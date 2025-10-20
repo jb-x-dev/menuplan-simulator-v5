@@ -35,8 +35,8 @@ else:
 
 @app.route('/')
 def index():
-    """Serve Frontend"""
-    return send_from_directory(app.static_folder, 'index.html')
+    """Serve Landing Page"""
+    return send_from_directory(app.static_folder, 'landing.html')
 
 
 @app.route('/api/recipes', methods=['GET'])

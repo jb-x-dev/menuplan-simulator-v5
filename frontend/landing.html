@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menüplansimulator - jb-x eBusiness Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 18px;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .module-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .module-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .module-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .module-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .module-card.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .module-card.primary .module-title,
+        .module-card.primary .module-description {
+            color: white;
+        }
+        
+        .footer {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .footer p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .badge.new {
+            background: #FF9800;
+        }
+        
+        .badge.beta {
+            background: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Menüplansimulator</h1>
+            <p>jb-x eBusiness Suite - Version 1.0</p>
+        </div>
+        
+        <div class="modules-grid">
+            <!-- Menüplansimulator -->
+            <a href="index.html" class="module-card primary">
+                <div class="module-icon">🚀</div>
+                <div class="module-title">Menüplansimulator</div>
+                <div class="module-description">
+                    Automatische und manuelle Menüplanerstellung mit BKT-Optimierung, 
+                    Constraint-basierter Filterung und Saisonalitäts-Berücksichtigung.
+                </div>
+            </a>
+            
+            <!-- BKT-Verwaltung -->
+            <a href="bkt-verwaltung.html" class="module-card">
+                <div class="module-icon">💰</div>
+                <div class="module-title">
+                    BKT-Verwaltung
+                    <span class="badge new">NEU</span>
+                </div>
+                <div class="module-description">
+                    Verwaltung von Budget-Zielen (BKT), Toleranzen und Kostenanalysen. 
+                    Übersicht über historische BKT-Entwicklung und Prognosen.
+                </div>
+            </a>
+            
+            <!-- Rezeptverwaltung -->
+            <a href="recipes.html" class="module-card">
+                <div class="module-icon">📚</div>
+                <div class="module-title">Rezeptverwaltung</div>
+                <div class="module-description">
+                    Erstellen, Bearbeiten und Verwalten von Rezepten. 
+                    200 Rezepte mit vollständigen Metadaten, Allergenen und Nährwerten.
+                </div>
+            </a>
+            
+            <!-- Beschaffung -->
+            <a href="procurement.html" class="module-card">
+                <div class="module-icon">📦</div>
+                <div class="module-title">Beschaffung</div>
+                <div class="module-description">
+                    Auflösung von Menüplänen in Beschaffungslisten. 
+                    Automatische Zuordnung zu Lieferanten und Bestelltagen.
+                </div>
+            </a>
+            
+            <!-- Statistiken & Analysen -->
+            <a href="analytics.html" class="module-card">
+                <div class="module-icon">📊</div>
+                <div class="module-title">
+                    Statistiken & Analysen
+                    <span class="badge beta">BETA</span>
+                </div>
+                <div class="module-description">
+                    Umfassende Auswertungen zu Menüplänen, Kosten, Beliebtheit und 
+                    Ernährungsformen. Visualisierung von Trends und Mustern.
+                </div>
+            </a>
+            
+            <!-- Export & Berichte -->
+            <a href="exports.html" class="module-card">
+                <div class="module-icon">📝</div>
+                <div class="module-title">Export & Berichte</div>
+                <div class="module-description">
+                    Export von Menüplänen in verschiedenen Formaten (PDF, Excel, XML). 
+                    Kunden-PDFs und Beschaffungslisten.
+                </div>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 jb-x eBusiness Suite | Menüplansimulator Version 1.0 | Entwickelt mit Manus AI</p>
+        </div>
+    </div>
+</body>
+</html>
+
