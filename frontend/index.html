@@ -1,0 +1,3127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menüplansimulator - Mit manueller Auswahl</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .mode-switch {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .mode-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+        
+        .config-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        
+        .config-section {
+            margin-bottom: 20px;
+        }
+        
+        .config-section h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .checkbox-item input {
+            width: auto;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .btn-secondary {
+            background: #28a745;
+        }
+        
+        .btn-secondary:hover {
+            background: #218838;
+        }
+        
+        .results-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .calendar-view {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .day-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .day-date {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .day-cost {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .meals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .meal-card {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .meal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .meal-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .btn-change {
+            background: #f5576c;
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .btn-change:hover {
+            background: #e04555;
+        }
+        
+        .recipe-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .recipe-item:hover {
+            background: #e9ecef;
+            transform: translateX(2px);
+        }
+        
+        .recipe-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .recipe-cost {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .allergens {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        
+        .allergen-badge {
+            background: #fee;
+            color: #c00;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        
+        /* Portion Control */
+        .portion-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 8px 0;
+        }
+        
+        .portion-btn {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .portion-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .info-btn {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .info-btn:hover {
+            background: #5568d3;
+            transform: scale(1.1);
+        }
+        
+        .portion-input {
+            width: 60px;
+            height: 32px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            padding: 0 5px;
+        }
+        
+        /* Status Selector */
+        .status-selector select {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 14px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            background: white;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .status-draft {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-template {
+            background: #cfe2ff;
+            color: #084298;
+        }
+        
+        .status-active {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+        
+        .status-archived {
+            background: #e2e3e5;
+            color: #41464b;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .modal-close:hover {
+            color: #333;
+        }
+        
+        .recipe-selector {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .recipe-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .filter-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        
+        .recipe-list {
+            display: grid;
+            gap: 10px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .recipe-option {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        
+        .recipe-option:hover {
+            background: #e9ecef;
+            border-color: #667eea;
+        }
+        
+        .recipe-option.selected {
+            background: #e7f3ff;
+            border-color: #667eea;
+        }
+        
+        .recipe-option-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .recipe-option-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .recipe-option-cost {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .recipe-option-meta {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-value.success {
+            color: #28a745;
+        }
+        
+        .stat-value.danger {
+            color: #dc3545;
+        }
+        
+        .empty-slot {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            color: #856404;
+        }
+        
+        .btn-add-recipe {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .btn-add-recipe:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <div>
+                    <h1>🍽️ Menüplansimulator</h1>
+                    <p>Automatische und manuelle Menüplanerstellung</p>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <select id="headerOrderListSelect" onchange="loadOrderListFromHeader(this.value)" style="padding: 10px 16px; border: 2px solid #667eea; border-radius: 6px; font-size: 14px; background: white; cursor: pointer; font-weight: 500;">
+                        <option value="">📋 Bestelllisten...</option>
+                    </select>
+                    <select id="headerMealPlanSelect" onchange="loadMealPlanFromHeader(this.value)" style="padding: 10px 16px; border: 2px solid #667eea; border-radius: 6px; font-size: 14px; background: white; cursor: pointer; font-weight: 500;">
+                        <option value="">📅 Menüpläne...</option>
+                    </select>
+                    <button onclick="showSettings()" style="padding: 10px 16px; background: #6c757d; color: white; border: 2px solid #6c757d; border-radius: 6px; font-weight: 500; font-size: 14px; cursor: pointer;">⚙️ Einstellungen</button>
+                    <a href="/recipes.html" style="padding: 10px 16px; background: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px; border: 2px solid #28a745; display: inline-block;">📚 Rezeptverwaltung</a>
+                    <button onclick="showHelp('de')" style="padding: 10px 16px; background: #17a2b8; color: white; border: 2px solid #17a2b8; border-radius: 6px; font-weight: 500; font-size: 14px; cursor: pointer;">🇩🇪❓</button>
+                    <button onclick="showHelp('es')" style="padding: 10px 16px; background: #17a2b8; color: white; border: 2px solid #17a2b8; border-radius: 6px; font-weight: 500; font-size: 14px; cursor: pointer;">🇪🇸❓</button>
+                </div>
+            </div>
+            <div class="mode-switch">
+                <button class="mode-btn active" onclick="switchMode('auto', event)">🤖 Automatisch</button>
+                <button class="mode-btn" onclick="switchMode('manual', event)">✋ Manuell</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="config-panel">
+                <div class="config-section">
+                    <h3>📅 Zeitraum</h3>
+                    <div class="form-group">
+                        <label>Startdatum</label>
+                        <input type="date" id="startDate" value="2025-11-03">
+                    </div>
+                    <div class="form-group">
+                        <label>Enddatum</label>
+                        <input type="date" id="endDate" value="2025-11-16">
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>💰 Budget (BKT)</h3>
+                    <div class="form-group">
+                        <label>Ziel-BKT (€) - Maximale Kosten pro Tag</label>
+                        <input type="number" id="bktTarget" value="8.00" step="0.10">
+                    </div>
+                    <div class="form-group">
+                        <label>Toleranz (%)</label>
+                        <input type="number" id="bktTolerance" value="15" step="1">
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>🍴 Mahlzeiten</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealBreakfast" checked>
+                            <label for="mealBreakfast">Frühstück</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealLunch" checked>
+                            <label for="mealLunch">Mittagessen</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealSnack">
+                            <label for="mealSnack">Zwischenmahlzeit</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealDinner">
+                            <label for="mealDinner">Abendessen</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>🥗 Ernährungsformen</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVollkost" checked>
+                            <label for="dietVollkost">Vollkost</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVegetarisch" checked>
+                            <label for="dietVegetarisch">Vegetarisch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVegan">
+                            <label for="dietVegan">Vegan</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>⚠️ Ausgeschlossene Allergene</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenGluten">
+                            <label for="allergenGluten">Gluten</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenMilch">
+                            <label for="allergenMilch">Milch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenEier">
+                            <label for="allergenEier">Eier</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenFisch">
+                            <label for="allergenFisch">Fisch</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section" id="quantitySection" style="display: none;">
+                    <h3>📊 Portionen (Bestellmenge)</h3>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Globale Menge:</label>
+                        <input type="number" id="globalQuantity" min="0" value="0" style="width: 100%; padding: 8px; border: 2px solid #667eea; border-radius: 5px; font-size: 14px; margin-bottom: 10px;">
+                        
+                        <div style="margin-bottom: 10px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Auswahlmodus:</label>
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 8px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;">
+                                    <input type="radio" name="selectionMode" value="manual" checked>
+                                    <span>✋ Manuell (nur ausgewählte Checkboxen)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 8px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;">
+                                    <input type="radio" name="selectionMode" value="cheapest">
+                                    <span>💰 Günstigstes Rezept pro Gericht</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 8px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;">
+                                    <input type="radio" name="selectionMode" value="expensive">
+                                    <span>💸 Teuerstes Rezept pro Gericht</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary" id="btnApplyGlobalQuantity" style="width: 100%; margin-bottom: 10px;">✓ Menge anwenden</button>
+                        <div style="margin-bottom: 10px;">
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;">
+                                <input type="checkbox" id="selectAllRecipes" checked onchange="toggleAllRecipeSelection()">
+                                <span>Alle Rezepte auswählen</span>
+                            </label>
+                        </div>
+                        <p style="font-size: 12px; color: #666; margin-top: 5px;">ℹ️ Checkboxen neben den Rezepten im Plan aktivieren/deaktivieren</p>
+                    </div>
+                    <button class="btn" id="btnCreateOrderList" style="width: 100%; background: #28a745; color: white;">📋 Bestellliste erstellen</button>
+                </div>
+                
+                <div class="config-section" id="orderListsSection" style="display: none;">
+                    <h3>📜 Bestelllisten</h3>
+                    <div style="margin-bottom: 10px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Bestellliste auswählen:</label>
+                        <select id="orderListDropdown" style="width: 100%; padding: 8px; border: 2px solid #667eea; border-radius: 5px; font-size: 14px;">
+                            <option value="">-- Bestellliste auswählen --</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-secondary" id="btnViewOrderList" style="flex: 1; min-width: 120px;" disabled>👁️ Anzeigen</button>
+                        <button class="btn btn-secondary" id="btnCopyOrderList" style="flex: 1; min-width: 120px;" disabled>📋 Kopieren</button>
+                        <button class="btn btn-secondary" id="btnExportOrderList" style="flex: 1; min-width: 120px;" disabled>📥 Export</button>
+                        <button class="btn btn-secondary" id="btnDeleteOrderList" style="flex: 1; min-width: 120px; background: #dc3545; color: white;" disabled>× Löschen</button>
+                    </div>
+                </div>
+                
+                <div id="autoControls">
+                    <button class="btn" id="btnSimulate">🚀 Automatisch generieren</button>
+                </div>
+                
+                <div id="manualControls" style="display: none;">
+                    <button class="btn" id="btnCreateEmpty">📝 Leeren Plan erstellen</button>
+                </div>
+                
+                <button class="btn btn-secondary" id="btnExportPDF" style="display: none;">📝 PDF exportieren</button>
+                <button class="btn btn-secondary" id="btnSaveMealPlan" style="display: none; background: #667eea; color: white;">💾 Menüplan speichern</button>
+                
+                <div id="customerPDFSection" style="display: none; margin-top: 10px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: bold;">📄 Wochenplan für Abnehmer:</label>
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <select id="pdfOrientation" style="padding: 8px; border: 2px solid #667eea; border-radius: 5px; font-size: 14px; flex: 1; min-width: 200px;">
+                            <option value="portrait">📄 Hochkant (Mahlzeiten als Spalten)</option>
+                            <option value="landscape">📄 Querformat (Tage als Spalten)</option>
+                        </select>
+                        <button class="btn btn-secondary" id="btnExportCustomerPDF" style="flex-shrink: 0;">📄 Exportieren</button>
+                    </div>
+                </div>
+                
+                <div id="excelExportSection" style="display: none; margin-top: 10px;">
+                    <button class="btn btn-secondary" id="btnExportExcel" style="width: 100%;">📊 Excel-Export (Portionen)</button>
+                </div>
+                
+                <div class="status-section" id="statusSection" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 2px solid #eee;">
+                    <h3 style="margin-bottom: 10px; color: #333;">Plan-Status</h3>
+                    <div class="status-selector">
+                        <select id="planStatus" onchange="updatePlanStatus(this.value)">
+                            <option value="draft">📝 Entwurf</option>
+                            <option value="template">📋 Vorlage</option>
+                            <option value="active">✅ Aktiv</option>
+                            <option value="archived">📦 Archiviert</option>
+                        </select>
+                    </div>
+                    <div id="statusBadge" class="status-badge status-draft" style="margin-top: 10px;">📝 Entwurf</div>
+                </div>
+            </div>
+            
+            <div class="results-panel">
+                <div id="results">
+                    <div class="loading">
+                        <p>Wählen Sie einen Modus und konfigurieren Sie die Parameter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal für Rezeptauswahl -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Rezept auswählen</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <!-- Help Modal -->
+    <div class="modal" id="helpModal">
+        <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h2 class="modal-title" id="helpModalTitle">Hilfe</h2>
+                <button class="modal-close" onclick="closeHelpModal()">&times;</button>
+            </div>
+            <div id="helpModalBody" style="padding: 20px; line-height: 1.6;"></div>
+        </div>
+    </div>
+    
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content" style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h2 class="modal-title">⚙️ Einstellungen</h2>
+                <button class="modal-close" onclick="closeSettings()">&times;</button>
+            </div>
+            <div style="padding: 20px;">
+                <!-- Tabs -->
+                <div class="settings-tabs" style="display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0;">
+                    <button class="settings-tab active" onclick="switchSettingsTab('meals')" id="tabMeals" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid #667eea; font-weight: 600;">🍽️ Mahlzeiten</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('allergens')" id="tabAllergens" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">🚫 Allergene</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('dietary')" id="tabDietary" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">🥗 Ernährung</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('defaults')" id="tabDefaults" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">⚙️ Standardwerte</button>
+                </div>
+                
+                <!-- Tab Content: Mahlzeiten -->
+                <div id="tabContentMeals" class="tab-content">
+                    <h3 style="margin-top: 0;">🍽️ Mahlzeiten-Konfiguration</h3>
+                    <div id="mealSettingsContainer"></div>
+                    <button class="btn" onclick="addMealSetting()" style="margin-top: 10px; background: #28a745; color: white;">➥ Mahlzeit hinzufügen</button>
+                </div>
+                
+                <!-- Tab Content: Allergene -->
+                <div id="tabContentAllergens" class="tab-content" style="display: none;">
+                    <h3 style="margin-top: 0;">🚫 Allergene-Auswahl</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Wählen Sie die Allergene aus, die bei der Menüplanung berücksichtigt werden sollen:</p>
+                    <div id="allergenCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
+                </div>
+                
+                <!-- Tab Content: Ernährungsformen -->
+                <div id="tabContentDietary" class="tab-content" style="display: none;">
+                    <h3 style="margin-top: 0;">🥗 Ernährungsformen</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Wählen Sie die Ernährungsformen aus, die angeboten werden sollen:</p>
+                    <div id="dietaryCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
+                </div>
+                
+                <!-- Tab Content: Standardwerte -->
+                <div id="tabContentDefaults" class="tab-content" style="display: none;">
+                    <h3 style="margin-top: 0;">⚙️ Standardwerte</h3>
+                    <div class="form-group">
+                        <label for="defaultPortions" style="font-weight: 600; display: block; margin-bottom: 5px;">Standard-Portionen für Autovorschlag:</label>
+                        <input type="number" id="defaultPortions" min="1" max="500" value="50" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666; display: block; margin-top: 5px;">Diese Menge wird beim Erzeugen des automatischen Vorschlags verwendet.</small>
+                    </div>
+                </div>
+                
+                <button class="btn btn-secondary" onclick="saveAllSettings()" style="margin-top: 20px; width: 100%;">💾 Alle Einstellungen speichern</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentMode = 'auto';
+        let currentPlan = null;
+        let currentConfig = null;
+        let allRecipes = [];
+        let manualPlan = null;
+        
+        // Mahlzeiten-Einstellungen
+        let mealSettings = [
+            { id: 1, name: 'Frühstück', isMainMeal: false, component: 'Frühstück' },
+            { id: 2, name: 'Mittagessen', isMainMeal: true, component: 'Mittagessen' },
+            { id: 3, name: 'Abendessen', isMainMeal: false, component: 'Abendessen' }
+        ];
+        
+        // Allergene-Einstellungen
+        const availableAllergens = ['Gluten', 'Milch', 'Eier', 'Fisch', 'Soja', 'Nüsse', 'Sellerie', 'Senf', 'Sesam', 'Lupinen', 'Krebstiere', 'Weichtiere', 'Schwefeldioxid'];
+        let selectedAllergens = ['Gluten', 'Milch', 'Eier', 'Fisch', 'Soja', 'Nüsse'];
+        
+        // Ernährungsformen-Einstellungen
+        const availableDietaryForms = ['Vollkost', 'Vegetarisch', 'Vegan', 'Glutenfrei', 'Laktosefrei', 'Halal', 'Koscher'];
+        let selectedDietaryForms = ['Vollkost', 'Vegetarisch'];
+        
+        // Standardwerte
+        let defaultPortions = 50;
+        
+        // Lade Mahlzeiten-Einstellungen aus localStorage
+        function loadMealSettings() {
+            const saved = localStorage.getItem('mealSettings');
+            if (saved) {
+                mealSettings = JSON.parse(saved);
+            }
+        }
+        
+        // Initialisiere beim Start
+        loadMealSettings();
+        
+        // Lade Rezepte beim Start
+        async function loadRecipes() {
+            try {
+                const response = await fetch('/api/recipes');
+                allRecipes = await response.json();
+                console.log(`✅ ${allRecipes.length} Rezepte geladen`);
+            } catch (error) {
+                console.error('Fehler beim Laden der Rezepte:', error);
+            }
+        }
+        
+        loadRecipes();
+        
+        function switchMode(mode, event) {
+            currentMode = mode;
+            
+            // Update buttons
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+            
+            // Show/hide controls
+            if (mode === 'auto') {
+                document.getElementById('autoControls').style.display = 'block';
+                document.getElementById('manualControls').style.display = 'none';
+            } else {
+                document.getElementById('autoControls').style.display = 'none';
+                document.getElementById('manualControls').style.display = 'block';
+            }
+        }
+        
+        // Automatische Generierung
+        document.getElementById('btnSimulate').addEventListener('click', async () => {
+            const btn = document.getElementById('btnSimulate');
+            btn.disabled = true;
+            btn.textContent = '⏳ Generiere...';
+            
+            try {
+                const config = getConfig();
+                
+                const response = await fetch('/api/simulate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(config)
+                });
+                
+                const data = await response.json();
+                console.log('API Response:', data);
+                
+                if (data.success) {
+                    currentPlan = data.plan;
+                    if (!currentPlan.status) {
+                        currentPlan.status = 'draft';
+                        currentPlan.status_changed_at = new Date().toISOString();
+                    }
+                    currentConfig = config;
+                    displayPlan(data.plan, true);
+                    document.getElementById('btnExportPDF').style.display = 'block';
+                    document.getElementById('btnSaveMealPlan').style.display = 'block';
+                    document.getElementById('customerPDFSection').style.display = 'block';
+                    document.getElementById('excelExportSection').style.display = 'block';
+                    document.getElementById('statusSection').style.display = 'block';
+                    showQuantitySection();
+                    updateStatusBadge();
+                } else {
+                    showError(data.error);
+                }
+            } catch (error) {
+                showError(error.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🚀 Automatisch generieren';
+            }
+        });
+        
+        // Leeren Plan erstellen
+        document.getElementById('btnCreateEmpty').addEventListener('click', () => {
+            const config = getConfig();
+            const startDate = new Date(config.start_date);
+            const endDate = new Date(config.end_date);
+            
+            const days = [];
+            let currentDate = new Date(startDate);
+            
+            while (currentDate <= endDate) {
+                const dayData = {
+                    date: currentDate.toISOString().split('T')[0],
+                    total_cost: 0,
+                    menu_lines: []
+                };
+                
+                // Erstelle Menülinien für ausgewählte Mahlzeiten
+                config.menu_lines.forEach(ml => {
+                    dayData.menu_lines.push({
+                        id: ml.id,
+                        name: ml.name,
+                        recipes: []
+                    });
+                });
+                
+                days.push(dayData);
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            
+            manualPlan = {
+                days: days,
+                status: 'draft',
+                status_changed_at: new Date().toISOString(),
+                statistics: {
+                    total_cost: 0,
+                    average_bkt: 0,
+                    within_budget: true
+                }
+            };
+            
+            currentPlan = manualPlan;
+            currentConfig = config;
+            displayPlan(manualPlan, false);
+            document.getElementById('btnExportPDF').style.display = 'block';
+            document.getElementById('btnSaveMealPlan').style.display = 'block';
+            document.getElementById('customerPDFSection').style.display = 'block';
+            document.getElementById('excelExportSection').style.display = 'block';
+            document.getElementById('statusSection').style.display = 'block';
+            showQuantitySection();
+            updateStatusBadge();
+        });
+        
+        function getConfig() {
+            const config = {
+                start_date: document.getElementById('startDate').value,
+                end_date: document.getElementById('endDate').value,
+                bkt_target: parseFloat(document.getElementById('bktTarget').value),
+                bkt_tolerance: parseFloat(document.getElementById('bktTolerance').value) / 100,
+                dietary_forms: [],
+                excluded_allergens: [],
+                repetition_interval: 7,
+                consider_seasonality: true,
+                menu_lines: []
+            };
+            
+            if (document.getElementById('dietVollkost').checked) config.dietary_forms.push('Vollkost');
+            if (document.getElementById('dietVegetarisch').checked) config.dietary_forms.push('Vegetarisch');
+            if (document.getElementById('dietVegan').checked) config.dietary_forms.push('Vegan');
+            
+            if (document.getElementById('allergenGluten').checked) config.excluded_allergens.push('Gluten');
+            if (document.getElementById('allergenMilch').checked) config.excluded_allergens.push('Milch');
+            if (document.getElementById('allergenEier').checked) config.excluded_allergens.push('Eier');
+            if (document.getElementById('allergenFisch').checked) config.excluded_allergens.push('Fisch');
+            
+            const meals = [];
+            if (document.getElementById('mealBreakfast').checked) meals.push('Frühstück');
+            if (document.getElementById('mealLunch').checked) meals.push('Mittagessen');
+            if (document.getElementById('mealSnack').checked) meals.push('Zwischenmahlzeit');
+            if (document.getElementById('mealDinner').checked) meals.push('Abendessen');
+            
+            config.menu_lines = meals.map((meal, idx) => ({
+                id: idx + 1,
+                name: meal,
+                dietary_forms: config.dietary_forms,
+                cost_forms: [{
+                    id: idx + 1,
+                    name: meal,
+                    component: meal,
+                    target_count: 50
+                }]
+            }));
+            
+            return config;
+        }
+        
+        function displayPlan(plan, isAutomatic) {
+            console.log('displayPlan called with:', plan);
+            const stats = plan.statistics;
+            
+            let html = '';
+            
+            // Statistiken
+            html += '<div class="stats-grid">';
+            html += `
+                <div class="stat-card">
+                    <div class="stat-label">Gesamt-BKT</div>
+                    <div class="stat-value" id="overallBKTDisplay">
+                        ${stats.average_bkt.toFixed(2)}€
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Gesamtkosten</div>
+                    <div class="stat-value" id="totalCostDisplay">${stats.total_cost.toFixed(2)}€</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Gesamt Portionen</div>
+                    <div class="stat-value" id="totalPortionsDisplay">${stats.total_portions || 0}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Portionen pro Tag</div>
+                    <div class="stat-value" id="portionsPerDayDisplay">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Tage</div>
+                    <div class="stat-value">${plan.days.length}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Modus</div>
+                    <div class="stat-value">${isAutomatic ? '🤖 Auto' : '✋ Manuell'}</div>
+                </div>
+            `;
+            html += '</div>';
+            
+            // Tage
+            html += '<div class="calendar-view">';
+            for (let dayIdx = 0; dayIdx < plan.days.length; dayIdx++) {
+                const day = plan.days[dayIdx];
+                html += `
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div class="day-date">${formatDate(day.date)}</div>
+                            <div class="day-cost">${day.total_cost.toFixed(2)}€</div>
+                        </div>
+                        <div class="meals-grid">
+                `;
+                
+                for (let mlIdx = 0; mlIdx < day.menu_lines.length; mlIdx++) {
+                    const menuLine = day.menu_lines[mlIdx];
+                    html += `
+                        <div class="meal-card">
+                            <div class="meal-header">
+                                <div class="meal-title">${menuLine.name}</div>
+                            </div>
+                    `;
+                    
+                    if (menuLine.recipes && menuLine.recipes.length > 0) {
+                        for (let recipeIdx = 0; recipeIdx < menuLine.recipes.length; recipeIdx++) {
+                            const recipeSlot = menuLine.recipes[recipeIdx];
+                            
+                            // Prüfe ob es ein MealSlot mit Optionen ist
+                            if (recipeSlot.options && recipeSlot.options.length > 0) {
+                                // Neues Format: MealSlot mit mehreren Optionen
+                                html += `<div class="recipe-slot" style="margin-bottom: 15px; padding: 10px; background: #f8f9fa; border-radius: 8px;">`;
+                                
+                                for (let optIdx = 0; optIdx < recipeSlot.options.length; optIdx++) {
+                                    const option = recipeSlot.options[optIdx];
+                                    const isSelected = optIdx === recipeSlot.selected_index;
+                                    
+                                    html += `
+                                        <div class="recipe-option" style="
+                                            padding: 10px;
+                                            margin-bottom: 8px;
+                                            border: 2px solid ${isSelected ? '#667eea' : '#dee2e6'};
+                                            border-radius: 6px;
+                                            background: ${isSelected ? '#f0f4ff' : 'white'};
+                                            cursor: pointer;
+                                            transition: all 0.2s;
+                                        " onclick="selectRecipeOption(${dayIdx}, ${mlIdx}, ${recipeIdx}, ${optIdx})">
+                                            <div style="display: flex; align-items: flex-start; gap: 10px;">
+                                                <input type="checkbox" 
+                                                       class="recipe-quantity-checkbox" 
+                                                       id="qty_cb_${dayIdx}_${mlIdx}_${recipeIdx}_${optIdx}" 
+                                                       ${isSelected ? 'checked' : ''}
+                                                       onclick="event.stopPropagation(); toggleRecipeSelection(${dayIdx}, ${mlIdx}, ${recipeIdx}, ${optIdx});"
+                                                       style="margin-top: 4px; width: 18px; height: 18px; cursor: pointer;">
+                                                <div style="flex: 1;">
+                                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                                        <strong>${option.recipe_name}</strong>
+                                                        <button class="info-btn" onclick="event.stopPropagation(); showRecipeInfo(${option.recipe_id})" title="Rezept-Details anzeigen">ℹ️</button>
+                                                    </div>
+                                                    <div style="font-size: 14px; color: #666; margin-top: 4px;">
+                                                        💰 ${option.cost_per_serving.toFixed(2)}€
+                                                        ${option.allergens && option.allergens.length > 0 ? `
+                                                            | 🚨 ${option.allergens.join(', ')}
+                                                        ` : ''}
+                                                    </div>
+                                                    <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #dee2e6;">
+                                                        <label style="font-size: 13px; font-weight: bold; display: block; margin-bottom: 5px;">📊 Bestellmenge:</label>
+                                                        <input type="number" 
+                                                               id="quantity_${dayIdx}_${mlIdx}_${recipeIdx}_${optIdx}" 
+                                                               min="0" 
+                                                               value="${option.quantity || 0}" 
+                                                               onclick="event.stopPropagation();" 
+                                                               onchange="updateOptionQuantity(${dayIdx}, ${mlIdx}, ${recipeIdx}, ${optIdx}, this.value)" 
+                                                               style="width: 100%; padding: 6px; border: 1px solid ${isSelected ? '#667eea' : '#dee2e6'}; border-radius: 4px; font-size: 14px;">
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }
+                                
+                                html += `</div>`;
+                            } else {
+                                // Altes Format: Einzelnes Rezept (für Abwärtskompatibilität)
+                                const recipe = recipeSlot;
+                                html += `
+                                    <div class="recipe-item">
+                                        <div style="cursor: pointer;">
+                                            <div class="recipe-name" style="display: flex; align-items: center; gap: 8px;">
+                                                <span onclick="showRecipeDetails(${recipe.recipe_id})" style="flex: 1;">${recipe.recipe_name}</span>
+                                                <button class="info-btn" onclick="event.stopPropagation(); showRecipeInfo(${recipe.recipe_id})" title="Rezept-Details anzeigen">ℹ️</button>
+                                            </div>
+                                            <div class="recipe-meta">
+                                                <span class="recipe-cost">💰 ${(recipe.recipe_cost || recipe.cost_per_serving || recipe.cost || 0).toFixed(2)}€</span>
+                                            </div>
+                                            ${recipe.allergens && recipe.allergens.length > 0 ? `
+                                                <div class="allergens">
+                                                    ${recipe.allergens.map(a => `<span class="allergen-badge">${a}</span>`).join('')}
+                                            </div>
+                                        ` : ''}
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        }
+                    } else {
+                        html += `
+                            <div class="empty-slot">
+                                <p>Kein Rezept ausgewählt</p>
+                                <button class="btn-add-recipe" onclick="changeRecipe(${dayIdx}, ${mlIdx}, -1)">+ Rezept hinzufügen</button>
+                            </div>
+                        `;
+                    }
+                    
+                    html += `
+                        </div>
+                    `;
+                }
+                
+                html += `
+                        </div>
+                        <div id="day_${dayIdx}_stats"></div>
+                    </div>
+                `;
+            }
+            html += '</div>';
+            
+            document.getElementById('results').innerHTML = html;
+            
+            // Aktualisiere Statistiken basierend auf Portionen
+            setTimeout(() => updateStatisticsDisplay(), 100);
+        }
+        
+        function changeRecipe(dayIdx, menuLineIdx, recipeIdx) {
+            const day = currentPlan.days[dayIdx];
+            const menuLine = day.menu_lines[menuLineIdx];
+            const component = menuLine.name;
+            
+            // Filtere Rezepte nach Komponente und Constraints
+            const filteredRecipes = allRecipes.filter(r => {
+                if (r.menu_component !== component) return false;
+                if (!r.is_enabled) return false;
+                
+                // Prüfe Allergene
+                if (currentConfig.excluded_allergens.some(a => r.allergens.includes(a))) return false;
+                
+                // Prüfe Ernährungsformen
+                if (!currentConfig.dietary_forms.some(df => r.dietary_forms.includes(df))) return false;
+                
+                return true;
+            });
+            
+            showRecipeSelector(filteredRecipes, (selectedRecipe, portionCount) => {
+                // Ersetze oder füge Rezept hinzu
+                const portions = portionCount || 50;
+                const newRecipeData = {
+                    recipe_id: selectedRecipe.id,
+                    recipe_name: selectedRecipe.name,
+                    recipe_cost: selectedRecipe.cost,
+                    cost_per_serving: selectedRecipe.cost,
+                    cost: selectedRecipe.cost,
+                    component: component,
+                    target_count: portions,
+                    allergens: selectedRecipe.allergens
+                };
+                
+                if (recipeIdx === -1) {
+                    // Neues Rezept hinzufügen
+                    if (!menuLine.recipes) menuLine.recipes = [];
+                    menuLine.recipes.push(newRecipeData);
+                } else {
+                    // Rezept ersetzen
+                    menuLine.recipes[recipeIdx] = newRecipeData;
+                }
+                
+                // Aktualisiere Kosten
+                updatePlanCosts();
+                
+                // Neu anzeigen
+                displayPlan(currentPlan, currentMode === 'auto');
+            });
+        }
+        
+        function showRecipeSelector(recipes, onSelect) {
+            let html = '<div class="recipe-selector">';
+            
+            html += '<div class="recipe-filter">';
+            html += '<input type="text" class="filter-input" id="recipeSearch" placeholder="Rezept suchen..." onkeyup="filterRecipes()">';
+            html += '<div style="margin-top: 10px;">';
+            html += '<label style="margin-right: 10px; font-weight: 600;">Portionen:</label>';
+            html += '<input type="number" id="portionCount" value="50" min="1" max="500" style="width: 100px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">';
+            html += '</div>';
+            html += '</div>';
+            
+            html += '<div class="recipe-list" id="recipeList">';
+            for (const recipe of recipes) {
+                html += `
+                    <div class="recipe-option" onclick="selectRecipe(${recipe.id})">
+                        <div class="recipe-option-header">
+                            <span class="recipe-option-name">${recipe.name}</span>
+                            <span class="recipe-option-cost">${recipe.cost.toFixed(2)}€</span>
+                        </div>
+                        <div class="recipe-option-meta">
+                            ${recipe.category} • ${recipe.group}
+                            ${recipe.allergens.length > 0 ? ' • Allergene: ' + recipe.allergens.join(', ') : ''}
+                        </div>
+                    </div>
+                `;
+            }
+            html += '</div>';
+            
+            html += '</div>';
+            
+            document.getElementById('modalTitle').textContent = 'Rezept auswählen';
+            document.getElementById('modalBody').innerHTML = html;
+            document.getElementById('recipeModal').classList.add('active');
+            
+            // Speichere Callback
+            window.currentRecipeSelectCallback = onSelect;
+            window.currentRecipeList = recipes;
+        }
+        
+        function selectRecipe(recipeId) {
+            const recipe = allRecipes.find(r => r.id === recipeId);
+            if (recipe && window.currentRecipeSelectCallback) {
+                const portionInput = document.getElementById('portionCount');
+                const portionCount = portionInput ? parseInt(portionInput.value) || 50 : 50;
+                window.currentRecipeSelectCallback(recipe, portionCount);
+                closeModal();
+            }
+        }
+        
+        function filterRecipes() {
+            const search = document.getElementById('recipeSearch').value.toLowerCase();
+            const options = document.querySelectorAll('.recipe-option');
+            
+            options.forEach(option => {
+                const text = option.textContent.toLowerCase();
+                if (text.includes(search)) {
+                    option.style.display = 'block';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+        }
+        
+        function updatePlanCosts() {
+            let totalCost = 0;
+            let dayCount = 0;
+            
+            for (const day of currentPlan.days) {
+                let dayCost = 0;
+                for (const menuLine of day.menu_lines) {
+                    if (menuLine.recipes) {
+                        for (const recipe of menuLine.recipes) {
+                            dayCost += (recipe.recipe_cost || recipe.cost_per_serving || recipe.cost || 0);
+                        }
+                    }
+                }
+                day.total_cost = dayCost;
+                totalCost += dayCost;
+                dayCount++;
+            }
+            
+            // Calculate total portions
+            let totalPortions = 0;
+            for (const day of currentPlan.days) {
+                for (const menuLine of day.menu_lines) {
+                    for (const recipe of menuLine.recipes) {
+                        totalPortions += (recipe.portions || 0);
+                    }
+                }
+            }
+            
+            currentPlan.statistics.total_cost = totalCost;
+            currentPlan.statistics.average_bkt = dayCount > 0 ? totalCost / dayCount : 0;
+            currentPlan.statistics.total_portions = totalPortions;
+            currentPlan.statistics.within_budget = 
+                currentPlan.statistics.average_bkt >= currentConfig.bkt_target * (1 - currentConfig.bkt_tolerance) &&
+                currentPlan.statistics.average_bkt <= currentConfig.bkt_target * (1 + currentConfig.bkt_tolerance);
+        }
+        
+        async function showRecipeDetails(recipeId) {
+            try {
+                const response = await fetch(`/api/recipe/${recipeId}`);
+                const data = await response.json();
+                console.log('API Response:', data);
+                
+                if (data.success) {
+                    const recipe = data.recipe;
+                    
+                    let html = '<div class="recipe-details">';
+                    
+                    html += `
+                        <div class="detail-section">
+                            <h4>📝 Beschreibung</h4>
+                            <p>${recipe.description || 'Keine Beschreibung verfügbar'}</p>
+                            <p><strong>Portionsgröße:</strong> ${recipe.portion_size}</p>
+                            <p><strong>Zubereitungszeit:</strong> ${recipe.processing_time} Stunden</p>
+                            <p><strong>Kosten pro Portion:</strong> ${recipe.cost.toFixed(2)}€</p>
+                        </div>
+                    `;
+                    
+                    html += `
+                        <div class="detail-section">
+                            <h4>📊 Nährwerte (pro Portion)</h4>
+                            <div class="nutritional-grid">
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Kalorien</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.calories}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Fett (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.fat}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Kohlenhydrate (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.carbs}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Protein (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.protein}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    if (recipe.ingredients && recipe.ingredients.length > 0) {
+                        html += `
+                            <div class="detail-section">
+                                <h4>🥘 Zutaten (für ${recipe.calculation_basis} Portionen)</h4>
+                                <ul class="ingredients-list">
+                        `;
+                        for (const ing of recipe.ingredients) {
+                            html += `
+                                <li class="ingredient-item">
+                                    <span>${ing.name}</span>
+                                    <span><strong>${ing.quantity} ${ing.unit}</strong></span>
+                                </li>
+                            `;
+                        }
+                        html += `
+                                </ul>
+                            </div>
+                        `;
+                    }
+                    
+                    html += `
+                        <div class="detail-section">
+                            <h4>⚠️ Allergene & Zusatzstoffe</h4>
+                            <p><strong>Allergene:</strong> ${recipe.allergens.length > 0 ? recipe.allergens.join(', ') : 'Keine'}</p>
+                            <p><strong>Zusatzstoffe:</strong> ${recipe.additives && recipe.additives.length > 0 ? recipe.additives.join(', ') : 'Keine'}</p>
+                            <p><strong>Ernährungsformen:</strong> ${recipe.dietary_forms.join(', ')}</p>
+                        </div>
+                    `;
+                    
+                    html += '</div>';
+                    
+                    document.getElementById('modalTitle').textContent = recipe.name;
+                    document.getElementById('modalBody').innerHTML = html;
+                    document.getElementById('recipeModal').classList.add('active');
+                }
+            } catch (error) {
+                alert('Fehler beim Laden der Rezeptdetails: ' + error.message);
+            }
+        }
+        
+        // Alias for info button
+        async function showRecipeInfo(recipeId) {
+            await showRecipeDetails(recipeId);
+        }
+        
+        function closeModal() {
+            document.getElementById('recipeModal').classList.remove('active');
+        }
+        
+        async function toggleRecipeSelection(dayIdx, menuLineIdx, recipeIdx, optionIdx) {
+            if (!currentPlan || !currentPlan.days) return;
+            
+            const day = currentPlan.days[dayIdx];
+            if (!day) return;
+            
+            const menuLine = day.menu_lines[menuLineIdx];
+            if (!menuLine || !menuLine.recipes) return;
+            
+            const recipeSlot = menuLine.recipes[recipeIdx];
+            if (!recipeSlot || !recipeSlot.options) return;
+            
+            const checkboxId = `qty_cb_${dayIdx}_${menuLineIdx}_${recipeIdx}_${optionIdx}`;
+            const checkbox = document.getElementById(checkboxId);
+            if (!checkbox) return;
+            
+            // Wenn Checkbox aktiviert wird
+            if (checkbox.checked) {
+                // Deaktiviere alle anderen Checkboxen in diesem Gericht
+                for (let i = 0; i < recipeSlot.options.length; i++) {
+                    if (i !== optionIdx) {
+                        const otherCheckboxId = `qty_cb_${dayIdx}_${menuLineIdx}_${recipeIdx}_${i}`;
+                        const otherCheckbox = document.getElementById(otherCheckboxId);
+                        if (otherCheckbox) {
+                            otherCheckbox.checked = false;
+                        }
+                    }
+                }
+                
+                // Wähle dieses Rezept aus
+                await selectRecipeOption(dayIdx, menuLineIdx, recipeIdx, optionIdx);
+            } else {
+                // Wenn Checkbox deaktiviert wird, reaktiviere sie (mindestens eine muss aktiv sein)
+                checkbox.checked = true;
+            }
+        }
+        
+        async function selectRecipeOption(dayIdx, menuLineIdx, recipeIdx, optionIdx) {
+            if (!currentPlan || !currentPlan.days) return;
+            
+            const day = currentPlan.days[dayIdx];
+            if (!day) return;
+            
+            const menuLine = day.menu_lines[menuLineIdx];
+            if (!menuLine || !menuLine.recipes) return;
+            
+            const recipeSlot = menuLine.recipes[recipeIdx];
+            if (!recipeSlot || !recipeSlot.options) return;
+            
+            // Prüfe ob der Index gültig ist
+            if (optionIdx < 0 || optionIdx >= recipeSlot.options.length) return;
+            
+            // Wenn bereits ausgewählt, nichts tun
+            if (recipeSlot.selected_index === optionIdx) return;
+            
+            try {
+                // Rufe API auf um Auswahl zu aktualisieren
+                const response = await fetch('/api/update-selection', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        plan: currentPlan,
+                        date: day.date,
+                        menu_line_id: menuLineIdx,  // 0-basierter Array-Index
+                        cost_form_id: menuLineIdx,
+                        new_index: optionIdx
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Aktualisiere den Plan mit der Antwort vom Server
+                    currentPlan = result.plan;
+                    
+                    // Zeige aktualisierten Plan an
+                    displayPlan(currentPlan, currentMode === 'auto');
+                    
+                    console.log('✅ Rezeptauswahl aktualisiert');
+                } else {
+                    console.error('❌ Fehler beim Aktualisieren der Auswahl:', result.error);
+                    alert('Fehler beim Aktualisieren der Rezeptauswahl: ' + result.error);
+                }
+            } catch (error) {
+                console.error('❌ Fehler bei API-Aufruf:', error);
+                alert('Fehler beim Aktualisieren der Rezeptauswahl');
+            }
+        }
+        
+        function removeRecipe(dayIdx, menuLineIdx, recipeIdx) {
+            if (!currentPlan || !currentPlan.days) return;
+            
+            const day = currentPlan.days[dayIdx];
+            if (!day) return;
+            
+            const menuLine = day.menu_lines[menuLineIdx];
+            if (!menuLine || !menuLine.recipes) return;
+            
+            // Bestätigung
+            if (confirm('Möchten Sie dieses Rezept wirklich entfernen?')) {
+                // Entferne Rezept
+                menuLine.recipes.splice(recipeIdx, 1);
+                
+                // Aktualisiere Kosten
+                updatePlanCosts();
+                
+                // Neu anzeigen
+                displayPlan(currentPlan, currentMode === 'auto');
+            }
+        }
+        
+        // Portion adjustment functions
+        function adjustPortions(dayIdx, menuLineIdx, recipeIdx, delta) {
+            if (!currentPlan || !currentPlan.days) return;
+            
+            const day = currentPlan.days[dayIdx];
+            if (!day) return;
+            
+            const menuLine = day.menu_lines[menuLineIdx];
+            if (!menuLine || !menuLine.recipes) return;
+            
+            const recipe = menuLine.recipes[recipeIdx];
+            if (!recipe) return;
+            
+            // Calculate new portion count
+            const newPortions = Math.max(1, Math.min(500, recipe.target_count + delta));
+            
+            // Update portions
+            recipe.target_count = newPortions;
+            
+            // Update costs
+            updatePlanCosts();
+            
+            // Refresh display
+            displayPlan(currentPlan, currentMode === 'auto');
+        }
+        
+        function updatePortions(dayIdx, menuLineIdx, recipeIdx, value) {
+            if (!currentPlan || !currentPlan.days) return;
+            
+            const day = currentPlan.days[dayIdx];
+            if (!day) return;
+            
+            const menuLine = day.menu_lines[menuLineIdx];
+            if (!menuLine || !menuLine.recipes) return;
+            
+            const recipe = menuLine.recipes[recipeIdx];
+            if (!recipe) return;
+            
+            // Parse and validate
+            const newPortions = Math.max(1, Math.min(500, parseInt(value) || 1));
+            
+            // Update portions
+            recipe.target_count = newPortions;
+            
+            // Update costs
+            updatePlanCosts();
+            
+            // Refresh display
+            displayPlan(currentPlan, currentMode === 'auto');
+        }
+        
+        // Status management functions
+        function updatePlanStatus(newStatus) {
+            if (!currentPlan) return;
+            
+            // Validierung: Nur bestimmte Übergänge erlaubt
+            const validTransitions = {
+                'draft': ['template', 'active', 'archived'],
+                'template': ['draft'],
+                'active': ['archived'],
+                'archived': []  // Keine Änderung möglich
+            };
+            
+            const currentStatus = currentPlan.status || 'draft';
+            
+            if (!validTransitions[currentStatus].includes(newStatus)) {
+                alert(`Status-Änderung von ${currentStatus} zu ${newStatus} nicht erlaubt`);
+                document.getElementById('planStatus').value = currentStatus;
+                return;
+            }
+            
+            // Bestätigung bei kritischen Änderungen
+            if (newStatus === 'active') {
+                if (!confirm('Plan aktivieren? Aktive Pläne können nicht mehr bearbeitet werden.')) {
+                    document.getElementById('planStatus').value = currentStatus;
+                    return;
+                }
+            }
+            
+            if (newStatus === 'archived') {
+                if (!confirm('Plan archivieren? Archivierte Pläne können nicht mehr geändert werden.')) {
+                    document.getElementById('planStatus').value = currentStatus;
+                    return;
+                }
+            }
+            
+            // Status aktualisieren
+            currentPlan.status = newStatus;
+            currentPlan.status_changed_at = new Date().toISOString();
+            
+            // UI aktualisieren
+            updateStatusBadge();
+            
+            // Bei aktivem oder archiviertem Plan: Bearbeitung deaktivieren
+            if (newStatus === 'active' || newStatus === 'archived') {
+                disableEditing();
+            } else {
+                enableEditing();
+            }
+        }
+        
+        function updateStatusBadge() {
+            const status = currentPlan.status || 'draft';
+            const badges = {
+                'draft': '📝 Entwurf',
+                'template': '📋 Vorlage',
+                'active': '✅ Aktiv',
+                'archived': '📦 Archiviert'
+            };
+            
+            const badge = document.getElementById('statusBadge');
+            const selector = document.getElementById('planStatus');
+            
+            if (badge) {
+                badge.textContent = badges[status];
+                badge.className = 'status-badge status-' + status;
+            }
+            
+            if (selector) {
+                selector.value = status;
+            }
+        }
+        
+        function disableEditing() {
+            // Alle Bearbeitungs-Buttons deaktivieren
+            document.querySelectorAll('.btn-change, .btn-add-recipe, .portion-btn, .portion-input').forEach(elem => {
+                elem.disabled = true;
+                elem.style.opacity = '0.5';
+                elem.style.cursor = 'not-allowed';
+            });
+        }
+        
+        function enableEditing() {
+            // Alle Bearbeitungs-Buttons aktivieren
+            document.querySelectorAll('.btn-change, .btn-add-recipe, .portion-btn, .portion-input').forEach(elem => {
+                elem.disabled = false;
+                elem.style.opacity = '1';
+                elem.style.cursor = 'pointer';
+            });
+        }
+        
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            const days = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+            return `${days[date.getDay()]}, ${date.toLocaleDateString('de-DE')}`;
+        }
+        
+        function showError(message) {
+            document.getElementById('results').innerHTML = `
+                <div style="color: red; padding: 20px;">
+                    <h3>❌ Fehler</h3>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+        
+        // PDF-Export
+        document.getElementById('btnExportPDF').addEventListener('click', async () => {
+            if (!currentPlan || !currentConfig) {
+                alert('Bitte führen Sie zuerst eine Simulation durch');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/export/pdf', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        plan: currentPlan,
+                        config: currentConfig
+                    })
+                });
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `menuplan_${currentConfig.start_date}.pdf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } else {
+                    alert('Fehler beim PDF-Export');
+                }
+            } catch (error) {
+                alert('Fehler beim PDF-Export: ' + error.message);
+            }
+        });
+        
+        // Customer PDF-Export (ohne Preise)
+        document.getElementById('btnExportCustomerPDF').addEventListener('click', async () => {
+            if (!currentPlan) {
+                alert('Kein Plan vorhanden');
+                return;
+            }
+            
+            try {
+                // Get selected orientation
+                const orientation = document.getElementById('pdfOrientation').value;
+                
+                const response = await fetch('/api/export/customer-pdf', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        plan: currentPlan,
+                        orientation: orientation
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('PDF-Export fehlgeschlagen');
+                }
+                
+                // PDF herunterladen
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `wochenplan_abnehmer_${new Date().toISOString().split('T')[0]}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                alert('✅ Wochenplan für Abnehmer erfolgreich exportiert!');
+            } catch (error) {
+                alert('Fehler beim PDF-Export: ' + error.message);
+            }
+        });
+        
+        // Excel-Export (Portionen)
+        document.getElementById('btnExportExcel').addEventListener('click', async () => {
+            if (!currentPlan) {
+                alert('Kein Plan vorhanden');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/export/excel', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        plan: currentPlan
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Excel-Export fehlgeschlagen');
+                }
+                
+                // Excel-Datei herunterladen
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `menuplan_portionen_${new Date().toISOString().split('T')[0]}.xlsx`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                alert('✅ Menüplan erfolgreich als Excel exportiert!');
+            } catch (error) {
+                alert('Fehler beim Excel-Export: ' + error.message);
+            }
+        });
+        
+        // Modal schließen bei Klick außerhalb
+        document.getElementById('recipeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'recipeModal') {
+                closeModal();
+            }
+        });
+        
+        // ===== ORDER MANAGEMENT FUNCTIONS =====
+        
+        let orderLists = JSON.parse(localStorage.getItem('orderLists') || '[]');
+        let savedMealPlans = JSON.parse(localStorage.getItem('savedMealPlans') || '[]');
+        
+        // Befülle Header-Dropdowns beim Laden
+        window.addEventListener('DOMContentLoaded', () => {
+            populateHeaderDropdowns();
+        });
+        
+        // Befülle Header-Dropdowns
+        function populateHeaderDropdowns() {
+            // Bestelllisten-Dropdown
+            const orderListSelect = document.getElementById('headerOrderListSelect');
+            orderListSelect.innerHTML = '<option value="">📋 Bestelllisten...</option>';
+            
+            const sortedOrderLists = [...orderLists].sort((a, b) => b.id - a.id);
+            for (const list of sortedOrderLists) {
+                const option = document.createElement('option');
+                option.value = list.id;
+                option.textContent = list.name;
+                orderListSelect.appendChild(option);
+            }
+            
+            // Menüpläne-Dropdown
+            const mealPlanSelect = document.getElementById('headerMealPlanSelect');
+            mealPlanSelect.innerHTML = '<option value="">📅 Menüpläne...</option>';
+            
+            const sortedMealPlans = [...savedMealPlans].sort((a, b) => b.id - a.id);
+            for (const plan of sortedMealPlans) {
+                const option = document.createElement('option');
+                option.value = plan.id;
+                option.textContent = plan.name || `Menüplan ${plan.id}`;
+                mealPlanSelect.appendChild(option);
+            }
+        }
+        
+        // Lade Bestellliste aus Header
+        function loadOrderListFromHeader(id) {
+            if (!id) return;
+            
+            viewOrderList(parseInt(id));
+            
+            // Reset dropdown
+            document.getElementById('headerOrderListSelect').value = '';
+        }
+        
+        // Speichere Menüplan
+        document.getElementById('btnSaveMealPlan').addEventListener('click', () => {
+            if (!currentPlan) {
+                alert('❌ Kein Menüplan vorhanden');
+                return;
+            }
+            
+            const name = prompt('Name für den Menüplan:', `Menüplan ${new Date().toISOString().split('T')[0]}`);
+            if (!name) return;
+            
+            const savedPlan = {
+                id: Date.now(),
+                name: name,
+                plan: currentPlan,
+                config: currentConfig,
+                mode: currentMode,
+                created_at: new Date().toISOString()
+            };
+            
+            savedMealPlans.push(savedPlan);
+            localStorage.setItem('savedMealPlans', JSON.stringify(savedMealPlans));
+            populateHeaderDropdowns();
+            
+            alert(`✅ Menüplan gespeichert: ${name}`);
+        });
+        
+        // Lade Menüplan aus Header
+        function loadMealPlanFromHeader(id) {
+            if (!id) return;
+            
+            const plan = savedMealPlans.find(p => p.id === parseInt(id));
+            if (!plan) {
+                alert('❌ Menüplan nicht gefunden');
+                return;
+            }
+            
+            // Lade Menüplan
+            currentPlan = plan.plan;
+            currentConfig = plan.config || {};
+            currentMode = plan.mode || 'auto';
+            
+            // Zeige Plan
+            displayPlan(currentPlan, currentMode === 'auto');
+            
+            // Zeige Export-Buttons
+            document.getElementById('btnExportPDF').style.display = 'block';
+            document.getElementById('customerPDFSection').style.display = 'block';
+            document.getElementById('excelExportSection').style.display = 'block';
+            document.getElementById('statusSection').style.display = 'block';
+            showQuantitySection();
+            updateStatusBadge();
+            
+            // Reset dropdown
+            document.getElementById('headerMealPlanSelect').value = '';
+            
+            alert(`✅ Menüplan geladen: ${plan.name || 'Menüplan ' + plan.id}`);
+        }
+        
+        // Zeige Quantity-Sektion wenn Plan vorhanden
+        function showQuantitySection() {
+            document.getElementById('quantitySection').style.display = 'block';
+            document.getElementById('orderListsSection').style.display = 'block';
+            loadOrderLists();
+        }
+        
+        // Toggle alle Rezept-Checkboxen
+        function toggleAllRecipeSelection() {
+            const selectAll = document.getElementById('selectAllRecipes').checked;
+            const checkboxes = document.querySelectorAll('.recipe-quantity-checkbox');
+            checkboxes.forEach(cb => cb.checked = selectAll);
+        }
+        
+        // Aktualisiere Menge für einzelne Rezeptoption
+        function updateOptionQuantity(dayIdx, mlIdx, recipeIdx, optIdx, quantity) {
+            if (!currentPlan || !currentPlan.days) return;
+            
+            const day = currentPlan.days[dayIdx];
+            if (!day) return;
+            
+            const menuLine = day.menu_lines[mlIdx];
+            if (!menuLine || !menuLine.recipes) return;
+            
+            const recipeSlot = menuLine.recipes[recipeIdx];
+            if (!recipeSlot || !recipeSlot.options) return;
+            
+            const option = recipeSlot.options[optIdx];
+            if (!option) return;
+            
+            // Speichere Menge in der Option
+            option.quantity = parseInt(quantity) || 0;
+            
+            console.log(`✅ Menge aktualisiert: ${option.recipe_name} = ${option.quantity}`);
+            
+            // Aktualisiere Statistiken
+            updateStatisticsDisplay();
+        }
+        
+        // Berechne Statistiken basierend auf ausgewählten Rezepten und Portionen
+        function calculatePlanStatistics() {
+            if (!currentPlan || !currentPlan.days) return null;
+            
+            // Finde Hauptmahlzeit
+            const mainMeal = mealSettings.find(m => m.isMainMeal);
+            const mainMealComponent = mainMeal ? mainMeal.component : 'Mittagessen';
+            
+            const stats = {
+                totalCost: 0,
+                totalPortions: 0,
+                totalPortionsPerDay: 0,
+                mainMealPortions: 0,
+                totalMeals: 0,
+                days: [],
+                averageBKT: 0,
+                overallBKT: 0,
+                mainMealName: mainMeal ? mainMeal.name : 'Mittagessen'
+            };
+            
+            // Durchlaufe alle Tage
+            for (const day of currentPlan.days) {
+                const dayStats = {
+                    date: day.date,
+                    totalCost: 0,
+                    totalPortions: 0,
+                    meals: 0,
+                    bkt: 0
+                };
+                
+                // Durchlaufe alle Mahlzeiten
+                let dayMainMealPortions = 0;
+                for (const menuLine of day.menu_lines) {
+                    const isMainMeal = menuLine.name === mainMealComponent || menuLine.cost_forms.some(cf => cf.component === mainMealComponent);
+                    
+                    for (const recipeSlot of menuLine.recipes) {
+                        if (recipeSlot.options) {
+                            // Finde ausgewähltes Rezept
+                            const selectedOption = recipeSlot.options[recipeSlot.selected_index];
+                            if (selectedOption) {
+                                const quantity = selectedOption.quantity || 0;
+                                const cost = selectedOption.cost_per_serving || 0;
+                                
+                                dayStats.totalCost += cost * quantity;
+                                dayStats.totalPortions += quantity;
+                                
+                                // Zähle Hauptmahlzeit-Portionen
+                                if (isMainMeal && quantity > 0) {
+                                    dayMainMealPortions += quantity;
+                                }
+                                
+                                if (quantity > 0) {
+                                    dayStats.meals++;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                dayStats.mainMealPortions = dayMainMealPortions;
+                
+                // BKT pro Tag = Gesamtkosten / Gesamtportionen
+                if (dayStats.totalPortions > 0) {
+                    dayStats.bkt = dayStats.totalCost / dayStats.totalPortions;
+                }
+                
+                stats.days.push(dayStats);
+                stats.totalCost += dayStats.totalCost;
+                stats.totalPortions += dayStats.totalPortions;
+                stats.totalMeals += dayStats.meals;
+                stats.mainMealPortions += dayStats.mainMealPortions;
+            }
+            
+            // Portionen pro Tag = Hauptmahlzeit-Portionen / Anzahl Tage
+            if (stats.days.length > 0) {
+                stats.totalPortionsPerDay = stats.mainMealPortions / stats.days.length;
+            }
+            
+            // Gesamtportionen = Summe aller Portionen / Anzahl der Mahlzeiten
+            if (stats.totalMeals > 0) {
+                stats.averagePortions = stats.totalPortions / stats.totalMeals;
+            }
+            
+            // Gesamt-BKT = Gesamtkosten / Gesamtportionen
+            if (stats.totalPortions > 0) {
+                stats.overallBKT = stats.totalCost / stats.totalPortions;
+            }
+            
+            // Durchschnittlicher BKT über alle Tage
+            const bktValues = stats.days.filter(d => d.bkt > 0).map(d => d.bkt);
+            if (bktValues.length > 0) {
+                stats.averageBKT = bktValues.reduce((a, b) => a + b, 0) / bktValues.length;
+            }
+            
+            return stats;
+        }
+        
+        // Aktualisiere Statistik-Anzeige
+        function updateStatisticsDisplay() {
+            const stats = calculatePlanStatistics();
+            if (!stats) return;
+            
+            // Gesamtstatistiken im Header
+            const totalCostEl = document.getElementById('totalCostDisplay');
+            const totalPortionsEl = document.getElementById('totalPortionsDisplay');
+            const overallBKTEl = document.getElementById('overallBKTDisplay');
+            const portionsPerDayEl = document.getElementById('portionsPerDayDisplay');
+            
+            if (totalCostEl) totalCostEl.textContent = stats.totalCost.toFixed(2) + '€';
+            if (totalPortionsEl) totalPortionsEl.textContent = stats.totalPortions;
+            if (overallBKTEl) overallBKTEl.textContent = stats.overallBKT.toFixed(2) + '€';
+            if (portionsPerDayEl) portionsPerDayEl.textContent = `${stats.totalPortionsPerDay.toFixed(0)} (${stats.mainMealName})`;
+            
+            // Tagesstatistiken in der Tabelle
+            for (let i = 0; i < stats.days.length; i++) {
+                const dayStats = stats.days[i];
+                const dayElement = document.getElementById(`day_${i}_stats`);
+                if (dayElement) {
+                    dayElement.innerHTML = `
+                        <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                            📊 Portionen: ${dayStats.totalPortions} (Hauptmahlzeit: ${dayStats.mainMealPortions}) | 
+                            💰 Kosten: ${dayStats.totalCost.toFixed(2)}€ | 
+                            📈 BKT: ${dayStats.bkt.toFixed(2)}€
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        // Wende globale Menge basierend auf Auswahlmodus an
+        document.getElementById('btnApplyGlobalQuantity').addEventListener('click', () => {
+            if (!currentPlan || !currentPlan.days) {
+                alert('Kein Plan vorhanden');
+                return;
+            }
+            
+            const globalQuantity = parseInt(document.getElementById('globalQuantity').value) || 0;
+            const selectionMode = document.querySelector('input[name="selectionMode"]:checked').value;
+            let appliedCount = 0;
+            
+            if (selectionMode === 'manual') {
+                // Manueller Modus: Nur ausgewählte Checkboxen
+                for (let dayIdx = 0; dayIdx < currentPlan.days.length; dayIdx++) {
+                    const day = currentPlan.days[dayIdx];
+                    for (let mlIdx = 0; mlIdx < day.menu_lines.length; mlIdx++) {
+                        const menuLine = day.menu_lines[mlIdx];
+                        for (let recipeIdx = 0; recipeIdx < menuLine.recipes.length; recipeIdx++) {
+                            const recipeSlot = menuLine.recipes[recipeIdx];
+                            if (recipeSlot.options) {
+                                for (let optIdx = 0; optIdx < recipeSlot.options.length; optIdx++) {
+                                    const checkboxId = `qty_cb_${dayIdx}_${mlIdx}_${recipeIdx}_${optIdx}`;
+                                    const checkbox = document.getElementById(checkboxId);
+                                    if (checkbox && checkbox.checked) {
+                                        recipeSlot.options[optIdx].quantity = globalQuantity;
+                                        appliedCount++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if (selectionMode === 'cheapest') {
+                // Günstigstes Rezept: Finde günstigste Option pro Gericht
+                for (let dayIdx = 0; dayIdx < currentPlan.days.length; dayIdx++) {
+                    const day = currentPlan.days[dayIdx];
+                    for (let mlIdx = 0; mlIdx < day.menu_lines.length; mlIdx++) {
+                        const menuLine = day.menu_lines[mlIdx];
+                        for (let recipeIdx = 0; recipeIdx < menuLine.recipes.length; recipeIdx++) {
+                            const recipeSlot = menuLine.recipes[recipeIdx];
+                            if (recipeSlot.options && recipeSlot.options.length > 0) {
+                                let cheapestIdx = 0;
+                                let cheapestCost = recipeSlot.options[0].cost_per_serving || 0;
+                                for (let optIdx = 1; optIdx < recipeSlot.options.length; optIdx++) {
+                                    const cost = recipeSlot.options[optIdx].cost_per_serving || 0;
+                                    if (cost < cheapestCost) {
+                                        cheapestCost = cost;
+                                        cheapestIdx = optIdx;
+                                    }
+                                }
+                                recipeSlot.options[cheapestIdx].quantity = globalQuantity;
+                                appliedCount++;
+                            }
+                        }
+                    }
+                }
+            } else if (selectionMode === 'expensive') {
+                // Teuerstes Rezept: Finde teuerste Option pro Gericht
+                for (let dayIdx = 0; dayIdx < currentPlan.days.length; dayIdx++) {
+                    const day = currentPlan.days[dayIdx];
+                    for (let mlIdx = 0; mlIdx < day.menu_lines.length; mlIdx++) {
+                        const menuLine = day.menu_lines[mlIdx];
+                        for (let recipeIdx = 0; recipeIdx < menuLine.recipes.length; recipeIdx++) {
+                            const recipeSlot = menuLine.recipes[recipeIdx];
+                            if (recipeSlot.options && recipeSlot.options.length > 0) {
+                                let mostExpensiveIdx = 0;
+                                let mostExpensiveCost = recipeSlot.options[0].cost_per_serving || 0;
+                                for (let optIdx = 1; optIdx < recipeSlot.options.length; optIdx++) {
+                                    const cost = recipeSlot.options[optIdx].cost_per_serving || 0;
+                                    if (cost > mostExpensiveCost) {
+                                        mostExpensiveCost = cost;
+                                        mostExpensiveIdx = optIdx;
+                                    }
+                                }
+                                recipeSlot.options[mostExpensiveIdx].quantity = globalQuantity;
+                                appliedCount++;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Aktualisiere Anzeige
+            displayPlan(currentPlan, currentMode === 'auto');
+            
+            // Aktualisiere Statistiken
+            setTimeout(() => updateStatisticsDisplay(), 100);
+            
+            alert(`✅ Globale Menge ${globalQuantity} auf ${appliedCount} ausgewählte Rezepte angewendet!`);
+        });
+        
+        // Erstelle Bestellliste
+        document.getElementById('btnCreateOrderList').addEventListener('click', () => {
+            if (!currentPlan || !currentPlan.days) {
+                alert('Kein Plan vorhanden');
+                return;
+            }
+            
+            // Sammle alle Rezeptoptionen mit Menge > 0
+            const orderItems = [];
+            
+            for (const day of currentPlan.days) {
+                for (const menuLine of day.menu_lines) {
+                    for (const recipeSlot of menuLine.recipes) {
+                        if (recipeSlot.options) {
+                            // Durchlaufe alle Optionen
+                            for (const option of recipeSlot.options) {
+                                const quantity = option.quantity || 0;
+                                
+                                if (quantity > 0) {
+                                    orderItems.push({
+                                        date: day.date,
+                                        meal: menuLine.name,
+                                        recipe_id: option.recipe_id,
+                                        recipe_name: option.recipe_name,
+                                        quantity: quantity,
+                                        cost_per_serving: option.cost_per_serving,
+                                        total_cost: quantity * option.cost_per_serving,
+                                        ingredients: option.ingredients || []
+                                    });
+                                }
+                            }
+                        } else {
+                            // Altes Format (für Abwärtskompatibilität)
+                            const quantity = recipeSlot.quantity || 0;
+                            if (quantity > 0) {
+                                orderItems.push({
+                                    date: day.date,
+                                    meal: menuLine.name,
+                                    recipe_id: recipeSlot.recipe_id,
+                                    recipe_name: recipeSlot.recipe_name,
+                                    quantity: quantity,
+                                    cost_per_serving: recipeSlot.cost_per_serving,
+                                    total_cost: quantity * recipeSlot.cost_per_serving,
+                                    ingredients: recipeSlot.ingredients || []
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if (orderItems.length === 0) {
+                alert('⚠️ Keine Rezepte mit Menge > 0 gefunden!');
+                return;
+            }
+            
+            // Erstelle Bestellliste mit Timestamp
+            const now = new Date();
+            const timestamp = now.toISOString().replace('T', ' ').substring(0, 19);
+            
+            const orderList = {
+                id: Date.now(),
+                name: `Bestellliste ${timestamp}`,
+                created_at: timestamp,
+                items: orderItems,
+                total_quantity: orderItems.reduce((sum, item) => sum + item.quantity, 0),
+                total_cost: orderItems.reduce((sum, item) => sum + item.total_cost, 0)
+            };
+            
+            // Speichere Bestellliste
+            orderLists.push(orderList);
+            localStorage.setItem('orderLists', JSON.stringify(orderLists));
+            
+            // Setze alle Mengen auf 0
+            for (const day of currentPlan.days) {
+                for (const menuLine of day.menu_lines) {
+                    for (const recipeSlot of menuLine.recipes) {
+                        if (recipeSlot.options) {
+                            // Setze alle Optionen auf 0
+                            for (const option of recipeSlot.options) {
+                                option.quantity = 0;
+                            }
+                        } else {
+                            // Altes Format
+                            recipeSlot.quantity = 0;
+                        }
+                    }
+                }
+            }
+            
+            // Aktualisiere Anzeige
+            displayPlan(currentPlan, currentMode === 'auto');
+            loadOrderLists();
+            populateHeaderDropdowns();
+            
+            alert(`✅ Bestellliste erstellt: ${orderList.items.length} Rezepte, ${orderList.total_quantity} Portionen`);
+        });
+        
+        // Lade und zeige Bestelllisten
+        function loadOrderLists() {
+            const dropdown = document.getElementById('orderListDropdown');
+            
+            // Leere Dropdown (außer erste Option)
+            dropdown.innerHTML = '<option value="">-- Bestellliste auswählen --</option>';
+            
+            if (orderLists.length === 0) {
+                return;
+            }
+            
+            // Sortiere nach Datum (neueste zuerst)
+            const sortedLists = [...orderLists].sort((a, b) => b.id - a.id);
+            
+            for (const list of sortedLists) {
+                const option = document.createElement('option');
+                option.value = list.id;
+                option.textContent = `${list.name} (📊 ${list.items.length} Rezepte, ${list.total_quantity} Portionen, ${list.total_cost.toFixed(2)}€)`;
+                dropdown.appendChild(option);
+            }
+        }
+        
+        // Dropdown-Change-Event: Aktiviere/Deaktiviere Buttons
+        document.getElementById('orderListDropdown').addEventListener('change', (e) => {
+            const selectedId = e.target.value;
+            const hasSelection = selectedId !== '';
+            
+            document.getElementById('btnViewOrderList').disabled = !hasSelection;
+            document.getElementById('btnCopyOrderList').disabled = !hasSelection;
+            document.getElementById('btnExportOrderList').disabled = !hasSelection;
+            document.getElementById('btnDeleteOrderList').disabled = !hasSelection;
+        });
+        
+        // Button-Event-Listener für Bestelllisten-Aktionen
+        document.getElementById('btnViewOrderList').addEventListener('click', () => {
+            const selectedId = parseInt(document.getElementById('orderListDropdown').value);
+            if (selectedId) viewOrderList(selectedId);
+        });
+        
+        document.getElementById('btnCopyOrderList').addEventListener('click', () => {
+            const selectedId = parseInt(document.getElementById('orderListDropdown').value);
+            if (selectedId) copyOrderList(selectedId);
+        });
+        
+        document.getElementById('btnExportOrderList').addEventListener('click', () => {
+            const selectedId = parseInt(document.getElementById('orderListDropdown').value);
+            if (selectedId) exportOrderList(selectedId);
+        });
+        
+        document.getElementById('btnDeleteOrderList').addEventListener('click', () => {
+            const selectedId = parseInt(document.getElementById('orderListDropdown').value);
+            if (selectedId) deleteOrderList(selectedId);
+        });
+        
+        // Zeige Bestellliste mit zwei Teilen
+        function viewOrderList(id) {
+            const list = orderLists.find(l => l.id === id);
+            if (!list) return;
+            
+            let html = `<h3>${list.name}</h3>`;
+            html += `<p style="color: #666; margin-bottom: 15px;">Erstellt: ${list.created_at}</p>`;
+            
+            // TEIL 1: Menüplan-Tabelle
+            html += `<h4 style="margin-top: 20px; margin-bottom: 10px;">📊 Teil 1: Menüplan</h4>`;
+            html += `<table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">`;
+            html += `<tr style="background: #667eea; color: white; font-weight: bold;">`;
+            html += `<th style="padding: 8px; border: 1px solid #dee2e6; text-align: left;">Datum</th>`;
+            html += `<th style="padding: 8px; border: 1px solid #dee2e6; text-align: left;">Rezept</th>`;
+            html += `<th style="padding: 8px; border: 1px solid #dee2e6; text-align: right;">Portionen</th>`;
+            html += `</tr>`;
+            
+            // Sortiere nach Datum
+            const sortedItems = [...list.items].sort((a, b) => a.date.localeCompare(b.date));
+            
+            for (const item of sortedItems) {
+                html += `<tr>`;
+                html += `<td style="padding: 8px; border: 1px solid #dee2e6;">${item.date}</td>`;
+                html += `<td style="padding: 8px; border: 1px solid #dee2e6;">${item.recipe_name}</td>`;
+                html += `<td style="padding: 8px; border: 1px solid #dee2e6; text-align: right;">${item.quantity}</td>`;
+                html += `</tr>`;
+            }
+            
+            html += `<tr style="background: #f8f9fa; font-weight: bold;">`;
+            html += `<td colspan="2" style="padding: 8px; border: 1px solid #dee2e6; text-align: right;">GESAMT:</td>`;
+            html += `<td style="padding: 8px; border: 1px solid #dee2e6; text-align: right;">${list.total_quantity}</td>`;
+            html += `</tr>`;
+            html += `</table>`;
+            
+            // TEIL 2: Komponenten nach Bestelltag
+            html += `<h4 style="margin-top: 20px; margin-bottom: 10px;">📦 Teil 2: Komponenten nach Bestelltag</h4>`;
+            
+            // Gruppiere Zutaten nach Bestelltag (2 Tage vor Menüplantag)
+            const ingredientsByOrderDay = {};
+            
+            for (const item of list.items) {
+                // Berechne Bestelltag (2 Tage vor Menüplantag)
+                const menuDate = new Date(item.date);
+                const orderDate = new Date(menuDate);
+                orderDate.setDate(orderDate.getDate() - 2);
+                const orderDateStr = orderDate.toISOString().split('T')[0];
+                
+                if (!ingredientsByOrderDay[orderDateStr]) {
+                    ingredientsByOrderDay[orderDateStr] = {};
+                }
+                
+                // Addiere Zutaten
+                if (item.ingredients && item.ingredients.length > 0) {
+                    for (const ingredient of item.ingredients) {
+                        const key = ingredient.name;
+                        if (!ingredientsByOrderDay[orderDateStr][key]) {
+                            ingredientsByOrderDay[orderDateStr][key] = {
+                                name: ingredient.name,
+                                quantity: 0,
+                                unit: ingredient.unit
+                            };
+                        }
+                        ingredientsByOrderDay[orderDateStr][key].quantity += ingredient.quantity * item.quantity;
+                    }
+                }
+            }
+            
+            // Sortiere Bestelltage
+            const sortedOrderDays = Object.keys(ingredientsByOrderDay).sort();
+            
+            if (sortedOrderDays.length === 0) {
+                html += `<p style="color: #666; font-style: italic;">Keine Zutatendaten verfügbar</p>`;
+            } else {
+                for (const orderDay of sortedOrderDays) {
+                    html += `<h5 style="margin-top: 15px; margin-bottom: 8px; color: #667eea;">📅 Bestelltag: ${orderDay}</h5>`;
+                    html += `<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">`;
+                    html += `<tr style="background: #f8f9fa; font-weight: bold;">`;
+                    html += `<th style="padding: 8px; border: 1px solid #dee2e6; text-align: left;">Komponente</th>`;
+                    html += `<th style="padding: 8px; border: 1px solid #dee2e6; text-align: right;">Menge</th>`;
+                    html += `<th style="padding: 8px; border: 1px solid #dee2e6; text-align: left;">Einheit</th>`;
+                    html += `</tr>`;
+                    
+                    const ingredients = Object.values(ingredientsByOrderDay[orderDay]);
+                    ingredients.sort((a, b) => a.name.localeCompare(b.name));
+                    
+                    for (const ingredient of ingredients) {
+                        html += `<tr>`;
+                        html += `<td style="padding: 8px; border: 1px solid #dee2e6;">${ingredient.name}</td>`;
+                        html += `<td style="padding: 8px; border: 1px solid #dee2e6; text-align: right;">${ingredient.quantity.toFixed(2)}</td>`;
+                        html += `<td style="padding: 8px; border: 1px solid #dee2e6;">${ingredient.unit}</td>`;
+                        html += `</tr>`;
+                    }
+                    
+                    html += `</table>`;
+                }
+            }
+            
+            // Zeige in Modal
+            const modal = document.getElementById('recipeModal');
+            const modalBody = modal.querySelector('.modal-body');
+            modalBody.innerHTML = html;
+            modal.classList.add('active');
+        }
+        
+        // Kopiere Bestellliste
+        function copyOrderList(id) {
+            const list = orderLists.find(l => l.id === id);
+            if (!list) return;
+            
+            const newList = {
+                ...list,
+                id: Date.now(),
+                name: `${list.name} (Kopie)`,
+                created_at: new Date().toISOString().replace('T', ' ').substring(0, 19)
+            };
+            
+            orderLists.push(newList);
+            localStorage.setItem('orderLists', JSON.stringify(orderLists));
+            loadOrderLists();
+            
+            alert(`✅ Bestellliste kopiert: ${newList.name}`);
+        }
+        
+        // Lösche Bestellliste
+        function deleteOrderList(id) {
+            if (!confirm('Bestellliste wirklich löschen?')) return;
+            
+            orderLists = orderLists.filter(l => l.id !== id);
+            localStorage.setItem('orderLists', JSON.stringify(orderLists));
+            loadOrderLists();
+            
+            alert('✅ Bestellliste gelöscht');
+        }
+        
+        // Exportiere Bestellliste als Excel
+        async function exportOrderList(id) {
+            const list = orderLists.find(l => l.id === id);
+            if (!list) return;
+            
+            try {
+                // Lade SheetJS dynamisch
+                if (!window.XLSX) {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js';
+                    document.head.appendChild(script);
+                    await new Promise(resolve => script.onload = resolve);
+                }
+                
+                // Erstelle Workbook
+                const wb = window.XLSX.utils.book_new();
+                
+                // TEIL 1: Menüplan
+                const menuPlanData = [['Bestellliste: ' + list.name], ['Erstellt: ' + list.created_at], []];
+                menuPlanData.push(['Datum', 'Rezept', 'Portionen']);
+                
+                const sortedItems = [...list.items].sort((a, b) => a.date.localeCompare(b.date));
+                for (const item of sortedItems) {
+                    menuPlanData.push([item.date, item.recipe_name, item.quantity]);
+                }
+                menuPlanData.push(['GESAMT', '', list.total_quantity]);
+                
+                const ws1 = window.XLSX.utils.aoa_to_sheet(menuPlanData);
+                window.XLSX.utils.book_append_sheet(wb, ws1, 'Menüplan');
+                
+                // TEIL 2: Komponenten nach Bestelltag
+                const ingredientsByOrderDay = {};
+                
+                for (const item of list.items) {
+                    const menuDate = new Date(item.date);
+                    const orderDate = new Date(menuDate);
+                    orderDate.setDate(orderDate.getDate() - 2);
+                    const orderDateStr = orderDate.toISOString().split('T')[0];
+                    
+                    if (!ingredientsByOrderDay[orderDateStr]) {
+                        ingredientsByOrderDay[orderDateStr] = {};
+                    }
+                    
+                    if (item.ingredients && item.ingredients.length > 0) {
+                        for (const ingredient of item.ingredients) {
+                            const key = ingredient.name;
+                            if (!ingredientsByOrderDay[orderDateStr][key]) {
+                                ingredientsByOrderDay[orderDateStr][key] = {
+                                    name: ingredient.name,
+                                    quantity: 0,
+                                    unit: ingredient.unit
+                                };
+                            }
+                            ingredientsByOrderDay[orderDateStr][key].quantity += ingredient.quantity * item.quantity;
+                        }
+                    }
+                }
+                
+                const sortedOrderDays = Object.keys(ingredientsByOrderDay).sort();
+                
+                if (sortedOrderDays.length > 0) {
+                    const ingredientsData = [];
+                    
+                    for (const orderDay of sortedOrderDays) {
+                        ingredientsData.push([`Bestelltag: ${orderDay}`]);
+                        ingredientsData.push(['Komponente', 'Menge', 'Einheit']);
+                        
+                        const ingredients = Object.values(ingredientsByOrderDay[orderDay]);
+                        ingredients.sort((a, b) => a.name.localeCompare(b.name));
+                        
+                        for (const ingredient of ingredients) {
+                            ingredientsData.push([ingredient.name, ingredient.quantity.toFixed(2), ingredient.unit]);
+                        }
+                        
+                        ingredientsData.push([]);
+                    }
+                    
+                    const ws2 = window.XLSX.utils.aoa_to_sheet(ingredientsData);
+                    window.XLSX.utils.book_append_sheet(wb, ws2, 'Komponenten');
+                }
+                
+                // Download
+                window.XLSX.writeFile(wb, `bestellliste_${list.id}.xlsx`);
+                
+                alert('✅ Bestellliste als Excel exportiert');
+            } catch (error) {
+                console.error('Excel-Export Fehler:', error);
+                alert('❌ Fehler beim Excel-Export: ' + error.message);
+            }
+        }
+        // Help Modal Functions
+        function showHelp(language) {
+            const helpModal = document.getElementById('helpModal');
+            const helpModalTitle = document.getElementById('helpModalTitle');
+            const helpModalBody = document.getElementById('helpModalBody');
+            
+            if (language === 'de') {
+                helpModalTitle.textContent = '🇩🇪 Hilfe - Anwenderdokumentation';
+                helpModalBody.innerHTML = getGermanHelp();
+            } else if (language === 'es') {
+                helpModalTitle.textContent = '🇪🇸 Ayuda - Documentación de Usuario';
+                helpModalBody.innerHTML = getSpanishHelp();
+            }
+            
+            helpModal.classList.add('active');
+        }
+        
+        function closeHelpModal() {
+            document.getElementById('helpModal').classList.remove('active');
+        }
+        
+        // Settings Modal Functions
+        function showSettings() {
+            loadAllSettings();
+            renderMealSettings();
+            renderAllergenCheckboxes();
+            renderDietaryCheckboxes();
+            renderDefaultValues();
+            document.getElementById('settingsModal').classList.add('active');
+        }
+        
+        function closeSettings() {
+            document.getElementById('settingsModal').classList.remove('active');
+        }
+        
+        function renderMealSettings() {
+            const container = document.getElementById('mealSettingsContainer');
+            let html = '';
+            
+            for (let i = 0; i < mealSettings.length; i++) {
+                const meal = mealSettings[i];
+                html += `
+                    <div style="border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; margin-bottom: 10px; background: white;">
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <input type="text" value="${meal.name}" onchange="updateMealName(${i}, this.value)" style="flex: 1; padding: 8px; border: 2px solid #667eea; border-radius: 5px; font-size: 14px;" placeholder="Mahlzeit-Name">
+                            <label style="display: flex; align-items: center; gap: 5px; white-space: nowrap;">
+                                <input type="checkbox" ${meal.isMainMeal ? 'checked' : ''} onchange="setMainMeal(${i}, this.checked)">
+                                <span style="font-weight: bold; color: #667eea;">⭐ Hauptmahlzeit</span>
+                            </label>
+                            <button onclick="removeMealSetting(${i})" style="padding: 8px 12px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">×</button>
+                        </div>
+                        <input type="text" value="${meal.component}" onchange="updateMealComponent(${i}, this.value)" style="width: 100%; padding: 8px; border: 2px solid #dee2e6; border-radius: 5px; font-size: 13px;" placeholder="Komponente (für API)">
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        function updateMealName(index, name) {
+            mealSettings[index].name = name;
+        }
+        
+        function updateMealComponent(index, component) {
+            mealSettings[index].component = component;
+        }
+        
+        function setMainMeal(index, isMain) {
+            if (isMain) {
+                // Deaktiviere alle anderen Hauptmahlzeiten
+                mealSettings.forEach((meal, i) => {
+                    if (i !== index) meal.isMainMeal = false;
+                });
+            }
+            mealSettings[index].isMainMeal = isMain;
+            renderMealSettings();
+        }
+        
+        function addMealSetting() {
+            const newId = Math.max(...mealSettings.map(m => m.id), 0) + 1;
+            mealSettings.push({
+                id: newId,
+                name: 'Neue Mahlzeit',
+                isMainMeal: false,
+                component: 'Neue_Mahlzeit'
+            });
+            renderMealSettings();
+        }
+        
+        function removeMealSetting(index) {
+            if (mealSettings.length <= 1) {
+                alert('Mindestens eine Mahlzeit muss vorhanden sein!');
+                return;
+            }
+            mealSettings.splice(index, 1);
+            renderMealSettings();
+        }
+        
+        function saveMealSettings() {
+            // Prüfe, ob mindestens eine Hauptmahlzeit vorhanden ist
+            const hasMainMeal = mealSettings.some(m => m.isMainMeal);
+            if (!hasMainMeal) {
+                alert('Mindestens eine Mahlzeit muss als Hauptmahlzeit markiert sein!');
+                return;
+            }
+            
+            localStorage.setItem('mealSettings', JSON.stringify(mealSettings));
+            
+            // Aktualisiere die Konfiguration
+            updateConfigWithMealSettings();
+        }
+        
+        // Tab-Wechsel
+        function switchSettingsTab(tabName) {
+            // Deaktiviere alle Tabs
+            document.querySelectorAll('.settings-tab').forEach(tab => {
+                tab.style.borderBottom = '3px solid transparent';
+                tab.style.color = '#666';
+            });
+            
+            // Verstecke alle Tab-Inhalte
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Aktiviere gewählten Tab
+            const activeTab = document.getElementById('tab' + tabName.charAt(0).toUpperCase() + tabName.slice(1));
+            if (activeTab) {
+                activeTab.style.borderBottom = '3px solid #667eea';
+                activeTab.style.color = '#000';
+            }
+            
+            // Zeige gewählten Tab-Inhalt
+            const activeContent = document.getElementById('tabContent' + tabName.charAt(0).toUpperCase() + tabName.slice(1));
+            if (activeContent) {
+                activeContent.style.display = 'block';
+            }
+        }
+        
+        // Lade alle Einstellungen aus localStorage
+        function loadAllSettings() {
+            // Mahlzeiten
+            const savedMeals = localStorage.getItem('mealSettings');
+            if (savedMeals) {
+                mealSettings = JSON.parse(savedMeals);
+            }
+            
+            // Allergene
+            const savedAllergens = localStorage.getItem('selectedAllergens');
+            if (savedAllergens) {
+                selectedAllergens = JSON.parse(savedAllergens);
+            }
+            
+            // Ernährungsformen
+            const savedDietary = localStorage.getItem('selectedDietaryForms');
+            if (savedDietary) {
+                selectedDietaryForms = JSON.parse(savedDietary);
+            }
+            
+            // Standardwerte
+            const savedDefaultPortions = localStorage.getItem('defaultPortions');
+            if (savedDefaultPortions) {
+                defaultPortions = parseInt(savedDefaultPortions);
+            }
+        }
+        
+        // Rendere Allergene-Checkboxen
+        function renderAllergenCheckboxes() {
+            const container = document.getElementById('allergenCheckboxes');
+            let html = '';
+            
+            for (const allergen of availableAllergens) {
+                const isChecked = selectedAllergens.includes(allergen);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleAllergen('${allergen}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${allergen}</span>
+                    </label>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        // Rendere Ernährungsformen-Checkboxen
+        function renderDietaryCheckboxes() {
+            const container = document.getElementById('dietaryCheckboxes');
+            let html = '';
+            
+            for (const form of availableDietaryForms) {
+                const isChecked = selectedDietaryForms.includes(form);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleDietaryForm('${form}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${form}</span>
+                    </label>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        // Rendere Standardwerte
+        function renderDefaultValues() {
+            document.getElementById('defaultPortions').value = defaultPortions;
+        }
+        
+        // Toggle Allergen
+        function toggleAllergen(allergen, isChecked) {
+            if (isChecked) {
+                if (!selectedAllergens.includes(allergen)) {
+                    selectedAllergens.push(allergen);
+                }
+            } else {
+                selectedAllergens = selectedAllergens.filter(a => a !== allergen);
+            }
+            renderAllergenCheckboxes();
+        }
+        
+        // Toggle Ernährungsform
+        function toggleDietaryForm(form, isChecked) {
+            if (isChecked) {
+                if (!selectedDietaryForms.includes(form)) {
+                    selectedDietaryForms.push(form);
+                }
+            } else {
+                selectedDietaryForms = selectedDietaryForms.filter(f => f !== form);
+            }
+            renderDietaryCheckboxes();
+        }
+        
+        // Speichere alle Einstellungen
+        function saveAllSettings() {
+            // Prüfe, ob mindestens eine Hauptmahlzeit vorhanden ist
+            const hasMainMeal = mealSettings.some(m => m.isMainMeal);
+            if (!hasMainMeal) {
+                alert('Mindestens eine Mahlzeit muss als Hauptmahlzeit markiert sein!');
+                return;
+            }
+            
+            // Speichere alle Einstellungen
+            localStorage.setItem('mealSettings', JSON.stringify(mealSettings));
+            localStorage.setItem('selectedAllergens', JSON.stringify(selectedAllergens));
+            localStorage.setItem('selectedDietaryForms', JSON.stringify(selectedDietaryForms));
+            
+            // Standardwerte
+            defaultPortions = parseInt(document.getElementById('defaultPortions').value) || 50;
+            localStorage.setItem('defaultPortions', defaultPortions.toString());
+            
+            alert('✅ Alle Einstellungen gespeichert!');
+            closeSettings();
+            
+            // Aktualisiere die Konfiguration
+            updateConfigWithMealSettings();
+        }
+        
+        function updateConfigWithMealSettings() {
+            // Aktualisiere menu_lines basierend auf mealSettings
+            const menuLines = mealSettings.map(meal => ({
+                id: meal.id,
+                name: meal.name,
+                dietary_forms: ['Vollkost'],
+                cost_forms: [{
+                    id: meal.id,
+                    name: meal.name,
+                    component: meal.component,
+                    target_count: meal.isMainMeal ? 50 : 0
+                }]
+            }));
+            
+            // Wenn currentConfig existiert, aktualisiere es
+            if (currentConfig) {
+                currentConfig.menu_lines = menuLines;
+            }
+        }
+        
+        function getGermanHelp() {
+            return `
+                <h1>Anwenderdokumentation Menüplansimulator v6.7</h1>
+                <p><strong>Willkommen beim Menüplansimulator!</strong> Diese Dokumentation erklärt alle Funktionen der Anwendung.</p>
+                
+                <h2>1. Erste Schritte</h2>
+                <p>Der Menüplansimulator ist eine Webanwendung zur Erstellung, Verwaltung und Optimierung von Menüplänen. Sie können Menüpläne automatisch generieren lassen oder manuell erstellen, die Kosten kontrollieren und Bestelllisten für die benötigten Zutaten erzeugen.</p>
+                
+                <h3>Benutzeroberfläche</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: #f8f9fa;">
+                        <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Bereich</th>
+                        <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Beschreibung</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Header</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Enthält die Hauptnavigation, Speicher- und Ladefunktionen sowie die Hilfe-Buttons.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Konfiguration</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Hier stellen Sie alle Parameter für die Menüplan-Erstellung ein.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Ergebnisse</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Zeigt den generierten Menüplan, Statistiken und Export-Optionen an.</td>
+                    </tr>
+                </table>
+                
+                <h2>2. Menüplan erstellen</h2>
+                
+                <h3>Automatische Erstellung</h3>
+                <p>Die automatische Erstellung generiert einen optimierten Menüplan basierend auf Ihren Konfigurationseinstellungen.</p>
+                <ol>
+                    <li>Stellen Sie alle gewünschten Parameter im <strong>Konfigurationsbereich</strong> ein.</li>
+                    <li>Klicken Sie auf den Button <strong>"🤖 Menüplan automatisch erstellen"</strong>.</li>
+                    <li>Der generierte Plan wird im <strong>Ergebnisbereich</strong> angezeigt.</li>
+                </ol>
+                
+                <h3>Manuelle Erstellung</h3>
+                <p>Die manuelle Erstellung erzeugt einen leeren Menüplan, den Sie selbst mit Rezepten füllen können.</p>
+                <ol>
+                    <li>Stellen Sie die Anzahl der Tage im <strong>Konfigurationsbereich</strong> ein.</li>
+                    <li>Klicken Sie auf den Button <strong>"✋ Menüplan manuell erstellen"</strong>.</li>
+                    <li>Ein leerer Plan wird angezeigt. Klicken Sie auf <strong>"+ Rezept hinzufügen"</strong>, um Rezepte auszuwählen.</li>
+                </ol>
+                
+                <h2>3. Rezeptauswahl</h2>
+                <p>Für jedes Gericht werden eine oder mehrere Rezeptoptionen angezeigt.</p>
+                <ul>
+                    <li><strong>Checkbox:</strong> Aktivieren Sie eine Checkbox, um dieses Rezept für die Mahlzeit auszuwählen. Alle anderen Optionen im gleichen Gericht werden automatisch deaktiviert.</li>
+                    <li><strong>Info-Button (ℹ️):</strong> Zeigt detaillierte Informationen zum Rezept an (Zutaten, Zubereitung, etc.).</li>
+                </ul>
+                
+                <h2>4. Mengenverwaltung</h2>
+                
+                <h3>Globale Mengenanwendung</h3>
+                <ol>
+                    <li>Markieren Sie die gewünschten Rezepte über die <strong>Checkboxen</strong> neben den Rezeptnamen.</li>
+                    <li>Geben Sie die gewünschte Menge in das Feld <strong>"Globale Menge"</strong> ein.</li>
+                    <li>Klicken Sie auf <strong>"✓ Auf alle anwenden"</strong>.</li>
+                    <li>Die Menge wird auf alle markierten Rezepte angewendet.</li>
+                </ol>
+                
+                <h3>Individuelle Mengen</h3>
+                <p>Geben Sie die gewünschte Menge in das Feld <strong>"📊 Bestellmenge"</strong> direkt unter dem Rezeptnamen ein. Die Statistiken werden bei jeder Änderung automatisch aktualisiert.</p>
+                
+                <h2>5. Bestelllisten</h2>
+                
+                <h3>Bestellliste erstellen</h3>
+                <ol>
+                    <li>Legen Sie die gewünschten Mengen für alle Rezepte fest.</li>
+                    <li>Klicken Sie auf den Button <strong>"📋 Bestellliste erstellen"</strong>.</li>
+                    <li>Das System sammelt alle Rezepte mit einer Menge > 0.</li>
+                    <li>Die Bestellliste wird mit aktuellem Datum und Uhrzeit gespeichert.</li>
+                </ol>
+                
+                <h3>Bestellliste verwalten</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: #f8f9fa;">
+                        <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Button</th>
+                        <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Beschreibung</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>👁️ Anzeigen</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Öffnet die detaillierte Zwei-Teile-Ansicht der Bestellliste.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>📋 Kopieren</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Erstellt eine Kopie der Bestellliste mit neuem Zeitstempel.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>📥 Export (Excel)</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Exportiert die Bestellliste als Excel-Datei (.xlsx).</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>× Löschen</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Entfernt die Bestellliste endgültig (mit Bestätigung).</td>
+                    </tr>
+                </table>
+                
+                <h2>6. Menüpläne speichern und laden</h2>
+                
+                <h3>Menüplan speichern</h3>
+                <ol>
+                    <li>Erstellen Sie einen Menüplan.</li>
+                    <li>Klicken Sie auf den Button <strong>"💾 Menüplan speichern"</strong>.</li>
+                    <li>Geben Sie einen Namen für den Menüplan ein.</li>
+                    <li>Der Plan wird im Browser gespeichert.</li>
+                </ol>
+                
+                <h3>Menüplan laden</h3>
+                <p>Gespeicherte Menüpläne können im Header-Menü <strong>"📅 Menüpläne..."</strong> ausgewählt werden. Wählen Sie einen Plan aus der Liste, um ihn zu laden.</p>
+            `;
+        }
+        
+        function getSpanishHelp() {
+            return `
+                <h1>Documentación de Usuario del Simulador de Planes de Menú v6.7</h1>
+                <p><strong>¡Bienvenido al Simulador de Planes de Menú!</strong> Esta documentación explica todas las funciones de la aplicación.</p>
+                
+                <h2>1. Primeros Pasos</h2>
+                <p>El Simulador de Planes de Menú es una aplicación web para la creación, gestión y optimización de planes de menú. Puede generar planes de menú automáticamente o crearlos manualmente, controlar los costos y generar listas de pedidos para los ingredientes necesarios.</p>
+                
+                <h3>Interfaz de Usuario</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: #f8f9fa;">
+                        <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Área</th>
+                        <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Descripción</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Encabezado</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Contiene la navegación principal, las funciones de guardar y cargar, y los botones de ayuda.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Configuración</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Aquí se establecen todos los parámetros para la creación del plan de menú.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>Resultados</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Muestra el plan de menú generado, las estadísticas y las opciones de exportación.</td>
+                    </tr>
+                </table>
+                
+                <h2>2. Crear un Plan de Menú</h2>
+                
+                <h3>Creación Automática</h3>
+                <p>La creación automática genera un plan de menú optimizado basado en su configuración.</p>
+                <ol>
+                    <li>Establezca todos los parámetros deseados en el <strong>área de Configuración</strong>.</li>
+                    <li>Haga clic en el botón <strong>"🤖 Crear plan de menú automáticamente"</strong>.</li>
+                    <li>El plan generado se mostrará en el <strong>área de Resultados</strong>.</li>
+                </ol>
+                
+                <h3>Creación Manual</h3>
+                <p>La creación manual genera un plan de menú vacío que puede llenar usted mismo con recetas.</p>
+                <ol>
+                    <li>Establezca el número de días en el <strong>área de Configuración</strong>.</li>
+                    <li>Haga clic en el botón <strong>"✋ Crear plan de menú manualmente"</strong>.</li>
+                    <li>Se mostrará un plan vacío. Haga clic en <strong>"+ Añadir receta"</strong> para seleccionar recetas.</li>
+                </ol>
+                
+                <h2>3. Selección de Recetas</h2>
+                <p>Para cada plato se muestran una o más opciones de recetas.</p>
+                <ul>
+                    <li><strong>Casilla de verificación:</strong> Active una casilla para seleccionar esa receta para la comida. Todas las demás opciones en el mismo plato se desactivan automáticamente.</li>
+                    <li><strong>Botón de información (ℹ️):</strong> Muestra información detallada sobre la receta (ingredientes, preparación, etc.).</li>
+                </ul>
+                
+                <h2>4. Gestión de Cantidades</h2>
+                
+                <h3>Aplicación Global de Cantidad</h3>
+                <ol>
+                    <li>Marque las recetas deseadas usando las <strong>casillas de verificación</strong> junto a los nombres de las recetas.</li>
+                    <li>Ingrese la cantidad deseada en el campo <strong>"Cantidad Global"</strong>.</li>
+                    <li>Haga clic en <strong>"✓ Aplicar a todas"</strong>.</li>
+                    <li>La cantidad se aplicará a todas las recetas marcadas.</li>
+                </ol>
+                
+                <h3>Cantidades Individuales</h3>
+                <p>Ingrese la cantidad deseada en el campo <strong>"📊 Cantidad de pedido"</strong> directamente debajo del nombre de la receta. Las estadísticas se actualizan automáticamente con cada cambio.</p>
+                
+                <h2>5. Listas de Pedidos</h2>
+                
+                <h3>Crear Lista de Pedidos</h3>
+                <ol>
+                    <li>Establezca las cantidades deseadas para todas las recetas.</li>
+                    <li>Haga clic en el botón <strong>"📋 Crear lista de pedidos"</strong>.</li>
+                    <li>El sistema recopila todas las recetas con una cantidad > 0.</li>
+                    <li>La lista de pedidos se guarda con la fecha y hora actuales.</li>
+                </ol>
+                
+                <h3>Gestionar Lista de Pedidos</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: #f8f9fa;">
+                        <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Botón</th>
+                        <th style="border: 1px solid #dee2e6; padding: 10px; text-align: left;">Descripción</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>👁️ Ver</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Abre la vista detallada de dos partes de la lista de pedidos.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>📋 Copiar</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Crea una copia de la lista de pedidos con una nueva marca de tiempo.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>📥 Exportar (Excel)</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Exporta la lista de pedidos como un archivo de Excel (.xlsx).</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;"><strong>× Eliminar</strong></td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px;">Elimina la lista de pedidos permanentemente (con confirmación).</td>
+                    </tr>
+                </table>
+                
+                <h2>6. Guardar y Cargar Planes de Menú</h2>
+                
+                <h3>Guardar Plan de Menú</h3>
+                <ol>
+                    <li>Cree un plan de menú.</li>
+                    <li>Haga clic en el botón <strong>"💾 Guardar plan de menú"</strong>.</li>
+                    <li>Ingrese un nombre para el plan de menú.</li>
+                    <li>El plan se guardará en el navegador.</li>
+                </ol>
+                
+                <h3>Cargar Plan de Menú</h3>
+                <p>Los planes de menú guardados se pueden seleccionar en el menú del encabezado <strong>"📅 Planes de menú..."</strong>. Seleccione un plan de la lista para cargarlo.</p>
+            `;
+        }
+    </script>
+</body>
+</html>
+

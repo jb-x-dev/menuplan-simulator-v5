@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menüplansimulator - jb-x eBusiness Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 20px;
+        }
+        
+        .config-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .config-panel h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .checkbox-item input {
+            width: auto;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .result-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card .label {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card .value {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .stat-card.success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .stat-card.warning {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .calendar-view {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .day-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .day-header h3 {
+            color: #333;
+            font-size: 18px;
+        }
+        
+        .day-bkt {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .day-bkt.good {
+            color: #11998e;
+            border: 2px solid #11998e;
+        }
+        
+        .day-bkt.warning {
+            color: #f5576c;
+            border: 2px solid #f5576c;
+        }
+        
+        .menu-lines {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .menu-line {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        
+        .menu-line-name {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .recipe-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .recipe-item:last-child {
+            border-bottom: none;
+        }
+        
+        .recipe-name {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .recipe-cost {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .recipe-tags {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #e0e7ff;
+            color: #667eea;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+        
+        .error {
+            background: #fee;
+            border: 2px solid #f5576c;
+            color: #c00;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .info-text {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Menüplansimulator</h1>
+            <p>Automatische Menüplanerstellung für die jb-x eBusiness Suite</p>
+            <div style="margin-top: 15px;">
+                <a href="/procurement.html" style="padding: 8px 16px; background: #667eea; color: white; text-decoration: none; border-radius: 6px;">📦 Beschaffungsauflösung ansehen</a>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="config-panel">
+                <h2>⚙️ Konfiguration</h2>
+                
+                <div class="form-group">
+                    <label>Startdatum</label>
+                    <input type="date" id="start_date">
+                </div>
+                
+                <div class="form-group">
+                    <label>Enddatum</label>
+                    <input type="date" id="end_date">
+                </div>
+                
+                <div class="form-group">
+                    <label>Ziel-BKT (€)</label>
+                    <input type="number" id="bkt_target" value="8.0" step="0.1" min="0">
+                </div>
+                
+                <div class="form-group">
+                    <label>BKT-Toleranz (%)</label>
+                    <input type="number" id="bkt_tolerance" value="15" min="0" max="50">
+                </div>
+                
+                <div class="form-group">
+                    <label>Ernährungsformen</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="diet_vollkost" value="Vollkost" checked>
+                            <label for="diet_vollkost">Vollkost</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="diet_vegetarisch" value="Vegetarisch" checked>
+                            <label for="diet_vegetarisch">Vegetarisch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="diet_vegan" value="Vegan">
+                            <label for="diet_vegan">Vegan</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Ausgeschlossene Allergene</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergen_gluten" value="Gluten" checked>
+                            <label for="allergen_gluten">Gluten</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergen_nuesse" value="Nüsse">
+                            <label for="allergen_nuesse">Nüsse</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergen_milch" value="Milch">
+                            <label for="allergen_milch">Milch</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Wiederholungsintervall (Tage)</label>
+                    <input type="number" id="repetition_interval" value="7" min="1" max="14">
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="consider_seasonality" checked>
+                        <label for="consider_seasonality">Saisonalität berücksichtigen</label>
+                    </div>
+                </div>
+                
+                <button class="btn" id="simulateBtn" onclick="runSimulation()">
+                    🚀 Simulation starten
+                </button>
+                
+                <p class="info-text">
+                    Der Simulator erstellt automatisch einen optimierten Menüplan basierend auf Ihren Vorgaben.
+                </p>
+            </div>
+            
+            <div class="result-panel" id="resultPanel">
+                <div style="text-align: center; padding: 60px; color: #999;">
+                    <h2>👈 Konfigurieren Sie die Parameter und starten Sie die Simulation</h2>
+                    <p style="margin-top: 10px;">Der generierte Menüplan wird hier angezeigt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Setze Default-Daten
+        const today = new Date();
+        const startDate = new Date(today);
+        startDate.setDate(today.getDate() + 7);
+        const endDate = new Date(startDate);
+        endDate.setDate(startDate.getDate() + 13);
+        
+        document.getElementById('start_date').value = startDate.toISOString().split('T')[0];
+        document.getElementById('end_date').value = endDate.toISOString().split('T')[0];
+        
+        async function runSimulation() {
+            const btn = document.getElementById('simulateBtn');
+            const resultPanel = document.getElementById('resultPanel');
+            
+            // Sammle Konfiguration
+            const dietaryForms = [];
+            if (document.getElementById('diet_vollkost').checked) dietaryForms.push('Vollkost');
+            if (document.getElementById('diet_vegetarisch').checked) dietaryForms.push('Vegetarisch');
+            if (document.getElementById('diet_vegan').checked) dietaryForms.push('Vegan');
+            
+            const excludedAllergens = [];
+            if (document.getElementById('allergen_gluten').checked) excludedAllergens.push('Gluten');
+            if (document.getElementById('allergen_nuesse').checked) excludedAllergens.push('Nüsse');
+            if (document.getElementById('allergen_milch').checked) excludedAllergens.push('Milch');
+            
+            const config = {
+                start_date: document.getElementById('start_date').value,
+                end_date: document.getElementById('end_date').value,
+                kitchen_id: 1,
+                menu_lines: [
+                    {
+                        id: 1,
+                        name: 'Vollkost',
+                        cost_forms: [
+                            {id: 1, name: 'Mittagessen', component: 'Mittagessen'},
+                            {id: 2, name: 'Abendessen', component: 'Abendessen'}
+                        ]
+                    },
+                    {
+                        id: 2,
+                        name: 'Vegetarisch',
+                        cost_forms: [
+                            {id: 3, name: 'Mittagessen', component: 'Mittagessen'}
+                        ]
+                    }
+                ],
+                bkt_target: parseFloat(document.getElementById('bkt_target').value),
+                bkt_tolerance: parseFloat(document.getElementById('bkt_tolerance').value) / 100,
+                dietary_forms: dietaryForms,
+                excluded_allergens: excludedAllergens,
+                excluded_aversions: [],
+                repetition_interval: parseInt(document.getElementById('repetition_interval').value),
+                consider_seasonality: document.getElementById('consider_seasonality').checked
+            };
+            
+            // Zeige Loading
+            btn.disabled = true;
+            btn.textContent = '⏳ Simulation läuft...';
+            resultPanel.innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <h3>Menüplan wird generiert...</h3>
+                    <p style="color: #666; margin-top: 10px;">Dies kann einige Sekunden dauern.</p>
+                </div>
+            `;
+            
+            try {
+                const response = await fetch('/api/simulate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(config)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayResult(data.plan);
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                resultPanel.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Fehler bei der Simulation</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🚀 Simulation starten';
+            }
+        }
+        
+        function displayResult(plan) {
+            const resultPanel = document.getElementById('resultPanel');
+            const stats = plan.statistics;
+            
+            let html = '<h2>📊 Ergebnisse</h2>';
+            
+            // Statistiken
+            html += '<div class="statistics">';
+            html += `
+                <div class="stat-card">
+                    <div class="label">Tage</div>
+                    <div class="value">${stats.total_days}</div>
+                </div>
+                <div class="stat-card ${stats.within_budget ? 'success' : 'warning'}">
+                    <div class="label">Durchschn. BKT</div>
+                    <div class="value">${stats.average_bkt.toFixed(2)}€</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">Gesamtkosten</div>
+                    <div class="value">${stats.total_cost.toFixed(2)}€</div>
+                </div>
+                <div class="stat-card ${stats.within_budget ? 'success' : 'warning'}">
+                    <div class="label">Budget-Status</div>
+                    <div class="value">${stats.within_budget ? '✓' : '⚠'}</div>
+                </div>
+            `;
+            html += '</div>';
+            
+            // Budget-Info
+            html += `<p style="color: #666; margin-bottom: 20px;">
+                Ziel-BKT: ${stats.bkt_target.toFixed(2)}€ | 
+                Toleranzbereich: ${stats.bkt_min.toFixed(2)}€ - ${stats.bkt_max.toFixed(2)}€
+            </p>`;
+            
+            // Tage
+            html += '<div class="calendar-view">';
+            for (const day of plan.days) {
+                const bktInRange = day.calculated_bkt >= stats.bkt_min && day.calculated_bkt <= stats.bkt_max;
+                
+                html += `
+                    <div class="day-card">
+                        <div class="day-header">
+                            <h3>${day.day_of_week}, ${formatDate(day.date)}</h3>
+                            <div class="day-bkt ${bktInRange ? 'good' : 'warning'}">
+                                ${day.calculated_bkt.toFixed(2)}€
+                            </div>
+                        </div>
+                        <div class="menu-lines">
+                `;
+                
+                for (const menuLine of day.menu_lines) {
+                    html += `
+                        <div class="menu-line">
+                            <div class="menu-line-name">${menuLine.name}</div>
+                    `;
+                    
+                    for (const recipe of menuLine.recipes) {
+                        html += `
+                            <div class="recipe-item">
+                                <div>
+                                    <div class="recipe-name">${recipe.recipe_name}</div>
+                                    <div class="recipe-tags">
+                                        ${recipe.dietary_forms.map(d => `<span class="tag">${d}</span>`).join('')}
+                                        ${recipe.allergens.length > 0 ? `<span class="tag" style="background: #fee; color: #c00;">⚠ ${recipe.allergens.join(', ')}</span>` : ''}
+                                    </div>
+                                </div>
+                                <div class="recipe-cost">${recipe.cost_per_serving.toFixed(2)}€</div>
+                            </div>
+                        `;
+                    }
+                    
+                    html += '</div>';
+                }
+                
+                html += '</div></div>';
+            }
+            html += '</div>';
+            
+            resultPanel.innerHTML = html;
+        }
+        
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('de-DE', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+        }
+    </script>
+</body>
+</html>
+

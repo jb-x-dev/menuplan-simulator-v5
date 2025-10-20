@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezeptverwaltung - Menüplansimulator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 32px;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+        }
+        
+        .btn-success {
+            background: #28a745;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .btn-warning {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+        
+        .search-box {
+            flex: 1;
+            max-width: 400px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .filter-select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .recipes-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .recipes-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        .recipes-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .recipes-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .recipe-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 4px;
+        }
+        
+        .badge-allergen {
+            background: #fee;
+            color: #c00;
+        }
+        
+        .badge-diet {
+            background: #e7f3ff;
+            color: #0066cc;
+        }
+        
+        .badge-component {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .badge-enabled {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-disabled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            width: 90%;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .page-btn {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .page-btn:hover {
+            background: #f8f9fa;
+        }
+        
+        .page-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>📚 Rezeptverwaltung</h1>
+                <p>200 Rezepte für die Menüplanung</p>
+            </div>
+            <div class="header-actions">
+                <a href="/" class="btn">← Zurück zur Planung</a>
+                <button class="btn btn-success" onclick="showAddRecipe()">+ Neues Rezept</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="stats" id="stats">
+                <div class="stat-card">
+                    <div class="stat-label">Gesamt</div>
+                    <div class="stat-value" id="statTotal">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Frühstück</div>
+                    <div class="stat-value" id="statBreakfast">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Mittagessen</div>
+                    <div class="stat-value" id="statLunch">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Abendessen</div>
+                    <div class="stat-value" id="statDinner">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Zwischenmahlzeit</div>
+                    <div class="stat-value" id="statSnack">-</div>
+                </div>
+            </div>
+            
+            <div class="toolbar">
+                <div class="search-box">
+                    <input type="text" class="search-input" id="searchInput" placeholder="🔍 Rezept suchen..." onkeyup="filterRecipes()">
+                </div>
+                <div class="filters">
+                    <select class="filter-select" id="filterComponent" onchange="filterRecipes()">
+                        <option value="">Alle Mahlzeiten</option>
+                        <option value="Frühstück">Frühstück</option>
+                        <option value="Mittagessen">Mittagessen</option>
+                        <option value="Abendessen">Abendessen</option>
+                        <option value="Zwischenmahlzeit">Zwischenmahlzeit</option>
+                    </select>
+                    <select class="filter-select" id="filterCategory" onchange="filterRecipes()">
+                        <option value="">Alle Kategorien</option>
+                        <option value="Hauptgang">Hauptgang</option>
+                        <option value="Suppe">Suppe</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Beilage">Beilage</option>
+                        <option value="Frühstück">Frühstück</option>
+                    </select>
+                    <select class="filter-select" id="filterStatus" onchange="filterRecipes()">
+                        <option value="">Alle Status</option>
+                        <option value="enabled">Aktiviert</option>
+                        <option value="disabled">Deaktiviert</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="recipesContainer">
+                <div class="loading">Lade Rezepte...</div>
+            </div>
+            
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </div>
+    
+    <!-- Modal für Rezept bearbeiten/hinzufügen -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Rezept bearbeiten</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="recipeForm">
+                <div class="form-group">
+                    <label class="form-label">Name *</label>
+                    <input type="text" class="form-input" id="recipeName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Kosten (€) *</label>
+                        <input type="number" class="form-input" id="recipeCost" step="0.10" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Portionsgröße</label>
+                        <input type="text" class="form-input" id="recipePortionSize" value="1 Portion">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Kategorie *</label>
+                        <select class="form-select" id="recipeCategory" required>
+                            <option value="Hauptgang">Hauptgang</option>
+                            <option value="Suppe">Suppe</option>
+                            <option value="Dessert">Dessert</option>
+                            <option value="Beilage">Beilage</option>
+                            <option value="Frühstück">Frühstück</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mahlzeit *</label>
+                        <select class="form-select" id="recipeComponent" required>
+                            <option value="Frühstück">Frühstück</option>
+                            <option value="Mittagessen">Mittagessen</option>
+                            <option value="Abendessen">Abendessen</option>
+                            <option value="Zwischenmahlzeit">Zwischenmahlzeit</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Beschreibung</label>
+                    <textarea class="form-textarea" id="recipeDescription"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Allergene</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenGluten" value="Gluten">
+                            <label>Gluten</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenMilch" value="Milch">
+                            <label>Milch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenEier" value="Eier">
+                            <label>Eier</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenFisch" value="Fisch">
+                            <label>Fisch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenSoja" value="Soja">
+                            <label>Soja</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenNuesse" value="Nüsse">
+                            <label>Nüsse</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Ernährungsformen</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVollkost" value="Vollkost" checked>
+                            <label>Vollkost</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVegetarisch" value="Vegetarisch">
+                            <label>Vegetarisch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVegan" value="Vegan">
+                            <label>Vegan</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <input type="checkbox" id="recipeEnabled" checked>
+                        Rezept aktiviert
+                    </label>
+                </div>
+                
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button type="button" class="btn" onclick="closeModal()">Abbrechen</button>
+                    <button type="submit" class="btn btn-success">Speichern</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        let allRecipes = [];
+        let filteredRecipes = [];
+        let currentPage = 1;
+        const recipesPerPage = 20;
+        
+        // Lade Rezepte beim Start
+        async function loadRecipes() {
+            try {
+                const response = await fetch('/api/recipes');
+                allRecipes = await response.json();
+                filteredRecipes = [...allRecipes];
+                updateStats();
+                filterRecipes();
+            } catch (error) {
+                console.error('Fehler beim Laden:', error);
+                document.getElementById('recipesContainer').innerHTML = 
+                    '<div class="loading" style="color: red;">Fehler beim Laden der Rezepte</div>';
+            }
+        }
+        
+        function updateStats() {
+            document.getElementById('statTotal').textContent = allRecipes.length;
+            document.getElementById('statBreakfast').textContent = 
+                allRecipes.filter(r => r.menu_component === 'Frühstück').length;
+            document.getElementById('statLunch').textContent = 
+                allRecipes.filter(r => r.menu_component === 'Mittagessen').length;
+            document.getElementById('statDinner').textContent = 
+                allRecipes.filter(r => r.menu_component === 'Abendessen').length;
+            document.getElementById('statSnack').textContent = 
+                allRecipes.filter(r => r.menu_component === 'Zwischenmahlzeit').length;
+        }
+        
+        function filterRecipes() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const component = document.getElementById('filterComponent').value;
+            const category = document.getElementById('filterCategory').value;
+            const status = document.getElementById('filterStatus').value;
+            
+            filteredRecipes = allRecipes.filter(recipe => {
+                const matchSearch = !search || 
+                    recipe.name.toLowerCase().includes(search) ||
+                    recipe.description.toLowerCase().includes(search) ||
+                    recipe.group.toLowerCase().includes(search);
+                
+                const matchComponent = !component || recipe.menu_component === component;
+                const matchCategory = !category || recipe.category === category;
+                const matchStatus = !status || 
+                    (status === 'enabled' && recipe.is_enabled) ||
+                    (status === 'disabled' && !recipe.is_enabled);
+                
+                return matchSearch && matchComponent && matchCategory && matchStatus;
+            });
+            
+            currentPage = 1;
+            displayRecipes();
+        }
+        
+        function displayRecipes() {
+            const start = (currentPage - 1) * recipesPerPage;
+            const end = start + recipesPerPage;
+            const pageRecipes = filteredRecipes.slice(start, end);
+            
+            let html = `
+                <table class="recipes-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Kategorie</th>
+                            <th>Mahlzeit</th>
+                            <th>Kosten</th>
+                            <th>Allergene</th>
+                            <th>Status</th>
+                            <th>Aktionen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            for (const recipe of pageRecipes) {
+                html += `
+                    <tr>
+                        <td>${recipe.id}</td>
+                        <td>
+                            <div class="recipe-name">${recipe.name}</div>
+                            <small style="color: #666;">${recipe.group}</small>
+                        </td>
+                        <td>${recipe.category}</td>
+                        <td><span class="badge badge-component">${recipe.menu_component}</span></td>
+                        <td><strong>${recipe.cost.toFixed(2)}€</strong></td>
+                        <td>
+                            ${recipe.allergens.map(a => `<span class="badge badge-allergen">${a}</span>`).join('')}
+                        </td>
+                        <td>
+                            <span class="badge ${recipe.is_enabled ? 'badge-enabled' : 'badge-disabled'}">
+                                ${recipe.is_enabled ? 'Aktiv' : 'Inaktiv'}
+                            </span>
+                        </td>
+                        <td>
+                            <div class="actions">
+                                <button class="btn btn-sm btn-warning" onclick="editRecipe(${recipe.id})">Bearbeiten</button>
+                                <button class="btn btn-sm ${recipe.is_enabled ? 'btn-danger' : 'btn-success'}" 
+                                        onclick="toggleRecipe(${recipe.id})">
+                                    ${recipe.is_enabled ? 'Deaktivieren' : 'Aktivieren'}
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }
+            
+            html += `
+                    </tbody>
+                </table>
+            `;
+            
+            document.getElementById('recipesContainer').innerHTML = html;
+            displayPagination();
+        }
+        
+        function displayPagination() {
+            const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
+            let html = '';
+            
+            if (totalPages > 1) {
+                html += `<button class="page-btn" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>← Zurück</button>`;
+                
+                for (let i = 1; i <= totalPages; i++) {
+                    if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+                        html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+                    } else if (i === currentPage - 3 || i === currentPage + 3) {
+                        html += `<span>...</span>`;
+                    }
+                }
+                
+                html += `<button class="page-btn" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Weiter →</button>`;
+            }
+            
+            document.getElementById('pagination').innerHTML = html;
+        }
+        
+        function changePage(page) {
+            const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                displayRecipes();
+                window.scrollTo(0, 0);
+            }
+        }
+        
+        function showAddRecipe() {
+            document.getElementById('modalTitle').textContent = 'Neues Rezept hinzufügen';
+            document.getElementById('recipeForm').reset();
+            document.getElementById('recipeModal').classList.add('active');
+        }
+        
+        function editRecipe(id) {
+            const recipe = allRecipes.find(r => r.id === id);
+            if (!recipe) return;
+            
+            document.getElementById('modalTitle').textContent = 'Rezept bearbeiten';
+            document.getElementById('recipeName').value = recipe.name;
+            document.getElementById('recipeCost').value = recipe.cost;
+            document.getElementById('recipePortionSize').value = recipe.portion_size || '1 Portion';
+            document.getElementById('recipeCategory').value = recipe.category;
+            document.getElementById('recipeComponent').value = recipe.menu_component;
+            document.getElementById('recipeDescription').value = recipe.description || '';
+            document.getElementById('recipeEnabled').checked = recipe.is_enabled;
+            
+            // Allergene
+            document.querySelectorAll('[id^="allergen"]').forEach(cb => {
+                cb.checked = recipe.allergens.includes(cb.value);
+            });
+            
+            // Ernährungsformen
+            document.querySelectorAll('[id^="diet"]').forEach(cb => {
+                cb.checked = recipe.dietary_forms.includes(cb.value);
+            });
+            
+            document.getElementById('recipeModal').classList.add('active');
+        }
+        
+        function toggleRecipe(id) {
+            const recipe = allRecipes.find(r => r.id === id);
+            if (!recipe) return;
+            
+            recipe.is_enabled = !recipe.is_enabled;
+            filterRecipes();
+            
+            // Hier würde normalerweise ein API-Call zum Speichern erfolgen
+            console.log(`Rezept ${id} ${recipe.is_enabled ? 'aktiviert' : 'deaktiviert'}`);
+        }
+        
+        function closeModal() {
+            document.getElementById('recipeModal').classList.remove('active');
+        }
+        
+        document.getElementById('recipeForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Sammle Formulardaten
+            const allergens = [];
+            document.querySelectorAll('[id^="allergen"]:checked').forEach(cb => {
+                allergens.push(cb.value);
+            });
+            
+            const dietaryForms = [];
+            document.querySelectorAll('[id^="diet"]:checked').forEach(cb => {
+                dietaryForms.push(cb.value);
+            });
+            
+            const recipeData = {
+                name: document.getElementById('recipeName').value,
+                cost: parseFloat(document.getElementById('recipeCost').value),
+                portion_size: document.getElementById('recipePortionSize').value,
+                category: document.getElementById('recipeCategory').value,
+                menu_component: document.getElementById('recipeComponent').value,
+                description: document.getElementById('recipeDescription').value,
+                allergens: allergens,
+                dietary_forms: dietaryForms,
+                is_enabled: document.getElementById('recipeEnabled').checked
+            };
+            
+            console.log('Rezept gespeichert:', recipeData);
+            alert('Rezept gespeichert! (Demo-Modus - keine Persistierung)');
+            closeModal();
+            
+            // Hier würde normalerweise ein API-Call zum Speichern erfolgen
+        });
+        
+        // Modal schließen bei Klick außerhalb
+        document.getElementById('recipeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'recipeModal') {
+                closeModal();
+            }
+        });
+        
+        // Initial laden
+        loadRecipes();
+    </script>
+</body>
+</html>
+

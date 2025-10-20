@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menüplansimulator - Erweitert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+        
+        .config-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .config-section {
+            margin-bottom: 20px;
+        }
+        
+        .config-section h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .checkbox-item input {
+            width: auto;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .results-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .calendar-view {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .day-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .day-date {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .day-cost {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .meals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .meal-card {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .meal-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .recipe-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .recipe-item:hover {
+            background: #e9ecef;
+            transform: translateX(2px);
+        }
+        
+        .recipe-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .recipe-cost {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .allergens {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        
+        .allergen-badge {
+            background: #fee;
+            color: #c00;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .modal-close:hover {
+            color: #333;
+        }
+        
+        .recipe-details {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .detail-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        
+        .detail-section h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .ingredients-list {
+            list-style: none;
+        }
+        
+        .ingredient-item {
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .nutritional-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .nutrition-item {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .nutrition-label {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .nutrition-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .btn-replace {
+            background: #f5576c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .btn-replace:hover {
+            background: #e04555;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-value.success {
+            color: #28a745;
+        }
+        
+        .stat-value.danger {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Menüplansimulator - Erweitert</h1>
+            <p>Automatische Menüplanerstellung mit parametrisierbaren Mahlzeiten</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="config-panel">
+                <div class="config-section">
+                    <h3>📅 Zeitraum</h3>
+                    <div class="form-group">
+                        <label>Startdatum</label>
+                        <input type="date" id="startDate" value="2025-11-03">
+                    </div>
+                    <div class="form-group">
+                        <label>Enddatum</label>
+                        <input type="date" id="endDate" value="2025-11-16">
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>💰 Budget (BKT)</h3>
+                    <div class="form-group">
+                        <label>Ziel-BKT (€)</label>
+                        <input type="number" id="bktTarget" value="8.00" step="0.10">
+                    </div>
+                    <div class="form-group">
+                        <label>Toleranz (%)</label>
+                        <input type="number" id="bktTolerance" value="15" step="1">
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>🍴 Mahlzeiten</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealBreakfast" checked>
+                            <label for="mealBreakfast">Frühstück</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealLunch" checked>
+                            <label for="mealLunch">Mittagessen</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealSnack">
+                            <label for="mealSnack">Zwischenmahlzeit</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealDinner">
+                            <label for="mealDinner">Abendessen</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>🥗 Ernährungsformen</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVollkost" checked>
+                            <label for="dietVollkost">Vollkost</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVegetarisch" checked>
+                            <label for="dietVegetarisch">Vegetarisch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVegan">
+                            <label for="dietVegan">Vegan</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>⚠️ Ausgeschlossene Allergene</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenGluten">
+                            <label for="allergenGluten">Gluten</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenMilch">
+                            <label for="allergenMilch">Milch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenEier">
+                            <label for="allergenEier">Eier</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenFisch">
+                            <label for="allergenFisch">Fisch</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn" id="btnSimulate">🚀 Simulation starten</button>
+                <button class="btn" id="btnExportPDF" style="background: #28a745; margin-top: 10px; display: none;">📝 PDF exportieren</button>
+            </div>
+            
+            <div class="results-panel">
+                <div id="results">
+                    <div class="loading">
+                        <p>Konfigurieren Sie die Parameter und starten Sie die Simulation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal für Rezeptdetails -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Rezeptdetails</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script>
+        let currentPlan = null;
+        let currentConfig = null;
+        
+        document.getElementById('btnSimulate').addEventListener('click', async () => {
+            const btn = document.getElementById('btnSimulate');
+            btn.disabled = true;
+            btn.textContent = '⏳ Simuliere...';
+            
+            try {
+                // Sammle Konfiguration
+                const config = {
+                    start_date: document.getElementById('startDate').value,
+                    end_date: document.getElementById('endDate').value,
+                    bkt_target: parseFloat(document.getElementById('bktTarget').value),
+                    bkt_tolerance: parseFloat(document.getElementById('bktTolerance').value) / 100,
+                    dietary_forms: [],
+                    excluded_allergens: [],
+                    repetition_interval: 7,
+                    consider_seasonality: true,
+                    menu_lines: []
+                };
+                
+                // Ernährungsformen
+                if (document.getElementById('dietVollkost').checked) config.dietary_forms.push('Vollkost');
+                if (document.getElementById('dietVegetarisch').checked) config.dietary_forms.push('Vegetarisch');
+                if (document.getElementById('dietVegan').checked) config.dietary_forms.push('Vegan');
+                
+                // Allergene
+                if (document.getElementById('allergenGluten').checked) config.excluded_allergens.push('Gluten');
+                if (document.getElementById('allergenMilch').checked) config.excluded_allergens.push('Milch');
+                if (document.getElementById('allergenEier').checked) config.excluded_allergens.push('Eier');
+                if (document.getElementById('allergenFisch').checked) config.excluded_allergens.push('Fisch');
+                
+                // Mahlzeiten
+                const meals = [];
+                if (document.getElementById('mealBreakfast').checked) meals.push('Frühstück');
+                if (document.getElementById('mealLunch').checked) meals.push('Mittagessen');
+                if (document.getElementById('mealSnack').checked) meals.push('Zwischenmahlzeit');
+                if (document.getElementById('mealDinner').checked) meals.push('Abendessen');
+                
+                // Erstelle Menülinien
+                config.menu_lines = meals.map((meal, idx) => ({
+                    id: idx + 1,
+                    name: meal,
+                    dietary_forms: config.dietary_forms,
+                    cost_forms: [{
+                        id: idx + 1,
+                        name: meal,
+                        component: meal,
+                        target_count: 50
+                    }]
+                }));
+                
+                // API-Aufruf
+                const response = await fetch('/api/simulate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(config)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentPlan = data.plan;
+                    currentConfig = config;
+                    displayPlan(data.plan);
+                    document.getElementById('btnExportPDF').style.display = 'block';
+                } else {
+                    document.getElementById('results').innerHTML = `
+                        <div style="color: red; padding: 20px;">
+                            <h3>❌ Fehler</h3>
+                            <p>${data.error}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                document.getElementById('results').innerHTML = `
+                    <div style="color: red; padding: 20px;">
+                        <h3>❌ Fehler</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🚀 Simulation starten';
+            }
+        });
+        
+        function displayPlan(plan) {
+            const stats = plan.statistics;
+            
+            let html = '';
+            
+            // Statistiken
+            html += '<div class="stats-grid">';
+            html += `
+                <div class="stat-card">
+                    <div class="stat-label">Durchschnitt BKT</div>
+                    <div class="stat-value ${stats.within_budget ? 'success' : 'danger'}">
+                        ${stats.average_bkt.toFixed(2)}€
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Gesamtkosten</div>
+                    <div class="stat-value">${stats.total_cost.toFixed(2)}€</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Tage</div>
+                    <div class="stat-value">${plan.days.length}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Budget-Status</div>
+                    <div class="stat-value ${stats.within_budget ? 'success' : 'danger'}">
+                        ${stats.within_budget ? '✓ Im Budget' : '✗ Außerhalb'}
+                    </div>
+                </div>
+            `;
+            html += '</div>';
+            
+            // Tage
+            html += '<div class="calendar-view">';
+            for (const day of plan.days) {
+                html += `
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div class="day-date">${formatDate(day.date)}</div>
+                            <div class="day-cost">${day.total_cost.toFixed(2)}€</div>
+                        </div>
+                        <div class="meals-grid">
+                `;
+                
+                for (const menuLine of day.menu_lines) {
+                    for (const recipe of menuLine.recipes) {
+                        html += `
+                            <div class="meal-card">
+                                <div class="meal-title">${recipe.component}</div>
+                                <div class="recipe-item" onclick="showRecipeDetails(${recipe.recipe_id})">
+                                    <div class="recipe-name">${recipe.recipe_name}</div>
+                                    <div class="recipe-meta">
+                                        <span>${recipe.target_count} Portionen</span>
+                                        <span class="recipe-cost">${recipe.recipe_cost.toFixed(2)}€</span>
+                                    </div>
+                                    ${recipe.allergens && recipe.allergens.length > 0 ? `
+                                        <div class="allergens">
+                                            ${recipe.allergens.map(a => `<span class="allergen-badge">${a}</span>`).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+            html += '</div>';
+            
+            document.getElementById('results').innerHTML = html;
+        }
+        
+        async function showRecipeDetails(recipeId) {
+            try {
+                const response = await fetch(`/api/recipe/${recipeId}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const recipe = data.recipe;
+                    
+                    document.getElementById('modalTitle').textContent = recipe.name;
+                    
+                    let html = '<div class="recipe-details">';
+                    
+                    // Beschreibung
+                    html += `
+                        <div class="detail-section">
+                            <h4>📝 Beschreibung</h4>
+                            <p>${recipe.description || 'Keine Beschreibung verfügbar'}</p>
+                            <p><strong>Portionsgröße:</strong> ${recipe.portion_size}</p>
+                            <p><strong>Zubereitungszeit:</strong> ${recipe.processing_time} Stunden</p>
+                            <p><strong>Kosten pro Portion:</strong> ${recipe.cost.toFixed(2)}€</p>
+                        </div>
+                    `;
+                    
+                    // Nährwerte
+                    html += `
+                        <div class="detail-section">
+                            <h4>📊 Nährwerte (pro Portion)</h4>
+                            <div class="nutritional-grid">
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Kalorien</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.calories}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Fett (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.fat}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Kohlenhydrate (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.carbs}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Protein (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.protein}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Zutaten
+                    if (recipe.ingredients && recipe.ingredients.length > 0) {
+                        html += `
+                            <div class="detail-section">
+                                <h4>🥘 Zutaten (für ${recipe.calculation_basis} Portionen)</h4>
+                                <ul class="ingredients-list">
+                        `;
+                        for (const ing of recipe.ingredients) {
+                            html += `
+                                <li class="ingredient-item">
+                                    <span>${ing.name}</span>
+                                    <span><strong>${ing.quantity} ${ing.unit}</strong></span>
+                                </li>
+                            `;
+                        }
+                        html += `
+                                </ul>
+                            </div>
+                        `;
+                    }
+                    
+                    // Allergene & Zusatzstoffe
+                    html += `
+                        <div class="detail-section">
+                            <h4>⚠️ Allergene & Zusatzstoffe</h4>
+                            <p><strong>Allergene:</strong> ${recipe.allergens.length > 0 ? recipe.allergens.join(', ') : 'Keine'}</p>
+                            <p><strong>Zusatzstoffe:</strong> ${recipe.additives && recipe.additives.length > 0 ? recipe.additives.join(', ') : 'Keine'}</p>
+                            <p><strong>Ernährungsformen:</strong> ${recipe.dietary_forms.join(', ')}</p>
+                        </div>
+                    `;
+                    
+                    html += '</div>';
+                    
+                    document.getElementById('modalBody').innerHTML = html;
+                    document.getElementById('recipeModal').classList.add('active');
+                }
+            } catch (error) {
+                alert('Fehler beim Laden der Rezeptdetails: ' + error.message);
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('recipeModal').classList.remove('active');
+        }
+        
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            const days = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+            return `${days[date.getDay()]}, ${date.toLocaleDateString('de-DE')}`;
+        }
+        
+        // PDF-Export
+        document.getElementById('btnExportPDF').addEventListener('click', async () => {
+            if (!currentPlan || !currentConfig) {
+                alert('Bitte führen Sie zuerst eine Simulation durch');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/export/pdf', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        plan: currentPlan,
+                        config: currentConfig
+                    })
+                });
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `menuplan_${currentConfig.start_date}.pdf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } else {
+                    alert('Fehler beim PDF-Export');
+                }
+            } catch (error) {
+                alert('Fehler beim PDF-Export: ' + error.message);
+            }
+        });
+        
+        // Modal schließen bei Klick außerhalb
+        document.getElementById('recipeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'recipeModal') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+

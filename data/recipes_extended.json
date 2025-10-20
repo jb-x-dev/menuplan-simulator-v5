@@ -1,0 +1,3071 @@
+[
+  {
+    "id": 1,
+    "name": "Haferflocken-Porridge mit Früchten",
+    "cost": 1.8,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Müsli",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 320,
+      "fat": 8,
+      "carbs": 52,
+      "protein": 12
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Warmer Haferbrei mit frischen Früchten der Saison und Honig",
+    "portion_size": "250g",
+    "ingredients": [
+      {
+        "id": 201,
+        "name": "Haferflocken",
+        "quantity": 800,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 2.5
+      },
+      {
+        "id": 202,
+        "name": "Milch",
+        "quantity": 2000,
+        "unit": "ml",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 1.2
+      },
+      {
+        "id": 203,
+        "name": "Früchte gemischt",
+        "quantity": 1000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 4.5
+      },
+      {
+        "id": 204,
+        "name": "Honig",
+        "quantity": 200,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 8.0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Vollkornbrot mit Butter und Marmelade",
+    "cost": 1.2,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Brot",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 280,
+      "fat": 12,
+      "carbs": 38,
+      "protein": 8
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.3,
+    "description": "Frisches Vollkornbrot mit Butter und hausgemachter Marmelade",
+    "portion_size": "2 Scheiben",
+    "ingredients": [
+      {
+        "id": 205,
+        "name": "Vollkornbrot",
+        "quantity": 1500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.2
+      },
+      {
+        "id": 206,
+        "name": "Butter",
+        "quantity": 300,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 6.5
+      },
+      {
+        "id": 207,
+        "name": "Marmelade",
+        "quantity": 400,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 4.8
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Rührei mit Schnittlauch",
+    "cost": 2.1,
+    "allergens": [
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Warmes Frühstück",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 240,
+      "fat": 18,
+      "carbs": 4,
+      "protein": 16
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Cremiges Rührei mit frischem Schnittlauch und Butter",
+    "portion_size": "2 Eier",
+    "ingredients": [
+      {
+        "id": 208,
+        "name": "Eier",
+        "quantity": 20,
+        "unit": "Stück",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 0.35
+      },
+      {
+        "id": 202,
+        "name": "Milch",
+        "quantity": 200,
+        "unit": "ml",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 1.2
+      },
+      {
+        "id": 206,
+        "name": "Butter",
+        "quantity": 100,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 6.5
+      },
+      {
+        "id": 209,
+        "name": "Schnittlauch",
+        "quantity": 50,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 12.0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Müsli mit Joghurt und Obst",
+    "cost": 2.3,
+    "allergens": [
+      "Gluten",
+      "Milch",
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Müsli",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 380,
+      "fat": 14,
+      "carbs": 54,
+      "protein": 14
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.3,
+    "description": "Knuspriges Müsli mit Naturjoghurt und frischem Obst",
+    "portion_size": "200g",
+    "ingredients": [
+      {
+        "id": 210,
+        "name": "Müsli",
+        "quantity": 1000,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 5.5
+      },
+      {
+        "id": 211,
+        "name": "Joghurt",
+        "quantity": 1500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.2
+      },
+      {
+        "id": 203,
+        "name": "Früchte gemischt",
+        "quantity": 800,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 4.5
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Käsebrötchen",
+    "cost": 1.5,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Gebäck",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 320,
+      "fat": 16,
+      "carbs": 34,
+      "protein": 14
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.3,
+    "description": "Frische Brötchen mit Käse belegt",
+    "portion_size": "1 Brötchen",
+    "ingredients": [
+      {
+        "id": 212,
+        "name": "Brötchen",
+        "quantity": 10,
+        "unit": "Stück",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 0.4
+      },
+      {
+        "id": 213,
+        "name": "Käse Scheiben",
+        "quantity": 500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 7.8
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Hähnchenbrust mit Reis und Gemüse",
+    "cost": 3.8,
+    "allergens": [
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fleisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 650,
+      "fat": 15,
+      "carbs": 80,
+      "protein": 45
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Gebratene Hähnchenbrust mit Basmatireis und gedünstetem Gemüse",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 101,
+        "name": "Hähnchenbrust",
+        "quantity": 2000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 9.5
+      },
+      {
+        "id": 102,
+        "name": "Reis",
+        "quantity": 800,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 2.2
+      },
+      {
+        "id": 103,
+        "name": "Gemüsemix",
+        "quantity": 1500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.5
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Rinderbraten mit Kartoffeln",
+    "cost": 4.2,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fleisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 720,
+      "fat": 25,
+      "carbs": 60,
+      "protein": 50
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 3.0,
+    "description": "Saftiger Rinderbraten mit Rosmarinkartoffeln und Bratensauce",
+    "portion_size": "400g",
+    "ingredients": [
+      {
+        "id": 104,
+        "name": "Rindfleisch",
+        "quantity": 2500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 12.5
+      },
+      {
+        "id": 105,
+        "name": "Kartoffeln",
+        "quantity": 2000,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 1.8
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Fischfilet mit Gemüse",
+    "cost": 4.5,
+    "allergens": [
+      "Fisch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 580,
+      "fat": 18,
+      "carbs": 45,
+      "protein": 55
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Gedünstetes Fischfilet mit mediterranem Gemüse",
+    "portion_size": "300g",
+    "ingredients": [
+      {
+        "id": 106,
+        "name": "Fischfilet",
+        "quantity": 2000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 14.0
+      },
+      {
+        "id": 103,
+        "name": "Gemüsemix",
+        "quantity": 1500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.5
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Gemüse-Curry mit Tofu",
+    "cost": 2.9,
+    "allergens": [
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vegetarisch",
+      "Vegan"
+    ],
+    "category": "Hauptgang",
+    "group": "Vegetarisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 520,
+      "fat": 20,
+      "carbs": 65,
+      "protein": 25
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.0,
+    "description": "Würziges Gemüse-Curry mit gebratenem Tofu und Kokosmilch",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 107,
+        "name": "Tofu",
+        "quantity": 1500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 4,
+        "lead_time": 2,
+        "price": 5.5
+      },
+      {
+        "id": 103,
+        "name": "Gemüsemix",
+        "quantity": 2000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.5
+      },
+      {
+        "id": 108,
+        "name": "Kokosmilch",
+        "quantity": 400,
+        "unit": "ml",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 2.8
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Linsen-Bolognese",
+    "cost": 2.5,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vegetarisch",
+      "Vegan"
+    ],
+    "category": "Hauptgang",
+    "group": "Vegetarisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 480,
+      "fat": 12,
+      "carbs": 70,
+      "protein": 22
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.5,
+    "description": "Herzhafte Bolognese aus roten Linsen mit Tomaten und Kräutern",
+    "portion_size": "300g",
+    "ingredients": [
+      {
+        "id": 109,
+        "name": "Linsen",
+        "quantity": 1000,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 3.2
+      },
+      {
+        "id": 110,
+        "name": "Tomaten",
+        "quantity": 1500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 2.2
+      },
+      {
+        "id": 111,
+        "name": "Zwiebeln",
+        "quantity": 300,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 1.5
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Spaghetti Carbonara",
+    "cost": 3.2,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Pasta",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 680,
+      "fat": 28,
+      "carbs": 75,
+      "protein": 30
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Klassische Pasta Carbonara mit Speck, Ei und Parmesan",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 112,
+        "name": "Spaghetti",
+        "quantity": 1000,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 2.5
+      },
+      {
+        "id": 113,
+        "name": "Speck",
+        "quantity": 500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 8.5
+      },
+      {
+        "id": 208,
+        "name": "Eier",
+        "quantity": 10,
+        "unit": "Stück",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 0.35
+      },
+      {
+        "id": 114,
+        "name": "Parmesan",
+        "quantity": 300,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 12.0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Chili con Carne",
+    "cost": 3.5,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Eintopf",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 620,
+      "fat": 22,
+      "carbs": 55,
+      "protein": 42
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.5,
+    "description": "Würziges Chili mit Hackfleisch und Kidneybohnen",
+    "portion_size": "400g",
+    "ingredients": [
+      {
+        "id": 115,
+        "name": "Hackfleisch",
+        "quantity": 1500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 7.5
+      },
+      {
+        "id": 116,
+        "name": "Kidneybohnen",
+        "quantity": 800,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 2.8
+      },
+      {
+        "id": 110,
+        "name": "Tomaten",
+        "quantity": 1000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 2.2
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Gemüselasagne",
+    "cost": 3.3,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vegetarisch"
+    ],
+    "category": "Hauptgang",
+    "group": "Pasta",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 580,
+      "fat": 24,
+      "carbs": 68,
+      "protein": 26
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.0,
+    "description": "Geschichtete Lasagne mit Gemüse und Béchamelsauce",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 117,
+        "name": "Lasagneplatten",
+        "quantity": 800,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 3.2
+      },
+      {
+        "id": 103,
+        "name": "Gemüsemix",
+        "quantity": 2000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.5
+      },
+      {
+        "id": 118,
+        "name": "Béchamelsauce",
+        "quantity": 1000,
+        "unit": "ml",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 4.5
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Tomatensuppe",
+    "cost": 1.8,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Suppe",
+    "group": "Cremige Suppe",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 220,
+      "fat": 12,
+      "carbs": 24,
+      "protein": 6
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Cremige Tomatensuppe mit Basilikum",
+    "portion_size": "300ml",
+    "ingredients": [
+      {
+        "id": 110,
+        "name": "Tomaten",
+        "quantity": 2000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 2.2
+      },
+      {
+        "id": 119,
+        "name": "Sahne",
+        "quantity": 300,
+        "unit": "ml",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.5
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Kartoffelsuppe",
+    "cost": 1.5,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Suppe",
+    "group": "Cremige Suppe",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 280,
+      "fat": 14,
+      "carbs": 32,
+      "protein": 8
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Deftige Kartoffelsuppe mit Würstchen",
+    "portion_size": "350ml",
+    "ingredients": [
+      {
+        "id": 105,
+        "name": "Kartoffeln",
+        "quantity": 2500,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 1.8
+      },
+      {
+        "id": 120,
+        "name": "Würstchen",
+        "quantity": 500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 6.5
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Schokoladenpudding",
+    "cost": 1.2,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Dessert",
+    "group": "Pudding",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 280,
+      "fat": 10,
+      "carbs": 42,
+      "protein": 8
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Cremiger Schokoladenpudding",
+    "portion_size": "150g",
+    "ingredients": [
+      {
+        "id": 202,
+        "name": "Milch",
+        "quantity": 1500,
+        "unit": "ml",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 1.2
+      },
+      {
+        "id": 121,
+        "name": "Puddingpulver Schoko",
+        "quantity": 200,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 4.5
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Apfelkuchen",
+    "cost": 2.1,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Dessert",
+    "group": "Kuchen",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 320,
+      "fat": 14,
+      "carbs": 44,
+      "protein": 6
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.0,
+    "description": "Hausgemachter Apfelkuchen mit Zimt",
+    "portion_size": "120g",
+    "ingredients": [
+      {
+        "id": 122,
+        "name": "Mehl",
+        "quantity": 500,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 1.2
+      },
+      {
+        "id": 123,
+        "name": "Äpfel",
+        "quantity": 1500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 2.8
+      },
+      {
+        "id": 208,
+        "name": "Eier",
+        "quantity": 5,
+        "unit": "Stück",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 0.35
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Gemüsesuppe mit Brot",
+    "cost": 1.9,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch",
+      "Vegan"
+    ],
+    "category": "Suppe",
+    "group": "Klare Suppe",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 240,
+      "fat": 6,
+      "carbs": 38,
+      "protein": 8
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Klare Gemüsesuppe mit frischem Brot",
+    "portion_size": "400ml",
+    "ingredients": [
+      {
+        "id": 103,
+        "name": "Gemüsemix",
+        "quantity": 2000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.5
+      },
+      {
+        "id": 205,
+        "name": "Vollkornbrot",
+        "quantity": 500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.2
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Käsebrot mit Salat",
+    "cost": 2.2,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Beilage",
+    "group": "Salat",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 380,
+      "fat": 18,
+      "carbs": 36,
+      "protein": 18
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Vollkornbrot mit Käse und gemischtem Salat",
+    "portion_size": "250g",
+    "ingredients": [
+      {
+        "id": 205,
+        "name": "Vollkornbrot",
+        "quantity": 1000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.2
+      },
+      {
+        "id": 213,
+        "name": "Käse Scheiben",
+        "quantity": 500,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 7.8
+      },
+      {
+        "id": 124,
+        "name": "Salat gemischt",
+        "quantity": 800,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.2
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Omelett mit Gemüse",
+    "cost": 2.4,
+    "allergens": [
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Hauptgang",
+    "group": "Vegetarisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 320,
+      "fat": 22,
+      "carbs": 12,
+      "protein": 20
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Fluffiges Omelett mit frischem Gemüse",
+    "portion_size": "250g",
+    "ingredients": [
+      {
+        "id": 208,
+        "name": "Eier",
+        "quantity": 20,
+        "unit": "Stück",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 0.35
+      },
+      {
+        "id": 103,
+        "name": "Gemüsemix",
+        "quantity": 1000,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.5
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Waffeln mit Früchten",
+    "cost": 2.5,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Frühstück",
+    "group": "Warmes Frühstück",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 351,
+      "fat": 17,
+      "carbs": 48,
+      "protein": 12
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Knusprige Waffeln mit frischen Früchten",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 221,
+        "name": "Zutat 21",
+        "quantity": 584,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 3,
+        "price": 7.05
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Bagel mit Frischkäse",
+    "cost": 1.8,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Brot",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 256,
+      "fat": 18,
+      "carbs": 44,
+      "protein": 16
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Bagel mit cremigem Frischkäse",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 222,
+        "name": "Zutat 22",
+        "quantity": 1097,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 6.54
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Obstsalat mit Joghurt",
+    "cost": 2.0,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Obst",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 255,
+      "fat": 8,
+      "carbs": 30,
+      "protein": 18
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Frischer Obstsalat mit Naturjoghurt",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 223,
+        "name": "Zutat 23",
+        "quantity": 1624,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 1,
+        "price": 4.2
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Knäckebrot mit Aufstrich",
+    "cost": 1.3,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Brot",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 304,
+      "fat": 18,
+      "carbs": 48,
+      "protein": 19
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Knäckebrot mit verschiedenen Aufstrichen",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 224,
+        "name": "Zutat 24",
+        "quantity": 809,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 1,
+        "price": 5.84
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Smoothie Bowl",
+    "cost": 2.8,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Müsli",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 312,
+      "fat": 15,
+      "carbs": 44,
+      "protein": 12
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Smoothie Bowl mit Toppings",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 225,
+        "name": "Zutat 25",
+        "quantity": 1093,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 2,
+        "lead_time": 1,
+        "price": 5.04
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "French Toast",
+    "cost": 2.2,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Frühstück",
+    "group": "Warmes Frühstück",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 329,
+      "fat": 13,
+      "carbs": 30,
+      "protein": 19
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.6,
+    "description": "Arme Ritter mit Zimt und Zucker",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 226,
+        "name": "Zutat 26",
+        "quantity": 1050,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 2,
+        "lead_time": 2,
+        "price": 4.36
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Quark mit Früchten",
+    "cost": 1.7,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Müsli",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 252,
+      "fat": 17,
+      "carbs": 46,
+      "protein": 8
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.3,
+    "description": "Magerquark mit frischen Früchten",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 227,
+        "name": "Zutat 27",
+        "quantity": 1678,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 2,
+        "lead_time": 3,
+        "price": 2.78
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Roggenbrot mit Käse",
+    "cost": 1.4,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Brot",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 431,
+      "fat": 19,
+      "carbs": 44,
+      "protein": 19
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Roggenbrot mit Käse",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 228,
+        "name": "Zutat 28",
+        "quantity": 1917,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 3,
+        "price": 7.62
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Cornflakes mit Milch",
+    "cost": 1.5,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Müsli",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 260,
+      "fat": 8,
+      "carbs": 51,
+      "protein": 11
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Knusprige Cornflakes mit Milch",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 229,
+        "name": "Zutat 29",
+        "quantity": 1706,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 3,
+        "lead_time": 2,
+        "price": 3.48
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Chia-Pudding",
+    "cost": 2.1,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Müsli",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 284,
+      "fat": 17,
+      "carbs": 59,
+      "protein": 18
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Chia-Pudding mit Früchten",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 230,
+        "name": "Zutat 30",
+        "quantity": 1529,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 1,
+        "lead_time": 3,
+        "price": 5.57
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Schweinebraten mit Knödeln",
+    "cost": 4.1,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fleisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 744,
+      "fat": 22,
+      "carbs": 76,
+      "protein": 49
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.6,
+    "description": "Saftiger Schweinebraten mit Semmelknödeln",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 231,
+        "name": "Hauptzutat 31",
+        "quantity": 2089,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 6.18
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Lachsfilet mit Reis",
+    "cost": 5.2,
+    "allergens": [
+      "Fisch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 590,
+      "fat": 34,
+      "carbs": 86,
+      "protein": 26
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Gebratenes Lachsfilet mit Reis",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 232,
+        "name": "Hauptzutat 32",
+        "quantity": 1887,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 8.27
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Gulasch mit Nudeln",
+    "cost": 3.9,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fleisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 730,
+      "fat": 29,
+      "carbs": 67,
+      "protein": 38
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.1,
+    "description": "Ungarisches Gulasch mit Nudeln",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 233,
+        "name": "Hauptzutat 33",
+        "quantity": 2357,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 8.01
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Vegetarische Pizza",
+    "cost": 3.2,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Hauptgang",
+    "group": "Vegetarisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 581,
+      "fat": 29,
+      "carbs": 88,
+      "protein": 45
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.3,
+    "description": "Pizza mit Gemüse und Käse",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 234,
+        "name": "Hauptzutat 34",
+        "quantity": 2370,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 4,
+        "lead_time": 1,
+        "price": 7.88
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Hähnchen-Curry",
+    "cost": 3.6,
+    "allergens": [
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fleisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 689,
+      "fat": 33,
+      "carbs": 90,
+      "protein": 27
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.8,
+    "description": "Würziges Hähnchen-Curry",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 235,
+        "name": "Hauptzutat 35",
+        "quantity": 2059,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 10.26
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Falafel mit Hummus",
+    "cost": 2.8,
+    "allergens": [
+      "Sesam"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Hauptgang",
+    "group": "Vegetarisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 724,
+      "fat": 16,
+      "carbs": 75,
+      "protein": 49
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Knusprige Falafel mit Hummus",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 236,
+        "name": "Hauptzutat 36",
+        "quantity": 1546,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 2,
+        "lead_time": 1,
+        "price": 6.32
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Schnitzel mit Pommes",
+    "cost": 4.5,
+    "allergens": [
+      "Gluten",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fleisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 592,
+      "fat": 19,
+      "carbs": 66,
+      "protein": 29
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.9,
+    "description": "Paniertes Schnitzel mit Pommes",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 237,
+        "name": "Hauptzutat 37",
+        "quantity": 2267,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 4,
+        "lead_time": 1,
+        "price": 11.61
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Ratatouille",
+    "cost": 2.6,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Hauptgang",
+    "group": "Vegetarisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 510,
+      "fat": 22,
+      "carbs": 79,
+      "protein": 45
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.5,
+    "description": "Französisches Gemüsegericht",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 238,
+        "name": "Hauptzutat 38",
+        "quantity": 1677,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 11.46
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Thunfisch-Pasta",
+    "cost": 3.8,
+    "allergens": [
+      "Gluten",
+      "Fisch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 629,
+      "fat": 19,
+      "carbs": 82,
+      "protein": 31
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.6,
+    "description": "Pasta mit Thunfisch und Tomaten",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 239,
+        "name": "Hauptzutat 39",
+        "quantity": 2066,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 11.29
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Gemüse-Pfanne",
+    "cost": 2.4,
+    "allergens": [
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Hauptgang",
+    "group": "Vegetarisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 535,
+      "fat": 21,
+      "carbs": 85,
+      "protein": 35
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.8,
+    "description": "Bunte Gemüse-Pfanne",
+    "portion_size": "350g",
+    "ingredients": [
+      {
+        "id": 240,
+        "name": "Hauptzutat 40",
+        "quantity": 2171,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 4,
+        "lead_time": 1,
+        "price": 7.82
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Wraps mit Hähnchen",
+    "cost": 2.9,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Hauptgang",
+    "group": "Fleisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 322,
+      "fat": 8,
+      "carbs": 45,
+      "protein": 12
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Wraps gefüllt mit Hähnchen",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 241,
+        "name": "Zutat 41",
+        "quantity": 1016,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 2,
+        "price": 6.4
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Griechischer Salat",
+    "cost": 2.3,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Beilage",
+    "group": "Salat",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 436,
+      "fat": 25,
+      "carbs": 42,
+      "protein": 19
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.9,
+    "description": "Salat mit Feta und Oliven",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 242,
+        "name": "Zutat 42",
+        "quantity": 594,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 3.93
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Belegte Brote",
+    "cost": 1.8,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Beilage",
+    "group": "Brot",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 416,
+      "fat": 15,
+      "carbs": 49,
+      "protein": 9
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.3,
+    "description": "Verschiedene belegte Brote",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 243,
+        "name": "Zutat 43",
+        "quantity": 706,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 7.68
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Quiche Lorraine",
+    "cost": 3.1,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Hauptgang",
+    "group": "Vegetarisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 223,
+      "fat": 10,
+      "carbs": 35,
+      "protein": 11
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.4,
+    "description": "Französische Quiche",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 244,
+        "name": "Zutat 44",
+        "quantity": 1287,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 1,
+        "lead_time": 3,
+        "price": 2.51
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Joghurt mit Müsli",
+    "cost": 1.6,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Dessert",
+    "group": "Joghurt",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 308,
+      "fat": 9,
+      "carbs": 21,
+      "protein": 8
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.1,
+    "description": "Joghurt mit Müsli",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 245,
+        "name": "Zutat 45",
+        "quantity": 1123,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 2,
+        "lead_time": 2,
+        "price": 4.03
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Obstteller",
+    "cost": 1.5,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Dessert",
+    "group": "Obst",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 257,
+      "fat": 6,
+      "carbs": 28,
+      "protein": 14
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.6,
+    "description": "Frischer Obstteller",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 246,
+        "name": "Zutat 46",
+        "quantity": 625,
+        "unit": "g",
+        "category": "ORDER",
+        "supplier_id": 1,
+        "lead_time": 3,
+        "price": 6.4
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Kuchen vom Blech",
+    "cost": 1.9,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Dessert",
+    "group": "Kuchen",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 383,
+      "fat": 19,
+      "carbs": 21,
+      "protein": 8
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.8,
+    "description": "Verschiedene Blechkuchen",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 247,
+        "name": "Zutat 47",
+        "quantity": 1483,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 3,
+        "lead_time": 1,
+        "price": 5.68
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Vanillepudding",
+    "cost": 1.1,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Dessert",
+    "group": "Pudding",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 360,
+      "fat": 17,
+      "carbs": 29,
+      "protein": 11
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Cremiger Vanillepudding",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 248,
+        "name": "Zutat 48",
+        "quantity": 636,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 1,
+        "lead_time": 2,
+        "price": 4.47
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Gemüsesticks mit Dip",
+    "cost": 1.7,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Beilage",
+    "group": "Gemüse",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 324,
+      "fat": 18,
+      "carbs": 30,
+      "protein": 16
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Rohkost mit Kräuterdip",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 249,
+        "name": "Zutat 49",
+        "quantity": 844,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 3,
+        "lead_time": 3,
+        "price": 2.9
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Käseplatte",
+    "cost": 2.5,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Beilage",
+    "group": "Käse",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 382,
+      "fat": 16,
+      "carbs": 42,
+      "protein": 5
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.8,
+    "description": "Verschiedene Käsesorten",
+    "portion_size": "1 Portion",
+    "ingredients": [
+      {
+        "id": 250,
+        "name": "Zutat 50",
+        "quantity": 1166,
+        "unit": "g",
+        "category": "STOCK",
+        "supplier_id": 1,
+        "lead_time": 1,
+        "price": 4.4
+      }
+    ]
+  }
+]

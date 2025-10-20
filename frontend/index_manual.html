@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menüplansimulator - Mit manueller Auswahl</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .mode-switch {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .mode-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+        
+        .config-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .config-section {
+            margin-bottom: 20px;
+        }
+        
+        .config-section h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .checkbox-item input {
+            width: auto;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .btn-secondary {
+            background: #28a745;
+        }
+        
+        .btn-secondary:hover {
+            background: #218838;
+        }
+        
+        .results-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .calendar-view {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .day-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .day-date {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .day-cost {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .meals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .meal-card {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .meal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .meal-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .btn-change {
+            background: #f5576c;
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .btn-change:hover {
+            background: #e04555;
+        }
+        
+        .recipe-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .recipe-item:hover {
+            background: #e9ecef;
+            transform: translateX(2px);
+        }
+        
+        .recipe-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .recipe-cost {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .allergens {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        
+        .allergen-badge {
+            background: #fee;
+            color: #c00;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .modal-close:hover {
+            color: #333;
+        }
+        
+        .recipe-selector {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .recipe-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .filter-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        
+        .recipe-list {
+            display: grid;
+            gap: 10px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .recipe-option {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        
+        .recipe-option:hover {
+            background: #e9ecef;
+            border-color: #667eea;
+        }
+        
+        .recipe-option.selected {
+            background: #e7f3ff;
+            border-color: #667eea;
+        }
+        
+        .recipe-option-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .recipe-option-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .recipe-option-cost {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .recipe-option-meta {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-value.success {
+            color: #28a745;
+        }
+        
+        .stat-value.danger {
+            color: #dc3545;
+        }
+        
+        .empty-slot {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            color: #856404;
+        }
+        
+        .btn-add-recipe {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .btn-add-recipe:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Menüplansimulator</h1>
+            <p>Automatische und manuelle Menüplanerstellung</p>
+            <div class="mode-switch">
+                <button class="mode-btn active" onclick="switchMode('auto')">🤖 Automatisch</button>
+                <button class="mode-btn" onclick="switchMode('manual')">✋ Manuell</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="config-panel">
+                <div class="config-section">
+                    <h3>📅 Zeitraum</h3>
+                    <div class="form-group">
+                        <label>Startdatum</label>
+                        <input type="date" id="startDate" value="2025-11-03">
+                    </div>
+                    <div class="form-group">
+                        <label>Enddatum</label>
+                        <input type="date" id="endDate" value="2025-11-16">
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>💰 Budget (BKT)</h3>
+                    <div class="form-group">
+                        <label>Ziel-BKT (€)</label>
+                        <input type="number" id="bktTarget" value="8.00" step="0.10">
+                    </div>
+                    <div class="form-group">
+                        <label>Toleranz (%)</label>
+                        <input type="number" id="bktTolerance" value="15" step="1">
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>🍴 Mahlzeiten</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealBreakfast" checked>
+                            <label for="mealBreakfast">Frühstück</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealLunch" checked>
+                            <label for="mealLunch">Mittagessen</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealSnack">
+                            <label for="mealSnack">Zwischenmahlzeit</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mealDinner">
+                            <label for="mealDinner">Abendessen</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>🥗 Ernährungsformen</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVollkost" checked>
+                            <label for="dietVollkost">Vollkost</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVegetarisch" checked>
+                            <label for="dietVegetarisch">Vegetarisch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dietVegan">
+                            <label for="dietVegan">Vegan</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-section">
+                    <h3>⚠️ Ausgeschlossene Allergene</h3>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenGluten">
+                            <label for="allergenGluten">Gluten</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenMilch">
+                            <label for="allergenMilch">Milch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenEier">
+                            <label for="allergenEier">Eier</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="allergenFisch">
+                            <label for="allergenFisch">Fisch</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="autoControls">
+                    <button class="btn" id="btnSimulate">🚀 Automatisch generieren</button>
+                </div>
+                
+                <div id="manualControls" style="display: none;">
+                    <button class="btn" id="btnCreateEmpty">📝 Leeren Plan erstellen</button>
+                </div>
+                
+                <button class="btn btn-secondary" id="btnExportPDF" style="display: none;">📝 PDF exportieren</button>
+            </div>
+            
+            <div class="results-panel">
+                <div id="results">
+                    <div class="loading">
+                        <p>Wählen Sie einen Modus und konfigurieren Sie die Parameter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal für Rezeptauswahl -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Rezept auswählen</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script>
+        let currentMode = 'auto';
+        let currentPlan = null;
+        let currentConfig = null;
+        let allRecipes = [];
+        let manualPlan = null;
+        
+        // Lade Rezepte beim Start
+        async function loadRecipes() {
+            try {
+                const response = await fetch('/api/recipes');
+                allRecipes = await response.json();
+                console.log(`✅ ${allRecipes.length} Rezepte geladen`);
+            } catch (error) {
+                console.error('Fehler beim Laden der Rezepte:', error);
+            }
+        }
+        
+        loadRecipes();
+        
+        function switchMode(mode) {
+            currentMode = mode;
+            
+            // Update buttons
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide controls
+            if (mode === 'auto') {
+                document.getElementById('autoControls').style.display = 'block';
+                document.getElementById('manualControls').style.display = 'none';
+            } else {
+                document.getElementById('autoControls').style.display = 'none';
+                document.getElementById('manualControls').style.display = 'block';
+            }
+        }
+        
+        // Automatische Generierung
+        document.getElementById('btnSimulate').addEventListener('click', async () => {
+            const btn = document.getElementById('btnSimulate');
+            btn.disabled = true;
+            btn.textContent = '⏳ Generiere...';
+            
+            try {
+                const config = getConfig();
+                
+                const response = await fetch('/api/simulate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(config)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentPlan = data.plan;
+                    currentConfig = config;
+                    displayPlan(data.plan, true);
+                    document.getElementById('btnExportPDF').style.display = 'block';
+                } else {
+                    showError(data.error);
+                }
+            } catch (error) {
+                showError(error.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🚀 Automatisch generieren';
+            }
+        });
+        
+        // Leeren Plan erstellen
+        document.getElementById('btnCreateEmpty').addEventListener('click', () => {
+            const config = getConfig();
+            const startDate = new Date(config.start_date);
+            const endDate = new Date(config.end_date);
+            
+            const days = [];
+            let currentDate = new Date(startDate);
+            
+            while (currentDate <= endDate) {
+                const dayData = {
+                    date: currentDate.toISOString().split('T')[0],
+                    total_cost: 0,
+                    menu_lines: []
+                };
+                
+                // Erstelle Menülinien für ausgewählte Mahlzeiten
+                config.menu_lines.forEach(ml => {
+                    dayData.menu_lines.push({
+                        id: ml.id,
+                        name: ml.name,
+                        recipes: []
+                    });
+                });
+                
+                days.push(dayData);
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            
+            manualPlan = {
+                days: days,
+                statistics: {
+                    total_cost: 0,
+                    average_bkt: 0,
+                    within_budget: true
+                }
+            };
+            
+            currentPlan = manualPlan;
+            currentConfig = config;
+            displayPlan(manualPlan, false);
+            document.getElementById('btnExportPDF').style.display = 'block';
+        });
+        
+        function getConfig() {
+            const config = {
+                start_date: document.getElementById('startDate').value,
+                end_date: document.getElementById('endDate').value,
+                bkt_target: parseFloat(document.getElementById('bktTarget').value),
+                bkt_tolerance: parseFloat(document.getElementById('bktTolerance').value) / 100,
+                dietary_forms: [],
+                excluded_allergens: [],
+                repetition_interval: 7,
+                consider_seasonality: true,
+                menu_lines: []
+            };
+            
+            if (document.getElementById('dietVollkost').checked) config.dietary_forms.push('Vollkost');
+            if (document.getElementById('dietVegetarisch').checked) config.dietary_forms.push('Vegetarisch');
+            if (document.getElementById('dietVegan').checked) config.dietary_forms.push('Vegan');
+            
+            if (document.getElementById('allergenGluten').checked) config.excluded_allergens.push('Gluten');
+            if (document.getElementById('allergenMilch').checked) config.excluded_allergens.push('Milch');
+            if (document.getElementById('allergenEier').checked) config.excluded_allergens.push('Eier');
+            if (document.getElementById('allergenFisch').checked) config.excluded_allergens.push('Fisch');
+            
+            const meals = [];
+            if (document.getElementById('mealBreakfast').checked) meals.push('Frühstück');
+            if (document.getElementById('mealLunch').checked) meals.push('Mittagessen');
+            if (document.getElementById('mealSnack').checked) meals.push('Zwischenmahlzeit');
+            if (document.getElementById('mealDinner').checked) meals.push('Abendessen');
+            
+            config.menu_lines = meals.map((meal, idx) => ({
+                id: idx + 1,
+                name: meal,
+                dietary_forms: config.dietary_forms,
+                cost_forms: [{
+                    id: idx + 1,
+                    name: meal,
+                    component: meal,
+                    target_count: 50
+                }]
+            }));
+            
+            return config;
+        }
+        
+        function displayPlan(plan, isAutomatic) {
+            const stats = plan.statistics;
+            
+            let html = '';
+            
+            // Statistiken
+            html += '<div class="stats-grid">';
+            html += `
+                <div class="stat-card">
+                    <div class="stat-label">Durchschnitt BKT</div>
+                    <div class="stat-value ${stats.within_budget ? 'success' : 'danger'}">
+                        ${stats.average_bkt.toFixed(2)}€
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Gesamtkosten</div>
+                    <div class="stat-value">${stats.total_cost.toFixed(2)}€</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Tage</div>
+                    <div class="stat-value">${plan.days.length}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Modus</div>
+                    <div class="stat-value">${isAutomatic ? '🤖 Auto' : '✋ Manuell'}</div>
+                </div>
+            `;
+            html += '</div>';
+            
+            // Tage
+            html += '<div class="calendar-view">';
+            for (let dayIdx = 0; dayIdx < plan.days.length; dayIdx++) {
+                const day = plan.days[dayIdx];
+                html += `
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div class="day-date">${formatDate(day.date)}</div>
+                            <div class="day-cost">${day.total_cost.toFixed(2)}€</div>
+                        </div>
+                        <div class="meals-grid">
+                `;
+                
+                for (let mlIdx = 0; mlIdx < day.menu_lines.length; mlIdx++) {
+                    const menuLine = day.menu_lines[mlIdx];
+                    html += `
+                        <div class="meal-card">
+                            <div class="meal-header">
+                                <div class="meal-title">${menuLine.name}</div>
+                            </div>
+                    `;
+                    
+                    if (menuLine.recipes && menuLine.recipes.length > 0) {
+                        for (const recipe of menuLine.recipes) {
+                            html += `
+                                <div class="recipe-item" onclick="showRecipeDetails(${recipe.recipe_id})">
+                                    <div class="recipe-name">${recipe.recipe_name}</div>
+                                    <div class="recipe-meta">
+                                        <span>${recipe.target_count} Portionen</span>
+                                        <span class="recipe-cost">${recipe.recipe_cost.toFixed(2)}€</span>
+                                    </div>
+                                    ${recipe.allergens && recipe.allergens.length > 0 ? `
+                                        <div class="allergens">
+                                            ${recipe.allergens.map(a => `<span class="allergen-badge">${a}</span>`).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                                <button class="btn-change" onclick="changeRecipe(${dayIdx}, ${mlIdx}, 0)">Ändern</button>
+                            `;
+                        }
+                    } else {
+                        html += `
+                            <div class="empty-slot">
+                                <p>Kein Rezept ausgewählt</p>
+                                <button class="btn-add-recipe" onclick="changeRecipe(${dayIdx}, ${mlIdx}, -1)">+ Rezept hinzufügen</button>
+                            </div>
+                        `;
+                    }
+                    
+                    html += `
+                        </div>
+                    `;
+                }
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+            html += '</div>';
+            
+            document.getElementById('results').innerHTML = html;
+        }
+        
+        function changeRecipe(dayIdx, menuLineIdx, recipeIdx) {
+            const day = currentPlan.days[dayIdx];
+            const menuLine = day.menu_lines[menuLineIdx];
+            const component = menuLine.name;
+            
+            // Filtere Rezepte nach Komponente und Constraints
+            const filteredRecipes = allRecipes.filter(r => {
+                if (r.menu_component !== component) return false;
+                if (!r.is_enabled) return false;
+                
+                // Prüfe Allergene
+                if (currentConfig.excluded_allergens.some(a => r.allergens.includes(a))) return false;
+                
+                // Prüfe Ernährungsformen
+                if (!currentConfig.dietary_forms.some(df => r.dietary_forms.includes(df))) return false;
+                
+                return true;
+            });
+            
+            showRecipeSelector(filteredRecipes, (selectedRecipe) => {
+                // Ersetze oder füge Rezept hinzu
+                const newRecipeData = {
+                    recipe_id: selectedRecipe.id,
+                    recipe_name: selectedRecipe.name,
+                    recipe_cost: selectedRecipe.cost,
+                    component: component,
+                    target_count: 50,
+                    allergens: selectedRecipe.allergens
+                };
+                
+                if (recipeIdx === -1) {
+                    // Neues Rezept hinzufügen
+                    if (!menuLine.recipes) menuLine.recipes = [];
+                    menuLine.recipes.push(newRecipeData);
+                } else {
+                    // Rezept ersetzen
+                    menuLine.recipes[recipeIdx] = newRecipeData;
+                }
+                
+                // Aktualisiere Kosten
+                updatePlanCosts();
+                
+                // Neu anzeigen
+                displayPlan(currentPlan, currentMode === 'auto');
+            });
+        }
+        
+        function showRecipeSelector(recipes, onSelect) {
+            let html = '<div class="recipe-selector">';
+            
+            html += '<div class="recipe-filter">';
+            html += '<input type="text" class="filter-input" id="recipeSearch" placeholder="Rezept suchen..." onkeyup="filterRecipes()">';
+            html += '</div>';
+            
+            html += '<div class="recipe-list" id="recipeList">';
+            for (const recipe of recipes) {
+                html += `
+                    <div class="recipe-option" onclick="selectRecipe(${recipe.id})">
+                        <div class="recipe-option-header">
+                            <span class="recipe-option-name">${recipe.name}</span>
+                            <span class="recipe-option-cost">${recipe.cost.toFixed(2)}€</span>
+                        </div>
+                        <div class="recipe-option-meta">
+                            ${recipe.category} • ${recipe.group}
+                            ${recipe.allergens.length > 0 ? ' • Allergene: ' + recipe.allergens.join(', ') : ''}
+                        </div>
+                    </div>
+                `;
+            }
+            html += '</div>';
+            
+            html += '</div>';
+            
+            document.getElementById('modalTitle').textContent = 'Rezept auswählen';
+            document.getElementById('modalBody').innerHTML = html;
+            document.getElementById('recipeModal').classList.add('active');
+            
+            // Speichere Callback
+            window.currentRecipeSelectCallback = onSelect;
+            window.currentRecipeList = recipes;
+        }
+        
+        function selectRecipe(recipeId) {
+            const recipe = allRecipes.find(r => r.id === recipeId);
+            if (recipe && window.currentRecipeSelectCallback) {
+                window.currentRecipeSelectCallback(recipe);
+                closeModal();
+            }
+        }
+        
+        function filterRecipes() {
+            const search = document.getElementById('recipeSearch').value.toLowerCase();
+            const options = document.querySelectorAll('.recipe-option');
+            
+            options.forEach(option => {
+                const text = option.textContent.toLowerCase();
+                if (text.includes(search)) {
+                    option.style.display = 'block';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+        }
+        
+        function updatePlanCosts() {
+            let totalCost = 0;
+            let dayCount = 0;
+            
+            for (const day of currentPlan.days) {
+                let dayCost = 0;
+                for (const menuLine of day.menu_lines) {
+                    if (menuLine.recipes) {
+                        for (const recipe of menuLine.recipes) {
+                            dayCost += recipe.recipe_cost;
+                        }
+                    }
+                }
+                day.total_cost = dayCost;
+                totalCost += dayCost;
+                dayCount++;
+            }
+            
+            currentPlan.statistics.total_cost = totalCost;
+            currentPlan.statistics.average_bkt = dayCount > 0 ? totalCost / dayCount : 0;
+            currentPlan.statistics.within_budget = 
+                currentPlan.statistics.average_bkt >= currentConfig.bkt_target * (1 - currentConfig.bkt_tolerance) &&
+                currentPlan.statistics.average_bkt <= currentConfig.bkt_target * (1 + currentConfig.bkt_tolerance);
+        }
+        
+        async function showRecipeDetails(recipeId) {
+            try {
+                const response = await fetch(`/api/recipe/${recipeId}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const recipe = data.recipe;
+                    
+                    let html = '<div class="recipe-details">';
+                    
+                    html += `
+                        <div class="detail-section">
+                            <h4>📝 Beschreibung</h4>
+                            <p>${recipe.description || 'Keine Beschreibung verfügbar'}</p>
+                            <p><strong>Portionsgröße:</strong> ${recipe.portion_size}</p>
+                            <p><strong>Zubereitungszeit:</strong> ${recipe.processing_time} Stunden</p>
+                            <p><strong>Kosten pro Portion:</strong> ${recipe.cost.toFixed(2)}€</p>
+                        </div>
+                    `;
+                    
+                    html += `
+                        <div class="detail-section">
+                            <h4>📊 Nährwerte (pro Portion)</h4>
+                            <div class="nutritional-grid">
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Kalorien</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.calories}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Fett (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.fat}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Kohlenhydrate (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.carbs}</div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <div class="nutrition-label">Protein (g)</div>
+                                    <div class="nutrition-value">${recipe.nutritional_values.protein}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    if (recipe.ingredients && recipe.ingredients.length > 0) {
+                        html += `
+                            <div class="detail-section">
+                                <h4>🥘 Zutaten (für ${recipe.calculation_basis} Portionen)</h4>
+                                <ul class="ingredients-list">
+                        `;
+                        for (const ing of recipe.ingredients) {
+                            html += `
+                                <li class="ingredient-item">
+                                    <span>${ing.name}</span>
+                                    <span><strong>${ing.quantity} ${ing.unit}</strong></span>
+                                </li>
+                            `;
+                        }
+                        html += `
+                                </ul>
+                            </div>
+                        `;
+                    }
+                    
+                    html += `
+                        <div class="detail-section">
+                            <h4>⚠️ Allergene & Zusatzstoffe</h4>
+                            <p><strong>Allergene:</strong> ${recipe.allergens.length > 0 ? recipe.allergens.join(', ') : 'Keine'}</p>
+                            <p><strong>Zusatzstoffe:</strong> ${recipe.additives && recipe.additives.length > 0 ? recipe.additives.join(', ') : 'Keine'}</p>
+                            <p><strong>Ernährungsformen:</strong> ${recipe.dietary_forms.join(', ')}</p>
+                        </div>
+                    `;
+                    
+                    html += '</div>';
+                    
+                    document.getElementById('modalTitle').textContent = recipe.name;
+                    document.getElementById('modalBody').innerHTML = html;
+                    document.getElementById('recipeModal').classList.add('active');
+                }
+            } catch (error) {
+                alert('Fehler beim Laden der Rezeptdetails: ' + error.message);
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('recipeModal').classList.remove('active');
+        }
+        
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            const days = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+            return `${days[date.getDay()]}, ${date.toLocaleDateString('de-DE')}`;
+        }
+        
+        function showError(message) {
+            document.getElementById('results').innerHTML = `
+                <div style="color: red; padding: 20px;">
+                    <h3>❌ Fehler</h3>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+        
+        // PDF-Export
+        document.getElementById('btnExportPDF').addEventListener('click', async () => {
+            if (!currentPlan || !currentConfig) {
+                alert('Bitte führen Sie zuerst eine Simulation durch');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/export/pdf', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        plan: currentPlan,
+                        config: currentConfig
+                    })
+                });
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `menuplan_${currentConfig.start_date}.pdf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } else {
+                    alert('Fehler beim PDF-Export');
+                }
+            } catch (error) {
+                alert('Fehler beim PDF-Export: ' + error.message);
+            }
+        });
+        
+        // Modal schließen bei Klick außerhalb
+        document.getElementById('recipeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'recipeModal') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+

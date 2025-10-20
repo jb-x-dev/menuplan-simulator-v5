@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Test</title>
+</head>
+<body>
+    <h1>JavaScript Test</h1>
+    <button id="testBtn">Test Button</button>
+    <div id="output"></div>
+    
+    <script>
+        console.log('✅ JavaScript läuft!');
+        
+        document.getElementById('testBtn').addEventListener('click', function() {
+            console.log('✅ Button geklickt!');
+            document.getElementById('output').innerHTML = '<p style="color: green;">✅ JavaScript funktioniert!</p>';
+            
+            // Teste API
+            fetch('/api/recipes')
+                .then(r => r.json())
+                .then(data => {
+                    console.log('✅ API Response:', data.length, 'Rezepte');
+                    document.getElementById('output').innerHTML += '<p>✅ API: ' + data.length + ' Rezepte geladen</p>';
+                })
+                .catch(e => {
+                    console.error('❌ API Error:', e);
+                });
+        });
+    </script>
+</body>
+</html>

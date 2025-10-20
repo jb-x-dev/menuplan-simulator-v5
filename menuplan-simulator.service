@@ -1,0 +1,21 @@
+[Unit]
+Description=Menüplansimulator Web Application
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/menuplan-simulator/backend
+Environment="PATH=/usr/bin:/usr/local/bin"
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/usr/bin/python3 /home/ubuntu/menuplan-simulator/backend/app.py
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=append:/var/log/menuplan-simulator.log
+StandardError=append:/var/log/menuplan-simulator.log
+
+[Install]
+WantedBy=multi-user.target
+
