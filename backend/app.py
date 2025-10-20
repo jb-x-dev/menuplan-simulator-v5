@@ -438,3 +438,226 @@ def update_selection():
             'error': str(e)
         }), 500
 
+
+
+
+@app.route('/api/menu-plans/save', methods=['POST'])
+def save_menu_plan():
+    """Speichert einen Menüplan mit Status"""
+    try:
+        data = request.get_json()
+        plan = data.get('plan')
+        status = data.get('status', 'Entwurf')  # Entwurf, Vorlage, Aktiv, Archiviert
+        name = data.get('name', '')
+        
+        if not plan:
+            return jsonify({'error': 'Kein Plan angegeben'}), 400
+        
+        # Lade bestehende Pläne
+        plans_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'menu_plans.json')
+        if os.path.exists(plans_file):
+            with open(plans_file, 'r', encoding='utf-8') as f:
+                saved_plans = json.load(f)
+        else:
+            saved_plans = []
+        
+        # Erstelle neuen Plan-Eintrag
+        from datetime import datetime
+        plan_entry = {
+            'id': len(saved_plans) + 1,
+            'name': name or f"Menüplan {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+            'status': status,
+            'created_at': datetime.now().isoformat(),
+            'plan': plan
+        }
+        
+        saved_plans.append(plan_entry)
+        
+        # Speichere Pläne
+        os.makedirs(os.path.dirname(plans_file), exist_ok=True)
+        with open(plans_file, 'w', encoding='utf-8') as f:
+            json.dump(saved_plans, f, ensure_ascii=False, indent=2)
+        
+        return jsonify({
+            'success': True,
+            'id': plan_entry['id'],
+            'message': f'Menüplan gespeichert mit Status: {status}'
+        })
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/menu-plans', methods=['GET'])
+def get_menu_plans():
+    """Gibt alle gespeicherten Menüpläne zurück"""
+    try:
+        status_filter = request.args.get('status')
+        
+        plans_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'menu_plans.json')
+        if not os.path.exists(plans_file):
+            return jsonify([])
+        
+        with open(plans_file, 'r', encoding='utf-8') as f:
+            saved_plans = json.load(f)
+        
+        # Filtere nach Status wenn angegeben
+        if status_filter:
+            saved_plans = [p for p in saved_plans if p.get('status') == status_filter]
+        
+        return jsonify(saved_plans)
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/menu-plans/<int:plan_id>', methods=['GET'])
+def get_menu_plan(plan_id):
+    """Gibt einen spezifischen Menüplan zurück"""
+    try:
+        plans_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'menu_plans.json')
+        if not os.path.exists(plans_file):
+            return jsonify({'error': 'Keine Pläne gefunden'}), 404
+        
+        with open(plans_file, 'r', encoding='utf-8') as f:
+            saved_plans = json.load(f)
+        
+        plan = next((p for p in saved_plans if p['id'] == plan_id), None)
+        if not plan:
+            return jsonify({'error': 'Plan nicht gefunden'}), 404
+        
+        return jsonify(plan)
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/procurement/from-plans', methods=['POST'])
+def get_procurement_from_plans():
+    """Erstellt Beschaffungsliste aus aktiven Menüplänen"""
+    try:
+        data = request.get_json()
+        plan_ids = data.get('plan_ids', [])
+        
+        plans_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'menu_plans.json')
+        if not os.path.exists(plans_file):
+            return jsonify({'error': 'Keine Pläne gefunden'}), 404
+        
+        with open(plans_file, 'r', encoding='utf-8') as f:
+            saved_plans = json.load(f)
+        
+        # Filtere gewählte Pläne
+        selected_plans = [p for p in saved_plans if p['id'] in plan_ids]
+        
+        # Sammle alle Rezepte aus den Plänen
+        all_ingredients = {}
+        recipes_by_day = {}
+        
+        for plan_entry in selected_plans:
+            plan = plan_entry['plan']
+            for day in plan.get('days', []):
+                day_date = day.get('date')
+                if day_date not in recipes_by_day:
+                    recipes_by_day[day_date] = []
+                
+                for meal in day.get('meals', []):
+                    for recipe_data in meal.get('recipes', []):
+                        recipes_by_day[day_date].append({
+                            'recipe': recipe_data,
+                            'portions': recipe_data.get('portions', 1)
+                        })
+                        
+                        # Sammle Zutaten
+                        for ingredient in recipe_data.get('ingredients', []):
+                            ing_name = ingredient.get('name')
+                            ing_quantity = ingredient.get('quantity', 0)
+                            ing_unit = ingredient.get('unit', '')
+                            lead_time = ingredient.get('lead_time', 1)
+                            
+                            # Berechne Bestelltag (Rezept-Tag - Lead Time)
+                            from datetime import datetime, timedelta
+                            recipe_date = datetime.strptime(day_date, '%Y-%m-%d')
+                            order_date = (recipe_date - timedelta(days=lead_time)).strftime('%Y-%m-%d')
+                            
+                            if order_date not in all_ingredients:
+                                all_ingredients[order_date] = {}
+                            
+                            if ing_name not in all_ingredients[order_date]:
+                                all_ingredients[order_date][ing_name] = {
+                                    'name': ing_name,
+                                    'quantity': 0,
+                                    'unit': ing_unit,
+                                    'lead_time': lead_time,
+                                    'ordered': False
+                                }
+                            
+                            all_ingredients[order_date][ing_name]['quantity'] += ing_quantity * recipe_data.get('portions', 1)
+        
+        # Konvertiere zu Liste
+        procurement_list = []
+        for order_date, ingredients in sorted(all_ingredients.items()):
+            procurement_list.append({
+                'order_date': order_date,
+                'ingredients': list(ingredients.values())
+            })
+        
+        return jsonify({
+            'success': True,
+            'procurement': procurement_list,
+            'recipes_by_day': recipes_by_day
+        })
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/procurement/order', methods=['POST'])
+def create_order():
+    """Erstellt eine Bestellung und setzt Status auf 'bestellt'"""
+    try:
+        data = request.get_json()
+        order_items = data.get('items', [])
+        
+        # Speichere Bestellung
+        orders_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'orders.json')
+        if os.path.exists(orders_file):
+            with open(orders_file, 'r', encoding='utf-8') as f:
+                orders = json.load(f)
+        else:
+            orders = []
+        
+        from datetime import datetime
+        order = {
+            'id': len(orders) + 1,
+            'created_at': datetime.now().isoformat(),
+            'items': order_items,
+            'status': 'bestellt'
+        }
+        
+        orders.append(order)
+        
+        os.makedirs(os.path.dirname(orders_file), exist_ok=True)
+        with open(orders_file, 'w', encoding='utf-8') as f:
+            json.dump(orders, f, ensure_ascii=False, indent=2)
+        
+        return jsonify({
+            'success': True,
+            'order_id': order['id'],
+            'message': 'Bestellung erfolgreich erstellt'
+        })
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+
+

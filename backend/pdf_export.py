@@ -75,30 +75,42 @@ def create_menu_plan_pdf(plan_data, config):
     elements.append(Spacer(1, 1*cm))
     
     # Tage
-    for day in plan_data['days']:
+    for day in plan_data.get('days', []):
         # Tag-Überschrift
         day_date = datetime.fromisoformat(day['date'])
-        day_title = f"{day_date.strftime('%A, %d.%m.%Y')} - {day['total_cost']:.2f}€"
+        day_title = f"{day_date.strftime('%A, %d.%m.%Y')} - {day.get('total_cost', 0):.2f}€"
         elements.append(Paragraph(day_title, heading_style))
         
         # Rezepte des Tages
         recipes_data = [['Mahlzeit', 'Rezept', 'Portionen', 'Kosten', 'Allergene']]
         
-        for menu_line in day['menu_lines']:
-            for recipe in menu_line['recipes']:
+        # Unterstütze beide Strukturen: menu_lines und meals
+        menu_items = day.get('menu_lines', day.get('meals', []))
+        
+        for menu_item in menu_items:
+            recipes = menu_item.get('recipes', [])
+            if not recipes and 'recipe' in menu_item:
+                recipes = [menu_item['recipe']]
+            
+            for recipe in recipes:
                 allergens_str = ', '.join(recipe.get('allergens', [])) if recipe.get('allergens') else '-'
                 # Verwende Fallback für Kosten und Component
                 cost = recipe.get('recipe_cost') or recipe.get('cost_per_serving') or recipe.get('cost') or 0
-                component = recipe.get('component') or recipe.get('menu_component') or menu_line.get('name', 'Mahlzeit')
-                target_count = recipe.get('target_count', 50)
+                component = recipe.get('component') or recipe.get('menu_component') or menu_item.get('name', 'Mahlzeit')
+                target_count = recipe.get('target_count') or recipe.get('portions', 50)
+                recipe_name = recipe.get('recipe_name') or recipe.get('name', 'Unbekannt')
                 
                 recipes_data.append([
                     component,
-                    recipe.get('recipe_name', 'Unbekannt'),
+                    recipe_name,
                     str(target_count),
                     f"{cost:.2f}€",
                     allergens_str
                 ])
+        
+        # Wenn keine Rezepte gefunden wurden, überspringe die Tabelle
+        if len(recipes_data) <= 1:
+            continue
         
         recipes_table = Table(recipes_data, colWidths=[3*cm, 6*cm, 2*cm, 2*cm, 4*cm])
         recipes_table.setStyle(TableStyle([

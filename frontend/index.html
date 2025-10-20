@@ -1924,7 +1924,7 @@
         }
         
         // Speichere Menüplan
-        document.getElementById('btnSaveMealPlan').addEventListener('click', () => {
+        document.getElementById('btnSaveMealPlan').addEventListener('click', async () => {
             if (!currentPlan) {
                 alert('❌ Kein Menüplan vorhanden');
                 return;
@@ -1933,20 +1933,62 @@
             const name = prompt('Name für den Menüplan:', `Menüplan ${new Date().toISOString().split('T')[0]}`);
             if (!name) return;
             
-            const savedPlan = {
-                id: Date.now(),
-                name: name,
-                plan: currentPlan,
-                config: currentConfig,
-                mode: currentMode,
-                created_at: new Date().toISOString()
-            };
+            // Frage nach Status
+            const statusOptions = ['Entwurf', 'Vorlage', 'Aktiv', 'Archiviert'];
+            const statusChoice = prompt(
+                'Status wählen:\n1 = Entwurf\n2 = Vorlage\n3 = Aktiv\n4 = Archiviert',
+                '3'
+            );
             
-            savedMealPlans.push(savedPlan);
-            localStorage.setItem('savedMealPlans', JSON.stringify(savedMealPlans));
-            populateHeaderDropdowns();
+            if (!statusChoice) return;
             
-            alert(`✅ Menüplan gespeichert: ${name}`);
+            const statusIndex = parseInt(statusChoice) - 1;
+            if (statusIndex < 0 || statusIndex >= statusOptions.length) {
+                alert('❌ Ungültige Auswahl');
+                return;
+            }
+            
+            const status = statusOptions[statusIndex];
+            
+            try {
+                const response = await fetch('/api/menu-plans/save', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        plan: currentPlan,
+                        status: status,
+                        name: name
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert(`✅ Menüplan gespeichert: ${name}\nStatus: ${status}`);
+                    
+                    // Auch lokal speichern für Kompatibilität
+                    const savedPlan = {
+                        id: data.id,
+                        name: name,
+                        plan: currentPlan,
+                        config: currentConfig,
+                        mode: currentMode,
+                        status: status,
+                        created_at: new Date().toISOString()
+                    };
+                    
+                    savedMealPlans.push(savedPlan);
+                    localStorage.setItem('savedMealPlans', JSON.stringify(savedMealPlans));
+                    populateHeaderDropdowns();
+                } else {
+                    alert('❌ Fehler beim Speichern: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Fehler:', error);
+                alert('❌ Fehler beim Speichern des Menüplans');
+            }
         });
         
         // Lade Menüplan aus Header

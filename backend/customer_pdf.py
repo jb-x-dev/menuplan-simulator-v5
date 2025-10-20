@@ -190,8 +190,9 @@ def create_landscape_table(days_to_export):
     # Sammle alle Mahlzeiten
     meal_names = []
     if days_to_export:
-        for menu_line in days_to_export[0].get('menu_lines', []):
-            meal_names.append(menu_line['name'])
+        menu_items = days_to_export[0].get('menu_lines', days_to_export[0].get('meals', []))
+        for menu_item in menu_items:
+            meal_names.append(menu_item.get('name', 'Mahlzeit'))
     
     # Für jede Mahlzeit eine Zeile
     for meal_name in meal_names:
@@ -221,8 +222,9 @@ def create_portrait_table(days_to_export):
     # Sammle alle Mahlzeiten
     meal_names = []
     if days_to_export:
-        for menu_line in days_to_export[0].get('menu_lines', []):
-            meal_names.append(menu_line['name'])
+        menu_items = days_to_export[0].get('menu_lines', days_to_export[0].get('meals', []))
+        for menu_item in menu_items:
+            meal_names.append(menu_item.get('name', 'Mahlzeit'))
     
     # Header-Zeile: Tag | Mahlzeit 1 | Mahlzeit 2 | ... | Mahlzeit N
     header_row = ['Tag'] + meal_names
@@ -254,11 +256,19 @@ def get_recipes_for_meal(day, meal_name):
     Holt alle Rezepte für eine bestimmte Mahlzeit an einem Tag
     Gibt formatierten String mit Rezeptnamen und Allergenen zurück
     """
-    for menu_line in day.get('menu_lines', []):
-        if menu_line['name'] == meal_name:
+    # Unterstütze beide Strukturen: menu_lines und meals
+    menu_items = day.get('menu_lines', day.get('meals', []))
+    
+    for menu_item in menu_items:
+        item_name = menu_item.get('name', '')
+        if item_name == meal_name:
             recipes_text = []
-            for recipe in menu_line.get('recipes', []):
-                recipe_name = recipe.get('recipe_name', 'Unbekannt')
+            recipes = menu_item.get('recipes', [])
+            if not recipes and 'recipe' in menu_item:
+                recipes = [menu_item['recipe']]
+            
+            for recipe in recipes:
+                recipe_name = recipe.get('recipe_name') or recipe.get('name', 'Unbekannt')
                 
                 # Allergene als Abkürzungen
                 allergens = recipe.get('allergens', [])
