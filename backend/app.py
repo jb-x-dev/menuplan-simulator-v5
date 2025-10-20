@@ -555,6 +555,9 @@ def get_procurement_from_plans():
         # Filtere gewählte Pläne
         selected_plans = [p for p in saved_plans if p['id'] in plan_ids]
         
+        # Lade Rezeptdatenbank für Zutaten
+        recipes_db = {r['id']: r for r in recipes}
+        
         # Sammle alle Rezepte aus den Plänen
         all_ingredients = {}
         recipes_by_day = {}
@@ -566,16 +569,35 @@ def get_procurement_from_plans():
                 if day_date not in recipes_by_day:
                     recipes_by_day[day_date] = []
                 
-                for meal in day.get('meals', []):
-                    for recipe_data in meal.get('recipes', []):
+                # Unterstütze beide Strukturen
+                menu_items = day.get('meals', day.get('menu_lines', []))
+                
+                for meal in menu_items:
+                    meal_recipes = meal.get('recipes', [])
+                    if not meal_recipes and 'recipe' in meal:
+                        meal_recipes = [meal['recipe']]
+                    
+                    for recipe_data in meal_recipes:
+                        # Hole Rezept-ID
+                        recipe_id = recipe_data.get('id') or recipe_data.get('recipe_id')
+                        portions = recipe_data.get('portions') or recipe_data.get('target_count', 1)
+                        
                         recipes_by_day[day_date].append({
                             'recipe': recipe_data,
-                            'portions': recipe_data.get('portions', 1)
+                            'portions': portions
                         })
                         
-                        # Sammle Zutaten
-                        for ingredient in recipe_data.get('ingredients', []):
+                        # Lade vollständige Rezeptdaten aus Datenbank
+                        full_recipe = recipes_db.get(recipe_id)
+                        if not full_recipe:
+                            continue
+                        
+                        # Sammle Zutaten aus vollständigem Rezept
+                        for ingredient in full_recipe.get('ingredients', []):
                             ing_name = ingredient.get('name')
+                            if not ing_name:
+                                continue
+                            
                             ing_quantity = ingredient.get('quantity', 0)
                             ing_unit = ingredient.get('unit', '')
                             lead_time = ingredient.get('lead_time', 1)
@@ -597,7 +619,7 @@ def get_procurement_from_plans():
                                     'ordered': False
                                 }
                             
-                            all_ingredients[order_date][ing_name]['quantity'] += ing_quantity * recipe_data.get('portions', 1)
+                            all_ingredients[order_date][ing_name]['quantity'] += ing_quantity * portions
         
         # Konvertiere zu Liste
         procurement_list = []

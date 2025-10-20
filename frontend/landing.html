@@ -12,10 +12,11 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #FAF9F6;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
+            color: #4A4A4A;
         }
         
         .container {
@@ -24,114 +25,118 @@
         }
         
         .header {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
+            margin-bottom: 50px;
         }
         
         .header h1 {
-            color: #667eea;
-            font-size: 42px;
+            font-size: 36px;
+            font-weight: 300;
+            color: #4A4A4A;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
         
         .header p {
-            color: #666;
-            font-size: 18px;
+            font-size: 16px;
+            color: #808080;
+            font-weight: 300;
         }
         
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         .module-card {
-            background: white;
-            border-radius: 12px;
+            background: #F5F5DC;
+            border: 1px solid #D3D3D3;
+            border-radius: 8px;
             padding: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
             text-decoration: none;
-            color: inherit;
-            display: block;
+            transition: all 0.2s ease;
+            position: relative;
         }
         
         .module-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+            border-color: #87CEEB;
+            box-shadow: 0 2px 8px rgba(135, 206, 235, 0.15);
+        }
+        
+        .module-card.primary {
+            background: #FFFEF0;
         }
         
         .module-icon {
-            font-size: 48px;
+            font-size: 32px;
             margin-bottom: 15px;
+            color: #808080;
+            transition: color 0.2s ease;
+        }
+        
+        .module-card:hover .module-icon {
+            color: #87CEEB;
+        }
+        
+        .module-card.primary .module-icon {
+            color: #87CEEB;
         }
         
         .module-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #333;
+            font-size: 20px;
+            font-weight: 400;
+            color: #4A4A4A;
             margin-bottom: 10px;
         }
         
         .module-description {
-            color: #666;
             font-size: 14px;
+            color: #808080;
             line-height: 1.6;
+            font-weight: 300;
         }
         
-        .module-card.primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .module-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-new {
+            background: #87CEEB;
             color: white;
         }
         
-        .module-card.primary .module-title,
-        .module-card.primary .module-description {
-            color: white;
+        .badge-beta {
+            background: #D3D3D3;
+            color: #4A4A4A;
         }
         
         .footer {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #D3D3D3;
         }
         
         .footer p {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .badge {
-            display: inline-block;
-            background: #4CAF50;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-        
-        .badge.new {
-            background: #FF9800;
-        }
-        
-        .badge.beta {
-            background: #2196F3;
+            font-size: 13px;
+            color: #808080;
+            font-weight: 300;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🍽️ Menüplansimulator</h1>
+            <h1>Menüplansimulator</h1>
             <p>jb-x eBusiness Suite - Version 1.0</p>
         </div>
         
@@ -141,21 +146,17 @@
                 <div class="module-icon">🚀</div>
                 <div class="module-title">Menüplansimulator</div>
                 <div class="module-description">
-                    Automatische und manuelle Menüplanerstellung mit BKT-Optimierung, 
-                    Constraint-basierter Filterung und Saisonalitäts-Berücksichtigung.
+                    Automatische und manuelle Menüplanerstellung mit BKT-Optimierung und Ernährungsformen-Berücksichtigung
                 </div>
             </a>
             
             <!-- BKT-Verwaltung -->
             <a href="bkt-verwaltung.html" class="module-card">
+                <span class="module-badge badge-new">NEU</span>
                 <div class="module-icon">💰</div>
-                <div class="module-title">
-                    BKT-Verwaltung
-                    <span class="badge new">NEU</span>
-                </div>
+                <div class="module-title">BKT-Verwaltung</div>
                 <div class="module-description">
-                    Verwaltung von Budget-Zielen (BKT), Toleranzen und Kostenanalysen. 
-                    Übersicht über historische BKT-Entwicklung und Prognosen.
+                    Budget-Verwaltung, Kostenanalysen und Überwachung der Betriebskosten pro Tag
                 </div>
             </a>
             
@@ -164,8 +165,7 @@
                 <div class="module-icon">📚</div>
                 <div class="module-title">Rezeptverwaltung</div>
                 <div class="module-description">
-                    Erstellen, Bearbeiten und Verwalten von Rezepten. 
-                    200 Rezepte mit vollständigen Metadaten, Allergenen und Nährwerten.
+                    CRUD-Funktionen für 200 Rezepte mit Nährwerten, Allergenen und Zusatzstoffen
                 </div>
             </a>
             
@@ -174,21 +174,17 @@
                 <div class="module-icon">📦</div>
                 <div class="module-title">Beschaffung</div>
                 <div class="module-description">
-                    Auflösung von Menüplänen in Beschaffungslisten. 
-                    Automatische Zuordnung zu Lieferanten und Bestelltagen.
+                    Procurement-Auflösung mit Gruppierung nach Bestelltagen und Lead Time-Berechnung
                 </div>
             </a>
             
             <!-- Statistiken & Analysen -->
             <a href="analytics.html" class="module-card">
+                <span class="module-badge badge-beta">BETA</span>
                 <div class="module-icon">📊</div>
-                <div class="module-title">
-                    Statistiken & Analysen
-                    <span class="badge beta">BETA</span>
-                </div>
+                <div class="module-title">Statistiken & Analysen</div>
                 <div class="module-description">
-                    Umfassende Auswertungen zu Menüplänen, Kosten, Beliebtheit und 
-                    Ernährungsformen. Visualisierung von Trends und Mustern.
+                    Umfassende Auswertungen zu Menüplänen, Kosten, Beliebtheit und Ernährungsformen
                 </div>
             </a>
             
@@ -197,14 +193,13 @@
                 <div class="module-icon">📝</div>
                 <div class="module-title">Export & Berichte</div>
                 <div class="module-description">
-                    Export von Menüplänen in verschiedenen Formaten (PDF, Excel, XML). 
-                    Kunden-PDFs und Beschaffungslisten.
+                    PDF, Excel und XML Export für Menüpläne, Bestelllisten und Beschaffungsauflösungen
                 </div>
             </a>
         </div>
         
         <div class="footer">
-            <p>© 2025 jb-x eBusiness Suite | Menüplansimulator Version 1.0 | Entwickelt mit Manus AI</p>
+            <p>&copy; 2025 jb-x eBusiness Suite - Menüplansimulator Version 1.0</p>
         </div>
     </div>
 </body>
