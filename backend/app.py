@@ -561,6 +561,7 @@ def get_procurement_from_plans():
         # Sammle alle Rezepte aus den Plänen
         all_ingredients = {}
         recipes_by_day = {}
+        recipe_breakdown = {}  # Zutat -> Liste von Rezepten
         
         for plan_entry in selected_plans:
             plan = plan_entry['plan']
@@ -620,6 +621,18 @@ def get_procurement_from_plans():
                                 }
                             
                             all_ingredients[order_date][ing_name]['quantity'] += ing_quantity * portions
+                            
+                            # Speichere Rezept-Breakdown
+                            if ing_name not in recipe_breakdown:
+                                recipe_breakdown[ing_name] = []
+                            
+                            recipe_breakdown[ing_name].append({
+                                'recipe_name': recipe_data.get('recipe_name') or recipe_data.get('name', 'Unbekannt'),
+                                'quantity': ing_quantity * portions,
+                                'unit': ing_unit,
+                                'portions': portions,
+                                'day': day_date
+                            })
         
         # Konvertiere zu Liste
         procurement_list = []
@@ -632,7 +645,8 @@ def get_procurement_from_plans():
         return jsonify({
             'success': True,
             'procurement': procurement_list,
-            'recipes_by_day': recipes_by_day
+            'recipes_by_day': recipes_by_day,
+            'recipe_breakdown': recipe_breakdown
         })
     
     except Exception as e:

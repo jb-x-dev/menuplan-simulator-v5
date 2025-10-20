@@ -88,6 +88,22 @@
             border-color: #6BB6D6;
         }
         
+        .btn-danger {
+            background: white;
+            color: #E74C3C;
+            border-color: #E74C3C;
+        }
+        
+        .btn-danger:hover {
+            background: #E74C3C;
+            color: white;
+        }
+        
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+        
         .card {
             background: #F5F5DC;
             border: 1px solid #D3D3D3;
@@ -151,6 +167,44 @@
             font-weight: 400;
             background: #87CEEB;
             color: white;
+            margin-right: 8px;
+        }
+        
+        .loaded-plans {
+            margin-top: 20px;
+        }
+        
+        .loaded-plan-item {
+            background: #FFFEF0;
+            padding: 15px;
+            border: 1px solid #87CEEB;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        
+        .loaded-plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .loaded-plan-title {
+            font-weight: 400;
+            color: #4A4A4A;
+        }
+        
+        .loaded-plan-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .loaded-plan-recipes {
+            font-size: 13px;
+            color: #808080;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #D3D3D3;
         }
         
         .procurement-section {
@@ -212,6 +266,27 @@
             font-weight: 300;
         }
         
+        .ingredient-source {
+            font-size: 11px;
+            color: #A0A0A0;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        
+        .recipe-breakdown {
+            margin-left: 30px;
+            margin-top: 8px;
+            padding: 8px;
+            background: white;
+            border-left: 2px solid #87CEEB;
+            font-size: 12px;
+            color: #808080;
+        }
+        
+        .recipe-breakdown-item {
+            margin-bottom: 4px;
+        }
+        
         .empty-state {
             text-align: center;
             padding: 60px 40px;
@@ -248,6 +323,20 @@
             color: #808080;
             font-weight: 300;
         }
+        
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #87CEEB;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 4px 8px;
+            text-decoration: underline;
+        }
+        
+        .toggle-btn:hover {
+            color: #6BB6D6;
+        }
     </style>
 </head>
 <body>
@@ -264,7 +353,15 @@
                 Lade aktive Menüpläne...
             </div>
             <div class="actions">
-                <button class="btn btn-primary" onclick="loadProcurement()">Beschaffung berechnen</button>
+                <button class="btn btn-primary" onclick="loadProcurement()">Pläne zur Beschaffung hinzufügen</button>
+            </div>
+            
+            <!-- Übernommene Pläne -->
+            <div id="loaded-plans-container" class="loaded-plans" style="display: none;">
+                <h3 style="font-size: 16px; font-weight: 400; margin-bottom: 15px; color: #4A4A4A;">
+                    Übernommene Pläne in Beschaffung
+                </h3>
+                <div id="loaded-plans-list"></div>
             </div>
         </div>
         
@@ -282,7 +379,9 @@
     
     <script>
         let activePlans = [];
+        let loadedPlans = [];  // Übernommene Pläne
         let procurementData = null;
+        let recipeBreakdown = {};  // Rezept → Komponenten Mapping
         
         // Lade aktive Menüpläne beim Start
         async function loadActivePlans() {
@@ -340,7 +439,7 @@
         
         // Berechne Beschaffung aus ausgewählten Plänen
         async function loadProcurement() {
-            const selectedPlanIds = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+            const selectedPlanIds = Array.from(document.querySelectorAll('#plans-container input[type="checkbox"]:checked'))
                 .map(cb => parseInt(cb.value));
             
             if (selectedPlanIds.length === 0) {
@@ -366,12 +465,126 @@
                     return;
                 }
                 
+                // Füge ausgewählte Pläne zu loadedPlans hinzu
+                selectedPlanIds.forEach(planId => {
+                    const plan = activePlans.find(p => p.id === planId);
+                    if (plan && !loadedPlans.find(p => p.id === planId)) {
+                        loadedPlans.push(plan);
+                    }
+                });
+                
                 procurementData = data.procurement;
+                recipeBreakdown = data.recipe_breakdown || {};
+                
+                displayLoadedPlans();
                 displayProcurement(data.procurement);
                 
             } catch (error) {
                 console.error('Fehler:', error);
                 alert('Fehler beim Berechnen der Beschaffung');
+            }
+        }
+        
+        // Zeige übernommene Pläne an
+        function displayLoadedPlans() {
+            const container = document.getElementById('loaded-plans-container');
+            const list = document.getElementById('loaded-plans-list');
+            
+            if (loadedPlans.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+            
+            container.style.display = 'block';
+            list.innerHTML = '';
+            
+            loadedPlans.forEach(plan => {
+                const planItem = document.createElement('div');
+                planItem.className = 'loaded-plan-item';
+                
+                // Zähle Rezepte
+                let recipeCount = 0;
+                let recipeNames = [];
+                if (plan.plan && plan.plan.days) {
+                    plan.plan.days.forEach(day => {
+                        const menuItems = day.meals || day.menu_lines || [];
+                        menuItems.forEach(meal => {
+                            const recipes = meal.recipes || (meal.recipe ? [meal.recipe] : []);
+                            recipeCount += recipes.length;
+                            recipes.forEach(r => {
+                                const name = r.recipe_name || r.name || 'Unbekannt';
+                                if (!recipeNames.includes(name)) {
+                                    recipeNames.push(name);
+                                }
+                            });
+                        });
+                    });
+                }
+                
+                planItem.innerHTML = `
+                    <div class="loaded-plan-header">
+                        <div class="loaded-plan-title">${plan.name}</div>
+                        <div class="loaded-plan-actions">
+                            <button class="btn btn-small" onclick="editPlan(${plan.id})">Bearbeiten</button>
+                            <button class="btn btn-small btn-danger" onclick="removePlan(${plan.id})">Entfernen</button>
+                        </div>
+                    </div>
+                    <div class="loaded-plan-recipes">
+                        ${recipeCount} Rezepte: ${recipeNames.slice(0, 3).join(', ')}${recipeNames.length > 3 ? '...' : ''}
+                    </div>
+                `;
+                list.appendChild(planItem);
+            });
+        }
+        
+        // Entferne Plan aus Beschaffung
+        function removePlan(planId) {
+            if (!confirm('Plan aus Beschaffung entfernen?')) {
+                return;
+            }
+            
+            loadedPlans = loadedPlans.filter(p => p.id !== planId);
+            displayLoadedPlans();
+            
+            // Neu berechnen
+            if (loadedPlans.length > 0) {
+                recalculateProcurement();
+            } else {
+                document.getElementById('procurement-container').style.display = 'none';
+            }
+        }
+        
+        // Bearbeite Plan (Platzhalter)
+        function editPlan(planId) {
+            alert('Bearbeiten-Funktion: Hier können Sie Portionen anpassen, Rezepte ändern, etc.');
+            // TODO: Implementiere Bearbeitungs-Dialog
+        }
+        
+        // Neu berechnen
+        async function recalculateProcurement() {
+            const planIds = loadedPlans.map(p => p.id);
+            
+            try {
+                const response = await fetch('/api/procurement/from-plans', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        plan_ids: planIds
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    procurementData = data.procurement;
+                    recipeBreakdown = data.recipe_breakdown || {};
+                    displayProcurement(data.procurement);
+                }
+                
+            } catch (error) {
+                console.error('Fehler:', error);
             }
         }
         
@@ -408,6 +621,11 @@
                 orderDay.ingredients.forEach((ingredient, index) => {
                     const ingredientItem = document.createElement('div');
                     ingredientItem.className = 'ingredient-item';
+                    
+                    // Hole Rezept-Breakdown für diese Zutat
+                    const breakdown = recipeBreakdown[ingredient.name] || [];
+                    const breakdownId = `breakdown-${orderDay.order_date}-${index}`;
+                    
                     ingredientItem.innerHTML = `
                         <input type="checkbox" 
                                id="ingredient-${orderDay.order_date}-${index}" 
@@ -420,9 +638,32 @@
                                 ${ingredient.quantity.toFixed(2)} ${ingredient.unit}
                                 ${ingredient.ordered ? ' (bereits bestellt)' : ''}
                             </div>
+                            ${breakdown.length > 0 ? `
+                                <button class="toggle-btn" onclick="toggleBreakdown('${breakdownId}')">
+                                    Aus ${breakdown.length} Rezept(en) →
+                                </button>
+                            ` : ''}
                         </div>
                     `;
+                    
                     ingredientList.appendChild(ingredientItem);
+                    
+                    // Füge Breakdown hinzu (versteckt)
+                    if (breakdown.length > 0) {
+                        const breakdownDiv = document.createElement('div');
+                        breakdownDiv.id = breakdownId;
+                        breakdownDiv.className = 'recipe-breakdown';
+                        breakdownDiv.style.display = 'none';
+                        
+                        breakdown.forEach(item => {
+                            const breakdownItem = document.createElement('div');
+                            breakdownItem.className = 'recipe-breakdown-item';
+                            breakdownItem.textContent = `• ${item.recipe_name}: ${item.quantity.toFixed(2)} ${item.unit} (${item.portions} Portionen)`;
+                            breakdownDiv.appendChild(breakdownItem);
+                        });
+                        
+                        ingredientList.appendChild(breakdownDiv);
+                    }
                 });
                 
                 dayDiv.appendChild(ingredientList);
@@ -430,6 +671,14 @@
             });
             
             container.style.display = 'block';
+        }
+        
+        // Toggle Rezept-Breakdown
+        function toggleBreakdown(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = element.style.display === 'none' ? 'block' : 'none';
+            }
         }
         
         // Erstelle Bestellung
@@ -468,7 +717,7 @@
                 if (data.success) {
                     alert(`Bestellung erfolgreich erstellt! Bestellnummer: ${data.order_id}`);
                     // Neu laden
-                    loadProcurement();
+                    recalculateProcurement();
                 } else {
                     alert('Fehler beim Erstellen der Bestellung: ' + data.error);
                 }
