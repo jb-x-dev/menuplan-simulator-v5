@@ -8,11 +8,11 @@ import os
 import sys
 
 # Importiere Simulator
-from .simulator import load_recipes_from_file, run_simulation, Recipe
-from .procurement import resolve_procurement
-from .pdf_export import create_menu_plan_pdf
-from .customer_pdf import generate_customer_pdf
-from .excel_export import create_excel_export
+from simulator import load_recipes_from_file, run_simulation, Recipe
+from procurement import resolve_procurement
+from pdf_export import create_menu_plan_pdf
+from customer_pdf import generate_customer_pdf
+from excel_export import create_excel_export
 
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 CORS(app)
