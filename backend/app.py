@@ -561,7 +561,16 @@ def get_procurement_from_plans():
         selected_plans = [p for p in saved_plans if p.get('id') in plan_ids or p.get('name') in plan_ids]
         
         # Lade Rezeptdatenbank für Zutaten
-        recipes_db = {r['id']: r for r in recipes}
+        # Konvertiere Recipe-Objekte zu Dictionaries
+        from dataclasses import asdict
+        recipes_db = {}
+        for r in recipes:
+            if hasattr(r, '__dict__'):
+                # Recipe Objekt
+                recipes_db[r.id] = asdict(r)
+            else:
+                # Bereits Dictionary
+                recipes_db[r['id']] = r
         
         # Sammle alle Rezepte aus den Plänen
         all_ingredients = {}
