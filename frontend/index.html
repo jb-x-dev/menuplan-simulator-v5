@@ -568,6 +568,37 @@
         .btn-add-recipe:hover {
             background: #218838;
         }
+
+        /* Responsive Design - Mobile First */
+        @media (max-width: 767px) {
+            .container { padding: 10px !important; max-width: 100% !important; }
+            .header { padding: 15px !important; flex-direction: column !important; gap: 10px !important; }
+            .header h1 { font-size: 20px !important; }
+            .card { padding: 15px !important; margin-bottom: 15px !important; }
+            .card h2 { font-size: 18px !important; }
+            .btn { width: 100% !important; margin-bottom: 8px !important; }
+            .actions { flex-direction: column !important; }
+            .grid, .calendar-view, .stats-grid { grid-template-columns: 1fr !important; }
+            table { font-size: 12px !important; }
+            th, td { padding: 8px 4px !important; }
+            .nav-home { position: static !important; margin-bottom: 10px !important; }
+            .nav-home a { display: block !important; text-align: center !important; }
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .container { padding: 15px !important; max-width: 95% !important; }
+            .grid, .calendar-view { grid-template-columns: repeat(2, 1fr) !important; }
+            .stats-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        }
+        @media (min-width: 1025px) {
+            .container { max-width: 1600px !important; }
+            .grid { grid-template-columns: repeat(3, 1fr) !important; }
+            .calendar-view { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important; }
+            .stats-grid { grid-template-columns: repeat(6, 1fr) !important; }
+        }
+        @media (hover: none) and (pointer: coarse) {
+            .btn, button, a { min-height: 44px !important; min-width: 44px !important; }
+            input[type="checkbox"], input[type="radio"] { width: 24px !important; height: 24px !important; }
+        }
     </style>
 </head>
 <body>
