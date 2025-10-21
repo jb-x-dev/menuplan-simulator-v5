@@ -1104,7 +1104,12 @@
         
         function displayPlan(plan, isAutomatic) {
             console.log('displayPlan called with:', plan);
-            const stats = plan.statistics;
+            currentPlan = plan;
+            
+            // Neuberechnung der Statistiken
+            recalculateStatistics();
+            
+            const stats = currentPlan.stats || plan.statistics;
             
             let html = '';
             
@@ -3201,6 +3206,364 @@
                 <p>Los planes de menú guardados se pueden seleccionar en el menú del encabezado <strong>"📅 Planes de menú..."</strong>. Seleccione un plan de la lista para cargarlo.</p>
             `;
         }
+
+// Funktion zum Neuberechnen der Statistiken nach Änderungen
+function recalculateStatistics() {
+    if (!currentPlan || !currentPlan.days) {
+        console.log('Kein Plan vorhanden');
+        return;
+    }
+    
+    let totalCost = 0;
+    let totalPortions = 0;
+    let mainMealPortions = 0;
+    let daysCount = currentPlan.days.length;
+    
+    // Durchlaufe alle Tage
+    currentPlan.days.forEach(day => {
+        let dayCost = 0;
+        let dayPortions = 0;
+        
+        // Durchlaufe alle Mahlzeiten
+        day.menu_lines.forEach(menuLine => {
+            if (menuLine.selected_option && menuLine.quantity > 0) {
+                const cost = menuLine.selected_option.cost_per_serving || 0;
+                const quantity = menuLine.quantity;
+                
+                dayCost += cost * quantity;
+                dayPortions += quantity;
+                
+                // Prüfe ob Hauptmahlzeit (Mittagessen)
+                if (menuLine.component_name === 'Mittagessen') {
+                    mainMealPortions += quantity;
+                }
+            }
+        });
+        
+        day.total_cost = dayCost;
+        totalCost += dayCost;
+        totalPortions += dayPortions;
+    });
+    
+    // Berechne durchschnittliche Portionen pro Tag (aus Hauptmahlzeiten)
+    const portionsPerDay = daysCount > 0 ? (mainMealPortions / daysCount) : 0;
+    
+    // Berechne Gesamt-BKT
+    const overallBKT = totalPortions > 0 ? (totalCost / totalPortions) : 0;
+    
+    // Update stats object
+    currentPlan.stats = currentPlan.stats || {};
+    currentPlan.stats.total_cost = totalCost;
+    currentPlan.stats.total_portions = totalPortions;
+    currentPlan.stats.average_bkt = overallBKT;
+    currentPlan.stats.main_meal_portions = mainMealPortions;
+    currentPlan.stats.portions_per_day = portionsPerDay;
+    
+    console.log('=== Berechnungen aktualisiert ===');
+    console.log('Gesamtkosten:', totalCost.toFixed(2), '€');
+    console.log('Gesamtportionen:', totalPortions);
+    console.log('Hauptmahlzeit-Portionen:', mainMealPortions);
+    console.log('Portionen pro Tag:', portionsPerDay.toFixed(0));
+    console.log('Gesamt-BKT:', overallBKT.toFixed(2), '€');
+    
+    // Update UI
+    updateStatisticsDisplay();
+}
+
+// Funktion zum Aktualisieren der Anzeige
+function updateStatisticsDisplay() {
+    if (!currentPlan || !currentPlan.stats) return;
+    
+    const stats = currentPlan.stats;
+    
+    // Update Gesamt-BKT
+    const bktElement = document.getElementById('overallBKTDisplay');
+    if (bktElement) {
+        bktElement.textContent = stats.average_bkt.toFixed(2) + '€';
+    }
+    
+    // Update Gesamtkosten
+    const costElement = document.getElementById('totalCostDisplay');
+    if (costElement) {
+        costElement.textContent = stats.total_cost.toFixed(2) + '€';
+    }
+    
+    // Update Gesamtportionen
+    const portionsElement = document.getElementById('totalPortionsDisplay');
+    if (portionsElement) {
+        portionsElement.textContent = stats.total_portions || 0;
+    }
+    
+    // Update Portionen pro Tag
+    const perDayElement = document.getElementById('portionsPerDayDisplay');
+    if (perDayElement) {
+        perDayElement.textContent = stats.portions_per_day ? stats.portions_per_day.toFixed(0) : '-';
+    }
+}
+
+
+// Globale Variablen für Rezept-Bearbeitung
+let currentEditContext = null;
+let allRecipes = [];
+
+// Modal HTML (wird am Ende des body eingefügt)
+const recipeModalHTML = `
+<div id="recipeModal" class="modal" style="display: none;">
+    <div class="modal-content" style="background: white; margin: 5% auto; padding: 30px; border: 1px solid #D3D3D3; width: 80%; max-width: 900px; border-radius: 8px; max-height: 80vh; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin: 0; color: #4A4A4A;">Rezept auswählen</h2>
+            <button onclick="closeRecipeModal()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #808080;">&times;</button>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <input type="text" id="recipeSearch" placeholder="Rezept suchen..." style="width: 100%; padding: 10px; border: 1px solid #D3D3D3; border-radius: 4px; font-size: 14px;" oninput="filterRecipes()">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <select id="componentFilter" style="width: 100%; padding: 10px; border: 1px solid #D3D3D3; border-radius: 4px; font-size: 14px;" onchange="filterRecipes()">
+                <option value="">Alle Komponenten</option>
+                <option value="Frühstück">Frühstück</option>
+                <option value="Mittagessen">Mittagessen</option>
+                <option value="Zwischenmahlzeit">Zwischenmahlzeit</option>
+                <option value="Abendessen">Abendessen</option>
+            </select>
+        </div>
+        
+        <div id="recipeList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; max-height: 400px; overflow-y: auto;">
+            <!-- Wird dynamisch gefüllt -->
+        </div>
+        
+        <div style="margin-top: 20px; text-align: right;">
+            <button onclick="closeRecipeModal()" style="padding: 10px 20px; background: white; border: 1px solid #D3D3D3; border-radius: 4px; cursor: pointer;">Abbrechen</button>
+        </div>
+    </div>
+</div>
+`;
+
+// Modal CSS
+const recipeModalCSS = `
+.modal {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.recipe-item-card {
+    background: white;
+    border: 1px solid #D3D3D3;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.recipe-item-card:hover {
+    border-color: #87CEEB;
+    box-shadow: 0 2px 8px rgba(135, 206, 235, 0.2);
+}
+
+.recipe-item-card h4 {
+    margin: 0 0 10px 0;
+    color: #4A4A4A;
+    font-size: 16px;
+}
+
+.recipe-item-card p {
+    margin: 5px 0;
+    color: #808080;
+    font-size: 13px;
+}
+`;
+
+// Initialisierung (nach DOM-Load)
+function initRecipeEditing() {
+    // Füge Modal HTML hinzu
+    document.body.insertAdjacentHTML('beforeend', recipeModalHTML);
+    
+    // Füge CSS hinzu
+    const style = document.createElement('style');
+    style.textContent = recipeModalCSS;
+    document.head.appendChild(style);
+    
+    // Lade alle Rezepte
+    loadAllRecipes();
+}
+
+// Lade alle Rezepte
+function loadAllRecipes() {
+    fetch('/api/recipes')
+        .then(response => response.json())
+        .then(data => {
+            allRecipes = data.recipes || data;
+            console.log('Rezepte geladen:', allRecipes.length);
+        })
+        .catch(error => {
+            console.error('Fehler beim Laden der Rezepte:', error);
+        });
+}
+
+// Rezept ändern
+function changeRecipe(dayIdx, mlIdx) {
+    currentEditContext = { dayIdx, mlIdx, action: 'change' };
+    openRecipeModal();
+}
+
+// Rezept hinzufügen
+function addRecipe(dayIdx, componentName) {
+    currentEditContext = { dayIdx, componentName, action: 'add' };
+    openRecipeModal();
+}
+
+// Rezept entfernen
+function removeRecipe(dayIdx, mlIdx) {
+    if (!confirm('Rezept wirklich entfernen?')) {
+        return;
+    }
+    
+    // Entferne Rezept aus Plan
+    currentPlan.days[dayIdx].menu_lines.splice(mlIdx, 1);
+    
+    // Neuberechnung und Anzeige
+    recalculateStatistics();
+    displayPlan(currentPlan, currentMode === 'auto');
+}
+
+// Modal öffnen
+function openRecipeModal() {
+    const modal = document.getElementById('recipeModal');
+    if (!modal) {
+        console.error('Modal nicht gefunden');
+        return;
+    }
+    
+    // Setze Filter zurück
+    document.getElementById('recipeSearch').value = '';
+    document.getElementById('componentFilter').value = '';
+    
+    // Zeige alle Rezepte
+    filterRecipes();
+    
+    // Zeige Modal
+    modal.style.display = 'block';
+}
+
+// Modal schließen
+function closeRecipeModal() {
+    const modal = document.getElementById('recipeModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+    currentEditContext = null;
+}
+
+// Rezepte filtern
+function filterRecipes() {
+    const searchTerm = document.getElementById('recipeSearch').value.toLowerCase();
+    const componentFilter = document.getElementById('componentFilter').value;
+    
+    let filtered = allRecipes;
+    
+    // Filter nach Suchbegriff
+    if (searchTerm) {
+        filtered = filtered.filter(recipe => 
+            recipe.name.toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    // Filter nach Komponente
+    if (componentFilter) {
+        filtered = filtered.filter(recipe => 
+            recipe.component_name === componentFilter
+        );
+    }
+    
+    // Zeige gefilterte Rezepte
+    renderRecipeList(filtered);
+}
+
+// Rezeptliste rendern
+function renderRecipeList(recipes) {
+    const listElement = document.getElementById('recipeList');
+    if (!listElement) return;
+    
+    if (recipes.length === 0) {
+        listElement.innerHTML = '<p style="text-align: center; color: #808080; padding: 20px;">Keine Rezepte gefunden</p>';
+        return;
+    }
+    
+    listElement.innerHTML = recipes.map(recipe => `
+        <div class="recipe-item-card" onclick="selectRecipe(${recipe.id})">
+            <h4>${recipe.name}</h4>
+            <p>📋 ${recipe.component_name || 'Unbekannt'}</p>
+            <p>💰 ${(recipe.cost_per_serving || 0).toFixed(2)}€</p>
+            ${recipe.diet_form ? `<p>🥗 ${recipe.diet_form}</p>` : ''}
+        </div>
+    `).join('');
+}
+
+// Rezept auswählen
+function selectRecipe(recipeId) {
+    if (!currentEditContext) {
+        console.error('Kein Edit-Kontext vorhanden');
+        return;
+    }
+    
+    // Finde Rezept
+    const recipe = allRecipes.find(r => r.id === recipeId);
+    if (!recipe) {
+        console.error('Rezept nicht gefunden:', recipeId);
+        return;
+    }
+    
+    const { dayIdx, mlIdx, componentName, action } = currentEditContext;
+    
+    if (action === 'change') {
+        // Ersetze bestehendes Rezept
+        const menuLine = currentPlan.days[dayIdx].menu_lines[mlIdx];
+        menuLine.selected_option = recipe;
+        menuLine.recipe_id = recipe.id;
+        menuLine.recipe_name = recipe.name;
+        
+    } else if (action === 'add') {
+        // Füge neues Rezept hinzu
+        const newMenuLine = {
+            component_name: componentName,
+            selected_option: recipe,
+            recipe_id: recipe.id,
+            recipe_name: recipe.name,
+            quantity: 50, // Standard-Menge
+            alternatives: []
+        };
+        
+        currentPlan.days[dayIdx].menu_lines.push(newMenuLine);
+    }
+    
+    // Schließe Modal
+    closeRecipeModal();
+    
+    // Neuberechnung und Anzeige
+    recalculateStatistics();
+    displayPlan(currentPlan, currentMode === 'auto');
+}
+
+// Click außerhalb des Modals schließt es
+window.onclick = function(event) {
+    const modal = document.getElementById('recipeModal');
+    if (event.target === modal) {
+        closeRecipeModal();
+    }
+}
+
+
+// Initialisiere Rezept-Bearbeitung nach DOM-Load
+document.addEventListener('DOMContentLoaded', function() {
+    initRecipeEditing();
+});
+
     </script>
 </body>
 </html>

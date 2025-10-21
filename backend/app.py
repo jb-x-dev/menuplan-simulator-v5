@@ -692,6 +692,65 @@ def create_order():
     
     except Exception as e:
         import traceback
+
+# Add this to backend/app.py
+
+@app.route('/api/statistics/recipe-usage')
+def get_recipe_usage():
+    """
+    Gibt Statistiken über Rezept-Verwendung zurück
+    """
+    try:
+        # Lade gespeicherte Menüpläne
+        menu_plans_file = 'data/menu_plans.json'
+        if not os.path.exists(menu_plans_file):
+            return jsonify({'recipes': []})
+        
+        with open(menu_plans_file, 'r', encoding='utf-8') as f:
+            menu_plans = json.load(f)
+        
+        # Zähle Rezept-Verwendung
+        recipe_usage = {}
+        
+        for plan in menu_plans:
+            plan_name = plan['name']
+            plan_date = plan.get('created_at', '')
+            
+            # Durchlaufe alle Tage und Mahlzeiten
+            for day in plan.get('plan', {}).get('days', []):
+                for menu_line in day.get('menu_lines', []):
+                    # Prüfe ob selected_option vorhanden
+                    if menu_line.get('selected_option'):
+                        recipe = menu_line['selected_option']
+                        recipe_id = recipe.get('id')
+                        recipe_name = recipe.get('name', 'Unbekannt')
+                        
+                        if recipe_id:
+                            if recipe_id not in recipe_usage:
+                                recipe_usage[recipe_id] = {
+                                    'id': recipe_id,
+                                    'name': recipe_name,
+                                    'usage_count': 0,
+                                    'menu_plans': []
+                                }
+                            
+                            # Prüfe ob Plan schon gezählt wurde
+                            if not any(p['name'] == plan_name for p in recipe_usage[recipe_id]['menu_plans']):
+                                recipe_usage[recipe_id]['usage_count'] += 1
+                                recipe_usage[recipe_id]['menu_plans'].append({
+                                    'name': plan_name,
+                                    'date': plan_date
+                                })
+        
+        # Sortiere nach Verwendung (absteigend)
+        recipes = sorted(recipe_usage.values(), key=lambda x: x['usage_count'], reverse=True)
+        
+        return jsonify({'recipes': recipes})
+    
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
         traceback.print_exc()
         return jsonify({'error': str(e)}), 500
 

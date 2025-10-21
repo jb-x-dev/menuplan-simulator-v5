@@ -5,189 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistiken & Analysen - Menüplansimulator</title>
     <style>
-        * {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: white;
-            min-height: 100vh;
-            padding: 20px;
         }
         
         .container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 30px;
         }
         
         .header {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-bottom: 30px;
         }
         
         .header h1 {
-            color: #87CEEB;
-            font-size: 32px;
-        }
-        
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            background: #5a6268;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .card h2 {
+            margin: 0;
             color: #4A4A4A;
-            font-size: 20px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #87CEEB;
         }
         
-        .placeholder {
-            background: #f8f9fa;
-            border: 2px dashed #ddd;
+        .nav-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .nav-home a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #D3D3D3;
+            color: #4A4A4A;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        .nav-home a:hover {
+            border-color: #87CEEB;
+            color: #87CEEB;
+        }
+        
+        .statistics-section {
+            background: white;
+            border: 1px solid #D3D3D3;
             border-radius: 8px;
-            padding: 40px;
-            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #D3D3D3;
+        }
+        
+        th {
+            background: #F8F9FA;
+            font-weight: 600;
+            color: #4A4A4A;
+        }
+        
+        tr:hover {
+            background: #F8F9FA;
+        }
+        
+        .usage-count {
+            font-weight: bold;
+            color: #87CEEB;
+            font-size: 18px;
+        }
+        
+        .menu-plans-list {
+            font-size: 0.9em;
             color: #808080;
         }
         
-        .placeholder-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        
-        .placeholder-text {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        
-        .placeholder-subtext {
-            font-size: 14px;
-            color: #999;
-        }
-
-        /* Responsive Design - Mobile First */
-        @media (max-width: 767px) {
-            .container { padding: 10px !important; max-width: 100% !important; }
-            .header { padding: 15px !important; flex-direction: column !important; gap: 10px !important; }
-            .header h1 { font-size: 20px !important; }
-            .card { padding: 15px !important; margin-bottom: 15px !important; }
-            .card h2 { font-size: 18px !important; }
-            .btn { width: 100% !important; margin-bottom: 8px !important; }
-            .actions { flex-direction: column !important; }
-            .grid, .calendar-view, .stats-grid { grid-template-columns: 1fr !important; }
-            table { font-size: 12px !important; }
-            th, td { padding: 8px 4px !important; }
-            .nav-home { position: static !important; margin-bottom: 10px !important; }
-            .nav-home a { display: block !important; text-align: center !important; }
-        }
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .container { padding: 15px !important; max-width: 95% !important; }
-            .grid, .calendar-view { grid-template-columns: repeat(2, 1fr) !important; }
-            .stats-grid { grid-template-columns: repeat(3, 1fr) !important; }
-        }
-        @media (min-width: 1025px) {
-            .container { max-width: 1600px !important; }
-            .grid { grid-template-columns: repeat(3, 1fr) !important; }
-            .calendar-view { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important; }
-            .stats-grid { grid-template-columns: repeat(6, 1fr) !important; }
-        }
-        @media (hover: none) and (pointer: coarse) {
-            .btn, button, a { min-height: 44px !important; min-width: 44px !important; }
-            input[type="checkbox"], input[type="radio"] { width: 24px !important; height: 24px !important; }
-        }
-    </style>
-<style>
-        .nav-home { position: fixed; top: 20px; left: 20px; z-index: 1000; }
-        .nav-home a { padding: 10px 20px; background: white; border: 1px solid #D3D3D3; border-radius: 6px; text-decoration: none; color: #4A4A4A; font-size: 14px; transition: all 0.2s; display: inline-block; }
-        .nav-home a:hover { border-color: #87CEEB; color: #87CEEB; }
-
-        /* Responsive Design - Mobile First */
-        @media (max-width: 767px) {
-            .container { padding: 10px !important; max-width: 100% !important; }
-            .header { padding: 15px !important; flex-direction: column !important; gap: 10px !important; }
-            .header h1 { font-size: 20px !important; }
-            .card { padding: 15px !important; margin-bottom: 15px !important; }
-            .card h2 { font-size: 18px !important; }
-            .btn { width: 100% !important; margin-bottom: 8px !important; }
-            .actions { flex-direction: column !important; }
-            .grid, .calendar-view, .stats-grid { grid-template-columns: 1fr !important; }
-            table { font-size: 12px !important; }
-            th, td { padding: 8px 4px !important; }
-            .nav-home { position: static !important; margin-bottom: 10px !important; }
-            .nav-home a { display: block !important; text-align: center !important; }
-        }
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .container { padding: 15px !important; max-width: 95% !important; }
-            .grid, .calendar-view { grid-template-columns: repeat(2, 1fr) !important; }
-            .stats-grid { grid-template-columns: repeat(3, 1fr) !important; }
-        }
-        @media (min-width: 1025px) {
-            .container { max-width: 1600px !important; }
-            .grid { grid-template-columns: repeat(3, 1fr) !important; }
-            .calendar-view { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important; }
-            .stats-grid { grid-template-columns: repeat(6, 1fr) !important; }
-        }
-        @media (hover: none) and (pointer: coarse) {
-            .btn, button, a { min-height: 44px !important; min-width: 44px !important; }
-            input[type="checkbox"], input[type="radio"] { width: 24px !important; height: 24px !important; }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #808080;
         }
     </style>
 </head>
 <body>
-    <div class="nav-home"><a href="landing.html">🏠 Startseite</a></div>
+    <div class="nav-home">
+        <a href="landing.html">🏠 Startseite</a>
+    </div>
+    
     <div class="container">
         <div class="header">
             <h1>📊 Statistiken & Analysen</h1>
-            <a href="landing.html" class="btn btn-secondary">← Zurück zur Übersicht</a>
         </div>
         
-        <div class="card">
-            <h2>Modul in Entwicklung</h2>
-            <div class="placeholder">
-                <div class="placeholder-icon">🚧</div>
-                <div class="placeholder-text">Dieses Modul befindet sich derzeit in Entwicklung</div>
-                <div class="placeholder-subtext">
-                    Geplante Features: Kostenanalysen, Beliebtheitstrends, Ernährungsformen-Verteilung, 
-                    Saisonalitäts-Auswertungen und mehr.
-                </div>
-            </div>
+        <div class="statistics-section">
+            <h2>Rezept-Verwendung in Menüplänen</h2>
+            <div id="loading" class="loading">Lade Statistiken...</div>
+            <table id="recipeUsageTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Rezept</th>
+                        <th style="text-align: center;">Verwendungen</th>
+                        <th>Menüpläne</th>
+                    </tr>
+                </thead>
+                <tbody id="recipeUsageBody">
+                    <!-- Wird dynamisch gefüllt -->
+                </tbody>
+            </table>
         </div>
     </div>
+    
+    <script>
+        // Lade Statistiken beim Seitenaufruf
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRecipeUsage();
+        });
+        
+        function loadRecipeUsage() {
+            fetch('/api/statistics/recipe-usage')
+                .then(response => response.json())
+                .then(data => {
+                    displayRecipeUsage(data.recipes);
+                })
+                .catch(error => {
+                    console.error('Fehler beim Laden der Statistiken:', error);
+                    document.getElementById('loading').textContent = 'Fehler beim Laden der Statistiken';
+                });
+        }
+        
+        function displayRecipeUsage(recipes) {
+            const tbody = document.getElementById('recipeUsageBody');
+            tbody.innerHTML = '';
+            
+            if (recipes.length === 0) {
+                document.getElementById('loading').textContent = 'Keine Daten verfügbar. Erstellen Sie zunächst Menüpläne.';
+                return;
+            }
+            
+            recipes.forEach(recipe => {
+                const row = document.createElement('tr');
+                
+                // Rezeptname
+                const nameCell = document.createElement('td');
+                nameCell.textContent = recipe.name;
+                row.appendChild(nameCell);
+                
+                // Verwendungen
+                const countCell = document.createElement('td');
+                countCell.className = 'usage-count';
+                countCell.style.textAlign = 'center';
+                countCell.textContent = recipe.usage_count;
+                row.appendChild(countCell);
+                
+                // Menüpläne
+                const plansCell = document.createElement('td');
+                plansCell.className = 'menu-plans-list';
+                const planNames = recipe.menu_plans.map(p => p.name).join(', ');
+                plansCell.textContent = planNames;
+                row.appendChild(plansCell);
+                
+                tbody.appendChild(row);
+            });
+            
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('recipeUsageTable').style.display = 'table';
+        }
+    </script>
 </body>
 </html>
-
