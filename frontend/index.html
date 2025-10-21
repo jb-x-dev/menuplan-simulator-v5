@@ -45,7 +45,7 @@
         
         .mode-btn {
             padding: 10px 20px;
-            border: 2px solid #667eea;
+            border: 2px solid #D3D3D3;
             background: white;
             color: #667eea;
             border-radius: 6px;
@@ -126,19 +126,20 @@
         .btn {
             width: 100%;
             padding: 12px;
-            background: white; border: 1px solid #D3D3D3;
-            color: white;
-            border: none;
+            background: white;
+            color: #4A4A4A;
+            border: 2px solid #D3D3D3;
             border-radius: 6px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
             margin-bottom: 10px;
         }
         
         .btn:hover {
-            background: #5568d3;
+            border-color: #87CEEB;
+            color: #87CEEB;
         }
         
         .btn:disabled {
@@ -298,7 +299,7 @@
         .portion-btn {
             width: 32px;
             height: 32px;
-            border: 2px solid #667eea;
+            border: 2px solid #D3D3D3;
             background: white;
             color: #667eea;
             font-size: 18px;
@@ -482,12 +483,12 @@
         
         .recipe-option:hover {
             background: #e9ecef;
-            border-color: #667eea;
+            border-color: #D3D3D3;
         }
         
         .recipe-option.selected {
             background: #e7f3ff;
-            border-color: #667eea;
+            border-color: #D3D3D3;
         }
         
         .recipe-option-header {
@@ -611,10 +612,10 @@
                     <p>Automatische und manuelle Menüplanerstellung</p>
                 </div>
                 <div style="display: flex; gap: 10px; align-items: center;">
-                    <select id="headerOrderListSelect" onchange="loadOrderListFromHeader(this.value)" style="padding: 10px 16px; border: 2px solid #667eea; border-radius: 6px; font-size: 14px; background: white; cursor: pointer; font-weight: 500;">
+                    <select id="headerOrderListSelect" onchange="loadOrderListFromHeader(this.value)" style="padding: 10px 16px; border: 2px solid #D3D3D3; border-radius: 6px; font-size: 14px; background: white; cursor: pointer; font-weight: 500;">
                         <option value="">📋 Bestelllisten...</option>
                     </select>
-                    <select id="headerMealPlanSelect" onchange="loadMealPlanFromHeader(this.value)" style="padding: 10px 16px; border: 2px solid #667eea; border-radius: 6px; font-size: 14px; background: white; cursor: pointer; font-weight: 500;">
+                    <select id="headerMealPlanSelect" onchange="loadMealPlanFromHeader(this.value)" style="padding: 10px 16px; border: 2px solid #D3D3D3; border-radius: 6px; font-size: 14px; background: white; cursor: pointer; font-weight: 500;">
                         <option value="">📅 Menüpläne...</option>
                     </select>
                     <button onclick="showSettings()" style="padding: 10px 16px; background: #6c757d; color: white; border: 2px solid #6c757d; border-radius: 6px; font-weight: 500; font-size: 14px; cursor: pointer;">⚙️ Einstellungen</button>
@@ -721,7 +722,7 @@
                     <h3>📊 Portionen (Bestellmenge)</h3>
                     <div style="margin-bottom: 15px;">
                         <label style="display: block; margin-bottom: 5px; font-weight: bold;">Globale Menge:</label>
-                        <input type="number" id="globalQuantity" min="0" value="0" style="width: 100%; padding: 8px; border: 2px solid #667eea; border-radius: 5px; font-size: 14px; margin-bottom: 10px;">
+                        <input type="number" id="globalQuantity" min="0" value="0" style="width: 100%; padding: 8px; border: 2px solid #D3D3D3; border-radius: 5px; font-size: 14px; margin-bottom: 10px;">
                         
                         <div style="margin-bottom: 10px;">
                             <label style="display: block; margin-bottom: 5px; font-weight: bold;">Auswahlmodus:</label>
@@ -757,7 +758,7 @@
                     <h3>📜 Bestelllisten</h3>
                     <div style="margin-bottom: 10px;">
                         <label style="display: block; margin-bottom: 5px; font-weight: bold;">Bestellliste auswählen:</label>
-                        <select id="orderListDropdown" style="width: 100%; padding: 8px; border: 2px solid #667eea; border-radius: 5px; font-size: 14px;">
+                        <select id="orderListDropdown" style="width: 100%; padding: 8px; border: 2px solid #D3D3D3; border-radius: 5px; font-size: 14px;">
                             <option value="">-- Bestellliste auswählen --</option>
                         </select>
                     </div>
@@ -783,7 +784,7 @@
                 <div id="customerPDFSection" style="display: none; margin-top: 10px;">
                     <label style="display: block; margin-bottom: 5px; font-weight: bold;">📄 Wochenplan für Abnehmer:</label>
                     <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                        <select id="pdfOrientation" style="padding: 8px; border: 2px solid #667eea; border-radius: 5px; font-size: 14px; flex: 1; min-width: 200px;">
+                        <select id="pdfOrientation" style="padding: 8px; border: 2px solid #D3D3D3; border-radius: 5px; font-size: 14px; flex: 1; min-width: 200px;">
                             <option value="portrait">📄 Hochkant (Mahlzeiten als Spalten)</option>
                             <option value="landscape">📄 Querformat (Tage als Spalten)</option>
                         </select>
@@ -2745,7 +2746,7 @@
                 html += `
                     <div style="border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; margin-bottom: 10px; background: white;">
                         <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
-                            <input type="text" value="${meal.name}" onchange="updateMealName(${i}, this.value)" style="flex: 1; padding: 8px; border: 2px solid #667eea; border-radius: 5px; font-size: 14px;" placeholder="Mahlzeit-Name">
+                            <input type="text" value="${meal.name}" onchange="updateMealName(${i}, this.value)" style="flex: 1; padding: 8px; border: 2px solid #D3D3D3; border-radius: 5px; font-size: 14px;" placeholder="Mahlzeit-Name">
                             <label style="display: flex; align-items: center; gap: 5px; white-space: nowrap;">
                                 <input type="checkbox" ${meal.isMainMeal ? 'checked' : ''} onchange="setMainMeal(${i}, this.checked)">
                                 <span style="font-weight: bold; color: #667eea;">⭐ Hauptmahlzeit</span>
