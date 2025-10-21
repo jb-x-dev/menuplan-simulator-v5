@@ -698,7 +698,9 @@
         }
         
         function showRecipeInfo(recipeId) {
-            const recipe = allRecipes.find(r => r.id === recipeId || r.recipe_id === recipeId);
+            // Konvertiere zu Number falls String
+            const numId = parseInt(recipeId);
+            const recipe = allRecipes.find(r => r.id == numId || r.recipe_id == numId || r.id == recipeId || r.recipe_id == recipeId);
             
             if (!recipe) {
                 alert('Rezept nicht gefunden');
