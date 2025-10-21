@@ -5,59 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beschaffungsauflösung - Menüplansimulator</title>
     <style>
-        * {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: white;
-            min-height: 100vh;
-            padding: 20px;
-            color: #4A4A4A;
         }
         
         .container {
             max-width: 1600px;
             margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .nav-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .nav-home a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #D3D3D3;
+            color: #4A4A4A;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        .nav-home a:hover {
+            border-color: #87CEEB;
+            color: #87CEEB;
         }
         
         .header {
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: #4A4A4A;
+        }
+        
+        .section {
             background: white;
-            border: 1px solid #D3D3D3;
+            border: 2px solid #D3D3D3;
             border-radius: 8px;
-            padding: 25px 30px;
+            padding: 20px;
             margin-bottom: 20px;
+        }
+        
+        .section h2 {
+            margin-top: 0;
+            color: #4A4A4A;
+            border-bottom: 2px solid #D3D3D3;
+            padding-bottom: 10px;
+        }
+        
+        .menu-plan-card {
+            background: white;
+            border: 2px solid #D3D3D3;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .menu-plan-card:hover {
+            border-color: #87CEEB;
+        }
+        
+        .menu-plan-card.selected {
+            border-color: #87CEEB;
+            background: #F0F8FF;
+        }
+        
+        .day-section {
+            margin: 15px 0;
+            padding: 15px;
+            background: #F8F9FA;
+            border: 2px solid #D3D3D3;
+            border-radius: 6px;
+        }
+        
+        .day-header {
+            font-weight: 600;
+            font-size: 16px;
+            color: #4A4A4A;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .header h1 {
-            font-size: 28px;
-            font-weight: 300;
+        .recipe-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border: 1px solid #D3D3D3;
+            border-radius: 4px;
+        }
+        
+        .recipe-name {
+            flex: 1;
+            font-weight: 500;
             color: #4A4A4A;
         }
         
-        .header h1::before {
-            content: "📦 ";
+        .recipe-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .info-btn {
+            padding: 5px 10px;
+            background: white;
+            border: 2px solid #D3D3D3;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .info-btn:hover {
+            border-color: #87CEEB;
+            color: #87CEEB;
+        }
+        
+        .summary-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .summary-item {
+            background: white;
+            padding: 15px;
+            border: 2px solid #D3D3D3;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .summary-label {
+            font-size: 12px;
             color: #808080;
+            margin-bottom: 5px;
+        }
+        
+        .summary-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #4A4A4A;
+        }
+        
+        .component-day {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border: 2px solid #D3D3D3;
+            border-radius: 6px;
+        }
+        
+        .component-day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .component-day-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: #4A4A4A;
+        }
+        
+        .day-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .component-list {
+            margin-top: 10px;
+        }
+        
+        .component-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            margin: 3px 0;
+            background: #F8F9FA;
+            border-radius: 4px;
         }
         
         .btn {
-            padding: 10px 20px;
-            border: 1px solid #D3D3D3;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 400;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            display: inline-block;
+            padding: 12px 24px;
             background: white;
+            border: 2px solid #D3D3D3;
             color: #4A4A4A;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
         }
         
         .btn:hover {
@@ -72,697 +229,533 @@
         }
         
         .btn-primary:hover {
-            background: #6BB6D6;
-            border-color: #6BB6D6;
-            color: white;
+            background: #6BB6D9;
+            border-color: #6BB6D9;
         }
         
-        .btn-success {
-            background: #87CEEB;
-            color: white;
-            border-color: #87CEEB;
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            overflow-y: auto;
         }
         
-        .btn-success:hover {
-            background: #6BB6D6;
-            border-color: #6BB6D6;
-        }
-        
-        .btn-danger {
+        .modal-content {
             background: white;
-            color: #E74C3C;
-            border-color: #E74C3C;
-        }
-        
-        .btn-danger:hover {
-            background: #E74C3C;
-            color: white;
-        }
-        
-        .btn-small {
-            padding: 6px 12px;
-            font-size: 12px;
-        }
-        
-        .card {
-            background: white;
-            border: 1px solid #D3D3D3;
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 800px;
             border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 20px;
+            border: 2px solid #D3D3D3;
         }
         
-        .card h2 {
-            font-size: 20px;
-            font-weight: 400;
-            color: #4A4A4A;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #D3D3D3;
-        }
-        
-        .plans-list {
-            margin-bottom: 20px;
-        }
-        
-        .plan-item {
-            background: white;
-            padding: 15px;
-            border: 1px solid #D3D3D3;
-            border-radius: 6px;
-            margin-bottom: 10px;
+        .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #D3D3D3;
+            padding-bottom: 15px;
         }
         
-        .plan-item input[type="checkbox"] {
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
+        .close-btn {
+            font-size: 28px;
+            font-weight: bold;
+            color: #808080;
             cursor: pointer;
         }
         
-        .plan-info {
-            flex: 1;
-        }
-        
-        .plan-name {
-            font-weight: 400;
+        .close-btn:hover {
             color: #4A4A4A;
-            margin-bottom: 4px;
         }
         
-        .plan-meta {
-            font-size: 12px;
-            color: #808080;
-            font-weight: 300;
-        }
-        
-        .status-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 400;
-            background: #87CEEB;
-            color: white;
-            margin-right: 8px;
-        }
-        
-        .loaded-plans {
-            margin-top: 20px;
-        }
-        
-        .loaded-plan-item {
-            background: #FFFEF0;
-            padding: 15px;
+        .order-preview {
+            background: #F8F9FA;
+            padding: 20px;
             border: 2px solid #D3D3D3;
             border-radius: 6px;
-            margin-bottom: 10px;
+            margin-top: 20px;
         }
         
-        .loaded-plan-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
         }
         
-        .loaded-plan-title {
-            font-weight: 400;
-            color: #4A4A4A;
-        }
-        
-        .loaded-plan-actions {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .loaded-plan-recipes {
-            font-size: 13px;
-            color: #808080;
-            margin-top: 8px;
-            padding-top: 8px;
-            border-top: 1px solid #D3D3D3;
-        }
-        
-        .procurement-section {
-            margin-top: 30px;
-        }
-        
-        .order-day {
-            background: white;
-            border: 1px solid #D3D3D3;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .order-day-header {
-            font-size: 16px;
-            font-weight: 400;
-            color: #4A4A4A;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+        th, td {
+            padding: 10px;
+            text-align: left;
             border-bottom: 1px solid #D3D3D3;
         }
         
-        .ingredient-list {
-            display: grid;
-            gap: 10px;
-        }
-        
-        .ingredient-item {
-            background: white;
-            padding: 12px;
-            border: 1px solid #D3D3D3;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .ingredient-item input[type="checkbox"] {
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-        
-        .ingredient-info {
-            flex: 1;
-        }
-        
-        .ingredient-name {
-            font-weight: 400;
+        th {
+            background: #F8F9FA;
+            font-weight: 600;
             color: #4A4A4A;
-            margin-bottom: 2px;
-        }
-        
-        .ingredient-quantity {
-            color: #808080;
-            font-size: 13px;
-            font-weight: 300;
-        }
-        
-        .ingredient-source {
-            font-size: 11px;
-            color: #A0A0A0;
-            margin-top: 4px;
-            font-style: italic;
-        }
-        
-        .recipe-breakdown {
-            margin-left: 30px;
-            margin-top: 8px;
-            padding: 8px;
-            background: white;
-            border-left: 2px solid #87CEEB;
-            font-size: 12px;
-            color: #808080;
-        }
-        
-        .recipe-breakdown-item {
-            margin-bottom: 4px;
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 60px 40px;
-            color: #808080;
-        }
-        
-        .empty-state-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-            opacity: 0.5;
-        }
-        
-        .empty-state-text {
-            font-size: 16px;
-            font-weight: 300;
-            margin-bottom: 8px;
-        }
-        
-        .empty-state-subtext {
-            font-size: 13px;
-            font-weight: 300;
-            color: #A0A0A0;
-        }
-        
-        .actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
         }
         
         .loading {
             text-align: center;
             padding: 40px;
             color: #808080;
-            font-weight: 300;
-        }
-        
-        .toggle-btn {
-            background: none;
-            border: none;
-            color: #87CEEB;
-            cursor: pointer;
-            font-size: 12px;
-            padding: 4px 8px;
-            text-decoration: underline;
-        }
-        
-        .toggle-btn:hover {
-            color: #6BB6D6;
-        }
-
-        /* Responsive Design - Mobile First */
-        @media (max-width: 767px) {
-            .container { padding: 10px !important; max-width: 100% !important; }
-            .header { padding: 15px !important; flex-direction: column !important; gap: 10px !important; }
-            .header h1 { font-size: 20px !important; }
-            .card { padding: 15px !important; margin-bottom: 15px !important; }
-            .card h2 { font-size: 18px !important; }
-            .btn { width: 100% !important; margin-bottom: 8px !important; }
-            .actions { flex-direction: column !important; }
-            .grid, .calendar-view, .stats-grid { grid-template-columns: 1fr !important; }
-            table { font-size: 12px !important; }
-            th, td { padding: 8px 4px !important; }
-            .nav-home { position: static !important; margin-bottom: 10px !important; }
-            .nav-home a { display: block !important; text-align: center !important; }
-        }
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .container { padding: 15px !important; max-width: 95% !important; }
-            .grid, .calendar-view { grid-template-columns: repeat(2, 1fr) !important; }
-            .stats-grid { grid-template-columns: repeat(3, 1fr) !important; }
-        }
-        @media (min-width: 1025px) {
-            .container { max-width: 1600px !important; }
-            .grid { grid-template-columns: repeat(3, 1fr) !important; }
-            .calendar-view { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important; }
-            .stats-grid { grid-template-columns: repeat(6, 1fr) !important; }
-        }
-        @media (hover: none) and (pointer: coarse) {
-            .btn, button, a { min-height: 44px !important; min-width: 44px !important; }
-            input[type="checkbox"], input[type="radio"] { width: 24px !important; height: 24px !important; }
         }
     </style>
 </head>
 <body>
+    <div class="nav-home">
+        <a href="landing.html">🏠 Startseite</a>
+    </div>
+    
     <div class="container">
         <div class="header">
-            <h1>Beschaffungsauflösung</h1>
-            <a href="landing.html" class="btn">← Zurück</a>
+            <h1>📦 Beschaffungsauflösung</h1>
         </div>
         
-        <!-- Aktive Menüpläne -->
-        <div class="card">
-            <h2>Aktive Menüpläne</h2>
-            <div id="plans-container" class="loading">
-                Lade aktive Menüpläne...
-            </div>
-            <div class="actions">
-                <button class="btn btn-primary" onclick="loadProcurement()">Pläne zur Beschaffung hinzufügen</button>
-            </div>
-            
-            <!-- Übernommene Pläne -->
-            <div id="loaded-plans-container" class="loaded-plans" style="display: none;">
-                <h3 style="font-size: 16px; font-weight: 400; margin-bottom: 15px; color: #4A4A4A;">
-                    Übernommene Pläne in Beschaffung
-                </h3>
-                <div id="loaded-plans-list"></div>
+        <!-- Menüplan-Auswahl -->
+        <div class="section">
+            <h2>1. Menüplan auswählen</h2>
+            <div id="menuPlansList">
+                <div class="loading">Lade aktive Menüpläne...</div>
             </div>
         </div>
         
-        <!-- Beschaffungsliste -->
-        <div id="procurement-container" style="display: none;">
-            <div class="card">
-                <h2>Beschaffungsliste nach Bestelltagen</h2>
-                <div id="procurement-list"></div>
-                <div class="actions">
-                    <button class="btn btn-success" onclick="createOrder()">Ausgewählte Komponenten bestellen</button>
+        <!-- Rezept-Übersicht -->
+        <div class="section" id="recipeOverview" style="display: none;">
+            <h2>2. Rezept-Übersicht</h2>
+            <div id="recipeDetails"></div>
+            <div class="summary-box" id="totalSummary"></div>
+        </div>
+        
+        <!-- Komponenten nach Bedarfstag -->
+        <div class="section" id="componentSection" style="display: none;">
+            <h2>3. Komponenten nach Bedarfstag</h2>
+            <div style="margin-bottom: 15px;">
+                <label style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="selectAllDays" class="day-checkbox">
+                    <span style="font-weight: 600;">Alle Tage auswählen</span>
+                </label>
+            </div>
+            <div id="componentsByDay"></div>
+            <div style="margin-top: 20px; text-align: center;">
+                <button class="btn btn-primary" onclick="generateOrderProposal()">📋 Bestellvorschlag erzeugen</button>
+            </div>
+        </div>
+        
+        <!-- Bestellvorschlag Modal -->
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="margin: 0;">📋 Bestellvorschlag</h2>
+                    <span class="close-btn" onclick="closeOrderModal()">&times;</span>
                 </div>
+                <div id="orderPreview"></div>
+                <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end;">
+                    <button class="btn" onclick="closeOrderModal()">Abbrechen</button>
+                    <button class="btn btn-primary" onclick="sendToJBX()">An jb-x übergeben</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rezept-Details Modal -->
+        <div id="recipeModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="margin: 0;" id="recipeModalTitle">Rezept-Details</h2>
+                    <span class="close-btn" onclick="closeRecipeModal()">&times;</span>
+                </div>
+                <div id="recipeModalContent"></div>
             </div>
         </div>
     </div>
     
     <script>
-        let activePlans = [];
-        let loadedPlans = [];  // Übernommene Pläne
-        let procurementData = null;
-        let recipeBreakdown = {};  // Rezept → Komponenten Mapping
+        let menuPlans = [];
+        let selectedPlan = null;
+        let allRecipes = [];
+        let componentsByDay = {};
         
-        // Lade aktive Menüpläne beim Start
-        async function loadActivePlans() {
+        // Lade Menüpläne beim Start
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMenuPlans();
+            loadAllRecipes();
+        });
+        
+        async function loadMenuPlans() {
             try {
                 const response = await fetch('/api/menu-plans?status=Aktiv');
-                const plans = await response.json();
-                
-                activePlans = plans;
-                
-                const container = document.getElementById('plans-container');
-                
-                if (plans.length === 0) {
-                    container.innerHTML = `
-                        <div class="empty-state">
-                            <div class="empty-state-icon">📭</div>
-                            <div class="empty-state-text">Keine aktiven Menüpläne gefunden</div>
-                            <div class="empty-state-subtext">
-                                Erstellen Sie einen Menüplan und setzen Sie den Status auf "Aktiv"
-                            </div>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                container.innerHTML = '<div class="plans-list"></div>';
-                const plansList = container.querySelector('.plans-list');
-                
-                plans.forEach(plan => {
-                    const planItem = document.createElement('div');
-                    planItem.className = 'plan-item';
-                    planItem.innerHTML = `
-                        <input type="checkbox" id="plan-${plan.id}" value="${plan.id}" checked>
-                        <div class="plan-info">
-                            <div class="plan-name">${plan.name}</div>
-                            <div class="plan-meta">
-                                Erstellt: ${new Date(plan.created_at).toLocaleDateString('de-DE')} | 
-                                ${plan.plan.days ? plan.plan.days.length : 0} Tage
-                            </div>
-                        </div>
-                        <span class="status-badge">${plan.status}</span>
-                    `;
-                    plansList.appendChild(planItem);
-                });
-                
-            } catch (error) {
-                console.error('Fehler beim Laden der Pläne:', error);
-                document.getElementById('plans-container').innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">⚠️</div>
-                        <div class="empty-state-text">Fehler beim Laden der Menüpläne</div>
-                    </div>
-                `;
-            }
-        }
-        
-        // Berechne Beschaffung aus ausgewählten Plänen
-        async function loadProcurement() {
-            const selectedPlanIds = Array.from(document.querySelectorAll('#plans-container input[type="checkbox"]:checked'))
-                .map(cb => parseInt(cb.value));
-            
-            if (selectedPlanIds.length === 0) {
-                alert('Bitte wählen Sie mindestens einen Menüplan aus');
-                return;
-            }
-            
-            try {
-                const response = await fetch('/api/procurement/from-plans', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        plan_ids: selectedPlanIds
-                    })
-                });
-                
                 const data = await response.json();
-                
-                if (!data.success) {
-                    alert('Fehler beim Berechnen der Beschaffung: ' + data.error);
-                    return;
-                }
-                
-                // Füge ausgewählte Pläne zu loadedPlans hinzu
-                selectedPlanIds.forEach(planId => {
-                    const plan = activePlans.find(p => p.id === planId);
-                    if (plan && !loadedPlans.find(p => p.id === planId)) {
-                        loadedPlans.push(plan);
-                    }
-                });
-                
-                procurementData = data.procurement;
-                recipeBreakdown = data.recipe_breakdown || {};
-                
-                displayLoadedPlans();
-                displayProcurement(data.procurement);
-                
+                menuPlans = data.plans || [];
+                displayMenuPlans();
             } catch (error) {
-                console.error('Fehler:', error);
-                alert('Fehler beim Berechnen der Beschaffung');
+                console.error('Fehler beim Laden der Menüpläne:', error);
+                document.getElementById('menuPlansList').innerHTML = '<p style="color: #dc3545;">Fehler beim Laden der Menüpläne</p>';
             }
         }
         
-        // Zeige übernommene Pläne an
-        function displayLoadedPlans() {
-            const container = document.getElementById('loaded-plans-container');
-            const list = document.getElementById('loaded-plans-list');
+        async function loadAllRecipes() {
+            try {
+                const response = await fetch('/api/recipes');
+                const data = await response.json();
+                allRecipes = data.recipes || data || [];
+            } catch (error) {
+                console.error('Fehler beim Laden der Rezepte:', error);
+            }
+        }
+        
+        function displayMenuPlans() {
+            const container = document.getElementById('menuPlansList');
             
-            if (loadedPlans.length === 0) {
-                container.style.display = 'none';
+            if (menuPlans.length === 0) {
+                container.innerHTML = '<p style="color: #808080;">Keine aktiven Menüpläne vorhanden. Erstellen Sie einen Menüplan im Menüplansimulator und setzen Sie den Status auf "Aktiv".</p>';
                 return;
             }
             
-            container.style.display = 'block';
-            list.innerHTML = '';
-            
-            loadedPlans.forEach(plan => {
-                const planItem = document.createElement('div');
-                planItem.className = 'loaded-plan-item';
-                
-                // Zähle Rezepte
-                let recipeCount = 0;
-                let recipeNames = [];
-                if (plan.plan && plan.plan.days) {
-                    plan.plan.days.forEach(day => {
-                        const menuItems = day.meals || day.menu_lines || [];
-                        menuItems.forEach(meal => {
-                            const recipes = meal.recipes || (meal.recipe ? [meal.recipe] : []);
-                            recipeCount += recipes.length;
-                            recipes.forEach(r => {
-                                const name = r.recipe_name || r.name || 'Unbekannt';
-                                if (!recipeNames.includes(name)) {
-                                    recipeNames.push(name);
-                                }
-                            });
-                        });
-                    });
-                }
-                
-                planItem.innerHTML = `
-                    <div class="loaded-plan-header">
-                        <div class="loaded-plan-title">${plan.name}</div>
-                        <div class="loaded-plan-actions">
-                            <button class="btn btn-small" onclick="editPlan(${plan.id})">Bearbeiten</button>
-                            <button class="btn btn-small btn-danger" onclick="removePlan(${plan.id})">Entfernen</button>
-                        </div>
-                    </div>
-                    <div class="loaded-plan-recipes">
-                        ${recipeCount} Rezepte: ${recipeNames.slice(0, 3).join(', ')}${recipeNames.length > 3 ? '...' : ''}
-                    </div>
-                `;
-                list.appendChild(planItem);
+            container.innerHTML = '';
+            menuPlans.forEach((plan, index) => {
+                const card = createMenuPlanCard(plan, index);
+                container.appendChild(card);
             });
         }
         
-        // Entferne Plan aus Beschaffung
-        function removePlan(planId) {
-            if (!confirm('Plan aus Beschaffung entfernen?')) {
-                return;
-            }
+        function createMenuPlanCard(plan, index) {
+            const card = document.createElement('div');
+            card.className = 'menu-plan-card';
+            card.onclick = () => selectMenuPlan(index);
             
-            loadedPlans = loadedPlans.filter(p => p.id !== planId);
-            displayLoadedPlans();
+            const totalRecipes = plan.plan?.days?.reduce((sum, day) => {
+                return sum + (day.menu_lines?.length || day.meals?.length || 0);
+            }, 0) || 0;
             
-            // Neu berechnen
-            if (loadedPlans.length > 0) {
-                recalculateProcurement();
-            } else {
-                document.getElementById('procurement-container').style.display = 'none';
-            }
+            card.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: 600; font-size: 18px; color: #4A4A4A;">${plan.name}</div>
+                        <div style="color: #808080; margin-top: 5px;">
+                            ${plan.plan?.days?.length || 0} Tage • ${totalRecipes} Rezepte
+                        </div>
+                    </div>
+                    <div style="color: #87CEEB; font-size: 24px;">→</div>
+                </div>
+            `;
+            
+            return card;
         }
         
-        // Bearbeite Plan (Platzhalter)
-        function editPlan(planId) {
-            alert('Bearbeiten-Funktion: Hier können Sie Portionen anpassen, Rezepte ändern, etc.');
-            // TODO: Implementiere Bearbeitungs-Dialog
+        function selectMenuPlan(index) {
+            selectedPlan = menuPlans[index];
+            
+            // Update UI
+            document.querySelectorAll('.menu-plan-card').forEach((card, i) => {
+                card.classList.toggle('selected', i === index);
+            });
+            
+            // Zeige Rezept-Übersicht
+            displayRecipeOverview();
+            
+            // Berechne Komponenten
+            calculateComponents();
         }
         
-        // Neu berechnen
-        async function recalculateProcurement() {
-            const planIds = loadedPlans.map(p => p.id);
+        function displayRecipeOverview() {
+            const section = document.getElementById('recipeOverview');
+            const details = document.getElementById('recipeDetails');
+            const summary = document.getElementById('totalSummary');
+            
+            section.style.display = 'block';
+            details.innerHTML = '';
+            
+            const plan = selectedPlan.plan;
+            const days = plan.days || [];
+            
+            let totalPortions = 0;
+            let totalCost = 0;
+            let totalDays = days.length;
+            
+            days.forEach((day, dayIdx) => {
+                const daySection = document.createElement('div');
+                daySection.className = 'day-section';
+                
+                const recipes = day.menu_lines || day.meals || [];
+                let dayPortions = 0;
+                let dayCost = 0;
+                
+                let recipesHTML = '';
+                recipes.forEach(recipe => {
+                    const portions = recipe.quantity || recipe.portions || 0;
+                    const cost = (recipe.cost_per_serving || 0) * portions;
+                    
+                    dayPortions += portions;
+                    dayCost += cost;
+                    
+                    recipesHTML += `
+                        <div class="recipe-item">
+                            <div class="recipe-name">${recipe.name || recipe.recipe_name}</div>
+                            <div class="recipe-info">
+                                <span>${portions} Portionen</span>
+                                <span>${cost.toFixed(2)} €</span>
+                                <button class="info-btn" onclick="showRecipeInfo('${recipe.recipe_id || recipe.id}')">ℹ️ Info</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                totalPortions += dayPortions;
+                totalCost += dayCost;
+                
+                const dayBKT = dayPortions > 0 ? (dayCost / dayPortions).toFixed(2) : '0.00';
+                
+                daySection.innerHTML = `
+                    <div class="day-header">
+                        <span>Tag ${dayIdx + 1} (${day.date || ''})</span>
+                        <span>${dayPortions} Portionen • ${dayCost.toFixed(2)} € • BKT: ${dayBKT} €</span>
+                    </div>
+                    ${recipesHTML}
+                `;
+                
+                details.appendChild(daySection);
+            });
+            
+            const totalBKT = totalPortions > 0 ? (totalCost / totalPortions).toFixed(2) : '0.00';
+            
+            summary.innerHTML = `
+                <div class="summary-item">
+                    <div class="summary-label">Gesamtportionen</div>
+                    <div class="summary-value">${totalPortions}</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Gesamtkosten</div>
+                    <div class="summary-value">${totalCost.toFixed(2)} €</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Gesamt-BKT</div>
+                    <div class="summary-value">${totalBKT} €</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Tage</div>
+                    <div class="summary-value">${totalDays}</div>
+                </div>
+            `;
+        }
+        
+        async function calculateComponents() {
+            const section = document.getElementById('componentSection');
+            const container = document.getElementById('componentsByDay');
+            
+            section.style.display = 'block';
+            container.innerHTML = '<div class="loading">Berechne Komponenten...</div>';
             
             try {
                 const response = await fetch('/api/procurement/from-plans', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        plan_ids: planIds
+                        plan_ids: [selectedPlan.id || selectedPlan.name]
                     })
                 });
                 
                 const data = await response.json();
+                componentsByDay = data.components_by_day || {};
                 
-                if (data.success) {
-                    procurementData = data.procurement;
-                    recipeBreakdown = data.recipe_breakdown || {};
-                    displayProcurement(data.procurement);
-                }
-                
+                displayComponentsByDay();
             } catch (error) {
-                console.error('Fehler:', error);
+                console.error('Fehler beim Berechnen der Komponenten:', error);
+                container.innerHTML = '<p style="color: #dc3545;">Fehler beim Berechnen der Komponenten</p>';
             }
         }
         
-        // Zeige Beschaffungsliste an
-        function displayProcurement(procurement) {
-            const container = document.getElementById('procurement-container');
-            const list = document.getElementById('procurement-list');
+        function displayComponentsByDay() {
+            const container = document.getElementById('componentsByDay');
+            container.innerHTML = '';
             
-            if (procurement.length === 0) {
-                list.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📭</div>
-                        <div class="empty-state-text">Keine Komponenten gefunden</div>
-                    </div>
-                `;
-                container.style.display = 'block';
+            const days = Object.keys(componentsByDay).sort();
+            
+            if (days.length === 0) {
+                container.innerHTML = '<p style="color: #808080;">Keine Komponenten gefunden</p>';
                 return;
             }
             
-            list.innerHTML = '';
-            
-            procurement.forEach(orderDay => {
+            days.forEach(day => {
+                const components = componentsByDay[day];
                 const dayDiv = document.createElement('div');
-                dayDiv.className = 'order-day';
+                dayDiv.className = 'component-day';
                 
-                const header = document.createElement('div');
-                header.className = 'order-day-header';
-                header.textContent = `Bestelltag: ${new Date(orderDay.order_date).toLocaleDateString('de-DE')}`;
-                dayDiv.appendChild(header);
-                
-                const ingredientList = document.createElement('div');
-                ingredientList.className = 'ingredient-list';
-                
-                orderDay.ingredients.forEach((ingredient, index) => {
-                    const ingredientItem = document.createElement('div');
-                    ingredientItem.className = 'ingredient-item';
-                    
-                    // Hole Rezept-Breakdown für diese Zutat
-                    const breakdown = recipeBreakdown[ingredient.name] || [];
-                    const breakdownId = `breakdown-${orderDay.order_date}-${index}`;
-                    
-                    ingredientItem.innerHTML = `
-                        <input type="checkbox" 
-                               id="ingredient-${orderDay.order_date}-${index}" 
-                               data-order-date="${orderDay.order_date}"
-                               data-ingredient='${JSON.stringify(ingredient)}'
-                               ${ingredient.ordered ? 'checked disabled' : ''}>
-                        <div class="ingredient-info">
-                            <div class="ingredient-name">${ingredient.name}</div>
-                            <div class="ingredient-quantity">
-                                ${ingredient.quantity.toFixed(2)} ${ingredient.unit}
-                                ${ingredient.ordered ? ' (bereits bestellt)' : ''}
-                            </div>
-                            ${breakdown.length > 0 ? `
-                                <button class="toggle-btn" onclick="toggleBreakdown('${breakdownId}')">
-                                    Aus ${breakdown.length} Rezept(en) →
-                                </button>
-                            ` : ''}
+                let componentsHTML = '';
+                components.forEach(comp => {
+                    componentsHTML += `
+                        <div class="component-item">
+                            <span>${comp.name}</span>
+                            <span>${comp.quantity.toFixed(2)} ${comp.unit}</span>
                         </div>
                     `;
-                    
-                    ingredientList.appendChild(ingredientItem);
-                    
-                    // Füge Breakdown hinzu (versteckt)
-                    if (breakdown.length > 0) {
-                        const breakdownDiv = document.createElement('div');
-                        breakdownDiv.id = breakdownId;
-                        breakdownDiv.className = 'recipe-breakdown';
-                        breakdownDiv.style.display = 'none';
-                        
-                        breakdown.forEach(item => {
-                            const breakdownItem = document.createElement('div');
-                            breakdownItem.className = 'recipe-breakdown-item';
-                            breakdownItem.textContent = `• ${item.recipe_name}: ${item.quantity.toFixed(2)} ${item.unit} (${item.portions} Portionen)`;
-                            breakdownDiv.appendChild(breakdownItem);
-                        });
-                        
-                        ingredientList.appendChild(breakdownDiv);
+                });
+                
+                dayDiv.innerHTML = `
+                    <div class="component-day-header">
+                        <div class="component-day-title">Bedarfstag: ${day}</div>
+                        <label>
+                            <input type="checkbox" class="day-checkbox" data-day="${day}">
+                            <span style="margin-left: 5px;">Auswählen</span>
+                        </label>
+                    </div>
+                    <div class="component-list">
+                        ${componentsHTML}
+                    </div>
+                `;
+                
+                container.appendChild(dayDiv);
+            });
+            
+            // "Alle auswählen" Funktionalität
+            document.getElementById('selectAllDays').onchange = function() {
+                document.querySelectorAll('.day-checkbox[data-day]').forEach(cb => {
+                    cb.checked = this.checked;
+                });
+            };
+        }
+        
+        function generateOrderProposal() {
+            const selectedDays = [];
+            document.querySelectorAll('.day-checkbox[data-day]:checked').forEach(cb => {
+                selectedDays.push(cb.dataset.day);
+            });
+            
+            if (selectedDays.length === 0) {
+                alert('Bitte wählen Sie mindestens einen Tag aus');
+                return;
+            }
+            
+            // Sammle Komponenten für ausgewählte Tage
+            const orderComponents = {};
+            selectedDays.forEach(day => {
+                const components = componentsByDay[day];
+                components.forEach(comp => {
+                    if (!orderComponents[comp.name]) {
+                        orderComponents[comp.name] = {
+                            name: comp.name,
+                            unit: comp.unit,
+                            quantity: 0,
+                            days: []
+                        };
                     }
+                    orderComponents[comp.name].quantity += comp.quantity;
+                    orderComponents[comp.name].days.push(day);
                 });
-                
-                dayDiv.appendChild(ingredientList);
-                list.appendChild(dayDiv);
             });
             
-            container.style.display = 'block';
+            displayOrderProposal(orderComponents, selectedDays);
         }
         
-        // Toggle Rezept-Breakdown
-        function toggleBreakdown(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.style.display = element.style.display === 'none' ? 'block' : 'none';
-            }
-        }
-        
-        // Erstelle Bestellung
-        async function createOrder() {
-            const selectedIngredients = Array.from(
-                document.querySelectorAll('#procurement-list input[type="checkbox"]:checked:not(:disabled)')
-            ).map(cb => {
-                return {
-                    order_date: cb.dataset.orderDate,
-                    ingredient: JSON.parse(cb.dataset.ingredient)
-                };
+        function displayOrderProposal(components, days) {
+            const preview = document.getElementById('orderPreview');
+            
+            let tableHTML = `
+                <h3>Ausgewählte Tage: ${days.join(', ')}</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Komponente</th>
+                            <th>Menge</th>
+                            <th>Einheit</th>
+                            <th>Bedarfstage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            Object.values(components).forEach(comp => {
+                tableHTML += `
+                    <tr>
+                        <td>${comp.name}</td>
+                        <td>${comp.quantity.toFixed(2)}</td>
+                        <td>${comp.unit}</td>
+                        <td>${comp.days.join(', ')}</td>
+                    </tr>
+                `;
             });
             
-            if (selectedIngredients.length === 0) {
-                alert('Bitte wählen Sie mindestens eine Komponente aus');
+            tableHTML += `
+                    </tbody>
+                </table>
+            `;
+            
+            preview.innerHTML = tableHTML;
+            document.getElementById('orderModal').style.display = 'block';
+        }
+        
+        function closeOrderModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+        
+        async function sendToJBX() {
+            alert('Funktion "An jb-x übergeben" wird implementiert.\n\nDer Bestellvorschlag würde jetzt an die jb-x eBusiness Suite übertragen.');
+            closeOrderModal();
+        }
+        
+        function showRecipeInfo(recipeId) {
+            const recipe = allRecipes.find(r => r.id === recipeId || r.recipe_id === recipeId);
+            
+            if (!recipe) {
+                alert('Rezept nicht gefunden');
                 return;
             }
             
-            if (!confirm(`${selectedIngredients.length} Komponenten bestellen?`)) {
-                return;
-            }
+            const modal = document.getElementById('recipeModal');
+            const title = document.getElementById('recipeModalTitle');
+            const content = document.getElementById('recipeModalContent');
             
-            try {
-                const response = await fetch('/api/procurement/order', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        items: selectedIngredients
-                    })
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    alert(`Bestellung erfolgreich erstellt! Bestellnummer: ${data.order_id}`);
-                    // Neu laden
-                    recalculateProcurement();
-                } else {
-                    alert('Fehler beim Erstellen der Bestellung: ' + data.error);
-                }
-                
-            } catch (error) {
-                console.error('Fehler:', error);
-                alert('Fehler beim Erstellen der Bestellung');
-            }
+            title.textContent = recipe.name || recipe.recipe_name;
+            
+            content.innerHTML = `
+                <div style="margin-bottom: 15px;">
+                    <strong>Beschreibung:</strong><br>
+                    ${recipe.description || 'Keine Beschreibung verfügbar'}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Kosten pro Portion:</strong> ${(recipe.cost_per_serving || 0).toFixed(2)} €
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Allergene:</strong><br>
+                    ${recipe.allergens?.join(', ') || 'Keine Angabe'}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Zusatzstoffe:</strong><br>
+                    ${recipe.additives?.join(', ') || 'Keine Angabe'}
+                </div>
+                ${recipe.ingredients ? `
+                <div>
+                    <strong>Zutaten:</strong>
+                    <ul>
+                        ${recipe.ingredients.map(ing => `<li>${ing.name}: ${ing.quantity} ${ing.unit}</li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
+            `;
+            
+            modal.style.display = 'block';
         }
         
-        // Beim Laden der Seite
-        document.addEventListener('DOMContentLoaded', () => {
-            loadActivePlans();
-        });
+        function closeRecipeModal() {
+            document.getElementById('recipeModal').style.display = 'none';
+        }
+        
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const orderModal = document.getElementById('orderModal');
+            const recipeModal = document.getElementById('recipeModal');
+            
+            if (event.target === orderModal) {
+                closeOrderModal();
+            }
+            if (event.target === recipeModal) {
+                closeRecipeModal();
+            }
+        };
     </script>
 </body>
 </html>
