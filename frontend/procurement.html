@@ -481,28 +481,60 @@
                 const daySection = document.createElement('div');
                 daySection.className = 'day-section';
                 
-                const recipes = day.menu_lines || day.meals || [];
+                const menuLines = day.menu_lines || day.meals || [];
                 let dayPortions = 0;
                 let dayCost = 0;
                 
                 let recipesHTML = '';
-                recipes.forEach(recipe => {
-                    const portions = recipe.quantity || recipe.portions || 0;
-                    const cost = (recipe.cost_per_serving || 0) * portions;
-                    
-                    dayPortions += portions;
-                    dayCost += cost;
-                    
-                    recipesHTML += `
-                        <div class="recipe-item">
-                            <div class="recipe-name">${recipe.name || recipe.recipe_name}</div>
-                            <div class="recipe-info">
-                                <span>${portions} Portionen</span>
-                                <span>${cost.toFixed(2)} €</span>
-                                <button class="info-btn" onclick="showRecipeInfo('${recipe.recipe_id || recipe.id}')">ℹ️ Info</button>
+                
+                // Verarbeite beide Strukturen: flach und verschachtelt
+                menuLines.forEach(menuLine => {
+                    // Verschachtelte Struktur: menu_lines[].recipes[].options[]
+                    if (menuLine.recipes && Array.isArray(menuLine.recipes)) {
+                        menuLine.recipes.forEach(recipeSlot => {
+                            const options = recipeSlot.options || [];
+                            const selectedIndex = recipeSlot.selected_index || 0;
+                            const recipe = options[selectedIndex];
+                            
+                            if (recipe) {
+                                const portions = recipe.quantity || recipe.portions || 0;
+                                const cost = (recipe.cost_per_serving || recipe.cost || 0) * portions;
+                                
+                                dayPortions += portions;
+                                dayCost += cost;
+                                
+                                recipesHTML += `
+                                    <div class="recipe-item">
+                                        <div class="recipe-name">${recipe.recipe_name || recipe.name}</div>
+                                        <div class="recipe-info">
+                                            <span>${portions} Portionen</span>
+                                            <span>${cost.toFixed(2)} €</span>
+                                            <button class="info-btn" onclick="showRecipeInfo('${recipe.recipe_id || recipe.id}')">\u2139\ufe0f Info</button>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        });
+                    }
+                    // Flache Struktur: menu_lines[] direkt mit Rezepten
+                    else if (menuLine.recipe_id || menuLine.id) {
+                        const portions = menuLine.quantity || menuLine.portions || 0;
+                        const cost = (menuLine.cost_per_serving || menuLine.cost || 0) * portions;
+                        
+                        dayPortions += portions;
+                        dayCost += cost;
+                        
+                        recipesHTML += `
+                            <div class="recipe-item">
+                                <div class="recipe-name">${menuLine.name || menuLine.recipe_name}</div>
+                                <div class="recipe-info">
+                                    <span>${portions} Portionen</span>
+                                    <span>${cost.toFixed(2)} €</span>
+                                    <button class="info-btn" onclick="showRecipeInfo('${menuLine.recipe_id || menuLine.id}')">\u2139\ufe0f Info</button>
+                                </div>
                             </div>
-                        </div>
-                    `;
+                        `;
+                    }
                 });
                 
                 totalPortions += dayPortions;
