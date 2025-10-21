@@ -457,7 +457,8 @@ def save_menu_plan():
         plans_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'menu_plans.json')
         if os.path.exists(plans_file):
             with open(plans_file, 'r', encoding='utf-8') as f:
-                saved_plans = json.load(f)
+                data_obj = json.load(f)
+                saved_plans = data_obj.get('plans', []) if isinstance(data_obj, dict) else data_obj
         else:
             saved_plans = []
         
@@ -476,7 +477,7 @@ def save_menu_plan():
         # Speichere Pläne
         os.makedirs(os.path.dirname(plans_file), exist_ok=True)
         with open(plans_file, 'w', encoding='utf-8') as f:
-            json.dump(saved_plans, f, ensure_ascii=False, indent=2)
+            json.dump({'plans': saved_plans}, f, ensure_ascii=False, indent=2)
         
         return jsonify({
             'success': True,
@@ -504,10 +505,11 @@ def get_menu_plans():
             saved_plans = json.load(f)
         
         # Filtere nach Status wenn angegeben
+        plans_list = saved_plans.get('plans', []) if isinstance(saved_plans, dict) else saved_plans
         if status_filter:
-            saved_plans = [p for p in saved_plans if p.get('status') == status_filter]
+            plans_list = [p for p in plans_list if p.get('status') == status_filter]
         
-        return jsonify(saved_plans)
+        return jsonify({'plans': plans_list})
     
     except Exception as e:
         import traceback
