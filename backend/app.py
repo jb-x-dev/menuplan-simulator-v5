@@ -552,10 +552,13 @@ def get_procurement_from_plans():
             return jsonify({'error': 'Keine Pläne gefunden'}), 404
         
         with open(plans_file, 'r', encoding='utf-8') as f:
-            saved_plans = json.load(f)
+            data_obj = json.load(f)
+        
+        # Handle both old and new format
+        saved_plans = data_obj.get('plans', data_obj if isinstance(data_obj, list) else [])
         
         # Filtere gewählte Pläne
-        selected_plans = [p for p in saved_plans if p['id'] in plan_ids]
+        selected_plans = [p for p in saved_plans if p.get('id') in plan_ids or p.get('name') in plan_ids]
         
         # Lade Rezeptdatenbank für Zutaten
         recipes_db = {r['id']: r for r in recipes}
@@ -576,77 +579,97 @@ def get_procurement_from_plans():
                 menu_items = day.get('meals', day.get('menu_lines', []))
                 
                 for meal in menu_items:
-                    meal_recipes = meal.get('recipes', [])
-                    if not meal_recipes and 'recipe' in meal:
-                        meal_recipes = [meal['recipe']]
-                    
-                    for recipe_data in meal_recipes:
-                        # Hole Rezept-ID
-                        recipe_id = recipe_data.get('id') or recipe_data.get('recipe_id')
-                        portions = recipe_data.get('portions') or recipe_data.get('target_count', 1)
+                    # Wenn menu_lines direkt Rezepte enthält
+                    if 'recipe_id' in meal:
+                        recipe_id = meal.get('recipe_id')
+                        portions = meal.get('quantity') or meal.get('portions', 1)
+                        recipe_data = meal
+                    else:
+                        # Verschachtelte Struktur mit recipes Array
+                        meal_recipes = meal.get('recipes', [])
+                        if not meal_recipes and 'recipe' in meal:
+                            meal_recipes = [meal['recipe']]
                         
-                        recipes_by_day[day_date].append({
-                            'recipe': recipe_data,
-                            'portions': portions
-                        })
-                        
-                        # Lade vollständige Rezeptdaten aus Datenbank
-                        full_recipe = recipes_db.get(recipe_id)
-                        if not full_recipe:
+                        if not meal_recipes:
                             continue
                         
-                        # Sammle Zutaten aus vollständigem Rezept
-                        for ingredient in full_recipe.get('ingredients', []):
-                            ing_name = ingredient.get('name')
-                            if not ing_name:
-                                continue
-                            
-                            ing_quantity = ingredient.get('quantity', 0)
-                            ing_unit = ingredient.get('unit', '')
-                            lead_time = ingredient.get('lead_time', 1)
-                            
-                            # Berechne Bestelltag (Rezept-Tag - Lead Time)
-                            from datetime import datetime, timedelta
-                            recipe_date = datetime.strptime(day_date, '%Y-%m-%d')
-                            order_date = (recipe_date - timedelta(days=lead_time)).strftime('%Y-%m-%d')
-                            
-                            if order_date not in all_ingredients:
-                                all_ingredients[order_date] = {}
-                            
-                            if ing_name not in all_ingredients[order_date]:
-                                all_ingredients[order_date][ing_name] = {
-                                    'name': ing_name,
-                                    'quantity': 0,
-                                    'unit': ing_unit,
-                                    'lead_time': lead_time,
-                                    'ordered': False
-                                }
-                            
-                            all_ingredients[order_date][ing_name]['quantity'] += ing_quantity * portions
-                            
-                            # Speichere Rezept-Breakdown
-                            if ing_name not in recipe_breakdown:
-                                recipe_breakdown[ing_name] = []
-                            
-                            recipe_breakdown[ing_name].append({
-                                'recipe_name': recipe_data.get('recipe_name') or recipe_data.get('name', 'Unbekannt'),
-                                'quantity': ing_quantity * portions,
+                        recipe_data = meal_recipes[0]  # Nehme erstes Rezept
+                        recipe_id = recipe_data.get('id') or recipe_data.get('recipe_id')
+                        portions = recipe_data.get('portions') or recipe_data.get('target_count', 1)
+                    
+                    # Für beide Fälle: Speichere Rezept-Info
+                    recipes_by_day[day_date].append({
+                        'recipe': recipe_data,
+                        'portions': portions
+                    })
+                    
+                    # Lade vollständige Rezeptdaten aus Datenbank
+                    # Konvertiere recipe_id zu int falls String
+                    try:
+                        recipe_id_int = int(recipe_id) if recipe_id else None
+                    except (ValueError, TypeError):
+                        recipe_id_int = recipe_id
+                    
+                    full_recipe = recipes_db.get(recipe_id_int)
+                    if not full_recipe:
+                        continue
+                    
+                    # Sammle Zutaten aus vollständigem Rezept
+                    for ingredient in full_recipe.get('ingredients', []):
+                        ing_name = ingredient.get('name')
+                        if not ing_name:
+                            continue
+                        
+                        ing_quantity = ingredient.get('quantity', 0)
+                        ing_unit = ingredient.get('unit', '')
+                        lead_time = ingredient.get('lead_time', 1)
+                        
+                        # Berechne Bestelltag (Rezept-Tag - Lead Time)
+                        from datetime import datetime, timedelta
+                        recipe_date = datetime.strptime(day_date, '%Y-%m-%d')
+                        order_date = (recipe_date - timedelta(days=lead_time)).strftime('%Y-%m-%d')
+                        
+                        if order_date not in all_ingredients:
+                            all_ingredients[order_date] = {}
+                        
+                        if ing_name not in all_ingredients[order_date]:
+                            all_ingredients[order_date][ing_name] = {
+                                'name': ing_name,
+                                'quantity': 0,
                                 'unit': ing_unit,
-                                'portions': portions,
-                                'day': day_date
-                            })
+                                'lead_time': lead_time,
+                                'ordered': False
+                            }
+                        
+                        all_ingredients[order_date][ing_name]['quantity'] += ing_quantity * portions
+                        
+                        # Speichere Rezept-Breakdown
+                        if ing_name not in recipe_breakdown:
+                            recipe_breakdown[ing_name] = []
+                        
+                        recipe_breakdown[ing_name].append({
+                            'recipe_name': recipe_data.get('recipe_name') or recipe_data.get('name', 'Unbekannt'),
+                            'quantity': ing_quantity * portions,
+                            'unit': ing_unit,
+                            'portions': portions,
+                            'day': day_date
+                        })
         
         # Konvertiere zu Liste
         procurement_list = []
+        components_by_day = {}
         for order_date, ingredients in sorted(all_ingredients.items()):
             procurement_list.append({
                 'order_date': order_date,
                 'ingredients': list(ingredients.values())
             })
+            # Frontend-kompatibles Format
+            components_by_day[order_date] = list(ingredients.values())
         
         return jsonify({
             'success': True,
             'procurement': procurement_list,
+            'components_by_day': components_by_day,
             'recipes_by_day': recipes_by_day,
             'recipe_breakdown': recipe_breakdown
         })
