@@ -335,11 +335,22 @@
         <!-- Komponenten nach Bedarfstag -->
         <div class="section" id="componentSection" style="display: none;">
             <h2>3. Komponenten nach Bedarfstag</h2>
-            <div style="margin-bottom: 15px;">
+            <div style="margin-bottom: 20px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
                 <label style="display: flex; align-items: center; gap: 10px;">
                     <input type="checkbox" id="selectAllDays" class="day-checkbox">
                     <span style="font-weight: 600;">Alle Tage auswählen</span>
                 </label>
+                <div style="display: flex; gap: 10px; align-items: center; margin-left: auto;">
+                    <span style="font-weight: 600; color: #4A4A4A;">Anzeige:</span>
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="radio" name="componentDisplay" value="individual" checked onchange="displayComponentsByDay()">
+                        <span>Einzeln pro Rezept</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="radio" name="componentDisplay" value="summary" onchange="displayComponentsByDay()">
+                        <span>Summe aller Rezepte</span>
+                    </label>
+                </div>
             </div>
             <div id="componentsByDay"></div>
             <div style="margin-top: 20px; text-align: center;">
@@ -484,11 +495,19 @@
                 const menuLines = day.menu_lines || day.meals || [];
                 let dayPortions = 0;
                 let dayCost = 0;
+                let dayMainMealPortions = 0;  // Nur Hauptmahlzeiten für BKT
+                let dayMainMealCost = 0;      // Nur Hauptmahlzeiten für BKT
                 
                 let recipesHTML = '';
                 
                 // Verarbeite beide Strukturen: flach und verschachtelt
                 menuLines.forEach(menuLine => {
+                    // Prüfe ob Hauptmahlzeit (isMainMeal flag oder component name)
+                    const isMainMeal = menuLine.isMainMeal || 
+                                      menuLine.name === 'Mittagessen' || 
+                                      menuLine.component === 'Mittagessen' ||
+                                      menuLine.component_name === 'Mittagessen';
+                    
                     // Verschachtelte Struktur: menu_lines[].recipes[].options[]
                     if (menuLine.recipes && Array.isArray(menuLine.recipes)) {
                         menuLine.recipes.forEach(recipeSlot => {
@@ -502,6 +521,12 @@
                                 
                                 dayPortions += portions;
                                 dayCost += cost;
+                                
+                                // Nur Hauptmahlzeiten für BKT
+                                if (isMainMeal) {
+                                    dayMainMealPortions += portions;
+                                    dayMainMealCost += cost;
+                                }
                                 
                                 recipesHTML += `
                                     <div class="recipe-item">
@@ -524,6 +549,12 @@
                         dayPortions += portions;
                         dayCost += cost;
                         
+                        // Nur Hauptmahlzeiten für BKT
+                        if (isMainMeal) {
+                            dayMainMealPortions += portions;
+                            dayMainMealCost += cost;
+                        }
+                        
                         recipesHTML += `
                             <div class="recipe-item">
                                 <div class="recipe-name">${menuLine.name || menuLine.recipe_name}</div>
@@ -540,7 +571,8 @@
                 totalPortions += dayPortions;
                 totalCost += dayCost;
                 
-                const dayBKT = dayPortions > 0 ? (dayCost / dayPortions).toFixed(2) : '0.00';
+                // BKT nur aus Hauptmahlzeiten berechnen
+                const dayBKT = dayMainMealPortions > 0 ? (dayMainMealCost / dayMainMealPortions).toFixed(2) : '0.00';
                 
                 daySection.innerHTML = `
                     <div class="day-header">
@@ -553,7 +585,40 @@
                 details.appendChild(daySection);
             });
             
-            const totalBKT = totalPortions > 0 ? (totalCost / totalPortions).toFixed(2) : '0.00';
+            // Gesamt-BKT nur aus Hauptmahlzeiten berechnen
+            let totalMainMealPortions = 0;
+            let totalMainMealCost = 0;
+            
+            days.forEach(day => {
+                const menuLines = day.menu_lines || day.meals || [];
+                menuLines.forEach(menuLine => {
+                    const isMainMeal = menuLine.isMainMeal || 
+                                      menuLine.name === 'Mittagessen' || 
+                                      menuLine.component === 'Mittagessen' ||
+                                      menuLine.component_name === 'Mittagessen';
+                    
+                    if (menuLine.recipes && Array.isArray(menuLine.recipes)) {
+                        menuLine.recipes.forEach(recipeSlot => {
+                            const options = recipeSlot.options || [];
+                            const selectedIndex = recipeSlot.selected_index || 0;
+                            const recipe = options[selectedIndex];
+                            if (recipe && isMainMeal) {
+                                const portions = recipe.quantity || recipe.portions || 0;
+                                const cost = (recipe.cost_per_serving || recipe.cost || 0) * portions;
+                                totalMainMealPortions += portions;
+                                totalMainMealCost += cost;
+                            }
+                        });
+                    } else if ((menuLine.recipe_id || menuLine.id) && isMainMeal) {
+                        const portions = menuLine.quantity || menuLine.portions || 0;
+                        const cost = (menuLine.cost_per_serving || menuLine.cost || 0) * portions;
+                        totalMainMealPortions += portions;
+                        totalMainMealCost += cost;
+                    }
+                });
+            });
+            
+            const totalBKT = totalMainMealPortions > 0 ? (totalMainMealCost / totalMainMealPortions).toFixed(2) : '0.00';
             
             summary.innerHTML = `
                 <div class="summary-item">
@@ -612,13 +677,36 @@
                 return;
             }
             
-            days.forEach(day => {
-                const components = componentsByDay[day];
-                const dayDiv = document.createElement('div');
-                dayDiv.className = 'component-day';
+            // Prüfe Anzeigemodus
+            const displayMode = document.querySelector('input[name="componentDisplay"]:checked')?.value || 'individual';
+            
+            if (displayMode === 'summary') {
+                // Summen-Ansicht: Aggregiere alle Komponenten über alle Tage
+                const aggregatedComponents = {};
+                
+                days.forEach(day => {
+                    const components = componentsByDay[day];
+                    components.forEach(comp => {
+                        const key = `${comp.name}_${comp.unit}`;
+                        if (!aggregatedComponents[key]) {
+                            aggregatedComponents[key] = {
+                                name: comp.name,
+                                quantity: 0,
+                                unit: comp.unit,
+                                days: []
+                            };
+                        }
+                        aggregatedComponents[key].quantity += comp.quantity;
+                        aggregatedComponents[key].days.push(day);
+                    });
+                });
+                
+                // Zeige aggregierte Komponenten
+                const summaryDiv = document.createElement('div');
+                summaryDiv.className = 'component-day';
                 
                 let componentsHTML = '';
-                components.forEach(comp => {
+                Object.values(aggregatedComponents).forEach(comp => {
                     componentsHTML += `
                         <div class="component-item">
                             <span>${comp.name}</span>
@@ -627,21 +715,49 @@
                     `;
                 });
                 
-                dayDiv.innerHTML = `
+                summaryDiv.innerHTML = `
                     <div class="component-day-header">
-                        <div class="component-day-title">Bedarfstag: ${day}</div>
-                        <label>
-                            <input type="checkbox" class="day-checkbox" data-day="${day}">
-                            <span style="margin-left: 5px;">Auswählen</span>
-                        </label>
+                        <div class="component-day-title">Gesamtsumme aller Komponenten</div>
                     </div>
                     <div class="component-list">
                         ${componentsHTML}
                     </div>
                 `;
                 
-                container.appendChild(dayDiv);
-            });
+                container.appendChild(summaryDiv);
+            } else {
+                // Einzeln-Ansicht: Zeige Komponenten pro Tag
+                days.forEach(day => {
+                    const components = componentsByDay[day];
+                    const dayDiv = document.createElement('div');
+                    dayDiv.className = 'component-day';
+                    
+                    let componentsHTML = '';
+                    components.forEach(comp => {
+                        componentsHTML += `
+                            <div class="component-item">
+                                <span>${comp.name}</span>
+                                <span>${comp.quantity.toFixed(2)} ${comp.unit}</span>
+                            </div>
+                        `;
+                    });
+                    
+                    dayDiv.innerHTML = `
+                        <div class="component-day-header">
+                            <div class="component-day-title">Bedarfstag: ${day}</div>
+                            <label>
+                                <input type="checkbox" class="day-checkbox" data-day="${day}">
+                                <span style="margin-left: 5px;">Auswählen</span>
+                            </label>
+                        </div>
+                        <div class="component-list">
+                            ${componentsHTML}
+                        </div>
+                    `;
+                    
+                    container.appendChild(dayDiv);
+                });
+            }
             
             // "Alle auswählen" Funktionalität
             document.getElementById('selectAllDays').onchange = function() {

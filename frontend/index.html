@@ -732,6 +732,10 @@
                                     <span>✋ Manuell (nur ausgewählte Checkboxen)</span>
                                 </label>
                                 <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 8px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;">
+                                    <input type="radio" name="selectionMode" value="all">
+                                    <span>🍽️ Alle Rezepte</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 8px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;">
                                     <input type="radio" name="selectionMode" value="cheapest">
                                     <span>💰 Günstigstes Rezept pro Gericht</span>
                                 </label>
@@ -1921,6 +1925,8 @@
         
         // Befülle Header-Dropdowns beim Laden
         window.addEventListener('DOMContentLoaded', () => {
+            loadAllSettings();  // Lade gespeicherte Einstellungen
+            renderMealSettings();  // Zeige Mahlzeiten-Einstellungen
             populateHeaderDropdowns();
         });
         
@@ -2262,6 +2268,47 @@
                                         recipeSlot.options[optIdx].quantity = globalQuantity;
                                         appliedCount++;
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if (selectionMode === 'cheapest') {
+                // Günstigstes Rezept: Finde günstigste Option pro Gericht
+                for (let dayIdx = 0; dayIdx < currentPlan.days.length; dayIdx++) {
+                    const day = currentPlan.days[dayIdx];
+                    for (let mlIdx = 0; mlIdx < day.menu_lines.length; mlIdx++) {
+                        const menuLine = day.menu_lines[mlIdx];
+                        for (let recipeIdx = 0; recipeIdx < menuLine.recipes.length; recipeIdx++) {
+                            const recipeSlot = menuLine.recipes[recipeIdx];
+                            if (recipeSlot.options && recipeSlot.options.length > 0) {
+                                let cheapestIdx = 0;
+                                let cheapestCost = recipeSlot.options[0].cost_per_serving || 0;
+                                for (let optIdx = 1; optIdx < recipeSlot.options.length; optIdx++) {
+                                    const cost = recipeSlot.options[optIdx].cost_per_serving || 0;
+                                    if (cost < cheapestCost) {
+                                        cheapestCost = cost;
+                                        cheapestIdx = optIdx;
+                                    }
+                                }
+                                recipeSlot.options[cheapestIdx].quantity = globalQuantity;
+                                appliedCount++;
+                            }
+                        }
+                    }
+                }
+            } else if (selectionMode === 'all') {
+                // Alle Rezepte: Wende Menge auf ALLE Optionen an
+                for (let dayIdx = 0; dayIdx < currentPlan.days.length; dayIdx++) {
+                    const day = currentPlan.days[dayIdx];
+                    for (let mlIdx = 0; mlIdx < day.menu_lines.length; mlIdx++) {
+                        const menuLine = day.menu_lines[mlIdx];
+                        for (let recipeIdx = 0; recipeIdx < menuLine.recipes.length; recipeIdx++) {
+                            const recipeSlot = menuLine.recipes[recipeIdx];
+                            if (recipeSlot.options) {
+                                for (let optIdx = 0; optIdx < recipeSlot.options.length; optIdx++) {
+                                    recipeSlot.options[optIdx].quantity = globalQuantity;
+                                    appliedCount++;
                                 }
                             }
                         }
@@ -2866,6 +2913,36 @@
             if (savedDefaultPortions) {
                 defaultPortions = parseInt(savedDefaultPortions);
             }
+            
+            // BKT-Einstellungen
+            const savedBktTarget = localStorage.getItem('bktTarget');
+            if (savedBktTarget) {
+                const bktInput = document.getElementById('bktTarget');
+                if (bktInput) bktInput.value = savedBktTarget;
+            }
+            
+            const savedBktTolerance = localStorage.getItem('bktTolerance');
+            if (savedBktTolerance) {
+                const tolInput = document.getElementById('bktTolerance');
+                if (tolInput) tolInput.value = savedBktTolerance;
+            }
+            
+            // Zeitraum-Einstellungen
+            const savedStartDate = localStorage.getItem('startDate');
+            if (savedStartDate) {
+                const startInput = document.getElementById('startDate');
+                if (startInput) startInput.value = savedStartDate;
+            }
+            
+            const savedEndDate = localStorage.getItem('endDate');
+            if (savedEndDate) {
+                const endInput = document.getElementById('endDate');
+                if (endInput) endInput.value = savedEndDate;
+            }
+            
+            // Rendere UI-Komponenten mit geladenen Daten
+            if (typeof renderAllergenCheckboxes === 'function') renderAllergenCheckboxes();
+            if (typeof renderDietaryCheckboxes === 'function') renderDietaryCheckboxes();
         }
         
         // Rendere Allergene-Checkboxen
@@ -2950,6 +3027,20 @@
             // Standardwerte
             defaultPortions = parseInt(document.getElementById('defaultPortions').value) || 50;
             localStorage.setItem('defaultPortions', defaultPortions.toString());
+            
+            // BKT-Einstellungen
+            const bktTarget = document.getElementById('bktTarget')?.value;
+            if (bktTarget) localStorage.setItem('bktTarget', bktTarget);
+            
+            const bktTolerance = document.getElementById('bktTolerance')?.value;
+            if (bktTolerance) localStorage.setItem('bktTolerance', bktTolerance);
+            
+            // Zeitraum-Einstellungen
+            const startDate = document.getElementById('startDate')?.value;
+            if (startDate) localStorage.setItem('startDate', startDate);
+            
+            const endDate = document.getElementById('endDate')?.value;
+            if (endDate) localStorage.setItem('endDate', endDate);
             
             alert('✅ Alle Einstellungen gespeichert!');
             closeSettings();
