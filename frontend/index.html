@@ -713,6 +713,40 @@
                     </div>
                 </div>
                 
+                <!-- Erweiterte Einstellungen (aufklappbar) -->
+                <div class="config-section">
+                    <h3 style="cursor: pointer; user-select: none; display: flex; align-items: center; gap: 8px;" onclick="toggleAdvancedSettings()">
+                        <span id="advancedSettingsIcon">▶</span> 🔧 Erweiterte Einstellungen
+                    </h3>
+                    <div id="advancedSettingsContent" style="display: none; margin-top: 15px;">
+                        
+                        <!-- Rezeptgruppen -->
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="font-size: 14px; margin-bottom: 8px; color: #667eea;">📋 Rezeptgruppen</h4>
+                            <div id="planRecipeGroupsCheckboxes" class="checkbox-group" style="max-height: 150px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 8px; border-radius: 4px;"></div>
+                        </div>
+                        
+                        <!-- Menülinien -->
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="font-size: 14px; margin-bottom: 8px; color: #667eea;">🍴 Menülinien</h4>
+                            <div id="planMenuLinesCheckboxes" class="checkbox-group" style="max-height: 150px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 8px; border-radius: 4px;"></div>
+                        </div>
+                        
+                        <!-- Garmethoden -->
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="font-size: 14px; margin-bottom: 8px; color: #667eea;">👨‍🍳 Garmethoden</h4>
+                            <div id="planCookingMethodsCheckboxes" class="checkbox-group" style="max-height: 150px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 8px; border-radius: 4px;"></div>
+                        </div>
+                        
+                        <!-- Abneigungen -->
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="font-size: 14px; margin-bottom: 8px; color: #667eea;">🚫 Abneigungen</h4>
+                            <div id="planAversionsCheckboxes" class="checkbox-group" style="max-height: 150px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 8px; border-radius: 4px;"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
                 <div class="config-section" id="quantitySection" style="display: none;">
                     <h3>📊 Portionen (Bestellmenge)</h3>
                     <div style="margin-bottom: 15px;">
@@ -874,6 +908,7 @@
                     <button class="settings-tab" onclick="switchSettingsTab('recipegroups')" id="tabRecipeGroups" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">📋 Rezeptgruppen</button>
                     <button class="settings-tab" onclick="switchSettingsTab('menulines')" id="tabMenuLines" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">🍴 Menülinien</button>
                     <button class="settings-tab" onclick="switchSettingsTab('cooking')" id="tabCooking" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">👨‍🍳 Garmethoden</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('aversions')" id="tabAversions" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">🚫 Abneigungen</button>
                     <button class="settings-tab" onclick="switchSettingsTab('defaults')" id="tabDefaults" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">⚙️ Standardwerte</button>
                 </div>
                 
@@ -965,6 +1000,13 @@
                     <div id="cookingMethodCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
                 </div>
                 
+                <!-- Tab Content: Abneigungen -->
+                <div id="tabContentAversions" class="tab-content" style="display: none;">
+                    <h3 style="margin-top: 0;">🚫 Abneigungen</h3>
+                    <p style="color: #666; margin-bottom: 15px;"><strong>Wichtig:</strong> Ausgewählte Abneigungen werden <strong>ausgeschlossen</strong>. Rezepte mit diesen Zutaten werden NICHT in den Menüplan aufgenommen.</p>
+                    <div id="aversionsCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
+                </div>
+                
                 <!-- Tab Content: Standardwerte -->
                 <div id="tabContentDefaults" class="tab-content" style="display: none;">
                     <h3 style="margin-top: 0;">⚙️ Standardwerte</h3>
@@ -1032,6 +1074,16 @@
             'Backen', 'Schmoren/Glasieren', 'Dünsten', 'Pochieren', 'Dämpfen'
         ];
         let selectedCookingMethods = ['Braten', 'Backen', 'Dünsten', 'Dämpfen'];
+        
+        // Abneigungen-Einstellungen (from SRM Portal)
+        const availableAversions = ['Schweinefleisch', 'Rindfleisch', 'Geflügel', 'Fisch', 'Meeresfrüchte'];
+        let selectedAversions = [];
+        
+        // Menüplan-spezifische Selektionen (Stufe 2)
+        let planRecipeGroups = [];  // Selektion für aktuellen Plan
+        let planMenuLines = [];  // Selektion für aktuellen Plan
+        let planCookingMethods = [];  // Selektion für aktuellen Plan
+        let planAversions = [];  // Selektion für aktuellen Plan
         
         // Standardwerte
         let defaultPortions = 50;
@@ -3132,6 +3184,7 @@
             renderRecipeGroupCheckboxes();
             renderMenuLineCheckboxes();
             renderCookingMethodCheckboxes();
+            renderAversionsCheckboxes();
             renderDefaultValues();
             document.getElementById('settingsModal').classList.add('active');
         }
@@ -3350,6 +3403,12 @@
             const savedCookingMethods = localStorage.getItem('selectedCookingMethods');
             if (savedCookingMethods) {
                 selectedCookingMethods = JSON.parse(savedCookingMethods);
+            }
+            
+            // Abneigungen
+            const savedAversions = localStorage.getItem('selectedAversions');
+            if (savedAversions) {
+                selectedAversions = JSON.parse(savedAversions);
             }
             
             // Standard-Portionen
@@ -3634,6 +3693,168 @@
             renderCookingMethodCheckboxes();
         }
         
+        // Toggle Abneigung
+        function toggleAversion(aversion, isChecked) {
+            if (isChecked) {
+                if (!selectedAversions.includes(aversion)) {
+                    selectedAversions.push(aversion);
+                }
+            } else {
+                selectedAversions = selectedAversions.filter(a => a !== aversion);
+            }
+            renderAversionsCheckboxes();
+        }
+        
+        // Rendere Abneigungen-Checkboxen (Settings)
+        function renderAversionsCheckboxes() {
+            const container = document.getElementById('aversionsCheckboxes');
+            if (!container) return;
+            
+            let html = '';
+            for (const aversion of availableAversions) {
+                const isChecked = selectedAversions.includes(aversion);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleAversion('${aversion}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${aversion}</span>
+                    </label>
+                `;
+            }
+            container.innerHTML = html;
+        }
+        
+        // Toggle Erweiterte Einstellungen
+        function toggleAdvancedSettings() {
+            const content = document.getElementById('advancedSettingsContent');
+            const icon = document.getElementById('advancedSettingsIcon');
+            
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                icon.textContent = '▼';
+                // Rendere Checkboxen beim ersten Öffnen
+                renderPlanCheckboxes();
+            } else {
+                content.style.display = 'none';
+                icon.textContent = '▶';
+            }
+        }
+        
+        // Rendere Plan-spezifische Checkboxen
+        function renderPlanCheckboxes() {
+            renderPlanRecipeGroupsCheckboxes();
+            renderPlanMenuLinesCheckboxes();
+            renderPlanCookingMethodsCheckboxes();
+            renderPlanAversionsCheckboxes();
+        }
+        
+        // Rendere Plan-Rezeptgruppen
+        function renderPlanRecipeGroupsCheckboxes() {
+            const container = document.getElementById('planRecipeGroupsCheckboxes');
+            if (!container) return;
+            
+            let html = '';
+            for (const group of selectedRecipeGroups) {
+                const isChecked = planRecipeGroups.includes(group);
+                html += `
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="planRG_${group}" ${isChecked ? 'checked' : ''} onchange="togglePlanRecipeGroup('${group}', this.checked)">
+                        <label for="planRG_${group}">${group}</label>
+                    </div>
+                `;
+            }
+            container.innerHTML = html || '<p style="color: #999; font-size: 12px;">Keine Rezeptgruppen in den Einstellungen ausgewählt</p>';
+        }
+        
+        // Rendere Plan-Menülinien
+        function renderPlanMenuLinesCheckboxes() {
+            const container = document.getElementById('planMenuLinesCheckboxes');
+            if (!container) return;
+            
+            let html = '';
+            for (const line of selectedMenuLines) {
+                const isChecked = planMenuLines.includes(line);
+                html += `
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="planML_${line}" ${isChecked ? 'checked' : ''} onchange="togglePlanMenuLine('${line}', this.checked)">
+                        <label for="planML_${line}">${line}</label>
+                    </div>
+                `;
+            }
+            container.innerHTML = html || '<p style="color: #999; font-size: 12px;">Keine Menülinien in den Einstellungen ausgewählt</p>';
+        }
+        
+        // Rendere Plan-Garmethoden
+        function renderPlanCookingMethodsCheckboxes() {
+            const container = document.getElementById('planCookingMethodsCheckboxes');
+            if (!container) return;
+            
+            let html = '';
+            for (const method of selectedCookingMethods) {
+                const isChecked = planCookingMethods.includes(method);
+                html += `
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="planCM_${method}" ${isChecked ? 'checked' : ''} onchange="togglePlanCookingMethod('${method}', this.checked)">
+                        <label for="planCM_${method}">${method}</label>
+                    </div>
+                `;
+            }
+            container.innerHTML = html || '<p style="color: #999; font-size: 12px;">Keine Garmethoden in den Einstellungen ausgewählt</p>';
+        }
+        
+        // Rendere Plan-Abneigungen
+        function renderPlanAversionsCheckboxes() {
+            const container = document.getElementById('planAversionsCheckboxes');
+            if (!container) return;
+            
+            let html = '';
+            for (const aversion of selectedAversions) {
+                const isChecked = planAversions.includes(aversion);
+                html += `
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="planAV_${aversion}" ${isChecked ? 'checked' : ''} onchange="togglePlanAversion('${aversion}', this.checked)">
+                        <label for="planAV_${aversion}">${aversion}</label>
+                    </div>
+                `;
+            }
+            container.innerHTML = html || '<p style="color: #999; font-size: 12px;">Keine Abneigungen in den Einstellungen ausgewählt</p>';
+        }
+        
+        // Toggle Plan-Rezeptgruppe
+        function togglePlanRecipeGroup(group, isChecked) {
+            if (isChecked) {
+                if (!planRecipeGroups.includes(group)) planRecipeGroups.push(group);
+            } else {
+                planRecipeGroups = planRecipeGroups.filter(g => g !== group);
+            }
+        }
+        
+        // Toggle Plan-Menülinie
+        function togglePlanMenuLine(line, isChecked) {
+            if (isChecked) {
+                if (!planMenuLines.includes(line)) planMenuLines.push(line);
+            } else {
+                planMenuLines = planMenuLines.filter(l => l !== line);
+            }
+        }
+        
+        // Toggle Plan-Garmethode
+        function togglePlanCookingMethod(method, isChecked) {
+            if (isChecked) {
+                if (!planCookingMethods.includes(method)) planCookingMethods.push(method);
+            } else {
+                planCookingMethods = planCookingMethods.filter(m => m !== method);
+            }
+        }
+        
+        // Toggle Plan-Abneigung
+        function togglePlanAversion(aversion, isChecked) {
+            if (isChecked) {
+                if (!planAversions.includes(aversion)) planAversions.push(aversion);
+            } else {
+                planAversions = planAversions.filter(a => a !== aversion);
+            }
+        }
+        
         // Speichere alle Einstellungen
         function saveAllSettings() {
             // Prüfe, ob mindestens eine Hauptmahlzeit vorhanden ist
@@ -3650,6 +3871,7 @@
             localStorage.setItem('selectedRecipeGroups', JSON.stringify(selectedRecipeGroups));
             localStorage.setItem('selectedMenuLines', JSON.stringify(selectedMenuLines));
             localStorage.setItem('selectedCookingMethods', JSON.stringify(selectedCookingMethods));
+            localStorage.setItem('selectedAversions', JSON.stringify(selectedAversions));
             
             // Standardwerte
             defaultPortions = parseInt(document.getElementById('defaultPortions').value) || 50;
