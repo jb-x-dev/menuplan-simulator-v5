@@ -635,12 +635,22 @@
                 <div class="config-section">
                     <h3>📅 Zeitraum</h3>
                     <div class="form-group">
-                        <label>Startdatum</label>
-                        <input type="date" id="startDate">
+                        <label>Jahr</label>
+                        <input type="number" id="planYear" min="2024" max="2030" style="width: 100%; padding: 8px; border: 2px solid #D3D3D3; border-radius: 6px;">
                     </div>
                     <div class="form-group">
-                        <label>Enddatum</label>
-                        <input type="date" id="endDate">
+                        <label>Start-Kalenderwoche</label>
+                        <input type="number" id="startWeek" min="1" max="53" style="width: 100%; padding: 8px; border: 2px solid #D3D3D3; border-radius: 6px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Anzahl Wochen</label>
+                        <input type="number" id="weekDuration" min="1" max="52" style="width: 100%; padding: 8px; border: 2px solid #D3D3D3; border-radius: 6px;">
+                    </div>
+                    <div class="form-group" style="background: #f0f4ff; padding: 10px; border-radius: 6px; margin-top: 10px;">
+                        <label style="font-weight: 600; color: #667eea;">Berechneter Zeitraum:</label>
+                        <div id="calculatedPeriod" style="margin-top: 5px; font-size: 14px; color: #333;">
+                            Bitte Jahr, KW und Dauer eingeben
+                        </div>
                     </div>
                 </div>
                 
@@ -891,6 +901,19 @@
                         <input type="number" id="defaultPortions" min="1" max="500" value="50" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
                         <small style="color: #666; display: block; margin-top: 5px;">Diese Menge wird beim Erzeugen des automatischen Vorschlags verwendet.</small>
                     </div>
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="weekStartDay" style="font-weight: 600; display: block; margin-bottom: 5px;">Wochenstart (für Kalenderwochen):</label>
+                        <select id="weekStartDay" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                            <option value="1">Montag</option>
+                            <option value="2">Dienstag</option>
+                            <option value="3">Mittwoch</option>
+                            <option value="4">Donnerstag</option>
+                            <option value="5">Freitag</option>
+                            <option value="6">Samstag</option>
+                            <option value="0">Sonntag</option>
+                        </select>
+                        <small style="color: #666; display: block; margin-top: 5px;">Dieser Wochentag wird als Startpunkt für die Kalenderwochen-Berechnung verwendet.</small>
+                    </div>
                 </div>
                 
                 <button class="btn btn-secondary" onclick="saveAllSettings()" style="margin-top: 20px; width: 100%;">💾 Alle Einstellungen speichern</button>
@@ -922,6 +945,7 @@
         
         // Standardwerte
         let defaultPortions = 50;
+        let weekStartDay = 1;  // 1 = Montag (ISO 8601 Standard)
         
         // Lade Mahlzeiten-Einstellungen aus localStorage
         function loadMealSettings() {
@@ -1064,10 +1088,84 @@
             updateStatusBadge();
         });
         
+        // Hilfsfunktion: Berechne Datum aus Kalenderwoche
+        function getDateFromWeek(year, week, weekStartDay) {
+            // ISO 8601: Woche 1 ist die Woche mit dem ersten Donnerstag des Jahres
+            const jan4 = new Date(year, 0, 4);
+            const jan4Day = jan4.getDay() || 7;  // Sonntag = 7 statt 0
+            const week1Monday = new Date(jan4);
+            week1Monday.setDate(jan4.getDate() - jan4Day + 1);
+            
+            // Berechne Start der gewünschten Woche (Montag)
+            const weekMonday = new Date(week1Monday);
+            weekMonday.setDate(week1Monday.getDate() + (week - 1) * 7);
+            
+            // Verschiebe auf gewünschten Wochentag
+            const targetDate = new Date(weekMonday);
+            const dayOffset = (weekStartDay === 0 ? 6 : weekStartDay - 1);  // Sonntag = 6 Tage nach Montag
+            targetDate.setDate(weekMonday.getDate() + dayOffset);
+            
+            return targetDate;
+        }
+        
+        // Hilfsfunktion: Berechne Kalenderwoche aus Datum (ISO 8601)
+        function getWeekNumber(date) {
+            const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+            const dayNum = d.getUTCDay() || 7;
+            d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+            const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+            return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+        }
+        
+        // Aktualisiere berechneten Zeitraum
+        function updateCalculatedPeriod() {
+            const year = parseInt(document.getElementById('planYear')?.value);
+            const startWeek = parseInt(document.getElementById('startWeek')?.value);
+            const duration = parseInt(document.getElementById('weekDuration')?.value);
+            
+            if (!year || !startWeek || !duration) {
+                document.getElementById('calculatedPeriod').innerHTML = 'Bitte Jahr, KW und Dauer eingeben';
+                return;
+            }
+            
+            const startDate = getDateFromWeek(year, startWeek, weekStartDay);
+            const endDate = new Date(startDate);
+            endDate.setDate(startDate.getDate() + (duration * 7) - 1);
+            
+            const endWeek = getWeekNumber(endDate);
+            const endYear = endDate.getFullYear();
+            
+            const formatDate = (d) => d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+            
+            document.getElementById('calculatedPeriod').innerHTML = `
+                <strong>KW ${startWeek}${endYear !== year ? '/' + year : ''} - KW ${endWeek}${endYear !== year ? '/' + endYear : ''}</strong><br>
+                ${formatDate(startDate)} - ${formatDate(endDate)}<br>
+                <small style="color: #666;">${duration} Woche${duration > 1 ? 'n' : ''}, ${duration * 7} Tage</small>
+            `;
+        }
+        
         function getConfig() {
+            // Berechne Start- und Enddatum aus Kalenderwochen
+            const year = parseInt(document.getElementById('planYear')?.value);
+            const startWeek = parseInt(document.getElementById('startWeek')?.value);
+            const duration = parseInt(document.getElementById('weekDuration')?.value);
+            
+            let startDate, endDate;
+            if (year && startWeek && duration) {
+                startDate = getDateFromWeek(year, startWeek, weekStartDay);
+                endDate = new Date(startDate);
+                endDate.setDate(startDate.getDate() + (duration * 7) - 1);
+            } else {
+                // Fallback auf Default-Werte
+                startDate = new Date();
+                startDate.setDate(startDate.getDate() + 14);
+                endDate = new Date(startDate);
+                endDate.setDate(endDate.getDate() + 13);
+            }
+            
             const config = {
-                start_date: document.getElementById('startDate').value,
-                end_date: document.getElementById('endDate').value,
+                start_date: startDate.toISOString().split('T')[0],
+                end_date: endDate.toISOString().split('T')[0],
                 bkt_target: parseFloat(document.getElementById('bktTarget').value),
                 bkt_tolerance: parseFloat(document.getElementById('bktTolerance').value) / 100,
                 dietary_forms: [],
@@ -2914,6 +3012,11 @@
                 defaultPortions = parseInt(savedDefaultPortions);
             }
             
+            const savedWeekStartDay = localStorage.getItem('weekStartDay');
+            if (savedWeekStartDay) {
+                weekStartDay = parseInt(savedWeekStartDay);
+            }
+            
             // BKT-Einstellungen
             const bktInput = document.getElementById('bktTarget');
             if (bktInput) {
@@ -2927,24 +3030,47 @@
                 tolInput.value = savedBktTolerance || '15';  // Default: 15%
             }
             
-            // Zeitraum-Einstellungen
-            const startInput = document.getElementById('startDate');
-            if (startInput) {
-                const savedStartDate = localStorage.getItem('startDate');
-                // Default: Heute + 14 Tage
-                const defaultStart = new Date();
-                defaultStart.setDate(defaultStart.getDate() + 14);
-                startInput.value = savedStartDate || defaultStart.toISOString().split('T')[0];
+            // Zeitraum-Einstellungen (Kalenderwochen)
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            const currentWeek = getWeekNumber(today);
+            
+            const yearInput = document.getElementById('planYear');
+            if (yearInput) {
+                const savedYear = localStorage.getItem('planYear');
+                yearInput.value = savedYear || currentYear;
             }
             
-            const endInput = document.getElementById('endDate');
-            if (endInput) {
-                const savedEndDate = localStorage.getItem('endDate');
-                // Default: Heute + 28 Tage (2 Wochen nach Start)
-                const defaultEnd = new Date();
-                defaultEnd.setDate(defaultEnd.getDate() + 28);
-                endInput.value = savedEndDate || defaultEnd.toISOString().split('T')[0];
+            const weekInput = document.getElementById('startWeek');
+            if (weekInput) {
+                const savedWeek = localStorage.getItem('startWeek');
+                weekInput.value = savedWeek || (currentWeek + 2);  // Default: 2 Wochen in der Zukunft
             }
+            
+            const durationInput = document.getElementById('weekDuration');
+            if (durationInput) {
+                const savedDuration = localStorage.getItem('weekDuration');
+                durationInput.value = savedDuration || 2;  // Default: 2 Wochen
+            }
+            
+            // Event-Listener für automatische Aktualisierung
+            ['planYear', 'startWeek', 'weekDuration'].forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.addEventListener('input', updateCalculatedPeriod);
+                    input.addEventListener('change', updateCalculatedPeriod);
+                }
+            });
+            
+            // Initiale Berechnung
+            updateCalculatedPeriod();
+            
+            // Setze Standardwerte in UI
+            const defaultPortionsInput = document.getElementById('defaultPortions');
+            if (defaultPortionsInput) defaultPortionsInput.value = defaultPortions;
+            
+            const weekStartDaySelect = document.getElementById('weekStartDay');
+            if (weekStartDaySelect) weekStartDaySelect.value = weekStartDay.toString();
             
             // Rendere UI-Komponenten mit geladenen Daten
             if (typeof renderAllergenCheckboxes === 'function') renderAllergenCheckboxes();
@@ -3034,6 +3160,9 @@
             defaultPortions = parseInt(document.getElementById('defaultPortions').value) || 50;
             localStorage.setItem('defaultPortions', defaultPortions.toString());
             
+            weekStartDay = parseInt(document.getElementById('weekStartDay').value) || 1;
+            localStorage.setItem('weekStartDay', weekStartDay.toString());
+            
             // BKT-Einstellungen
             const bktTarget = document.getElementById('bktTarget')?.value;
             if (bktTarget) localStorage.setItem('bktTarget', bktTarget);
@@ -3041,12 +3170,15 @@
             const bktTolerance = document.getElementById('bktTolerance')?.value;
             if (bktTolerance) localStorage.setItem('bktTolerance', bktTolerance);
             
-            // Zeitraum-Einstellungen
-            const startDate = document.getElementById('startDate')?.value;
-            if (startDate) localStorage.setItem('startDate', startDate);
+            // Zeitraum-Einstellungen (Kalenderwochen)
+            const planYear = document.getElementById('planYear')?.value;
+            if (planYear) localStorage.setItem('planYear', planYear);
             
-            const endDate = document.getElementById('endDate')?.value;
-            if (endDate) localStorage.setItem('endDate', endDate);
+            const startWeek = document.getElementById('startWeek')?.value;
+            if (startWeek) localStorage.setItem('startWeek', startWeek);
+            
+            const weekDuration = document.getElementById('weekDuration')?.value;
+            if (weekDuration) localStorage.setItem('weekDuration', weekDuration);
             
             alert('✅ Alle Einstellungen gespeichert!');
             closeSettings();
