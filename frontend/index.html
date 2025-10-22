@@ -668,23 +668,8 @@
                 
                 <div class="config-section">
                     <h3>🍴 Mahlzeiten</h3>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="mealBreakfast" checked>
-                            <label for="mealBreakfast">Frühstück</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="mealLunch" checked>
-                            <label for="mealLunch">Mittagessen</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="mealSnack">
-                            <label for="mealSnack">Zwischenmahlzeit</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="mealDinner">
-                            <label for="mealDinner">Abendessen</label>
-                        </div>
+                    <div class="checkbox-group" id="mealCheckboxContainer">
+                        <!-- Dynamisch generiert aus mealSettings -->
                     </div>
                 </div>
                 
@@ -3215,6 +3200,57 @@
             }
         }
         
+        // Setze Ernährungsformen-Checkboxen aus gespeicherten Einstellungen
+        function setDietaryCheckboxes() {
+            const dietCheckboxes = [
+                { id: 'dietVollkost', value: 'Vollkost' },
+                { id: 'dietVegetarisch', value: 'Vegetarisch' },
+                { id: 'dietVegan', value: 'Vegan' }
+            ];
+            
+            for (const cb of dietCheckboxes) {
+                const checkbox = document.getElementById(cb.id);
+                if (checkbox) {
+                    checkbox.checked = selectedDietaryForms.includes(cb.value);
+                }
+            }
+        }
+        
+        // Setze Allergene-Checkboxen aus gespeicherten Einstellungen
+        function setAllergenCheckboxes() {
+            const allergenCheckboxes = [
+                { id: 'allergenGluten', value: 'Gluten' },
+                { id: 'allergenMilch', value: 'Milch' },
+                { id: 'allergenEier', value: 'Eier' },
+                { id: 'allergenFisch', value: 'Fisch' }
+            ];
+            
+            for (const cb of allergenCheckboxes) {
+                const checkbox = document.getElementById(cb.id);
+                if (checkbox) {
+                    checkbox.checked = selectedAllergens.includes(cb.value);
+                }
+            }
+        }
+        
+        // Rendere Mahlzeiten-Checkboxen aus mealSettings
+        function renderMealCheckboxes() {
+            const container = document.getElementById('mealCheckboxContainer');
+            if (!container) return;
+            
+            let html = '';
+            for (const meal of mealSettings) {
+                const id = `meal_${meal.name.replace(/\s+/g, '_').toLowerCase()}`;
+                html += `
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="${id}" checked>
+                        <label for="${id}">${meal.name}</label>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+        
         // Lade alle Einstellungen aus localStorage
         function loadAllSettings() {
             // Mahlzeiten
@@ -3222,20 +3258,26 @@
             if (savedMeals) {
                 mealSettings = JSON.parse(savedMeals);
             }
+            // Rendere Checkboxen aus mealSettings
+            renderMealCheckboxes();
             
             // Allergene
             const savedAllergens = localStorage.getItem('selectedAllergens');
             if (savedAllergens) {
                 selectedAllergens = JSON.parse(savedAllergens);
             }
+            renderAllergenCheckboxes();
+            setAllergenCheckboxes();  // Setze auch Hauptseiten-Checkboxen
             
             // Ernährungsformen
             const savedDietary = localStorage.getItem('selectedDietaryForms');
             if (savedDietary) {
                 selectedDietaryForms = JSON.parse(savedDietary);
             }
+            renderDietaryCheckboxes();
+            setDietaryCheckboxes();  // Setze auch Hauptseiten-Checkboxen
             
-            // Standardwerte
+            // Standard-Portionen
             const savedDefaultPortions = localStorage.getItem('defaultPortions');
             if (savedDefaultPortions) {
                 defaultPortions = parseInt(savedDefaultPortions);

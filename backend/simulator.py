@@ -217,11 +217,10 @@ class MenuPlanSimulator:
                 min_daily += min(r.cost for r in recipes)
                 max_daily += max(r.cost for r in recipes)
         
-        # BKT ist Ziel PRO TAG
-        # Wir prüfen ob der Durchschnitt im Bereich liegt
-        # Einzelne Tage können abweichen
-        is_feasible = (min_daily <= self.config.bkt_target * 2 and 
-                       max_daily >= self.config.bkt_target * 0.5)
+        # BKT ist MAXIMUM PRO TAG
+        # Wir prüfen ob es möglich ist, unter dem BKT zu bleiben
+        # Einzelne Tage können abweichen, Durchschnitt muss unter BKT liegen
+        is_feasible = (min_daily <= self.config.bkt_max)
         
         return is_feasible, min_daily, max_daily
     
@@ -299,18 +298,23 @@ class MenuPlanSimulator:
         score = 0.0
         
         # BKT-Konformität (35%)
-        # BKT = Maximale Kosten PRO TAG (nicht Summe aller Rezepte)
-        # Einzelne Tage können abweichen, Durchschnitt muss stimmen
+        # BKT = MAXIMUM PRO TAG (nicht Ziel)
+        # Bevorzuge günstigere Rezepte, aber vermeide Überschreitung
         projected_cost = current_daily_cost + recipe.cost
         
-        # Prüfe ob wir noch im Rahmen sind
-        # Erlaubt bis zu 2x BKT pro Tag (für Flexibilität)
-        if projected_cost > self.config.bkt_target * 2:
-            bkt_score = 0.0  # Zu teuer
+        # Prüfe ob wir das Maximum überschreiten
+        if projected_cost > self.config.bkt_max:
+            bkt_score = 0.0  # Überschreitet Maximum
         else:
-            # Je näher am BKT-Ziel, desto besser
-            bkt_deviation = abs(projected_cost - self.config.bkt_target)
-            bkt_score = 1.0 - min(1.0, bkt_deviation / self.config.bkt_target)
+            # Je günstiger, desto besser (aber nicht zu billig)
+            # Optimal ist 70-90% des BKT-Targets
+            cost_ratio = projected_cost / self.config.bkt_target
+            if cost_ratio < 0.5:
+                bkt_score = 0.7  # Zu billig
+            elif cost_ratio <= 0.9:
+                bkt_score = 1.0  # Optimal
+            else:
+                bkt_score = 1.0 - (cost_ratio - 0.9) / 0.2  # Akzeptabel bis Maximum
         score += 0.35 * max(0, bkt_score)
         
         # Vielfalt (25%)
@@ -434,7 +438,12 @@ class MenuPlanSimulator:
                 meal_slot.cost for (date, ml, cf), meal_slot in plan.items() 
                 if date == d
             )
-            total_bkt_dev += abs(daily_cost - self.config.bkt_target)
+            # Penalisiere Überschreitung des Maximums stärker
+            if daily_cost > self.config.bkt_max:
+                total_bkt_dev += (daily_cost - self.config.bkt_max) * 3.0  # 3x Penalty
+            else:
+                # Bevorzuge Kosten nahe am Ziel (aber unter Maximum)
+                total_bkt_dev += abs(daily_cost - self.config.bkt_target * 0.8)
         
         avg_bkt_dev = total_bkt_dev / len(dates) if dates else 0
         
@@ -576,10 +585,10 @@ class MenuPlanSimulator:
                 'total_days': len(days),
                 'average_bkt': round(avg_daily_cost, 2),  # Durchschnitt pro Tag
                 'total_cost': round(total_cost, 2),  # Gesamtkosten über alle Tage
-                'bkt_target': self.config.bkt_target,  # Ziel pro Tag
+                'bkt_target': self.config.bkt_target,  # Maximum pro Tag
                 'bkt_min': round(self.config.bkt_min, 2),
                 'bkt_max': round(self.config.bkt_max, 2),
-                'within_budget': self.config.bkt_min <= avg_daily_cost <= self.config.bkt_max
+                'within_budget': avg_daily_cost <= self.config.bkt_max  # Durchschnitt unter Maximum
             }
         }
 
