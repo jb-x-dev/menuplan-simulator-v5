@@ -2077,6 +2077,12 @@
             loadAllSettings();  // Lade gespeicherte Einstellungen
             renderMealSettings();  // Zeige Mahlzeiten-Einstellungen
             populateHeaderDropdowns();
+            
+            // Setze Checkboxen nach vollständigem DOM-Load
+            setTimeout(() => {
+                setDietaryCheckboxes();
+                setAllergenCheckboxes();
+            }, 100);
         });
         
         // Befülle Header-Dropdowns
