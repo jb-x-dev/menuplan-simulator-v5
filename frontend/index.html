@@ -866,12 +866,15 @@
             </div>
             <div style="padding: 20px;">
                 <!-- Tabs -->
-                <div class="settings-tabs" style="display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0;">
-                    <button class="settings-tab active" onclick="switchSettingsTab('meals')" id="tabMeals" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid #667eea; font-weight: 600;">🍽️ Mahlzeiten</button>
-                    <button class="settings-tab" onclick="switchSettingsTab('runtime')" id="tabRuntime" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">📅 Laufzeiten</button>
-                    <button class="settings-tab" onclick="switchSettingsTab('allergens')" id="tabAllergens" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">🚫 Allergene</button>
-                    <button class="settings-tab" onclick="switchSettingsTab('dietary')" id="tabDietary" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">🥗 Ernährung</button>
-                    <button class="settings-tab" onclick="switchSettingsTab('defaults')" id="tabDefaults" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">⚙️ Standardwerte</button>
+                <div class="settings-tabs" style="display: flex; gap: 5px; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0; flex-wrap: wrap;">
+                    <button class="settings-tab active" onclick="switchSettingsTab('meals')" id="tabMeals" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid #667eea; font-weight: 600; font-size: 13px;">🍽️ Mahlzeiten</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('runtime')" id="tabRuntime" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">📅 Laufzeiten</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('allergens')" id="tabAllergens" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">🚫 Allergene (Ausschluss)</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('dietary')" id="tabDietary" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">🥗 Ernährungsformen</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('recipegroups')" id="tabRecipeGroups" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">📋 Rezeptgruppen</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('menulines')" id="tabMenuLines" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">🍴 Menülinien</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('cooking')" id="tabCooking" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">👨‍🍳 Garmethoden</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('defaults')" id="tabDefaults" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">⚙️ Standardwerte</button>
                 </div>
                 
                 <!-- Tab Content: Mahlzeiten -->
@@ -929,16 +932,37 @@
                 
                 <!-- Tab Content: Allergene -->
                 <div id="tabContentAllergens" class="tab-content" style="display: none;">
-                    <h3 style="margin-top: 0;">🚫 Allergene-Auswahl</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Wählen Sie die Allergene aus, die bei der Menüplanung berücksichtigt werden sollen:</p>
+                    <h3 style="margin-top: 0;">🚫 Allergene (Ausschluss)</h3>
+                    <p style="color: #666; margin-bottom: 15px;"><strong>Wichtig:</strong> Ausgewählte Allergene werden <strong>ausgeschlossen</strong>. Rezepte mit diesen Allergenen werden NICHT in den Menüplan aufgenommen.</p>
                     <div id="allergenCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
                 </div>
                 
                 <!-- Tab Content: Ernährungsformen -->
                 <div id="tabContentDietary" class="tab-content" style="display: none;">
                     <h3 style="margin-top: 0;">🥗 Ernährungsformen</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Wählen Sie die Ernährungsformen aus, die angeboten werden sollen:</p>
+                    <p style="color: #666; margin-bottom: 15px;"><strong>Wichtig:</strong> Nur Rezepte mit mindestens einer der ausgewählten Ernährungsformen werden in den Menüplan aufgenommen.</p>
                     <div id="dietaryCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
+                </div>
+                
+                <!-- Tab Content: Rezeptgruppen -->
+                <div id="tabContentRecipeGroups" class="tab-content" style="display: none;">
+                    <h3 style="margin-top: 0;">📋 Rezeptgruppen</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Wählen Sie die Rezeptgruppen aus, die aktiv sein sollen:</p>
+                    <div id="recipeGroupCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
+                </div>
+                
+                <!-- Tab Content: Menülinien -->
+                <div id="tabContentMenuLines" class="tab-content" style="display: none;">
+                    <h3 style="margin-top: 0;">🍴 Menülinien</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Wählen Sie die Menülinien aus, die angeboten werden sollen:</p>
+                    <div id="menuLineCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
+                </div>
+                
+                <!-- Tab Content: Garmethoden -->
+                <div id="tabContentCooking" class="tab-content" style="display: none;">
+                    <h3 style="margin-top: 0;">👨‍🍳 Garmethoden</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Wählen Sie die Garmethoden aus, die verwendet werden sollen:</p>
+                    <div id="cookingMethodCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;"></div>
                 </div>
                 
                 <!-- Tab Content: Standardwerte -->
@@ -977,13 +1001,37 @@
             { id: 3, name: 'Abendessen', isMainMeal: false, component: 'Abendessen', recipesPerMeal: 2 }
         ];
         
-        // Allergene-Einstellungen
-        const availableAllergens = ['Gluten', 'Milch', 'Eier', 'Fisch', 'Soja', 'Nüsse', 'Sellerie', 'Senf', 'Sesam', 'Lupinen', 'Krebstiere', 'Weichtiere', 'Schwefeldioxid'];
-        let selectedAllergens = ['Gluten', 'Milch', 'Eier', 'Fisch', 'Soja', 'Nüsse'];
+        // Unverträglichkeiten-Einstellungen (matching recipe data)
+        // Note: These are EXCLUDED allergens - recipes with these allergens will be filtered out
+        const availableAllergens = ['Gluten', 'Milch', 'Eier', 'Fisch', 'Soja', 'Nüsse', 'Schalenfrüchte', 'Sesam', 'Reis'];
+        let selectedAllergens = [];  // Empty = no allergens excluded
         
-        // Ernährungsformen-Einstellungen
-        const availableDietaryForms = ['Vollkost', 'Vegetarisch', 'Vegan', 'Glutenfrei', 'Laktosefrei', 'Halal', 'Koscher'];
-        let selectedDietaryForms = ['Vollkost', 'Vegetarisch'];
+        // Kostformen-Einstellungen (matching recipe data)
+        // Note: Recipes must have at least one of these dietary forms to be included
+        const availableDietaryForms = ['Vollkost', 'Vegetarisch', 'Vegan'];
+        let selectedDietaryForms = ['Vollkost', 'Vegetarisch', 'Vegan'];  // Include all by default
+        
+        // Rezeptgruppen-Einstellungen (from SRM Portal)
+        const availableRecipeGroups = [
+            'Basisrezeptur', 'Frühstück', 'Kalte Küche', 'Zwischenmahlzeit', 'Vorspeise Mittagessen',
+            'Fleisch/Fisch/Ei', 'Saucen', 'Sättigungsbeilage', 'Gemüse', 'Eintopf', 'Dessert',
+            'Abendessen', 'Aktionsgericht', 'Spätmahlzeit', 'Spezialität', 'Mediterran'
+        ];
+        let selectedRecipeGroups = ['Frühstück', 'Vorspeise Mittagessen', 'Fleisch/Fisch/Ei', 'Sättigungsbeilage', 'Gemüse', 'Dessert'];
+        
+        // Menülinien-Einstellungen (from SRM Portal)
+        const availableMenuLines = [
+            'Mittag_Dessert', 'Abendessen', 'Spätmahlzeit', 'Frühstück', 'Hauptgang',
+            'Mittag_Suppe', 'Vorspeise', 'Zwischengang', 'Nachspeise', 'Suppe', 'Käse', 'Mittagessen'
+        ];
+        let selectedMenuLines = ['Frühstück', 'Mittag_Suppe', 'Hauptgang', 'Mittag_Dessert', 'Abendessen'];
+        
+        // Garmethoden-Einstellungen (from SRM Portal)
+        const availableCookingMethods = [
+            'Sautieren', 'Grillieren', 'Braten', 'Garen bei Niedrigtemperatur', 'Poelieren',
+            'Backen', 'Schmoren/Glasieren', 'Dünsten', 'Pochieren', 'Dämpfen'
+        ];
+        let selectedCookingMethods = ['Braten', 'Backen', 'Dünsten', 'Dämpfen'];
         
         // Standardwerte
         let defaultPortions = 50;
@@ -3081,6 +3129,9 @@
             renderMealSettings();
             renderAllergenCheckboxes();
             renderDietaryCheckboxes();
+            renderRecipeGroupCheckboxes();
+            renderMenuLineCheckboxes();
+            renderCookingMethodCheckboxes();
             renderDefaultValues();
             document.getElementById('settingsModal').classList.add('active');
         }
@@ -3283,6 +3334,24 @@
             renderDietaryCheckboxes();
             setDietaryCheckboxes();  // Setze auch Hauptseiten-Checkboxen
             
+            // Rezeptgruppen
+            const savedRecipeGroups = localStorage.getItem('selectedRecipeGroups');
+            if (savedRecipeGroups) {
+                selectedRecipeGroups = JSON.parse(savedRecipeGroups);
+            }
+            
+            // Menülinien
+            const savedMenuLines = localStorage.getItem('selectedMenuLines');
+            if (savedMenuLines) {
+                selectedMenuLines = JSON.parse(savedMenuLines);
+            }
+            
+            // Garmethoden
+            const savedCookingMethods = localStorage.getItem('selectedCookingMethods');
+            if (savedCookingMethods) {
+                selectedCookingMethods = JSON.parse(savedCookingMethods);
+            }
+            
             // Standard-Portionen
             const savedDefaultPortions = localStorage.getItem('defaultPortions');
             if (savedDefaultPortions) {
@@ -3446,6 +3515,60 @@
             container.innerHTML = html;
         }
         
+        // Rendere Rezeptgruppen-Checkboxen
+        function renderRecipeGroupCheckboxes() {
+            const container = document.getElementById('recipeGroupCheckboxes');
+            let html = '';
+            
+            for (const group of availableRecipeGroups) {
+                const isChecked = selectedRecipeGroups.includes(group);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleRecipeGroup('${group}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${group}</span>
+                    </label>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        // Rendere Menülinien-Checkboxen
+        function renderMenuLineCheckboxes() {
+            const container = document.getElementById('menuLineCheckboxes');
+            let html = '';
+            
+            for (const line of availableMenuLines) {
+                const isChecked = selectedMenuLines.includes(line);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleMenuLine('${line}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${line}</span>
+                    </label>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        // Rendere Garmethoden-Checkboxen
+        function renderCookingMethodCheckboxes() {
+            const container = document.getElementById('cookingMethodCheckboxes');
+            let html = '';
+            
+            for (const method of availableCookingMethods) {
+                const isChecked = selectedCookingMethods.includes(method);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleCookingMethod('${method}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${method}</span>
+                    </label>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
         // Rendere Standardwerte
         function renderDefaultValues() {
             document.getElementById('defaultPortions').value = defaultPortions;
@@ -3475,6 +3598,42 @@
             renderDietaryCheckboxes();
         }
         
+        // Toggle Rezeptgruppe
+        function toggleRecipeGroup(group, isChecked) {
+            if (isChecked) {
+                if (!selectedRecipeGroups.includes(group)) {
+                    selectedRecipeGroups.push(group);
+                }
+            } else {
+                selectedRecipeGroups = selectedRecipeGroups.filter(g => g !== group);
+            }
+            renderRecipeGroupCheckboxes();
+        }
+        
+        // Toggle Menülinie
+        function toggleMenuLine(line, isChecked) {
+            if (isChecked) {
+                if (!selectedMenuLines.includes(line)) {
+                    selectedMenuLines.push(line);
+                }
+            } else {
+                selectedMenuLines = selectedMenuLines.filter(l => l !== line);
+            }
+            renderMenuLineCheckboxes();
+        }
+        
+        // Toggle Garmethode
+        function toggleCookingMethod(method, isChecked) {
+            if (isChecked) {
+                if (!selectedCookingMethods.includes(method)) {
+                    selectedCookingMethods.push(method);
+                }
+            } else {
+                selectedCookingMethods = selectedCookingMethods.filter(m => m !== method);
+            }
+            renderCookingMethodCheckboxes();
+        }
+        
         // Speichere alle Einstellungen
         function saveAllSettings() {
             // Prüfe, ob mindestens eine Hauptmahlzeit vorhanden ist
@@ -3488,6 +3647,9 @@
             localStorage.setItem('mealSettings', JSON.stringify(mealSettings));
             localStorage.setItem('selectedAllergens', JSON.stringify(selectedAllergens));
             localStorage.setItem('selectedDietaryForms', JSON.stringify(selectedDietaryForms));
+            localStorage.setItem('selectedRecipeGroups', JSON.stringify(selectedRecipeGroups));
+            localStorage.setItem('selectedMenuLines', JSON.stringify(selectedMenuLines));
+            localStorage.setItem('selectedCookingMethods', JSON.stringify(selectedCookingMethods));
             
             // Standardwerte
             defaultPortions = parseInt(document.getElementById('defaultPortions').value) || 50;
