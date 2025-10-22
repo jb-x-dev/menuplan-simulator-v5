@@ -636,11 +636,11 @@
                     <h3>📅 Zeitraum</h3>
                     <div class="form-group">
                         <label>Startdatum</label>
-                        <input type="date" id="startDate" value="2025-11-03">
+                        <input type="date" id="startDate">
                     </div>
                     <div class="form-group">
                         <label>Enddatum</label>
-                        <input type="date" id="endDate" value="2025-11-16">
+                        <input type="date" id="endDate">
                     </div>
                 </div>
                 
@@ -648,11 +648,11 @@
                     <h3>💰 Budget (BKT)</h3>
                     <div class="form-group">
                         <label>Ziel-BKT (€) - Maximale Kosten pro Tag</label>
-                        <input type="number" id="bktTarget" value="8.00" step="0.10">
+                        <input type="number" id="bktTarget" step="0.10">
                     </div>
                     <div class="form-group">
                         <label>Toleranz (%)</label>
-                        <input type="number" id="bktTolerance" value="15" step="1">
+                        <input type="number" id="bktTolerance" step="1">
                     </div>
                 </div>
                 
@@ -2915,29 +2915,35 @@
             }
             
             // BKT-Einstellungen
-            const savedBktTarget = localStorage.getItem('bktTarget');
-            if (savedBktTarget) {
-                const bktInput = document.getElementById('bktTarget');
-                if (bktInput) bktInput.value = savedBktTarget;
+            const bktInput = document.getElementById('bktTarget');
+            if (bktInput) {
+                const savedBktTarget = localStorage.getItem('bktTarget');
+                bktInput.value = savedBktTarget || '8.00';  // Default: 8.00
             }
             
-            const savedBktTolerance = localStorage.getItem('bktTolerance');
-            if (savedBktTolerance) {
-                const tolInput = document.getElementById('bktTolerance');
-                if (tolInput) tolInput.value = savedBktTolerance;
+            const tolInput = document.getElementById('bktTolerance');
+            if (tolInput) {
+                const savedBktTolerance = localStorage.getItem('bktTolerance');
+                tolInput.value = savedBktTolerance || '15';  // Default: 15%
             }
             
             // Zeitraum-Einstellungen
-            const savedStartDate = localStorage.getItem('startDate');
-            if (savedStartDate) {
-                const startInput = document.getElementById('startDate');
-                if (startInput) startInput.value = savedStartDate;
+            const startInput = document.getElementById('startDate');
+            if (startInput) {
+                const savedStartDate = localStorage.getItem('startDate');
+                // Default: Heute + 14 Tage
+                const defaultStart = new Date();
+                defaultStart.setDate(defaultStart.getDate() + 14);
+                startInput.value = savedStartDate || defaultStart.toISOString().split('T')[0];
             }
             
-            const savedEndDate = localStorage.getItem('endDate');
-            if (savedEndDate) {
-                const endInput = document.getElementById('endDate');
-                if (endInput) endInput.value = savedEndDate;
+            const endInput = document.getElementById('endDate');
+            if (endInput) {
+                const savedEndDate = localStorage.getItem('endDate');
+                // Default: Heute + 28 Tage (2 Wochen nach Start)
+                const defaultEnd = new Date();
+                defaultEnd.setDate(defaultEnd.getDate() + 28);
+                endInput.value = savedEndDate || defaultEnd.toISOString().split('T')[0];
             }
             
             // Rendere UI-Komponenten mit geladenen Daten
