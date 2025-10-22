@@ -856,7 +856,23 @@
         </div>
     </div>
     
-    <!-- Settings Modal -->
+        <!-- Recipe Selection Modal -->
+        <div id="recipeSelectionModal" class="modal">
+            <div class="modal-content" style="max-width: 800px; max-height: 80vh; overflow-y: auto;">
+                <div class="modal-header">
+                    <h2>🍽️ Rezept auswählen</h2>
+                    <button class="close-btn" onclick="closeRecipeSelectionModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="recipeSearchInput" placeholder="🔍 Rezept suchen..." 
+                           style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; margin-bottom: 15px;"
+                           oninput="filterRecipeList()">
+                    <div id="recipeListContainer" style="display: grid; gap: 10px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Settings Modal -->
     <div class="modal" id="settingsModal">
         <div class="modal-content" style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
             <div class="modal-header">
@@ -867,6 +883,7 @@
                 <!-- Tabs -->
                 <div class="settings-tabs" style="display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0;">
                     <button class="settings-tab active" onclick="switchSettingsTab('meals')" id="tabMeals" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid #667eea; font-weight: 600;">🍽️ Mahlzeiten</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('runtime')" id="tabRuntime" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">📅 Laufzeiten</button>
                     <button class="settings-tab" onclick="switchSettingsTab('allergens')" id="tabAllergens" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">🚫 Allergene</button>
                     <button class="settings-tab" onclick="switchSettingsTab('dietary')" id="tabDietary" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">🥗 Ernährung</button>
                     <button class="settings-tab" onclick="switchSettingsTab('defaults')" id="tabDefaults" style="padding: 10px 20px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">⚙️ Standardwerte</button>
@@ -877,6 +894,52 @@
                     <h3 style="margin-top: 0;">🍽️ Mahlzeiten-Konfiguration</h3>
                     <div id="mealSettingsContainer"></div>
                     <button class="btn" onclick="addMealSetting()" style="margin-top: 10px; background: #28a745; color: white;">➥ Mahlzeit hinzufügen</button>
+                </div>
+                
+                <!-- Tab Content: Laufzeiten -->
+                <div id="tabContentRuntime" class="tab-content" style="display: none;">
+                    <h3 style="margin-top: 0;">📅 Laufzeiten-Konfiguration</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Legen Sie die Standard-Einstellungen für Zeiträume fest. Diese Werte werden beim Erstellen neuer Menuepläne automatisch verwendet.</p>
+                    
+                    <div class="form-group">
+                        <label for="settingsWeekStartDay" style="font-weight: 600; display: block; margin-bottom: 5px;">Wochenstart:</label>
+                        <select id="settingsWeekStartDay" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                            <option value="1">Montag</option>
+                            <option value="2">Dienstag</option>
+                            <option value="3">Mittwoch</option>
+                            <option value="4">Donnerstag</option>
+                            <option value="5">Freitag</option>
+                            <option value="6">Samstag</option>
+                            <option value="0">Sonntag</option>
+                        </select>
+                        <small style="color: #666; display: block; margin-top: 5px;">Dieser Wochentag wird als Startpunkt für die Kalenderwochen-Berechnung verwendet.</small>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="settingsDefaultYear" style="font-weight: 600; display: block; margin-bottom: 5px;">Standard-Jahr:</label>
+                        <select id="settingsDefaultYear" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                            <option value="current">Aktuelles Jahr</option>
+                            <option value="next">Nächstes Jahr</option>
+                        </select>
+                        <small style="color: #666; display: block; margin-top: 5px;">Welches Jahr soll standardmäßig beim Erstellen neuer Pläne vorausgewählt sein?</small>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="settingsDefaultStartWeek" style="font-weight: 600; display: block; margin-bottom: 5px;">Standard-Start-Kalenderwoche:</label>
+                        <select id="settingsDefaultStartWeek" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                            <option value="current">Aktuelle KW</option>
+                            <option value="next">Nächste KW</option>
+                            <option value="+2">Aktuelle KW + 2</option>
+                            <option value="+4">Aktuelle KW + 4</option>
+                        </select>
+                        <small style="color: #666; display: block; margin-top: 5px;">Welche Kalenderwoche soll als Startpunkt vorausgewählt sein?</small>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="settingsDefaultDuration" style="font-weight: 600; display: block; margin-bottom: 5px;">Standard-Dauer (Wochen):</label>
+                        <input type="number" id="settingsDefaultDuration" min="1" max="52" value="2" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666; display: block; margin-top: 5px;">Wie viele Wochen soll ein neuer Plan standardmäßig umfassen?</small>
+                    </div>
                 </div>
                 
                 <!-- Tab Content: Allergene -->
@@ -901,19 +964,13 @@
                         <input type="number" id="defaultPortions" min="1" max="500" value="50" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
                         <small style="color: #666; display: block; margin-top: 5px;">Diese Menge wird beim Erzeugen des automatischen Vorschlags verwendet.</small>
                     </div>
+                    
                     <div class="form-group" style="margin-top: 20px;">
-                        <label for="weekStartDay" style="font-weight: 600; display: block; margin-bottom: 5px;">Wochenstart (für Kalenderwochen):</label>
-                        <select id="weekStartDay" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
-                            <option value="1">Montag</option>
-                            <option value="2">Dienstag</option>
-                            <option value="3">Mittwoch</option>
-                            <option value="4">Donnerstag</option>
-                            <option value="5">Freitag</option>
-                            <option value="6">Samstag</option>
-                            <option value="0">Sonntag</option>
-                        </select>
-                        <small style="color: #666; display: block; margin-top: 5px;">Dieser Wochentag wird als Startpunkt für die Kalenderwochen-Berechnung verwendet.</small>
+                        <label for="defaultRecipesPerMeal" style="font-weight: 600; display: block; margin-bottom: 5px;">Standard-Anzahl Rezepte pro Mahlzeit:</label>
+                        <input type="number" id="defaultRecipesPerMeal" min="1" max="5" value="2" style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666; display: block; margin-top: 5px;">Diese Anzahl wird beim Hinzufügen neuer Mahlzeiten als Standard verwendet.</small>
                     </div>
+
                 </div>
                 
                 <button class="btn btn-secondary" onclick="saveAllSettings()" style="margin-top: 20px; width: 100%;">💾 Alle Einstellungen speichern</button>
@@ -930,9 +987,9 @@
         
         // Mahlzeiten-Einstellungen
         let mealSettings = [
-            { id: 1, name: 'Frühstück', isMainMeal: false, component: 'Frühstück' },
-            { id: 2, name: 'Mittagessen', isMainMeal: true, component: 'Mittagessen' },
-            { id: 3, name: 'Abendessen', isMainMeal: false, component: 'Abendessen' }
+            { id: 1, name: 'Frühstück', isMainMeal: false, component: 'Frühstück', recipesPerMeal: 2 },
+            { id: 2, name: 'Mittagessen', isMainMeal: true, component: 'Mittagessen', recipesPerMeal: 2 },
+            { id: 3, name: 'Abendessen', isMainMeal: false, component: 'Abendessen', recipesPerMeal: 2 }
         ];
         
         // Allergene-Einstellungen
@@ -945,7 +1002,13 @@
         
         // Standardwerte
         let defaultPortions = 50;
+        let defaultRecipesPerMeal = 2;  // Standard-Anzahl Rezepte pro Mahlzeit
+        
+        // Laufzeiten-Einstellungen
         let weekStartDay = 1;  // 1 = Montag (ISO 8601 Standard)
+        let defaultYear = 'current';  // 'current' oder 'next'
+        let defaultStartWeek = '+2';  // 'current', 'next', '+2', '+4'
+        let defaultDuration = 2;  // Anzahl Wochen
         
         // Lade Mahlzeiten-Einstellungen aus localStorage
         function loadMealSettings() {
@@ -1168,37 +1231,25 @@
                 end_date: endDate.toISOString().split('T')[0],
                 bkt_target: parseFloat(document.getElementById('bktTarget').value),
                 bkt_tolerance: parseFloat(document.getElementById('bktTolerance').value) / 100,
-                dietary_forms: [],
-                excluded_allergens: [],
+                dietary_forms: selectedDietaryForms,  // Verwende gespeicherte Ernährungsformen
+                excluded_allergens: selectedAllergens,  // Verwende gespeicherte Allergene
                 repetition_interval: 7,
                 consider_seasonality: true,
                 menu_lines: []
             };
             
-            if (document.getElementById('dietVollkost').checked) config.dietary_forms.push('Vollkost');
-            if (document.getElementById('dietVegetarisch').checked) config.dietary_forms.push('Vegetarisch');
-            if (document.getElementById('dietVegan').checked) config.dietary_forms.push('Vegan');
-            
-            if (document.getElementById('allergenGluten').checked) config.excluded_allergens.push('Gluten');
-            if (document.getElementById('allergenMilch').checked) config.excluded_allergens.push('Milch');
-            if (document.getElementById('allergenEier').checked) config.excluded_allergens.push('Eier');
-            if (document.getElementById('allergenFisch').checked) config.excluded_allergens.push('Fisch');
-            
-            const meals = [];
-            if (document.getElementById('mealBreakfast').checked) meals.push('Frühstück');
-            if (document.getElementById('mealLunch').checked) meals.push('Mittagessen');
-            if (document.getElementById('mealSnack').checked) meals.push('Zwischenmahlzeit');
-            if (document.getElementById('mealDinner').checked) meals.push('Abendessen');
-            
-            config.menu_lines = meals.map((meal, idx) => ({
+            // Verwende mealSettings statt hardcodierte Checkboxen
+            config.menu_lines = mealSettings.map((meal, idx) => ({
                 id: idx + 1,
-                name: meal,
+                name: meal.name,
+                component: meal.component,
+                recipesPerMeal: meal.recipesPerMeal || defaultRecipesPerMeal,  // Anzahl Rezepte pro Mahlzeit
                 dietary_forms: config.dietary_forms,
                 cost_forms: [{
                     id: idx + 1,
-                    name: meal,
-                    component: meal,
-                    target_count: 50
+                    name: meal.name,
+                    component: meal.component,
+                    target_count: defaultPortions
                 }]
             }));
             
@@ -1321,6 +1372,16 @@
                                                                onchange="updateOptionQuantity(${dayIdx}, ${mlIdx}, ${recipeIdx}, ${optIdx}, this.value)" 
                                                                style="width: 100%; padding: 6px; border: 1px solid ${isSelected ? '#667eea' : '#dee2e6'}; border-radius: 4px; font-size: 14px;">
                                                     </div>
+                                                    <div style="margin-top: 10px; display: flex; gap: 5px; flex-wrap: wrap;">
+                                                        <button onclick="event.stopPropagation(); replaceRecipe(${dayIdx}, ${mlIdx}, ${recipeIdx}, ${optIdx})" 
+                                                                style="flex: 1; padding: 6px 10px; background: #667eea; color: white; border: none; border-radius: 4px; font-size: 12px; cursor: pointer;">
+                                                            🔄 Austauschen
+                                                        </button>
+                                                        <button onclick="event.stopPropagation(); removeRecipe(${dayIdx}, ${mlIdx}, ${recipeIdx}, ${optIdx})" 
+                                                                style="flex: 1; padding: 6px 10px; background: #dc3545; color: white; border: none; border-radius: 4px; font-size: 12px; cursor: pointer;">
+                                                            🗑️ Entfernen
+                                                        </button>
+                                                    </div>
                                                 </div>
                                                 </div>
                                             </div>
@@ -1328,7 +1389,12 @@
                                     `;
                                 }
                                 
-                                html += `</div>`;
+                                html += `
+                                    <button onclick="addRecipeToMeal(${dayIdx}, ${mlIdx}, ${recipeIdx})" 
+                                            style="width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; margin-top: 10px;">
+                                        ➕ Weiteres Rezept hinzufügen
+                                    </button>
+                                </div>`;
                             } else {
                                 // Altes Format: Einzelnes Rezept (für Abwärtskompatibilität)
                                 const recipe = recipeSlot;
@@ -2204,6 +2270,156 @@
             updateStatisticsDisplay();
         }
         
+        // Rezept-Management-Funktionen
+        let recipeManagementContext = null;
+        
+        function replaceRecipe(dayIdx, mlIdx, recipeIdx, optIdx) {
+            recipeManagementContext = { dayIdx, mlIdx, recipeIdx, optIdx, action: 'replace' };
+            openRecipeSelectionModal();
+        }
+        
+        function addRecipeToMeal(dayIdx, mlIdx, recipeIdx) {
+            recipeManagementContext = { dayIdx, mlIdx, recipeIdx, action: 'add' };
+            openRecipeSelectionModal();
+        }
+        
+        function removeRecipe(dayIdx, mlIdx, recipeIdx, optIdx) {
+            if (!currentPlan || !currentPlan.days) return;
+            
+            const day = currentPlan.days[dayIdx];
+            if (!day) return;
+            
+            const menuLine = day.menu_lines[mlIdx];
+            if (!menuLine || !menuLine.recipes) return;
+            
+            const recipeSlot = menuLine.recipes[recipeIdx];
+            if (!recipeSlot || !recipeSlot.options) return;
+            
+            // Verhindere Entfernen, wenn nur eine Option vorhanden
+            if (recipeSlot.options.length <= 1) {
+                alert('⚠️ Mindestens ein Rezept muss vorhanden sein!');
+                return;
+            }
+            
+            if (confirm(`Rezept "${recipeSlot.options[optIdx].recipe_name}" wirklich entfernen?`)) {
+                // Entferne Option
+                recipeSlot.options.splice(optIdx, 1);
+                
+                // Passe selected_index an
+                if (recipeSlot.selected_index >= optIdx) {
+                    recipeSlot.selected_index = Math.max(0, recipeSlot.selected_index - 1);
+                }
+                
+                // Aktualisiere Anzeige
+                displayPlan(currentPlan, false);
+                updateStatisticsDisplay();
+            }
+        }
+        
+        function openRecipeSelectionModal() {
+            const modal = document.getElementById('recipeSelectionModal');
+            modal.classList.add('active');
+            renderRecipeList(allRecipes);
+        }
+        
+        function closeRecipeSelectionModal() {
+            const modal = document.getElementById('recipeSelectionModal');
+            modal.classList.remove('active');
+            recipeManagementContext = null;
+        }
+        
+        function renderRecipeList(recipes) {
+            const container = document.getElementById('recipeListContainer');
+            let html = '';
+            
+            for (const recipe of recipes) {
+                html += `
+                    <div class="recipe-list-item" 
+                         style="padding: 15px; border: 2px solid #e0e0e0; border-radius: 8px; cursor: pointer; transition: all 0.2s;"
+                         onclick="selectRecipeFromList(${recipe.id})"
+                         onmouseover="this.style.borderColor='#667eea'; this.style.background='#f0f4ff'"
+                         onmouseout="this.style.borderColor='#e0e0e0'; this.style.background='white'">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: bold; font-size: 16px; margin-bottom: 5px;">${recipe.name}</div>
+                                <div style="font-size: 14px; color: #666; margin-bottom: 5px;">${recipe.description || ''}</div>
+                                <div style="font-size: 13px; color: #888;">
+                                    🏛️ ${recipe.category || 'Keine Kategorie'} | 
+                                    💰 ${recipe.cost.toFixed(2)}€
+                                    ${recipe.allergens && recipe.allergens.length > 0 ? ` | 🚨 ${recipe.allergens.join(', ')}` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html || '<p style="text-align: center; color: #666;">Keine Rezepte gefunden</p>';
+        }
+        
+        function filterRecipeList() {
+            const searchTerm = document.getElementById('recipeSearchInput').value.toLowerCase();
+            const filtered = allRecipes.filter(r => 
+                r.name.toLowerCase().includes(searchTerm) ||
+                (r.description && r.description.toLowerCase().includes(searchTerm)) ||
+                (r.category && r.category.toLowerCase().includes(searchTerm))
+            );
+            renderRecipeList(filtered);
+        }
+        
+        async function selectRecipeFromList(recipeId) {
+            if (!recipeManagementContext) return;
+            
+            const { dayIdx, mlIdx, recipeIdx, optIdx, action } = recipeManagementContext;
+            
+            // Lade vollständige Rezeptdaten
+            try {
+                const response = await fetch(`/api/recipe/${recipeId}`);
+                const recipe = await response.json();
+                
+                if (!currentPlan || !currentPlan.days) return;
+                
+                const day = currentPlan.days[dayIdx];
+                if (!day) return;
+                
+                const menuLine = day.menu_lines[mlIdx];
+                if (!menuLine || !menuLine.recipes) return;
+                
+                const recipeSlot = menuLine.recipes[recipeIdx];
+                
+                // Erstelle neue Option aus Rezept
+                const newOption = {
+                    recipe_id: recipe.id,
+                    recipe_name: recipe.name,
+                    cost_per_serving: recipe.cost,
+                    allergens: recipe.allergens || [],
+                    quantity: 0,
+                    ingredients: recipe.ingredients || []
+                };
+                
+                if (action === 'replace') {
+                    // Ersetze bestehende Option
+                    if (recipeSlot && recipeSlot.options) {
+                        recipeSlot.options[optIdx] = newOption;
+                    }
+                } else if (action === 'add') {
+                    // Füge neue Option hinzu
+                    if (recipeSlot && recipeSlot.options) {
+                        recipeSlot.options.push(newOption);
+                    }
+                }
+                
+                // Aktualisiere Anzeige
+                displayPlan(currentPlan, false);
+                updateStatisticsDisplay();
+                closeRecipeSelectionModal();
+                
+            } catch (error) {
+                console.error('Fehler beim Laden des Rezepts:', error);
+                alert('⚠️ Fehler beim Laden des Rezepts');
+            }
+        }
+        
         // Berechne Statistiken basierend auf ausgewählten Rezepten und Portionen
         function calculatePlanStatistics() {
             if (!currentPlan || !currentPlan.days) return null;
@@ -2898,7 +3114,13 @@
                             </label>
                             <button onclick="removeMealSetting(${i})" style="padding: 8px 12px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">×</button>
                         </div>
-                        <input type="text" value="${meal.component}" onchange="updateMealComponent(${i}, this.value)" style="width: 100%; padding: 8px; border: 2px solid #dee2e6; border-radius: 5px; font-size: 13px;" placeholder="Komponente (für API)">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                            <input type="text" value="${meal.component}" onchange="updateMealComponent(${i}, this.value)" style="flex: 1; padding: 8px; border: 2px solid #dee2e6; border-radius: 5px; font-size: 13px;" placeholder="Komponente (für API)">
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <label style="font-size: 13px; white-space: nowrap; color: #666;">Rezepte:</label>
+                                <input type="number" value="${meal.recipesPerMeal || defaultRecipesPerMeal}" min="1" max="5" onchange="updateRecipesPerMeal(${i}, parseInt(this.value))" style="width: 60px; padding: 8px; border: 2px solid #dee2e6; border-radius: 5px; font-size: 13px;">
+                            </div>
+                        </div>
                     </div>
                 `;
             }
@@ -2914,6 +3136,12 @@
             mealSettings[index].component = component;
         }
         
+        function updateRecipesPerMeal(index, count) {
+            if (count >= 1 && count <= 5) {
+                mealSettings[index].recipesPerMeal = count;
+            }
+        }
+        
         function setMainMeal(index, isMain) {
             if (isMain) {
                 // Deaktiviere alle anderen Hauptmahlzeiten
@@ -2926,12 +3154,13 @@
         }
         
         function addMealSetting() {
-            const newId = Math.max(...mealSettings.map(m => m.id), 0) + 1;
+            const newId = mealSettings.length > 0 ? Math.max(...mealSettings.map(m => m.id)) + 1 : 1;
             mealSettings.push({
                 id: newId,
                 name: 'Neue Mahlzeit',
                 isMainMeal: false,
-                component: 'Neue_Mahlzeit'
+                component: 'Neue Mahlzeit',
+                recipesPerMeal: defaultRecipesPerMeal  // Verwende gespeicherten Standardwert
             });
             renderMealSettings();
         }
@@ -3012,9 +3241,30 @@
                 defaultPortions = parseInt(savedDefaultPortions);
             }
             
+            const savedDefaultRecipesPerMeal = localStorage.getItem('defaultRecipesPerMeal');
+            if (savedDefaultRecipesPerMeal) {
+                defaultRecipesPerMeal = parseInt(savedDefaultRecipesPerMeal);
+            }
+            
+            // Laufzeiten-Einstellungen
             const savedWeekStartDay = localStorage.getItem('weekStartDay');
             if (savedWeekStartDay) {
                 weekStartDay = parseInt(savedWeekStartDay);
+            }
+            
+            const savedDefaultYear = localStorage.getItem('defaultYear');
+            if (savedDefaultYear) {
+                defaultYear = savedDefaultYear;
+            }
+            
+            const savedDefaultStartWeek = localStorage.getItem('defaultStartWeek');
+            if (savedDefaultStartWeek) {
+                defaultStartWeek = savedDefaultStartWeek;
+            }
+            
+            const savedDefaultDuration = localStorage.getItem('defaultDuration');
+            if (savedDefaultDuration) {
+                defaultDuration = parseInt(savedDefaultDuration);
             }
             
             // BKT-Einstellungen
@@ -3030,27 +3280,49 @@
                 tolInput.value = savedBktTolerance || '15';  // Default: 15%
             }
             
-            // Zeitraum-Einstellungen (Kalenderwochen)
+            // Zeitraum-Einstellungen (Kalenderwochen) - Verwende Laufzeiten-Einstellungen
             const today = new Date();
-            const currentYear = today.getFullYear();
+            let currentYear = today.getFullYear();
             const currentWeek = getWeekNumber(today);
+            
+            // Berechne Jahr basierend auf Einstellung
+            let calculatedYear = currentYear;
+            if (defaultYear === 'next') {
+                calculatedYear = currentYear + 1;
+            }
+            
+            // Berechne Start-KW basierend auf Einstellung
+            let calculatedStartWeek = currentWeek;
+            if (defaultStartWeek === 'next') {
+                calculatedStartWeek = currentWeek + 1;
+            } else if (defaultStartWeek === '+2') {
+                calculatedStartWeek = currentWeek + 2;
+            } else if (defaultStartWeek === '+4') {
+                calculatedStartWeek = currentWeek + 4;
+            }
+            
+            // Handle KW-Überlauf (> 52)
+            if (calculatedStartWeek > 52) {
+                calculatedStartWeek = calculatedStartWeek - 52;
+                calculatedYear++;
+            }
             
             const yearInput = document.getElementById('planYear');
             if (yearInput) {
                 const savedYear = localStorage.getItem('planYear');
-                yearInput.value = savedYear || currentYear;
+                yearInput.value = savedYear || calculatedYear;
             }
             
             const weekInput = document.getElementById('startWeek');
             if (weekInput) {
                 const savedWeek = localStorage.getItem('startWeek');
-                weekInput.value = savedWeek || (currentWeek + 2);  // Default: 2 Wochen in der Zukunft
+                weekInput.value = savedWeek || calculatedStartWeek;
             }
             
             const durationInput = document.getElementById('weekDuration');
             if (durationInput) {
                 const savedDuration = localStorage.getItem('weekDuration');
-                durationInput.value = savedDuration || 2;  // Default: 2 Wochen
+                durationInput.value = savedDuration || defaultDuration;
             }
             
             // Event-Listener für automatische Aktualisierung
@@ -3069,8 +3341,21 @@
             const defaultPortionsInput = document.getElementById('defaultPortions');
             if (defaultPortionsInput) defaultPortionsInput.value = defaultPortions;
             
-            const weekStartDaySelect = document.getElementById('weekStartDay');
-            if (weekStartDaySelect) weekStartDaySelect.value = weekStartDay.toString();
+            const defaultRecipesPerMealInput = document.getElementById('defaultRecipesPerMeal');
+            if (defaultRecipesPerMealInput) defaultRecipesPerMealInput.value = defaultRecipesPerMeal;
+            
+            // Setze Laufzeiten-Einstellungen in UI
+            const settingsWeekStartDaySelect = document.getElementById('settingsWeekStartDay');
+            if (settingsWeekStartDaySelect) settingsWeekStartDaySelect.value = weekStartDay.toString();
+            
+            const settingsDefaultYearSelect = document.getElementById('settingsDefaultYear');
+            if (settingsDefaultYearSelect) settingsDefaultYearSelect.value = defaultYear;
+            
+            const settingsDefaultStartWeekSelect = document.getElementById('settingsDefaultStartWeek');
+            if (settingsDefaultStartWeekSelect) settingsDefaultStartWeekSelect.value = defaultStartWeek;
+            
+            const settingsDefaultDurationInput = document.getElementById('settingsDefaultDuration');
+            if (settingsDefaultDurationInput) settingsDefaultDurationInput.value = defaultDuration;
             
             // Rendere UI-Komponenten mit geladenen Daten
             if (typeof renderAllergenCheckboxes === 'function') renderAllergenCheckboxes();
@@ -3160,8 +3445,21 @@
             defaultPortions = parseInt(document.getElementById('defaultPortions').value) || 50;
             localStorage.setItem('defaultPortions', defaultPortions.toString());
             
-            weekStartDay = parseInt(document.getElementById('weekStartDay').value) || 1;
+            defaultRecipesPerMeal = parseInt(document.getElementById('defaultRecipesPerMeal')?.value) || 2;
+            localStorage.setItem('defaultRecipesPerMeal', defaultRecipesPerMeal.toString());
+            
+            // Laufzeiten-Einstellungen
+            weekStartDay = parseInt(document.getElementById('settingsWeekStartDay')?.value) || 1;
             localStorage.setItem('weekStartDay', weekStartDay.toString());
+            
+            defaultYear = document.getElementById('settingsDefaultYear')?.value || 'current';
+            localStorage.setItem('defaultYear', defaultYear);
+            
+            defaultStartWeek = document.getElementById('settingsDefaultStartWeek')?.value || '+2';
+            localStorage.setItem('defaultStartWeek', defaultStartWeek);
+            
+            defaultDuration = parseInt(document.getElementById('settingsDefaultDuration')?.value) || 2;
+            localStorage.setItem('defaultDuration', defaultDuration.toString());
             
             // BKT-Einstellungen
             const bktTarget = document.getElementById('bktTarget')?.value;
