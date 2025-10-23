@@ -628,6 +628,21 @@
                 <button class="mode-btn active" onclick="switchMode('auto', event)">🤖 Automatisch</button>
                 <button class="mode-btn" onclick="switchMode('manual', event)">✋ Manuell</button>
             </div>
+            
+            <!-- Generate Buttons directly under mode switch -->
+            <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <div id="autoControls" style="flex: 1; min-width: 200px;">
+                    <button class="btn" id="btnSimulate" style="width: 100%;">🚀 Automatisch generieren</button>
+                </div>
+                
+                <div id="manualControls" style="display: none; flex: 1; min-width: 200px;">
+                    <button class="btn" id="btnCreateEmpty" style="width: 100%;">📝 Leeren Plan erstellen</button>
+                </div>
+                
+                <button class="btn btn-secondary" onclick="showSimulationParameters()" style="flex: 0 0 auto; padding: 10px 20px; background: white; border: 2px solid #667eea; color: #667eea;">
+                    ⚙️ Simulationsparameter
+                </button>
+            </div>
         </div>
         
         <div class="main-content">
@@ -803,13 +818,6 @@
                     </div>
                 </div>
                 
-                <div id="autoControls">
-                    <button class="btn" id="btnSimulate">🚀 Automatisch generieren</button>
-                </div>
-                
-                <div id="manualControls" style="display: none;">
-                    <button class="btn" id="btnCreateEmpty">📝 Leeren Plan erstellen</button>
-                </div>
                 
                 <button class="btn btn-secondary" id="btnExportPDF" style="display: none;">📝 PDF exportieren</button>
                 <button class="btn btn-secondary" id="btnSaveMealPlan" style="display: none; background: white; border: 1px solid #D3D3D3; color: #4A4A4A;">💾 Menüplan speichern</button>
@@ -1052,6 +1060,292 @@
                 </div>
                 
                 <button class="btn btn-secondary" onclick="saveAllSettings()" style="margin-top: 20px; width: 100%;">💾 Alle Einstellungen speichern</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Simulation Parameters Modal -->
+    <div class="modal" id="simulationParametersModal">
+        <div class="modal-content" style="max-width: 1000px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h2 class="modal-title">⚙️ Simulationsparameter</h2>
+                <button class="modal-close" onclick="closeSimulationParameters()">&times;</button>
+            </div>
+            <div style="padding: 20px;">
+                
+                <!-- Tabs for parameter categories -->
+                <div class="settings-tabs" style="margin-bottom: 20px;">
+                    <button class="settings-tab active" onclick="switchSimParamTab('nutrition')">🍎 Ernährung</button>
+                    <button class="settings-tab" onclick="switchSimParamTab('variety')">🔄 Vielfalt</button>
+                    <button class="settings-tab" onclick="switchSimParamTab('budget')">💰 Budget</button>
+                    <button class="settings-tab" onclick="switchSimParamTab('sustainability')">🌱 Nachhaltigkeit</button>
+                    <button class="settings-tab" onclick="switchSimParamTab('quality')">✅ Qualität</button>
+                </div>
+                
+                <!-- Nutrition Tab -->
+                <div id="simParamTabNutrition" class="tab-content">
+                    <h3>🍎 Ernährungs- und Nährwertparameter</h3>
+                    
+                    <div class="form-group">
+                        <label>Mindest-Kalorien pro Tag (kcal):</label>
+                        <input type="number" id="simMinCalories" min="1000" max="4000" value="2000" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 2000 kcal | Bereich: 1000-4000 kcal</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Maximal-Kalorien pro Tag (kcal):</label>
+                        <input type="number" id="simMaxCalories" min="1500" max="5000" value="2500" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 2500 kcal | Bereich: 1500-5000 kcal</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Protein-Anteil (%):</label>
+                        <input type="number" id="simProteinPercent" min="10" max="40" value="15" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 15% | Bereich: 10-40%</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Kohlenhydrat-Anteil (%):</label>
+                        <input type="number" id="simCarbsPercent" min="30" max="70" value="50" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 50% | Bereich: 30-70%</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Fett-Anteil (%):</label>
+                        <input type="number" id="simFatPercent" min="15" max="45" value="30" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 30% | Bereich: 15-45%</small>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">Spezialdiäten</h4>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simDiabeticDiet">
+                        <label for="simDiabeticDiet">Diabetesgerechte Kost aktivieren</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simHighProteinDiet">
+                        <label for="simHighProteinDiet">Protein-/energiereiche Kost aktivieren</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simLowSodiumDiet">
+                        <label for="simLowSodiumDiet">Natriumarme Kost aktivieren</label>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">Textmodifikationen</h4>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simSoftFood">
+                        <label for="simSoftFood">Weiche Kost</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simMincedFood">
+                        <label for="simMincedFood">Fein gehackte Kost</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simPureedFood">
+                        <label for="simPureedFood">Pürierte Kost</label>
+                    </div>
+                </div>
+                
+                <!-- Variety Tab -->
+                <div id="simParamTabVariety" class="tab-content" style="display: none;">
+                    <h3>🔄 Vielfalt und Menüzyklen</h3>
+                    
+                    <div class="form-group">
+                        <label>Mindest-Wiederholungsintervall (Tage):</label>
+                        <input type="number" id="simMinRepetition" min="7" max="60" value="21" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Mindestabstand zwischen Wiederholungen des gleichen Rezepts | Standard: 21 Tage</small>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">Tägliche Anforderungen</h4>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simDailyVegetables" checked>
+                        <label for="simDailyVegetables">Gemüse/Salat täglich</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simDailyStarch" checked>
+                        <label for="simDailyStarch">Stärkekomponente täglich</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simDailyFruit" checked>
+                        <label for="simDailyFruit">Obst täglich</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simDailyDairy" checked>
+                        <label for="simDailyDairy">Milchprodukte täglich</label>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">Begrenzungen (pro 20 Verpflegungstage)</h4>
+                    
+                    <div class="form-group">
+                        <label>Fleisch max.:</label>
+                        <input type="number" id="simMaxMeat" min="0" max="20" value="8" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 8 mal | Bereich: 0-20 mal</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Süße Hauptspeisen max.:</label>
+                        <input type="number" id="simMaxSweet" min="0" max="15" value="4" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 4 mal | Bereich: 0-15 mal</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Frittierte Gerichte max.:</label>
+                        <input type="number" id="simMaxFried" min="0" max="15" value="4" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 4 mal | Bereich: 0-15 mal</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Vollkornprodukte min.:</label>
+                        <input type="number" id="simMinWholeGrain" min="0" max="20" value="10" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 10 mal | Bereich: 0-20 mal</small>
+                    </div>
+                </div>
+                
+                <!-- Budget Tab -->
+                <div id="simParamTabBudget" class="tab-content" style="display: none;">
+                    <h3>💰 Budget und Kostenkontrolle</h3>
+                    
+                    <div class="form-group">
+                        <label>Rohkostbudget pro Person/Tag (€):</label>
+                        <input type="number" id="simBudgetPerDay" min="3" max="20" step="0.50" value="8.00" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 8.00 € | Bereich: 3.00-20.00 €</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Budget-Toleranz (%):</label>
+                        <input type="number" id="simBudgetTolerance" min="0" max="50" value="15" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Erlaubte Abweichung vom Ziel-BKT | Standard: 15%</small>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simCostOptimization" checked>
+                        <label for="simCostOptimization">Kostenoptimierung aktivieren</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Maximale Rezeptkosten (€):</label>
+                        <input type="number" id="simMaxRecipeCost" min="1" max="15" step="0.50" value="5.00" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 5.00 € | Bereich: 1.00-15.00 €</small>
+                    </div>
+                </div>
+                
+                <!-- Sustainability Tab -->
+                <div id="simParamTabSustainability" class="tab-content" style="display: none;">
+                    <h3>🌱 Nachhaltigkeit und Regionalität</h3>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simPreferSeasonal" checked>
+                        <label for="simPreferSeasonal">Saisonale Produkte bevorzugen</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simPreferRegional" checked>
+                        <label for="simPreferRegional">Regionale Produkte bevorzugen</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simPreferBio">
+                        <label for="simPreferBio">Bio-Produkte bevorzugen</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Regionalitäts-Radius (km):</label>
+                        <input type="number" id="simRegionalRadius" min="20" max="500" value="100" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Maximale Entfernung für "regionale" Produkte | Standard: 100 km</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mindestanteil Bio-Produkte (%):</label>
+                        <input type="number" id="simMinBioPercent" min="0" max="100" value="20" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 20% | Bereich: 0-100%</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mindestanteil regionale Produkte (%):</label>
+                        <input type="number" id="simMinRegionalPercent" min="0" max="100" value="50" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 50% | Bereich: 0-100%</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>CO₂-Footprint max. (kg CO₂/Tag):</label>
+                        <input type="number" id="simMaxCO2" min="1" max="15" step="0.5" value="5.0" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 5.0 kg | Bereich: 1.0-15.0 kg</small>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simReducePackaging" checked>
+                        <label for="simReducePackaging">Verpackungsmüll reduzieren</label>
+                    </div>
+                </div>
+                
+                <!-- Quality Tab -->
+                <div id="simParamTabQuality" class="tab-content" style="display: none;">
+                    <h3>✅ Qualitäts- und Hygienestandards</h3>
+                    
+                    <div class="form-group">
+                        <label>Maximale Salzmenge pro Tag (g):</label>
+                        <input type="number" id="simMaxSalt" min="2" max="12" step="0.5" value="6.0" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">WHO-Empfehlung: max. 5g/Tag | Standard: 6.0 g</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Maximale Zuckermenge pro Tag (g):</label>
+                        <input type="number" id="simMaxSugar" min="20" max="120" value="50" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">WHO-Empfehlung: max. 50g/Tag | Standard: 50 g</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Maximale gesättigte Fette (% der Gesamtkalorien):</label>
+                        <input type="number" id="simMaxSaturatedFat" min="5" max="20" value="10" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <small style="color: #666;">Standard: 10% | Bereich: 5-20%</small>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">Lebensmittelsicherheit</h4>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simExcludeRawMilk" checked>
+                        <label for="simExcludeRawMilk">Rohmilchprodukte ausschließen</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simExcludeRawEggs" checked>
+                        <label for="simExcludeRawEggs">Rohe Eier ausschließen</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simExcludeRawSausage" checked>
+                        <label for="simExcludeRawSausage">Rohwurst ausschließen</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simExcludeRawMeat" checked>
+                        <label for="simExcludeRawMeat">Ungekochtes Mett ausschließen</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simLimitConvenience" checked>
+                        <label for="simLimitConvenience">Convenience-Produkte begrenzen</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="simSustainablePalmOil" checked>
+                        <label for="simSustainablePalmOil">Palmölfrei oder nachhaltig</label>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e0e0e0; display: flex; gap: 10px; justify-content: flex-end;">
+                    <button class="btn btn-secondary" onclick="resetSimulationParameters()">🔄 Zurücksetzen</button>
+                    <button class="btn" onclick="saveSimulationParameters()">💾 Speichern</button>
+                </div>
             </div>
         </div>
     </div>
@@ -3231,6 +3525,265 @@
         
         function closeSettings() {
             document.getElementById('settingsModal').classList.remove('active');
+        }
+        
+        // Simulation Parameters Functions
+        let simulationParameters = {
+            nutrition: {
+                minCalories: 2000,
+                maxCalories: 2500,
+                proteinPercent: 15,
+                carbsPercent: 50,
+                fatPercent: 30,
+                diabeticDiet: false,
+                highProteinDiet: false,
+                lowSodiumDiet: false,
+                softFood: false,
+                mincedFood: false,
+                pureedFood: false
+            },
+            variety: {
+                minRepetition: 21,
+                dailyVegetables: true,
+                dailyStarch: true,
+                dailyFruit: true,
+                dailyDairy: true,
+                maxMeat: 8,
+                maxSweet: 4,
+                maxFried: 4,
+                minWholeGrain: 10
+            },
+            budget: {
+                budgetPerDay: 8.00,
+                budgetTolerance: 15,
+                costOptimization: true,
+                maxRecipeCost: 5.00
+            },
+            sustainability: {
+                preferSeasonal: true,
+                preferRegional: true,
+                preferBio: false,
+                regionalRadius: 100,
+                minBioPercent: 20,
+                minRegionalPercent: 50,
+                maxCO2: 5.0,
+                reducePackaging: true
+            },
+            quality: {
+                maxSalt: 6.0,
+                maxSugar: 50,
+                maxSaturatedFat: 10,
+                excludeRawMilk: true,
+                excludeRawEggs: true,
+                excludeRawSausage: true,
+                excludeRawMeat: true,
+                limitConvenience: true,
+                sustainablePalmOil: true
+            }
+        };
+        
+        function showSimulationParameters() {
+            loadSimulationParameters();
+            document.getElementById('simulationParametersModal').classList.add('active');
+        }
+        
+        function closeSimulationParameters() {
+            document.getElementById('simulationParametersModal').classList.remove('active');
+        }
+        
+        function switchSimParamTab(tabName) {
+            // Hide all tabs
+            const tabs = ['nutrition', 'variety', 'budget', 'sustainability', 'quality'];
+            tabs.forEach(tab => {
+                document.getElementById('simParamTab' + tab.charAt(0).toUpperCase() + tab.slice(1)).style.display = 'none';
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.settings-tab').forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById('simParamTab' + tabName.charAt(0).toUpperCase() + tabName.slice(1)).style.display = 'block';
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        function saveSimulationParameters() {
+            // Nutrition
+            simulationParameters.nutrition.minCalories = parseInt(document.getElementById('simMinCalories').value);
+            simulationParameters.nutrition.maxCalories = parseInt(document.getElementById('simMaxCalories').value);
+            simulationParameters.nutrition.proteinPercent = parseInt(document.getElementById('simProteinPercent').value);
+            simulationParameters.nutrition.carbsPercent = parseInt(document.getElementById('simCarbsPercent').value);
+            simulationParameters.nutrition.fatPercent = parseInt(document.getElementById('simFatPercent').value);
+            simulationParameters.nutrition.diabeticDiet = document.getElementById('simDiabeticDiet').checked;
+            simulationParameters.nutrition.highProteinDiet = document.getElementById('simHighProteinDiet').checked;
+            simulationParameters.nutrition.lowSodiumDiet = document.getElementById('simLowSodiumDiet').checked;
+            simulationParameters.nutrition.softFood = document.getElementById('simSoftFood').checked;
+            simulationParameters.nutrition.mincedFood = document.getElementById('simMincedFood').checked;
+            simulationParameters.nutrition.pureedFood = document.getElementById('simPureedFood').checked;
+            
+            // Variety
+            simulationParameters.variety.minRepetition = parseInt(document.getElementById('simMinRepetition').value);
+            simulationParameters.variety.dailyVegetables = document.getElementById('simDailyVegetables').checked;
+            simulationParameters.variety.dailyStarch = document.getElementById('simDailyStarch').checked;
+            simulationParameters.variety.dailyFruit = document.getElementById('simDailyFruit').checked;
+            simulationParameters.variety.dailyDairy = document.getElementById('simDailyDairy').checked;
+            simulationParameters.variety.maxMeat = parseInt(document.getElementById('simMaxMeat').value);
+            simulationParameters.variety.maxSweet = parseInt(document.getElementById('simMaxSweet').value);
+            simulationParameters.variety.maxFried = parseInt(document.getElementById('simMaxFried').value);
+            simulationParameters.variety.minWholeGrain = parseInt(document.getElementById('simMinWholeGrain').value);
+            
+            // Budget
+            simulationParameters.budget.budgetPerDay = parseFloat(document.getElementById('simBudgetPerDay').value);
+            simulationParameters.budget.budgetTolerance = parseInt(document.getElementById('simBudgetTolerance').value);
+            simulationParameters.budget.costOptimization = document.getElementById('simCostOptimization').checked;
+            simulationParameters.budget.maxRecipeCost = parseFloat(document.getElementById('simMaxRecipeCost').value);
+            
+            // Sustainability
+            simulationParameters.sustainability.preferSeasonal = document.getElementById('simPreferSeasonal').checked;
+            simulationParameters.sustainability.preferRegional = document.getElementById('simPreferRegional').checked;
+            simulationParameters.sustainability.preferBio = document.getElementById('simPreferBio').checked;
+            simulationParameters.sustainability.regionalRadius = parseInt(document.getElementById('simRegionalRadius').value);
+            simulationParameters.sustainability.minBioPercent = parseInt(document.getElementById('simMinBioPercent').value);
+            simulationParameters.sustainability.minRegionalPercent = parseInt(document.getElementById('simMinRegionalPercent').value);
+            simulationParameters.sustainability.maxCO2 = parseFloat(document.getElementById('simMaxCO2').value);
+            simulationParameters.sustainability.reducePackaging = document.getElementById('simReducePackaging').checked;
+            
+            // Quality
+            simulationParameters.quality.maxSalt = parseFloat(document.getElementById('simMaxSalt').value);
+            simulationParameters.quality.maxSugar = parseInt(document.getElementById('simMaxSugar').value);
+            simulationParameters.quality.maxSaturatedFat = parseInt(document.getElementById('simMaxSaturatedFat').value);
+            simulationParameters.quality.excludeRawMilk = document.getElementById('simExcludeRawMilk').checked;
+            simulationParameters.quality.excludeRawEggs = document.getElementById('simExcludeRawEggs').checked;
+            simulationParameters.quality.excludeRawSausage = document.getElementById('simExcludeRawSausage').checked;
+            simulationParameters.quality.excludeRawMeat = document.getElementById('simExcludeRawMeat').checked;
+            simulationParameters.quality.limitConvenience = document.getElementById('simLimitConvenience').checked;
+            simulationParameters.quality.sustainablePalmOil = document.getElementById('simSustainablePalmOil').checked;
+            
+            // Save to localStorage
+            localStorage.setItem('simulationParameters', JSON.stringify(simulationParameters));
+            
+            alert('✅ Simulationsparameter gespeichert!');
+            closeSimulationParameters();
+        }
+        
+        function loadSimulationParameters() {
+            const saved = localStorage.getItem('simulationParameters');
+            if (saved) {
+                simulationParameters = JSON.parse(saved);
+            }
+            
+            // Nutrition
+            document.getElementById('simMinCalories').value = simulationParameters.nutrition.minCalories;
+            document.getElementById('simMaxCalories').value = simulationParameters.nutrition.maxCalories;
+            document.getElementById('simProteinPercent').value = simulationParameters.nutrition.proteinPercent;
+            document.getElementById('simCarbsPercent').value = simulationParameters.nutrition.carbsPercent;
+            document.getElementById('simFatPercent').value = simulationParameters.nutrition.fatPercent;
+            document.getElementById('simDiabeticDiet').checked = simulationParameters.nutrition.diabeticDiet;
+            document.getElementById('simHighProteinDiet').checked = simulationParameters.nutrition.highProteinDiet;
+            document.getElementById('simLowSodiumDiet').checked = simulationParameters.nutrition.lowSodiumDiet;
+            document.getElementById('simSoftFood').checked = simulationParameters.nutrition.softFood;
+            document.getElementById('simMincedFood').checked = simulationParameters.nutrition.mincedFood;
+            document.getElementById('simPureedFood').checked = simulationParameters.nutrition.pureedFood;
+            
+            // Variety
+            document.getElementById('simMinRepetition').value = simulationParameters.variety.minRepetition;
+            document.getElementById('simDailyVegetables').checked = simulationParameters.variety.dailyVegetables;
+            document.getElementById('simDailyStarch').checked = simulationParameters.variety.dailyStarch;
+            document.getElementById('simDailyFruit').checked = simulationParameters.variety.dailyFruit;
+            document.getElementById('simDailyDairy').checked = simulationParameters.variety.dailyDairy;
+            document.getElementById('simMaxMeat').value = simulationParameters.variety.maxMeat;
+            document.getElementById('simMaxSweet').value = simulationParameters.variety.maxSweet;
+            document.getElementById('simMaxFried').value = simulationParameters.variety.maxFried;
+            document.getElementById('simMinWholeGrain').value = simulationParameters.variety.minWholeGrain;
+            
+            // Budget
+            document.getElementById('simBudgetPerDay').value = simulationParameters.budget.budgetPerDay;
+            document.getElementById('simBudgetTolerance').value = simulationParameters.budget.budgetTolerance;
+            document.getElementById('simCostOptimization').checked = simulationParameters.budget.costOptimization;
+            document.getElementById('simMaxRecipeCost').value = simulationParameters.budget.maxRecipeCost;
+            
+            // Sustainability
+            document.getElementById('simPreferSeasonal').checked = simulationParameters.sustainability.preferSeasonal;
+            document.getElementById('simPreferRegional').checked = simulationParameters.sustainability.preferRegional;
+            document.getElementById('simPreferBio').checked = simulationParameters.sustainability.preferBio;
+            document.getElementById('simRegionalRadius').value = simulationParameters.sustainability.regionalRadius;
+            document.getElementById('simMinBioPercent').value = simulationParameters.sustainability.minBioPercent;
+            document.getElementById('simMinRegionalPercent').value = simulationParameters.sustainability.minRegionalPercent;
+            document.getElementById('simMaxCO2').value = simulationParameters.sustainability.maxCO2;
+            document.getElementById('simReducePackaging').checked = simulationParameters.sustainability.reducePackaging;
+            
+            // Quality
+            document.getElementById('simMaxSalt').value = simulationParameters.quality.maxSalt;
+            document.getElementById('simMaxSugar').value = simulationParameters.quality.maxSugar;
+            document.getElementById('simMaxSaturatedFat').value = simulationParameters.quality.maxSaturatedFat;
+            document.getElementById('simExcludeRawMilk').checked = simulationParameters.quality.excludeRawMilk;
+            document.getElementById('simExcludeRawEggs').checked = simulationParameters.quality.excludeRawEggs;
+            document.getElementById('simExcludeRawSausage').checked = simulationParameters.quality.excludeRawSausage;
+            document.getElementById('simExcludeRawMeat').checked = simulationParameters.quality.excludeRawMeat;
+            document.getElementById('simLimitConvenience').checked = simulationParameters.quality.limitConvenience;
+            document.getElementById('simSustainablePalmOil').checked = simulationParameters.quality.sustainablePalmOil;
+        }
+        
+        function resetSimulationParameters() {
+            if (confirm('⚠️ Möchten Sie wirklich alle Simulationsparameter auf die Standardwerte zurücksetzen?')) {
+                localStorage.removeItem('simulationParameters');
+                simulationParameters = {
+                    nutrition: {
+                        minCalories: 2000,
+                        maxCalories: 2500,
+                        proteinPercent: 15,
+                        carbsPercent: 50,
+                        fatPercent: 30,
+                        diabeticDiet: false,
+                        highProteinDiet: false,
+                        lowSodiumDiet: false,
+                        softFood: false,
+                        mincedFood: false,
+                        pureedFood: false
+                    },
+                    variety: {
+                        minRepetition: 21,
+                        dailyVegetables: true,
+                        dailyStarch: true,
+                        dailyFruit: true,
+                        dailyDairy: true,
+                        maxMeat: 8,
+                        maxSweet: 4,
+                        maxFried: 4,
+                        minWholeGrain: 10
+                    },
+                    budget: {
+                        budgetPerDay: 8.00,
+                        budgetTolerance: 15,
+                        costOptimization: true,
+                        maxRecipeCost: 5.00
+                    },
+                    sustainability: {
+                        preferSeasonal: true,
+                        preferRegional: true,
+                        preferBio: false,
+                        regionalRadius: 100,
+                        minBioPercent: 20,
+                        minRegionalPercent: 50,
+                        maxCO2: 5.0,
+                        reducePackaging: true
+                    },
+                    quality: {
+                        maxSalt: 6.0,
+                        maxSugar: 50,
+                        maxSaturatedFat: 10,
+                        excludeRawMilk: true,
+                        excludeRawEggs: true,
+                        excludeRawSausage: true,
+                        excludeRawMeat: true,
+                        limitConvenience: true,
+                        sustainablePalmOil: true
+                    }
+                };
+                loadSimulationParameters();
+                alert('✅ Simulationsparameter wurden zurückgesetzt!');
+            }
         }
         
         function renderMealSettings() {
