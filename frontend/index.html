@@ -1,3 +1,4 @@
+<!-- Cache-Bust: v1.0.1-20251023 -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -1461,7 +1462,15 @@
                         currentPlan.status_changed_at = new Date().toISOString();
                     }
                     currentConfig = config;
+                    
                     displayPlan(data.plan, true);
+                    
+                    // Automatisch Standard-Portionen auf alle generierten Rezepte anwenden (NACH displayPlan)
+                    initializeDefaultPortions();
+                    
+                    // Aktualisiere Statistiken nach Portionen-Initialisierung
+                    setTimeout(() => updateStatisticsDisplay(), 100);
+                    
                     document.getElementById('btnExportPDF').style.display = 'block';
                     document.getElementById('btnSaveMealPlan').style.display = 'block';
                     document.getElementById('customerPDFSection').style.display = 'block';
@@ -2631,8 +2640,7 @@
         // Zeige Quantity-Sektion wenn Plan vorhanden
         function showQuantitySection() {
             document.getElementById('quantitySection').style.display = 'block';
-            document.getElementById('orderListsSection').style.display = 'block';
-            loadOrderLists();
+            // orderListsSection removed - now on separate page
         }
         
         // Toggle alle Rezept-Checkboxen
@@ -2852,8 +2860,7 @@
                 let dayMainMealPortions = 0;
                 for (const menuLine of day.menu_lines) {
                     // Prüfe ob Hauptkomponente
-                    const isMainMeal = menuLine.name === mainMealComponent || 
-                                      menuLine.cost_forms.some(cf => cf.component === mainMealComponent);
+                    const isMainMeal = menuLine.name === mainMealComponent;
                     
                     for (const recipeSlot of menuLine.recipes) {
                         if (recipeSlot.options) {
@@ -2918,6 +2925,32 @@
             }
             
             return stats;
+        }
+        
+        // Initialisiere Standard-Portionen für alle generierten Rezepte
+        function initializeDefaultPortions() {
+            if (!currentPlan || !currentPlan.days) return;
+            
+            console.log('🔧 Initialisiere Standard-Portionen:', defaultPortions);
+            
+            for (const day of currentPlan.days) {
+                for (const menuLine of day.menu_lines) {
+                    if (!menuLine.recipes) continue;
+                    
+                    for (const recipeSlot of menuLine.recipes) {
+                        if (recipeSlot.options && recipeSlot.options.length > 0) {
+                            // Setze Menge für die ausgewählte Option
+                            const selectedOption = recipeSlot.options[recipeSlot.selected_index];
+                            if (selectedOption) {
+                                selectedOption.quantity = defaultPortions;
+                                console.log(`✅ Menge gesetzt: ${selectedOption.recipe_name} = ${defaultPortions}`);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            console.log('✅ Standard-Portionen initialisiert');
         }
         
         // Aktualisiere Statistik-Anzeige
@@ -3184,57 +3217,13 @@
         
         // Lade und zeige Bestelllisten
         function loadOrderLists() {
-            const dropdown = document.getElementById('orderListDropdown');
-            
-            // Leere Dropdown (außer erste Option)
-            dropdown.innerHTML = '<option value="">-- Bestellliste auswählen --</option>';
-            
-            if (orderLists.length === 0) {
-                return;
-            }
-            
-            // Sortiere nach Datum (neueste zuerst)
-            const sortedLists = [...orderLists].sort((a, b) => b.id - a.id);
-            
-            for (const list of sortedLists) {
-                const option = document.createElement('option');
-                option.value = list.id;
-                option.textContent = `${list.name} (📊 ${list.items.length} Rezepte, ${list.total_quantity} Portionen, ${list.total_cost.toFixed(2)}€)`;
-                dropdown.appendChild(option);
-            }
+            // Order lists are now managed on separate page (order-lists.html)
+            // This function is kept for compatibility but does nothing
+            return;
         }
         
-        // Dropdown-Change-Event: Aktiviere/Deaktiviere Buttons
-        document.getElementById('orderListDropdown').addEventListener('change', (e) => {
-            const selectedId = e.target.value;
-            const hasSelection = selectedId !== '';
-            
-            document.getElementById('btnViewOrderList').disabled = !hasSelection;
-            document.getElementById('btnCopyOrderList').disabled = !hasSelection;
-            document.getElementById('btnExportOrderList').disabled = !hasSelection;
-            document.getElementById('btnDeleteOrderList').disabled = !hasSelection;
-        });
-        
-        // Button-Event-Listener für Bestelllisten-Aktionen
-        document.getElementById('btnViewOrderList').addEventListener('click', () => {
-            const selectedId = parseInt(document.getElementById('orderListDropdown').value);
-            if (selectedId) viewOrderList(selectedId);
-        });
-        
-        document.getElementById('btnCopyOrderList').addEventListener('click', () => {
-            const selectedId = parseInt(document.getElementById('orderListDropdown').value);
-            if (selectedId) copyOrderList(selectedId);
-        });
-        
-        document.getElementById('btnExportOrderList').addEventListener('click', () => {
-            const selectedId = parseInt(document.getElementById('orderListDropdown').value);
-            if (selectedId) exportOrderList(selectedId);
-        });
-        
-        document.getElementById('btnDeleteOrderList').addEventListener('click', () => {
-            const selectedId = parseInt(document.getElementById('orderListDropdown').value);
-            if (selectedId) deleteOrderList(selectedId);
-        });
+        // Order list event listeners removed - functionality moved to order-lists.html
+        // These elements no longer exist on this page
         
         // Zeige Bestellliste mit zwei Teilen
         function viewOrderList(id) {
@@ -5032,36 +5021,7 @@ function recalculateStatistics() {
     updateStatisticsDisplay();
 }
 
-// Funktion zum Aktualisieren der Anzeige
-function updateStatisticsDisplay() {
-    if (!currentPlan || !currentPlan.stats) return;
-    
-    const stats = currentPlan.stats;
-    
-    // Update Gesamt-BKT
-    const bktElement = document.getElementById('overallBKTDisplay');
-    if (bktElement) {
-        bktElement.textContent = stats.average_bkt.toFixed(2) + '€';
-    }
-    
-    // Update Gesamtkosten
-    const costElement = document.getElementById('totalCostDisplay');
-    if (costElement) {
-        costElement.textContent = stats.total_cost.toFixed(2) + '€';
-    }
-    
-    // Update Gesamtportionen
-    const portionsElement = document.getElementById('totalPortionsDisplay');
-    if (portionsElement) {
-        portionsElement.textContent = stats.total_portions || 0;
-    }
-    
-    // Update Portionen pro Tag
-    const perDayElement = document.getElementById('portionsPerDayDisplay');
-    if (perDayElement) {
-        perDayElement.textContent = stats.portions_per_day ? stats.portions_per_day.toFixed(0) : '-';
-    }
-}
+// Doppelte Funktion entfernt - siehe Zeile 2957
 
 
 // Globale Variablen für Rezept-Bearbeitung
