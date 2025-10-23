@@ -39,6 +39,24 @@ def index():
     return send_from_directory(app.static_folder, 'landing.html')
 
 
+@app.route('/index.html')
+def main_app():
+    """Serve Main Application"""
+    return send_from_directory(app.static_folder, 'index.html')
+
+
+@app.route('/order-lists.html')
+def order_lists():
+    """Serve Order Lists Management Page"""
+    return send_from_directory(app.static_folder, 'order-lists.html')
+
+
+@app.route('/meal-plans.html')
+def meal_plans():
+    """Serve Meal Plans Management Page"""
+    return send_from_directory(app.static_folder, 'meal-plans.html')
+
+
 @app.route('/api/recipes', methods=['GET'])
 def get_recipes():
     """Gibt alle Rezepte zurück"""
