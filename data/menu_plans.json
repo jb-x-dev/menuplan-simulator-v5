@@ -1,1 +1,4112 @@
-{"plans": []}
+{
+  "plans": [
+    {
+      "id": 1,
+      "name": "Menüplan 2025-10-23",
+      "status": "Aktiv",
+      "created_at": "2025-10-23T04:53:30.914097",
+      "plan": {
+        "days": [
+          {
+            "date": "2025-11-02",
+            "day_of_week": "Sunday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier"
+                        ],
+                        "cost_per_serving": 1.7,
+                        "description": "Bananenbrot - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 357,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 57",
+                            "price": 2.53,
+                            "quantity": 1280,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 57,
+                        "recipe_name": "Bananenbrot",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.8,
+                        "description": "Overnight Oats - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 355,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 55",
+                            "price": 7.16,
+                            "quantity": 656,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 55,
+                        "recipe_name": "Overnight Oats"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Soja"
+                        ],
+                        "cost_per_serving": 3.8,
+                        "description": "Hähnchen-Teriyaki - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 493,
+                            "lead_time": 1,
+                            "name": "Fleisch 93",
+                            "price": 11.49,
+                            "quantity": 1895,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 93,
+                        "recipe_name": "Hähnchen-Teriyaki"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Hähnchen-Nuggets - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 483,
+                            "lead_time": 1,
+                            "name": "Fleisch 83",
+                            "price": 11.77,
+                            "quantity": 1698,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 83,
+                        "recipe_name": "Hähnchen-Nuggets",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 1.8,
+                        "description": "Verschiedene belegte Brote",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 243,
+                            "lead_time": 1,
+                            "name": "Zutat 43",
+                            "price": 7.68,
+                            "quantity": 706,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 43,
+                        "recipe_name": "Belegte Brote",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Salat mit Feta und Oliven",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 242,
+                            "lead_time": 1,
+                            "name": "Zutat 42",
+                            "price": 3.93,
+                            "quantity": 594,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 42,
+                        "recipe_name": "Griechischer Salat"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.7,
+                        "description": "Käsekuchen - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 961,
+                            "lead_time": 2,
+                            "name": "Dessert-Zutaten 161",
+                            "price": 3.48,
+                            "quantity": 1170,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 161,
+                        "recipe_name": "Käsekuchen",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 2.4,
+                        "description": "Apfelstrudel - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 969,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 169",
+                            "price": 3.87,
+                            "quantity": 985,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 169,
+                        "recipe_name": "Apfelstrudel"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-03",
+            "day_of_week": "Monday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.8,
+                        "description": "Overnight Oats - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 355,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 55",
+                            "price": 7.16,
+                            "quantity": 656,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 55,
+                        "recipe_name": "Overnight Oats",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch",
+                          "Schalenfrüchte"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Knuspriges Müsli mit Naturjoghurt und frischem Obst",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 210,
+                            "lead_time": 3,
+                            "name": "Müsli",
+                            "price": 5.5,
+                            "quantity": 1000,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 211,
+                            "lead_time": 1,
+                            "name": "Joghurt",
+                            "price": 3.2,
+                            "quantity": 1500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 203,
+                            "lead_time": 1,
+                            "name": "Früchte gemischt",
+                            "price": 4.5,
+                            "quantity": 800,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 4,
+                        "recipe_name": "Müsli mit Joghurt und Obst"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 4,
+                        "description": "Schweinegulasch - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 491,
+                            "lead_time": 1,
+                            "name": "Fleisch 91",
+                            "price": 11.11,
+                            "quantity": 2369,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 91,
+                        "recipe_name": "Schweinegulasch",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.6,
+                        "description": "Französisches Gemüsegericht",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 238,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 38",
+                            "price": 11.46,
+                            "quantity": 1677,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 38,
+                        "recipe_name": "Ratatouille"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Salat mit Feta und Oliven",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 242,
+                            "lead_time": 1,
+                            "name": "Zutat 42",
+                            "price": 3.93,
+                            "quantity": 594,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 42,
+                        "recipe_name": "Griechischer Salat",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.5,
+                        "description": "Suppen-Topf - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1100,
+                            "lead_time": 2,
+                            "name": "Abendessen-Zutaten 200",
+                            "price": 3.42,
+                            "quantity": 1466,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 200,
+                        "recipe_name": "Suppen-Topf"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 1.2,
+                        "description": "Wackelpudding - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 966,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 166",
+                            "price": 7.6,
+                            "quantity": 1074,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 166,
+                        "recipe_name": "Wackelpudding",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.2,
+                        "description": "Cremiger Schokoladenpudding",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 202,
+                            "lead_time": 1,
+                            "name": "Milch",
+                            "price": 1.2,
+                            "quantity": 1500,
+                            "supplier_id": 1,
+                            "unit": "ml"
+                          },
+                          {
+                            "category": "STOCK",
+                            "id": 121,
+                            "lead_time": 3,
+                            "name": "Puddingpulver Schoko",
+                            "price": 4.5,
+                            "quantity": 200,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 16,
+                        "recipe_name": "Schokoladenpudding"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-04",
+            "day_of_week": "Tuesday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 1.6,
+                        "description": "Dinkelbrötchen mit Aufstrich - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 365,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 65",
+                            "price": 5.33,
+                            "quantity": 521,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 65,
+                        "recipe_name": "Dinkelbrötchen mit Aufstrich",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.7,
+                        "description": "Magerquark mit frischen Früchten",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 227,
+                            "lead_time": 3,
+                            "name": "Zutat 27",
+                            "price": 2.78,
+                            "quantity": 1678,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 27,
+                        "recipe_name": "Quark mit Früchten"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 4,
+                        "description": "Schweinegulasch - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 491,
+                            "lead_time": 1,
+                            "name": "Fleisch 91",
+                            "price": 11.11,
+                            "quantity": 2369,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 91,
+                        "recipe_name": "Schweinegulasch"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Fisch"
+                        ],
+                        "cost_per_serving": 3.8,
+                        "description": "Pasta mit Thunfisch und Tomaten",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 239,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 39",
+                            "price": 11.29,
+                            "quantity": 2066,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 39,
+                        "recipe_name": "Thunfisch-Pasta",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Coleslaw - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1082,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 182",
+                            "price": 9.87,
+                            "quantity": 1823,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 6,
+                        "recipe_id": 182,
+                        "recipe_name": "Coleslaw",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Klare Gemüsesuppe mit frischem Brot",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch",
+                          "Vegan"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 103,
+                            "lead_time": 1,
+                            "name": "Gemüsemix",
+                            "price": 3.5,
+                            "quantity": 2000,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 205,
+                            "lead_time": 1,
+                            "name": "Vollkornbrot",
+                            "price": 3.2,
+                            "quantity": 500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 18,
+                        "recipe_name": "Gemüsesuppe mit Brot"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2,
+                        "description": "Frucht-Smoothie - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 972,
+                            "lead_time": 3,
+                            "name": "Dessert-Zutaten 172",
+                            "price": 5.65,
+                            "quantity": 1397,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 172,
+                        "recipe_name": "Frucht-Smoothie",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.5,
+                        "description": "Mousse au Chocolat - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 959,
+                            "lead_time": 3,
+                            "name": "Dessert-Zutaten 159",
+                            "price": 6.05,
+                            "quantity": 911,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 159,
+                        "recipe_name": "Mousse au Chocolat"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-05",
+            "day_of_week": "Wednesday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch",
+                          "Schalenfrüchte"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Knuspriges Müsli mit Naturjoghurt und frischem Obst",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 210,
+                            "lead_time": 3,
+                            "name": "Müsli",
+                            "price": 5.5,
+                            "quantity": 1000,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 211,
+                            "lead_time": 1,
+                            "name": "Joghurt",
+                            "price": 3.2,
+                            "quantity": 1500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 203,
+                            "lead_time": 1,
+                            "name": "Früchte gemischt",
+                            "price": 4.5,
+                            "quantity": 800,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 4,
+                        "recipe_name": "Müsli mit Joghurt und Obst"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Griechischer Joghurt mit Honig - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 352,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 52",
+                            "price": 4.62,
+                            "quantity": 562,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 52,
+                        "recipe_name": "Griechischer Joghurt mit Honig",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 3.4,
+                        "description": "Puten-Döner - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 499,
+                            "lead_time": 1,
+                            "name": "Fleisch 99",
+                            "price": 17.98,
+                            "quantity": 2316,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 99,
+                        "recipe_name": "Puten-Döner",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 3.3,
+                        "description": "Geschichtete Lasagne mit Gemüse und Béchamelsauce",
+                        "dietary_forms": [
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 117,
+                            "lead_time": 3,
+                            "name": "Lasagneplatten",
+                            "price": 3.2,
+                            "quantity": 800,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 103,
+                            "lead_time": 1,
+                            "name": "Gemüsemix",
+                            "price": 3.5,
+                            "quantity": 2000,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "STOCK",
+                            "id": 118,
+                            "lead_time": 3,
+                            "name": "Béchamelsauce",
+                            "price": 4.5,
+                            "quantity": 1000,
+                            "supplier_id": 2,
+                            "unit": "ml"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 13,
+                        "recipe_name": "Gemüselasagne"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Klare Gemüsesuppe mit frischem Brot",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch",
+                          "Vegan"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 103,
+                            "lead_time": 1,
+                            "name": "Gemüsemix",
+                            "price": 3.5,
+                            "quantity": 2000,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 205,
+                            "lead_time": 1,
+                            "name": "Vollkornbrot",
+                            "price": 3.2,
+                            "quantity": 500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 18,
+                        "recipe_name": "Gemüsesuppe mit Brot",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.1,
+                        "description": "Gemischter Salat - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 1084,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 184",
+                            "price": 9.62,
+                            "quantity": 1504,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 184,
+                        "recipe_name": "Gemischter Salat"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.5,
+                        "description": "Mousse au Chocolat - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 959,
+                            "lead_time": 3,
+                            "name": "Dessert-Zutaten 159",
+                            "price": 6.05,
+                            "quantity": 911,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 159,
+                        "recipe_name": "Mousse au Chocolat"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.2,
+                        "description": "Brownies - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 962,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 162",
+                            "price": 7.11,
+                            "quantity": 1273,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 162,
+                        "recipe_name": "Brownies",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-06",
+            "day_of_week": "Thursday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.7,
+                        "description": "Pfannkuchen mit Ahornsirup - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 366,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 66",
+                            "price": 7.47,
+                            "quantity": 668,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 66,
+                        "recipe_name": "Pfannkuchen mit Ahornsirup"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.6,
+                        "description": "Käse-Omelette - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 361,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 61",
+                            "price": 3.56,
+                            "quantity": 1066,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 61,
+                        "recipe_name": "Käse-Omelette",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 4,
+                        "description": "Schweinegulasch - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 491,
+                            "lead_time": 1,
+                            "name": "Fleisch 91",
+                            "price": 11.11,
+                            "quantity": 2369,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 91,
+                        "recipe_name": "Schweinegulasch"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 3.5,
+                        "description": "Würziges Chili mit Hackfleisch und Kidneybohnen",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 115,
+                            "lead_time": 1,
+                            "name": "Hackfleisch",
+                            "price": 7.5,
+                            "quantity": 1500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "STOCK",
+                            "id": 116,
+                            "lead_time": 3,
+                            "name": "Kidneybohnen",
+                            "price": 2.8,
+                            "quantity": 800,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 110,
+                            "lead_time": 1,
+                            "name": "Tomaten",
+                            "price": 2.2,
+                            "quantity": 1000,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 12,
+                        "recipe_name": "Chili con Carne",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.1,
+                        "description": "Gemischter Salat - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 1084,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 184",
+                            "price": 9.62,
+                            "quantity": 1504,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 184,
+                        "recipe_name": "Gemischter Salat",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.2,
+                        "description": "Vollkornbrot mit Käse und gemischtem Salat",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 205,
+                            "lead_time": 1,
+                            "name": "Vollkornbrot",
+                            "price": 3.2,
+                            "quantity": 1000,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 213,
+                            "lead_time": 1,
+                            "name": "Käse Scheiben",
+                            "price": 7.8,
+                            "quantity": 500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 124,
+                            "lead_time": 1,
+                            "name": "Salat gemischt",
+                            "price": 3.2,
+                            "quantity": 800,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 19,
+                        "recipe_name": "Käsebrot mit Salat"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.2,
+                        "description": "Cremiger Schokoladenpudding",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 202,
+                            "lead_time": 1,
+                            "name": "Milch",
+                            "price": 1.2,
+                            "quantity": 1500,
+                            "supplier_id": 1,
+                            "unit": "ml"
+                          },
+                          {
+                            "category": "STOCK",
+                            "id": 121,
+                            "lead_time": 3,
+                            "name": "Puddingpulver Schoko",
+                            "price": 4.5,
+                            "quantity": 200,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 16,
+                        "recipe_name": "Schokoladenpudding",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.5,
+                        "description": "Mousse au Chocolat - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 959,
+                            "lead_time": 3,
+                            "name": "Dessert-Zutaten 159",
+                            "price": 6.05,
+                            "quantity": 911,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 159,
+                        "recipe_name": "Mousse au Chocolat"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-07",
+            "day_of_week": "Friday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch",
+                          "Schalenfrüchte"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Knuspriges Müsli mit Naturjoghurt und frischem Obst",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 210,
+                            "lead_time": 3,
+                            "name": "Müsli",
+                            "price": 5.5,
+                            "quantity": 1000,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 211,
+                            "lead_time": 1,
+                            "name": "Joghurt",
+                            "price": 3.2,
+                            "quantity": 1500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 203,
+                            "lead_time": 1,
+                            "name": "Früchte gemischt",
+                            "price": 4.5,
+                            "quantity": 800,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 4,
+                        "recipe_name": "Müsli mit Joghurt und Obst"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Rührei mit Speck - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 356,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 56",
+                            "price": 4.22,
+                            "quantity": 986,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 56,
+                        "recipe_name": "Rührei mit Speck",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 4,
+                        "description": "Schweinegulasch - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 491,
+                            "lead_time": 1,
+                            "name": "Fleisch 91",
+                            "price": 11.11,
+                            "quantity": 2369,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 91,
+                        "recipe_name": "Schweinegulasch"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.7,
+                        "description": "Blumenkohl-Curry - Vegetarisches Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 730,
+                            "lead_time": 1,
+                            "name": "Gemüse 130",
+                            "price": 9.88,
+                            "quantity": 1551,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 130,
+                        "recipe_name": "Blumenkohl-Curry",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Coleslaw - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1082,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 182",
+                            "price": 9.87,
+                            "quantity": 1823,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 6,
+                        "recipe_id": 182,
+                        "recipe_name": "Coleslaw",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.5,
+                        "description": "Brotzeit-Platte - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 1076,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 176",
+                            "price": 6.21,
+                            "quantity": 1509,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 6,
+                        "recipe_id": 176,
+                        "recipe_name": "Brotzeit-Platte"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.5,
+                        "description": "Mousse au Chocolat - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 959,
+                            "lead_time": 3,
+                            "name": "Dessert-Zutaten 159",
+                            "price": 6.05,
+                            "quantity": 911,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 159,
+                        "recipe_name": "Mousse au Chocolat"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 1.5,
+                        "description": "Frischer Obstteller",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 246,
+                            "lead_time": 3,
+                            "name": "Zutat 46",
+                            "price": 6.4,
+                            "quantity": 625,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 46,
+                        "recipe_name": "Obstteller",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-08",
+            "day_of_week": "Saturday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.5,
+                        "description": "Knusprige Cornflakes mit Milch",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 229,
+                            "lead_time": 2,
+                            "name": "Zutat 29",
+                            "price": 3.48,
+                            "quantity": 1706,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 29,
+                        "recipe_name": "Cornflakes mit Milch",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.9,
+                        "description": "Käse-Schinken-Sandwich - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 370,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 70",
+                            "price": 7.48,
+                            "quantity": 1060,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 70,
+                        "recipe_name": "Käse-Schinken-Sandwich"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Brokkoli-Käse-Auflauf - Vegetarisches Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 725,
+                            "lead_time": 1,
+                            "name": "Gemüse 125",
+                            "price": 5.57,
+                            "quantity": 1837,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 125,
+                        "recipe_name": "Brokkoli-Käse-Auflauf",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.6,
+                        "description": "Französisches Gemüsegericht",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 238,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 38",
+                            "price": 11.46,
+                            "quantity": 1677,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 38,
+                        "recipe_name": "Ratatouille"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 2.2,
+                        "description": "Kartoffelsalat - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1081,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 181",
+                            "price": 9.02,
+                            "quantity": 1396,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 6,
+                        "recipe_id": 181,
+                        "recipe_name": "Kartoffelsalat",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Bruschetta - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1089,
+                            "lead_time": 2,
+                            "name": "Abendessen-Zutaten 189",
+                            "price": 5.02,
+                            "quantity": 1467,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 189,
+                        "recipe_name": "Bruschetta"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.5,
+                        "description": "Mousse au Chocolat - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 959,
+                            "lead_time": 3,
+                            "name": "Dessert-Zutaten 159",
+                            "price": 6.05,
+                            "quantity": 911,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 159,
+                        "recipe_name": "Mousse au Chocolat",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.6,
+                        "description": "Crème Brûlée - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 958,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 158",
+                            "price": 6.96,
+                            "quantity": 1457,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 158,
+                        "recipe_name": "Crème Brûlée"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-09",
+            "day_of_week": "Sunday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch",
+                          "Nüsse"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Granola mit Milch - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 367,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 67",
+                            "price": 3.93,
+                            "quantity": 535,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 67,
+                        "recipe_name": "Granola mit Milch",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 1.3,
+                        "description": "Knäckebrot mit verschiedenen Aufstrichen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 224,
+                            "lead_time": 1,
+                            "name": "Zutat 24",
+                            "price": 5.84,
+                            "quantity": 809,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 6,
+                        "recipe_id": 24,
+                        "recipe_name": "Knäckebrot mit Aufstrich"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 4,
+                        "description": "Schweinegulasch - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 491,
+                            "lead_time": 1,
+                            "name": "Fleisch 91",
+                            "price": 11.11,
+                            "quantity": 2369,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 91,
+                        "recipe_name": "Schweinegulasch",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Fisch"
+                        ],
+                        "cost_per_serving": 5.2,
+                        "description": "Gebratenes Lachsfilet mit Reis",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 232,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 32",
+                            "price": 8.27,
+                            "quantity": 1887,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 32,
+                        "recipe_name": "Lachsfilet mit Reis"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 1.8,
+                        "description": "Verschiedene belegte Brote",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 243,
+                            "lead_time": 1,
+                            "name": "Zutat 43",
+                            "price": 7.68,
+                            "quantity": 706,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 43,
+                        "recipe_name": "Belegte Brote",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Bruschetta - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1089,
+                            "lead_time": 2,
+                            "name": "Abendessen-Zutaten 189",
+                            "price": 5.02,
+                            "quantity": 1467,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 189,
+                        "recipe_name": "Bruschetta"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.6,
+                        "description": "Milchreis - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 967,
+                            "lead_time": 3,
+                            "name": "Dessert-Zutaten 167",
+                            "price": 2.01,
+                            "quantity": 996,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 167,
+                        "recipe_name": "Milchreis",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier",
+                          "Nüsse"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Nuss-Ecken - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 973,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 173",
+                            "price": 2.94,
+                            "quantity": 1048,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 173,
+                        "recipe_name": "Nuss-Ecken"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-10",
+            "day_of_week": "Monday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Rührei mit Speck - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 356,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 56",
+                            "price": 4.22,
+                            "quantity": 986,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 56,
+                        "recipe_name": "Rührei mit Speck"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch",
+                          "Nüsse"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Granola mit Milch - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 367,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 67",
+                            "price": 3.93,
+                            "quantity": 535,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 67,
+                        "recipe_name": "Granola mit Milch",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.6,
+                        "description": "Französisches Gemüsegericht",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 238,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 38",
+                            "price": 11.46,
+                            "quantity": 1677,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 38,
+                        "recipe_name": "Ratatouille",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 3.9,
+                        "description": "Putengeschnetzeltes - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 481,
+                            "lead_time": 1,
+                            "name": "Fleisch 81",
+                            "price": 8.91,
+                            "quantity": 1939,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 81,
+                        "recipe_name": "Putengeschnetzeltes"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Sesam"
+                        ],
+                        "cost_per_serving": 3.1,
+                        "description": "Falafel-Teller - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1092,
+                            "lead_time": 2,
+                            "name": "Abendessen-Zutaten 192",
+                            "price": 5.73,
+                            "quantity": 1860,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 192,
+                        "recipe_name": "Falafel-Teller",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 3.8,
+                        "description": "Tapas-Platte - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 1096,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 196",
+                            "price": 6.45,
+                            "quantity": 1430,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 196,
+                        "recipe_name": "Tapas-Platte"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier",
+                          "Nüsse"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Nuss-Ecken - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 973,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 173",
+                            "price": 2.94,
+                            "quantity": 1048,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 173,
+                        "recipe_name": "Nuss-Ecken"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.7,
+                        "description": "Rohkost mit Kräuterdip",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 249,
+                            "lead_time": 3,
+                            "name": "Zutat 49",
+                            "price": 2.9,
+                            "quantity": 844,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 49,
+                        "recipe_name": "Gemüsesticks mit Dip",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-11",
+            "day_of_week": "Tuesday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2,
+                        "description": "Frischer Obstsalat mit Naturjoghurt",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 223,
+                            "lead_time": 1,
+                            "name": "Zutat 23",
+                            "price": 4.2,
+                            "quantity": 1624,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 23,
+                        "recipe_name": "Obstsalat mit Joghurt",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.8,
+                        "description": "Warmer Haferbrei mit frischen Früchten der Saison und Honig",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 201,
+                            "lead_time": 3,
+                            "name": "Haferflocken",
+                            "price": 2.5,
+                            "quantity": 800,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 202,
+                            "lead_time": 1,
+                            "name": "Milch",
+                            "price": 1.2,
+                            "quantity": 2000,
+                            "supplier_id": 1,
+                            "unit": "ml"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 203,
+                            "lead_time": 1,
+                            "name": "Früchte gemischt",
+                            "price": 4.5,
+                            "quantity": 1000,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "STOCK",
+                            "id": 204,
+                            "lead_time": 3,
+                            "name": "Honig",
+                            "price": 8,
+                            "quantity": 200,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 1,
+                        "recipe_name": "Haferflocken-Porridge mit Früchten"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier"
+                        ],
+                        "cost_per_serving": 3.4,
+                        "description": "Hackbraten - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 477,
+                            "lead_time": 1,
+                            "name": "Fleisch 77",
+                            "price": 13.09,
+                            "quantity": 1796,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 77,
+                        "recipe_name": "Hackbraten",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 4.5,
+                        "description": "Rindergulasch - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 471,
+                            "lead_time": 1,
+                            "name": "Fleisch 71",
+                            "price": 8.69,
+                            "quantity": 1618,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 71,
+                        "recipe_name": "Rindergulasch"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Bruschetta - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1089,
+                            "lead_time": 2,
+                            "name": "Abendessen-Zutaten 189",
+                            "price": 5.02,
+                            "quantity": 1467,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 189,
+                        "recipe_name": "Bruschetta"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Coleslaw - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1082,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 182",
+                            "price": 9.87,
+                            "quantity": 1823,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 6,
+                        "recipe_id": 182,
+                        "recipe_name": "Coleslaw",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Muffins - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 963,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 163",
+                            "price": 4.72,
+                            "quantity": 1326,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 163,
+                        "recipe_name": "Muffins",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.5,
+                        "description": "Mousse au Chocolat - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 959,
+                            "lead_time": 3,
+                            "name": "Dessert-Zutaten 159",
+                            "price": 6.05,
+                            "quantity": 911,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 159,
+                        "recipe_name": "Mousse au Chocolat"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-12",
+            "day_of_week": "Wednesday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.5,
+                        "description": "Frische Brötchen mit Käse belegt",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 212,
+                            "lead_time": 1,
+                            "name": "Brötchen",
+                            "price": 0.4,
+                            "quantity": 10,
+                            "supplier_id": 1,
+                            "unit": "Stück"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 213,
+                            "lead_time": 1,
+                            "name": "Käse Scheiben",
+                            "price": 7.8,
+                            "quantity": 500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 5,
+                        "recipe_name": "Käsebrötchen",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.8,
+                        "description": "Overnight Oats - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 355,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 55",
+                            "price": 7.16,
+                            "quantity": 656,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 55,
+                        "recipe_name": "Overnight Oats"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.9,
+                        "description": "Ratatouille-Auflauf - Vegetarisches Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 738,
+                            "lead_time": 1,
+                            "name": "Gemüse 138",
+                            "price": 4.38,
+                            "quantity": 1989,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 138,
+                        "recipe_name": "Ratatouille-Auflauf",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Klassische Pasta Carbonara mit Speck, Ei und Parmesan",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 112,
+                            "lead_time": 3,
+                            "name": "Spaghetti",
+                            "price": 2.5,
+                            "quantity": 1000,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 113,
+                            "lead_time": 1,
+                            "name": "Speck",
+                            "price": 8.5,
+                            "quantity": 500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 208,
+                            "lead_time": 1,
+                            "name": "Eier",
+                            "price": 0.35,
+                            "quantity": 10,
+                            "supplier_id": 1,
+                            "unit": "Stück"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 114,
+                            "lead_time": 1,
+                            "name": "Parmesan",
+                            "price": 12,
+                            "quantity": 300,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 11,
+                        "recipe_name": "Spaghetti Carbonara"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.9,
+                        "description": "Wurst-Käse-Salat - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 1085,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 185",
+                            "price": 6.74,
+                            "quantity": 1957,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 185,
+                        "recipe_name": "Wurst-Käse-Salat",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 2.2,
+                        "description": "Kartoffelsalat - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1081,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 181",
+                            "price": 9.02,
+                            "quantity": 1396,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 6,
+                        "recipe_id": 181,
+                        "recipe_name": "Kartoffelsalat"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.6,
+                        "description": "Crème Brûlée - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 958,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 158",
+                            "price": 6.96,
+                            "quantity": 1457,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 158,
+                        "recipe_name": "Crème Brûlée"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.1,
+                        "description": "Frozen Yogurt - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 975,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 175",
+                            "price": 3.98,
+                            "quantity": 1379,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 175,
+                        "recipe_name": "Frozen Yogurt",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-13",
+            "day_of_week": "Thursday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Rührei mit Speck - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 356,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 56",
+                            "price": 4.22,
+                            "quantity": 986,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 56,
+                        "recipe_name": "Rührei mit Speck"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.5,
+                        "description": "Joghurt-Parfait - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 369,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 69",
+                            "price": 5.46,
+                            "quantity": 1021,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 69,
+                        "recipe_name": "Joghurt-Parfait",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 4.5,
+                        "description": "Rindergulasch - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 471,
+                            "lead_time": 1,
+                            "name": "Fleisch 71",
+                            "price": 8.69,
+                            "quantity": 1618,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 71,
+                        "recipe_name": "Rindergulasch"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Klassische Pasta Carbonara mit Speck, Ei und Parmesan",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 112,
+                            "lead_time": 3,
+                            "name": "Spaghetti",
+                            "price": 2.5,
+                            "quantity": 1000,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 113,
+                            "lead_time": 1,
+                            "name": "Speck",
+                            "price": 8.5,
+                            "quantity": 500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 208,
+                            "lead_time": 1,
+                            "name": "Eier",
+                            "price": 0.35,
+                            "quantity": 10,
+                            "supplier_id": 1,
+                            "unit": "Stück"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 114,
+                            "lead_time": 1,
+                            "name": "Parmesan",
+                            "price": 12,
+                            "quantity": 300,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 11,
+                        "recipe_name": "Spaghetti Carbonara",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.5,
+                        "description": "Suppen-Topf - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1100,
+                            "lead_time": 2,
+                            "name": "Abendessen-Zutaten 200",
+                            "price": 3.42,
+                            "quantity": 1466,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 200,
+                        "recipe_name": "Suppen-Topf"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 1.9,
+                        "description": "Klare Gemüsesuppe mit frischem Brot",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch",
+                          "Vegan"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 103,
+                            "lead_time": 1,
+                            "name": "Gemüsemix",
+                            "price": 3.5,
+                            "quantity": 2000,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 205,
+                            "lead_time": 1,
+                            "name": "Vollkornbrot",
+                            "price": 3.2,
+                            "quantity": 500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 18,
+                        "recipe_name": "Gemüsesuppe mit Brot",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.7,
+                        "description": "Quarkspeise - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 971,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 171",
+                            "price": 2.46,
+                            "quantity": 902,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 171,
+                        "recipe_name": "Quarkspeise",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.6,
+                        "description": "Crème Brûlée - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 958,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 158",
+                            "price": 6.96,
+                            "quantity": 1457,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 158,
+                        "recipe_name": "Crème Brûlée"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-14",
+            "day_of_week": "Friday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Rührei mit Speck - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 356,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 56",
+                            "price": 4.22,
+                            "quantity": 986,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 56,
+                        "recipe_name": "Rührei mit Speck"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.5,
+                        "description": "Knusprige Cornflakes mit Milch",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 229,
+                            "lead_time": 2,
+                            "name": "Zutat 29",
+                            "price": 3.48,
+                            "quantity": 1706,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 29,
+                        "recipe_name": "Cornflakes mit Milch",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 1.8,
+                        "description": "Linsensuppe - Wohltuende Suppe",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 843,
+                            "lead_time": 1,
+                            "name": "Suppenzutaten 143",
+                            "price": 6.73,
+                            "quantity": 2227,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 143,
+                        "recipe_name": "Linsensuppe",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier"
+                        ],
+                        "cost_per_serving": 3.4,
+                        "description": "Hackbraten - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 477,
+                            "lead_time": 1,
+                            "name": "Fleisch 77",
+                            "price": 13.09,
+                            "quantity": 1796,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 77,
+                        "recipe_name": "Hackbraten"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.5,
+                        "description": "Suppen-Topf - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1100,
+                            "lead_time": 2,
+                            "name": "Abendessen-Zutaten 200",
+                            "price": 3.42,
+                            "quantity": 1466,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 200,
+                        "recipe_name": "Suppen-Topf"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Eier"
+                        ],
+                        "cost_per_serving": 2.4,
+                        "description": "Nudelsalat - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1080,
+                            "lead_time": 1,
+                            "name": "Abendessen-Zutaten 180",
+                            "price": 5.78,
+                            "quantity": 1688,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 6,
+                        "recipe_id": 180,
+                        "recipe_name": "Nudelsalat",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.1,
+                        "description": "Cremiger Vanillepudding",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 248,
+                            "lead_time": 2,
+                            "name": "Zutat 48",
+                            "price": 4.47,
+                            "quantity": 636,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 48,
+                        "recipe_name": "Vanillepudding",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 2.4,
+                        "description": "Apfelstrudel - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 969,
+                            "lead_time": 1,
+                            "name": "Dessert-Zutaten 169",
+                            "price": 3.87,
+                            "quantity": 985,
+                            "supplier_id": 3,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 169,
+                        "recipe_name": "Apfelstrudel"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          },
+          {
+            "date": "2025-11-15",
+            "day_of_week": "Saturday",
+            "menu_lines": [
+              {
+                "name": "Frühstück",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Eier"
+                        ],
+                        "cost_per_serving": 3.2,
+                        "description": "Rührei mit Speck - Frühstücksspezialität",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 356,
+                            "lead_time": 1,
+                            "name": "Hauptzutat 56",
+                            "price": 4.22,
+                            "quantity": 986,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 56,
+                        "recipe_name": "Rührei mit Speck"
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 1.2,
+                        "description": "Frisches Vollkornbrot mit Butter und hausgemachter Marmelade",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 205,
+                            "lead_time": 1,
+                            "name": "Vollkornbrot",
+                            "price": 3.2,
+                            "quantity": 1500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 206,
+                            "lead_time": 1,
+                            "name": "Butter",
+                            "price": 6.5,
+                            "quantity": 300,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "STOCK",
+                            "id": 207,
+                            "lead_time": 3,
+                            "name": "Marmelade",
+                            "price": 4.8,
+                            "quantity": 400,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 9,
+                        "recipe_id": 2,
+                        "recipe_name": "Vollkornbrot mit Butter und Marmelade",
+                        "quantity": 50
+                      }
+                    ],
+                    "selected_index": 1
+                  }
+                ]
+              },
+              {
+                "name": "Mittagessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 2.6,
+                        "description": "Gulaschsuppe - Wohltuende Suppe",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 844,
+                            "lead_time": 1,
+                            "name": "Suppenzutaten 144",
+                            "price": 4.85,
+                            "quantity": 1658,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 144,
+                        "recipe_name": "Gulaschsuppe",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 4.1,
+                        "description": "Schweineschnitzel natur - Herzhaftes Hauptgericht",
+                        "dietary_forms": [
+                          "Vollkost"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 497,
+                            "lead_time": 1,
+                            "name": "Fleisch 97",
+                            "price": 17.58,
+                            "quantity": 2439,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 97,
+                        "recipe_name": "Schweineschnitzel natur"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Abendessen",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten",
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.2,
+                        "description": "Vollkornbrot mit Käse und gemischtem Salat",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 205,
+                            "lead_time": 1,
+                            "name": "Vollkornbrot",
+                            "price": 3.2,
+                            "quantity": 1000,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 213,
+                            "lead_time": 1,
+                            "name": "Käse Scheiben",
+                            "price": 7.8,
+                            "quantity": 500,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          },
+                          {
+                            "category": "ORDER",
+                            "id": 124,
+                            "lead_time": 1,
+                            "name": "Salat gemischt",
+                            "price": 3.2,
+                            "quantity": 800,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 19,
+                        "recipe_name": "Käsebrot mit Salat",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Gluten"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Bruschetta - Leichtes Abendessen",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "STOCK",
+                            "id": 1089,
+                            "lead_time": 2,
+                            "name": "Abendessen-Zutaten 189",
+                            "price": 5.02,
+                            "quantity": 1467,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 189,
+                        "recipe_name": "Bruschetta"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              },
+              {
+                "name": "Zwischenmahlzeit",
+                "recipes": [
+                  {
+                    "is_user_modified": false,
+                    "options": [
+                      {
+                        "additives": [],
+                        "allergens": [],
+                        "cost_per_serving": 1.5,
+                        "description": "Frischer Obstteller",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 246,
+                            "lead_time": 3,
+                            "name": "Zutat 46",
+                            "price": 6.4,
+                            "quantity": 625,
+                            "supplier_id": 1,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 8,
+                        "recipe_id": 46,
+                        "recipe_name": "Obstteller",
+                        "quantity": 50
+                      },
+                      {
+                        "additives": [],
+                        "allergens": [
+                          "Milch"
+                        ],
+                        "cost_per_serving": 2.3,
+                        "description": "Eis-Becher - Süße Verführung",
+                        "dietary_forms": [
+                          "Vollkost",
+                          "Vegetarisch"
+                        ],
+                        "ingredients": [
+                          {
+                            "category": "ORDER",
+                            "id": 965,
+                            "lead_time": 2,
+                            "name": "Dessert-Zutaten 165",
+                            "price": 6.29,
+                            "quantity": 969,
+                            "supplier_id": 2,
+                            "unit": "g"
+                          }
+                        ],
+                        "popularity": 7,
+                        "recipe_id": 165,
+                        "recipe_name": "Eis-Becher"
+                      }
+                    ],
+                    "selected_index": 0
+                  }
+                ]
+              }
+            ],
+            "total_cost": 0
+          }
+        ],
+        "statistics": {
+          "average_bkt": 9.02,
+          "bkt_max": 9.2,
+          "bkt_min": 6.8,
+          "bkt_target": 8,
+          "total_cost": 126.3,
+          "total_days": 14,
+          "within_budget": true
+        },
+        "status": "draft",
+        "status_changed_at": "2025-10-23T08:52:48.153Z",
+        "stats": {
+          "total_cost": 0,
+          "total_portions": 0,
+          "average_bkt": 0,
+          "main_meal_portions": 0,
+          "portions_per_day": 0
+        }
+      }
+    }
+  ]
+}

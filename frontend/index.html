@@ -1703,7 +1703,7 @@
                                     <div class="day-date">${formatDate(day.date)}</div>
                                 </label>
                             </div>
-                            <div class="day-cost">${day.total_cost.toFixed(2)}€</div>
+                            <div class="day-cost">${(currentPlan.stats && currentPlan.stats.days && currentPlan.stats.days[dayIdx] && currentPlan.stats.days[dayIdx].bkt) ? currentPlan.stats.days[dayIdx].bkt.toFixed(2) : '0.00'}€</div>
                         </div>
                         <div class="meals-grid">
                 `;
@@ -2742,7 +2742,10 @@
                 searchInput.value = '';
             }
             
-            renderRecipeList(allRecipes);
+            // Warte kurz, bis Modal vollständig geöffnet ist
+            setTimeout(() => {
+                renderRecipeList(allRecipes);
+            }, 100);
         }
         
         function closeRecipeSelectionModal() {
@@ -2999,6 +3002,15 @@
                             📈 BKT: ${dayStats.bkt.toFixed(2)}€
                         </div>
                     `;
+                }
+                
+                // Aktualisiere auch die Tages-BKT in der Überschrift
+                const dayCard = document.getElementById(`day-${i}`);
+                if (dayCard) {
+                    const dayCostElement = dayCard.querySelector('.day-cost');
+                    if (dayCostElement) {
+                        dayCostElement.textContent = dayStats.bkt.toFixed(2) + '€';
+                    }
                 }
             }
         }
