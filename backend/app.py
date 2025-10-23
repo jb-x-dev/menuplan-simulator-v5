@@ -824,3 +824,4 @@ def serve_static_file(path):
     except Exception as e:
         return jsonify({'error': 'File not found'}), 404
 
+# Deployment trigger Wed Oct 22 22:40:49 EDT 2025
