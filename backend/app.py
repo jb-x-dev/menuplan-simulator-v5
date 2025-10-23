@@ -48,13 +48,28 @@ def main_app():
 @app.route('/order-lists.html')
 def order_lists():
     """Serve Order Lists Management Page"""
-    return send_from_directory(app.static_folder, 'order-lists.html')
+    import os
+    file_path = os.path.join(app.static_folder, 'order-lists.html')
+    print(f"DEBUG: Looking for order-lists.html at: {file_path}")
+    print(f"DEBUG: File exists: {os.path.exists(file_path)}")
+    print(f"DEBUG: static_folder: {app.static_folder}")
+    if os.path.exists(file_path):
+        return send_from_directory(app.static_folder, 'order-lists.html')
+    else:
+        return jsonify({'error': f'File not found at {file_path}'}), 404
 
 
 @app.route('/meal-plans.html')
 def meal_plans():
     """Serve Meal Plans Management Page"""
-    return send_from_directory(app.static_folder, 'meal-plans.html')
+    import os
+    file_path = os.path.join(app.static_folder, 'meal-plans.html')
+    print(f"DEBUG: Looking for meal-plans.html at: {file_path}")
+    print(f"DEBUG: File exists: {os.path.exists(file_path)}")
+    if os.path.exists(file_path):
+        return send_from_directory(app.static_folder, 'meal-plans.html')
+    else:
+        return jsonify({'error': f'File not found at {file_path}'}), 404
 
 
 @app.route('/api/recipes', methods=['GET'])
