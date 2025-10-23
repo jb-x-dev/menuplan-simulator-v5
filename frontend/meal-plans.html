@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menüpläne - Menüplansimulator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            padding: 10px 16px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            border: 2px solid #667eea;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #5568d3;
+            border-color: #5568d3;
+        }
+        
+        .nav-btn.secondary {
+            background: #6c757d;
+            border-color: #6c757d;
+        }
+        
+        .nav-btn.secondary:hover {
+            background: #5a6268;
+            border-color: #5a6268;
+        }
+        
+        .content-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .meal-plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .meal-plan-card {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .meal-plan-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.2);
+        }
+        
+        .meal-plan-card.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .meal-plan-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .meal-plan-meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .status-draft {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .status-template {
+            background: #17a2b8;
+            color: white;
+        }
+        
+        .status-active {
+            background: #28a745;
+            color: white;
+        }
+        
+        .status-archived {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover:not(:disabled) {
+            background: #5568d3;
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .btn-secondary:hover:not(:disabled) {
+            background: #5a6268;
+        }
+        
+        .btn-success {
+            background: #28a745;
+        }
+        
+        .btn-success:hover:not(:disabled) {
+            background: #218838;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+        }
+        
+        .btn-danger:hover:not(:disabled) {
+            background: #c82333;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-state-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📅 Menüplan-Verwaltung</h1>
+            <p>Auswählen, Laden, Kopieren und Drucken von Menüplänen</p>
+            
+            <div class="nav-buttons">
+                <a href="/index.html" class="nav-btn">🏠 Startseite</a>
+                <a href="/order-lists.html" class="nav-btn">📋 Bestelllisten</a>
+                <a href="/recipes.html" class="nav-btn secondary">📚 Rezeptverwaltung</a>
+            </div>
+        </div>
+        
+        <div class="content-panel">
+            <h2 style="margin-bottom: 20px;">Gespeicherte Menüpläne</h2>
+            
+            <div id="mealPlansContainer" class="meal-plan-grid">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📅</div>
+                    <h3>Keine Menüpläne vorhanden</h3>
+                    <p>Erstellen Sie einen Menüplan auf der Startseite</p>
+                </div>
+            </div>
+            
+            <div class="action-buttons" id="actionButtons" style="display: none;">
+                <button class="btn btn-success" id="btnLoad" disabled>📂 Laden</button>
+                <button class="btn btn-secondary" id="btnCopy" disabled>📋 Kopieren</button>
+                <button class="btn btn-secondary" id="btnExportPDF" disabled>📄 PDF Export</button>
+                <button class="btn btn-danger" id="btnDelete" disabled>🗑️ Löschen</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let mealPlans = [];
+        let selectedMealPlan = null;
+        
+        // Load meal plans from localStorage
+        function loadMealPlans() {
+            const saved = localStorage.getItem('saved_meal_plans');
+            if (saved) {
+                mealPlans = JSON.parse(saved);
+            }
+            renderMealPlans();
+        }
+        
+        // Render meal plans
+        function renderMealPlans() {
+            const container = document.getElementById('mealPlansContainer');
+            const actionButtons = document.getElementById('actionButtons');
+            
+            if (mealPlans.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📅</div>
+                        <h3>Keine Menüpläne vorhanden</h3>
+                        <p>Erstellen Sie einen Menüplan auf der Startseite</p>
+                    </div>
+                `;
+                actionButtons.style.display = 'none';
+                return;
+            }
+            
+            actionButtons.style.display = 'flex';
+            
+            container.innerHTML = mealPlans.map((plan, index) => {
+                const date = new Date(plan.timestamp);
+                const dateStr = date.toLocaleDateString('de-DE');
+                const timeStr = date.toLocaleTimeString('de-DE', {hour: '2-digit', minute: '2-digit'});
+                
+                const statusLabels = {
+                    'draft': '📝 Entwurf',
+                    'template': '📋 Vorlage',
+                    'active': '✅ Aktiv',
+                    'archived': '📦 Archiviert'
+                };
+                
+                const totalDays = plan.plan.days ? plan.plan.days.length : 0;
+                
+                return `
+                    <div class="meal-plan-card ${selectedMealPlan === index ? 'selected' : ''}" 
+                         onclick="selectMealPlan(${index})">
+                        <div class="meal-plan-title">${plan.name}</div>
+                        <div class="meal-plan-meta">📅 ${dateStr} ${timeStr}</div>
+                        <div class="meal-plan-meta">📆 ${totalDays} Tage</div>
+                        <div class="meal-plan-meta">💰 ${plan.plan.total_cost ? plan.plan.total_cost.toFixed(2) + '€' : 'N/A'}</div>
+                        <span class="status-badge status-${plan.status || 'draft'}">${statusLabels[plan.status || 'draft']}</span>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // Select meal plan
+        function selectMealPlan(index) {
+            selectedMealPlan = index;
+            renderMealPlans();
+            updateButtons();
+        }
+        
+        // Update button states
+        function updateButtons() {
+            const hasSelection = selectedMealPlan !== null;
+            document.getElementById('btnLoad').disabled = !hasSelection;
+            document.getElementById('btnCopy').disabled = !hasSelection;
+            document.getElementById('btnExportPDF').disabled = !hasSelection;
+            document.getElementById('btnDelete').disabled = !hasSelection;
+        }
+        
+        // Load meal plan
+        document.getElementById('btnLoad').addEventListener('click', () => {
+            if (selectedMealPlan === null) return;
+            
+            const plan = mealPlans[selectedMealPlan];
+            
+            // Save to localStorage as current plan
+            localStorage.setItem('current_meal_plan', JSON.stringify(plan));
+            
+            // Redirect to index.html
+            window.location.href = '/index.html';
+        });
+        
+        // Copy meal plan
+        document.getElementById('btnCopy').addEventListener('click', () => {
+            if (selectedMealPlan === null) return;
+            
+            const plan = mealPlans[selectedMealPlan];
+            let text = `${plan.name}\n\n`;
+            
+            if (plan.plan.days) {
+                plan.plan.days.forEach((day, dayIdx) => {
+                    text += `Tag ${dayIdx + 1}: ${day.date}\n`;
+                    text += '─'.repeat(50) + '\n';
+                    
+                    day.menu_lines.forEach(menuLine => {
+                        text += `\n${menuLine.name}:\n`;
+                        
+                        if (menuLine.recipes && menuLine.recipes.length > 0) {
+                            menuLine.recipes.forEach(recipeSlot => {
+                                if (recipeSlot.options && recipeSlot.options.length > 0) {
+                                    const selected = recipeSlot.options[recipeSlot.selected_index || 0];
+                                    text += `  - ${selected.recipe_name} (${selected.cost_per_serving.toFixed(2)}€)\n`;
+                                } else if (recipeSlot.recipe_name) {
+                                    text += `  - ${recipeSlot.recipe_name} (${recipeSlot.cost_per_serving.toFixed(2)}€)\n`;
+                                }
+                            });
+                        }
+                    });
+                    
+                    text += '\n';
+                });
+            }
+            
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ Menüplan in Zwischenablage kopiert!');
+            });
+        });
+        
+        // Export meal plan as PDF
+        document.getElementById('btnExportPDF').addEventListener('click', () => {
+            if (selectedMealPlan === null) return;
+            
+            const plan = mealPlans[selectedMealPlan];
+            
+            // Save to localStorage and redirect to index.html for PDF export
+            localStorage.setItem('export_meal_plan', JSON.stringify(plan));
+            window.location.href = '/index.html?action=export_pdf';
+        });
+        
+        // Delete meal plan
+        document.getElementById('btnDelete').addEventListener('click', () => {
+            if (selectedMealPlan === null) return;
+            
+            if (confirm('Möchten Sie diesen Menüplan wirklich löschen?')) {
+                mealPlans.splice(selectedMealPlan, 1);
+                localStorage.setItem('saved_meal_plans', JSON.stringify(mealPlans));
+                selectedMealPlan = null;
+                loadMealPlans();
+            }
+        });
+        
+        // Initialize
+        loadMealPlans();
+        updateButtons();
+    </script>
+</body>
+</html>
+
