@@ -97,9 +97,14 @@ class SimulatorConfig:
     excluded_aversions: List[str] = None
     recipe_options_count: int = 2  # Anzahl der Rezeptoptionen pro Mahlzeit
     
+    # NEU: Simulationsparameter
+    simulation_params: Dict = None
+    
     def __post_init__(self):
         if self.excluded_aversions is None:
             self.excluded_aversions = []
+        if self.simulation_params is None:
+            self.simulation_params = {}
     
     @property
     def bkt_min(self):
