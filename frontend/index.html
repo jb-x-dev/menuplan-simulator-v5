@@ -47,8 +47,8 @@
         .mode-btn {
             padding: 10px 20px;
             border: 2px solid #D3D3D3;
-            background: white;
-            color: #667eea;
+            background: #f5f5f5;
+            color: #666;
             border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
@@ -56,7 +56,8 @@
         }
         
         .mode-btn.active {
-            background: white; border: 1px solid #D3D3D3;
+            background: #667eea;
+            border: 2px solid #667eea;
             color: white;
         }
         
@@ -1040,7 +1041,7 @@
     
     <!-- Simulation Parameters Modal -->
     <div class="modal" id="simulationParametersModal">
-        <div class="modal-content" style="max-width: 1000px; max-height: 90vh; overflow-y: auto;">
+        <div class="modal-content" style="max-width: 900px; max-height: 85vh; overflow-y: auto; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
             <div class="modal-header">
                 <h2 class="modal-title">⚙️ Simulationsparameter</h2>
                 <button class="modal-close" onclick="closeSimulationParameters()">&times;</button>
@@ -2889,9 +2890,9 @@
                 
                 dayStats.mainMealPortions = dayMainMealPortions;
                 
-                // BKT pro Tag = Gesamtkosten / Gesamtportionen
-                if (dayStats.totalPortions > 0) {
-                    dayStats.bkt = dayStats.totalCost / dayStats.totalPortions;
+                // BKT pro Tag = Gesamtkosten / Hauptmahlzeit-Portionen (nur Hauptmahlzeiten)
+                if (dayMainMealPortions > 0) {
+                    dayStats.bkt = dayStats.totalCost / dayMainMealPortions;
                 }
                 
                 stats.days.push(dayStats);
@@ -2913,9 +2914,9 @@
                 stats.averagePortions = stats.totalPortions / stats.totalMeals;
             }
             
-            // Gesamt-BKT = Gesamtkosten / Gesamtportionen
-            if (stats.totalPortions > 0) {
-                stats.overallBKT = stats.totalCost / stats.totalPortions;
+            // Gesamt-BKT = Gesamtkosten / Hauptmahlzeit-Portionen (nur Hauptmahlzeiten)
+            if (stats.mainMealPortions > 0) {
+                stats.overallBKT = stats.totalCost / stats.mainMealPortions;
             }
             
             // Durchschnittlicher BKT über alle Tage
