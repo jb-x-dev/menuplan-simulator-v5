@@ -1848,53 +1848,14 @@
         }
         
         function changeRecipe(dayIdx, menuLineIdx, recipeIdx) {
-            const day = currentPlan.days[dayIdx];
-            const menuLine = day.menu_lines[menuLineIdx];
-            const component = menuLine.name;
-            
-            // Filtere Rezepte nach Komponente und Constraints
-            const filteredRecipes = allRecipes.filter(r => {
-                if (r.menu_component !== component) return false;
-                if (!r.is_enabled) return false;
-                
-                // Prüfe Allergene
-                if (currentConfig.excluded_allergens.some(a => r.allergens.includes(a))) return false;
-                
-                // Prüfe Ernährungsformen
-                if (!currentConfig.dietary_forms.some(df => r.dietary_forms.includes(df))) return false;
-                
-                return true;
-            });
-            
-            showRecipeSelector(filteredRecipes, (selectedRecipe, portionCount) => {
-                // Ersetze oder füge Rezept hinzu
-                const portions = portionCount || 50;
-                const newRecipeData = {
-                    recipe_id: selectedRecipe.id,
-                    recipe_name: selectedRecipe.name,
-                    recipe_cost: selectedRecipe.cost,
-                    cost_per_serving: selectedRecipe.cost,
-                    cost: selectedRecipe.cost,
-                    component: component,
-                    target_count: portions,
-                    allergens: selectedRecipe.allergens
-                };
-                
-                if (recipeIdx === -1) {
-                    // Neues Rezept hinzufügen
-                    if (!menuLine.recipes) menuLine.recipes = [];
-                    menuLine.recipes.push(newRecipeData);
-                } else {
-                    // Rezept ersetzen
-                    menuLine.recipes[recipeIdx] = newRecipeData;
-                }
-                
-                // Aktualisiere Kosten
-                updatePlanCosts();
-                
-                // Neu anzeigen
-                displayPlan(currentPlan, currentMode === 'auto');
-            });
+            // Verwende das neue Modal-System
+            if (recipeIdx === -1) {
+                // Neues Rezept hinzufügen
+                addRecipeToMeal(dayIdx, menuLineIdx);
+            } else {
+                // Rezept ersetzen
+                replaceRecipe(dayIdx, menuLineIdx, recipeIdx);
+            }
         }
         
         function showRecipeSelector(recipes, onSelect) {
