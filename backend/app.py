@@ -873,3 +873,14 @@ def serve_static_file(path):
         return jsonify({'error': f'File not found: {path}', 'details': str(e)}), 404
 
 # Deployment trigger Wed Oct 22 22:40:49 EDT 2025
+
+
+@app.route('/deployment-version')
+def deployment_version():
+    """Serve deployment version file for verification"""
+    try:
+        version_file = os.path.join(os.path.dirname(__file__), '..', 'DEPLOYMENT_VERSION.txt')
+        with open(version_file, 'r') as f:
+            return f.read(), 200, {'Content-Type': 'text/plain'}
+    except Exception as e:
+        return f"Error reading version file: {e}", 500
