@@ -598,6 +598,50 @@
                 </div>
                 
                 <div class="form-group">
+                    <label class="form-label">🔄 Kategorien (Vielfalt & Häufigkeit)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="categoryMeat" value="meat">
+                            <label>🥩 Enthält Fleisch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="categorySweet" value="sweet">
+                            <label>🍰 Süße Hauptspeise</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="categoryFried" value="fried">
+                            <label>🍟 Frittiert</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="categoryWholeGrain" value="whole_grain">
+                            <label>🌾 Vollkorn</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">✅ Qualitätsfilter (Rohe Zutaten)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="qualityRawMilk" value="raw_milk">
+                            <label>🥛 Enthält Rohmilch</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="qualityRawEggs" value="raw_eggs">
+                            <label>🥚 Enthält rohe Eier</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="qualityRawSausage" value="raw_sausage">
+                            <label>🌭 Enthält Rohwurst</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="qualityRawMeat" value="raw_meat">
+                            <label>🥩 Enthält rohes Fleisch (Mett)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
                     <label class="form-label">
                         <input type="checkbox" id="recipeEnabled" checked>
                         Rezept aktiviert
@@ -699,6 +743,16 @@
                         <td>
                             <div class="recipe-name">${recipe.name}</div>
                             <small style="color: #666;">${recipe.group}</small>
+                            <div style="margin-top: 4px;">
+                                ${recipe.contains_meat ? '<span class="badge" style="background: #ff6b6b; font-size: 10px;">🥩 Fleisch</span> ' : ''}
+                                ${recipe.is_sweet ? '<span class="badge" style="background: #ffd93d; color: #333; font-size: 10px;">🍰 Süß</span> ' : ''}
+                                ${recipe.is_fried ? '<span class="badge" style="background: #ff9f43; font-size: 10px;">🍟 Frittiert</span> ' : ''}
+                                ${recipe.is_whole_grain ? '<span class="badge" style="background: #a0522d; font-size: 10px;">🌾 Vollkorn</span> ' : ''}
+                                ${recipe.contains_raw_eggs ? '<span class="badge" style="background: #e74c3c; font-size: 10px;">⚠️ Rohe Eier</span> ' : ''}
+                                ${recipe.contains_raw_milk ? '<span class="badge" style="background: #e74c3c; font-size: 10px;">⚠️ Rohmilch</span> ' : ''}
+                                ${recipe.contains_raw_sausage ? '<span class="badge" style="background: #e74c3c; font-size: 10px;">⚠️ Rohwurst</span> ' : ''}
+                                ${recipe.contains_raw_meat ? '<span class="badge" style="background: #e74c3c; font-size: 10px;">⚠️ Rohes Fleisch</span> ' : ''}
+                            </div>
                         </td>
                         <td>${recipe.category}</td>
                         <td><span class="badge badge-component">${recipe.menu_component}</span></td>
@@ -792,6 +846,18 @@
                 cb.checked = recipe.dietary_forms.includes(cb.value);
             });
             
+            // Kategorien (Vielfalt)
+            document.getElementById('categoryMeat').checked = recipe.contains_meat || false;
+            document.getElementById('categorySweet').checked = recipe.is_sweet || false;
+            document.getElementById('categoryFried').checked = recipe.is_fried || false;
+            document.getElementById('categoryWholeGrain').checked = recipe.is_whole_grain || false;
+            
+            // Qualitätsfilter
+            document.getElementById('qualityRawMilk').checked = recipe.contains_raw_milk || false;
+            document.getElementById('qualityRawEggs').checked = recipe.contains_raw_eggs || false;
+            document.getElementById('qualityRawSausage').checked = recipe.contains_raw_sausage || false;
+            document.getElementById('qualityRawMeat').checked = recipe.contains_raw_meat || false;
+            
             document.getElementById('recipeModal').classList.add('active');
         }
         
@@ -833,7 +899,17 @@
                 description: document.getElementById('recipeDescription').value,
                 allergens: allergens,
                 dietary_forms: dietaryForms,
-                is_enabled: document.getElementById('recipeEnabled').checked
+                is_enabled: document.getElementById('recipeEnabled').checked,
+                // Kategorien (Vielfalt)
+                contains_meat: document.getElementById('categoryMeat').checked,
+                is_sweet: document.getElementById('categorySweet').checked,
+                is_fried: document.getElementById('categoryFried').checked,
+                is_whole_grain: document.getElementById('categoryWholeGrain').checked,
+                // Qualitätsfilter
+                contains_raw_milk: document.getElementById('qualityRawMilk').checked,
+                contains_raw_eggs: document.getElementById('qualityRawEggs').checked,
+                contains_raw_sausage: document.getElementById('qualityRawSausage').checked,
+                contains_raw_meat: document.getElementById('qualityRawMeat').checked
             };
             
             console.log('Rezept gespeichert:', recipeData);
