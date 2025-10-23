@@ -34,6 +34,18 @@ class Recipe:
     description: str = ""
     portion_size: str = "1 Portion"
     
+    # NEU: Kategorien für Häufigkeitsbeschränkungen
+    contains_meat: bool = False
+    is_sweet: bool = False
+    is_fried: bool = False
+    is_whole_grain: bool = False
+    
+    # NEU: Qualitätsmerkmale
+    contains_raw_milk: bool = False
+    contains_raw_eggs: bool = False
+    contains_raw_sausage: bool = False
+    contains_raw_meat: bool = False
+    
     def __post_init__(self):
         # Setze Defaults für optionale Felder
         if self.additives is None:
@@ -152,7 +164,24 @@ class MenuPlanSimulator:
         
         print("🎯 Phase 4: Optimizing plan (Local Search)...")
         self.progress = 70
-        self.current_plan = self._local_search_optimize(max_iterations=500)
+        
+        # NEU: Deaktiviere Local Search wenn Häufigkeitsbeschränkungen oder
+        # Wiederholungsabstand aktiv sind (Local Search berücksichtigt diese nicht)
+        variety_params = self.config.simulation_params.get('variety', {})
+        has_frequency_constraints = (
+            variety_params.get('maxMeat', 999) < 999 or
+            variety_params.get('maxSweet', 999) < 999 or
+            variety_params.get('maxFried', 999) < 999
+        )
+        has_repetition_constraint = variety_params.get('minRepetition', 21) < 21
+        
+        if has_frequency_constraints or has_repetition_constraint:
+            if has_frequency_constraints:
+                print("  ⚠️  Local Search disabled (frequency constraints active)")
+            if has_repetition_constraint:
+                print("  ⚠️  Local Search disabled (repetition distance active)")
+        else:
+            self.current_plan = self._local_search_optimize(max_iterations=500)
         
         print("🔍 Phase 5: Validating plan...")
         self.progress = 90
@@ -173,6 +202,13 @@ class MenuPlanSimulator:
         """Filtert Rezepte basierend auf Hard Constraints"""
         eligible = defaultdict(list)
         
+        # NEU: Qualitäts-Parameter holen
+        quality_params = self.config.simulation_params.get('quality', {})
+        exclude_raw_milk = quality_params.get('excludeRawMilk', True)
+        exclude_raw_eggs = quality_params.get('excludeRawEggs', True)
+        exclude_raw_sausage = quality_params.get('excludeRawSausage', True)
+        exclude_raw_meat = quality_params.get('excludeRawMeat', True)
+        
         for recipe in self.all_recipes:
             # Status-Check
             if recipe.status != "Freigegeben" or not recipe.is_enabled:
@@ -188,6 +224,16 @@ class MenuPlanSimulator:
             
             # Ernährungsformen-Check
             if not (set(recipe.dietary_forms) & set(self.config.dietary_forms)):
+                continue
+            
+            # NEU: Qualitäts-Checks
+            if exclude_raw_milk and recipe.contains_raw_milk:
+                continue
+            if exclude_raw_eggs and recipe.contains_raw_eggs:
+                continue
+            if exclude_raw_sausage and recipe.contains_raw_sausage:
+                continue
+            if exclude_raw_meat and recipe.contains_raw_meat:
                 continue
             
             # Zuordnung zu Menülinien
@@ -234,6 +280,20 @@ class MenuPlanSimulator:
         plan = {}
         used_recipes = defaultdict(list)
         
+        # NEU: Häufigkeits-Zähler für Kategorien
+        category_counts = {
+            'meat': 0,
+            'sweet': 0,
+            'fried': 0
+        }
+        
+        # NEU: Limits aus Parametern holen
+        variety_params = self.config.simulation_params.get('variety', {})
+        max_meat = variety_params.get('maxMeat', 999)
+        max_sweet = variety_params.get('maxSweet', 999)
+        max_fried = variety_params.get('maxFried', 999)
+        min_repetition = variety_params.get('minRepetition', 7)
+        
         current_date = self.config.start_date_obj
         total_days = (self.config.end_date_obj - current_date).days + 1
         day_count = 0
@@ -246,11 +306,65 @@ class MenuPlanSimulator:
                     key = (menu_line['id'], cost_form['id'])
                     candidates = self.eligible_recipes[key]
                     
+                    # NEU: Filtere Rezepte die Häufigkeitslimits überschreiten würden
+                    available_candidates = []
+                    soft_constraint_candidates = []  # Kandidaten mit kleiner Überschreitung
+                    
+                    for recipe in candidates:
+                        # Prüfe Häufigkeitslimits (Hard Constraints)
+                        violates_hard = False
+                        violates_soft = False
+                        
+                        # Erlaubt eine kleine Überschreitung (+2) als Soft Constraint
+                        if recipe.contains_meat:
+                            if category_counts['meat'] >= max_meat + 2:
+                                violates_hard = True
+                            elif category_counts['meat'] >= max_meat:
+                                violates_soft = True
+                        
+                        if recipe.is_sweet:
+                            if category_counts['sweet'] >= max_sweet + 2:
+                                violates_hard = True
+                            elif category_counts['sweet'] >= max_sweet:
+                                violates_soft = True
+                        
+                        if recipe.is_fried:
+                            if category_counts['fried'] >= max_fried + 2:
+                                violates_hard = True
+                            elif category_counts['fried'] >= max_fried:
+                                violates_soft = True
+                        
+                        if violates_hard:
+                            continue
+                        
+                        # Prüfe Wiederholungsabstand
+                        if recipe.id in used_recipes:
+                            last_used_dates = used_recipes[recipe.id]
+                            if last_used_dates:
+                                days_since_last_use = (current_date - max(last_used_dates)).days
+                                if days_since_last_use < min_repetition:
+                                    continue
+                        
+                        if violates_soft:
+                            soft_constraint_candidates.append(recipe)
+                        else:
+                            available_candidates.append(recipe)
+                    
+                    # Fallback-Strategie:
+                    # 1. Bevorzuge Kandidaten ohne Constraint-Verletzung
+                    # 2. Falls keine: Verwende Kandidaten mit Soft-Constraint-Verletzung
+                    # 3. Falls keine: Verwende alle Kandidaten (letzter Ausweg)
+                    if not available_candidates:
+                        if soft_constraint_candidates:
+                            available_candidates = soft_constraint_candidates
+                        else:
+                            available_candidates = candidates
+                    
                     # Score berechnen
                     scored = [
                         (self._calculate_score(r, current_date, plan, 
                                               used_recipes, daily_cost), r)
-                        for r in candidates
+                        for r in available_candidates
                     ]
                     scored.sort(reverse=True, key=lambda x: x[0])
                     
@@ -288,6 +402,15 @@ class MenuPlanSimulator:
                     plan[plan_key] = meal_slot
                     used_recipes[meal_slot.selected.id].append(current_date)
                     daily_cost += meal_slot.cost
+                    
+                    # NEU: Aktualisiere Häufigkeits-Zähler
+                    selected_recipe = meal_slot.selected
+                    if selected_recipe.contains_meat:
+                        category_counts['meat'] += 1
+                    if selected_recipe.is_sweet:
+                        category_counts['sweet'] += 1
+                    if selected_recipe.is_fried:
+                        category_counts['fried'] += 1
             
             current_date += timedelta(days=1)
             day_count += 1

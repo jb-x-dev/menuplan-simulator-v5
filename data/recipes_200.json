@@ -83,7 +83,15 @@
         "lead_time": 3,
         "price": 8.0
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 2,
@@ -159,7 +167,15 @@
         "lead_time": 3,
         "price": 4.8
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 3,
@@ -245,7 +261,15 @@
         "lead_time": 1,
         "price": 12.0
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 4,
@@ -322,7 +346,15 @@
         "lead_time": 1,
         "price": 4.5
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 5,
@@ -388,7 +420,15 @@
         "lead_time": 1,
         "price": 7.8
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 6,
@@ -462,7 +502,15 @@
         "lead_time": 1,
         "price": 3.5
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 7,
@@ -518,7 +566,15 @@
         "lead_time": 3,
         "price": 1.8
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 8,
@@ -582,7 +638,15 @@
         "lead_time": 1,
         "price": 3.5
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 9,
@@ -657,7 +721,15 @@
         "lead_time": 3,
         "price": 2.8
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 10,
@@ -724,7 +796,15 @@
         "lead_time": 3,
         "price": 1.5
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 11,
@@ -810,7 +890,15 @@
         "lead_time": 1,
         "price": 12.0
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 12,
@@ -876,7 +964,15 @@
         "lead_time": 1,
         "price": 2.2
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 13,
@@ -951,7 +1047,15 @@
         "lead_time": 3,
         "price": 4.5
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 14,
@@ -1016,7 +1120,15 @@
         "lead_time": 1,
         "price": 3.5
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 15,
@@ -1076,7 +1188,15 @@
         "lead_time": 1,
         "price": 6.5
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 16,
@@ -1141,7 +1261,15 @@
         "lead_time": 3,
         "price": 4.5
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 17,
@@ -1210,7 +1338,15 @@
         "lead_time": 1,
         "price": 0.35
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 18,
@@ -1276,7 +1412,15 @@
         "lead_time": 1,
         "price": 3.2
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 19,
@@ -1352,7 +1496,15 @@
         "lead_time": 1,
         "price": 3.2
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 20,
@@ -1418,7 +1570,15 @@
         "lead_time": 1,
         "price": 3.5
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 21,
@@ -1474,7 +1634,15 @@
         "lead_time": 3,
         "price": 7.05
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 22,
@@ -1530,7 +1698,15 @@
         "lead_time": 1,
         "price": 6.54
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 23,
@@ -1585,7 +1761,15 @@
         "lead_time": 1,
         "price": 4.2
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 24,
@@ -1640,7 +1824,15 @@
         "lead_time": 1,
         "price": 5.84
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 25,
@@ -1695,7 +1887,15 @@
         "lead_time": 1,
         "price": 5.04
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 26,
@@ -1751,7 +1951,15 @@
         "lead_time": 2,
         "price": 4.36
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 27,
@@ -1806,7 +2014,15 @@
         "lead_time": 3,
         "price": 2.78
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 28,
@@ -1862,7 +2078,15 @@
         "lead_time": 3,
         "price": 7.62
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 29,
@@ -1918,7 +2142,15 @@
         "lead_time": 2,
         "price": 3.48
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 30,
@@ -1973,7 +2205,15 @@
         "lead_time": 3,
         "price": 5.57
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 31,
@@ -2025,7 +2265,15 @@
         "lead_time": 1,
         "price": 6.18
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 32,
@@ -2079,7 +2327,15 @@
         "lead_time": 1,
         "price": 8.27
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 33,
@@ -2131,7 +2387,15 @@
         "lead_time": 1,
         "price": 8.01
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 34,
@@ -2187,7 +2451,15 @@
         "lead_time": 1,
         "price": 7.88
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 35,
@@ -2241,7 +2513,15 @@
         "lead_time": 1,
         "price": 10.26
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 36,
@@ -2296,7 +2576,15 @@
         "lead_time": 1,
         "price": 6.32
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 37,
@@ -2351,7 +2639,15 @@
         "lead_time": 1,
         "price": 11.61
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": true,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 38,
@@ -2404,7 +2700,15 @@
         "lead_time": 1,
         "price": 11.46
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 39,
@@ -2459,7 +2763,15 @@
         "lead_time": 1,
         "price": 11.29
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 40,
@@ -2514,7 +2826,15 @@
         "lead_time": 1,
         "price": 7.82
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 41,
@@ -2568,7 +2888,15 @@
         "lead_time": 2,
         "price": 6.4
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 42,
@@ -2623,7 +2951,15 @@
         "lead_time": 1,
         "price": 3.93
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 43,
@@ -2678,7 +3014,15 @@
         "lead_time": 1,
         "price": 7.68
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 44,
@@ -2735,7 +3079,15 @@
         "lead_time": 3,
         "price": 2.51
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 45,
@@ -2791,7 +3143,15 @@
         "lead_time": 2,
         "price": 4.03
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 46,
@@ -2844,7 +3204,15 @@
         "lead_time": 3,
         "price": 6.4
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 47,
@@ -2901,7 +3269,15 @@
         "lead_time": 1,
         "price": 5.68
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 48,
@@ -2956,7 +3332,15 @@
         "lead_time": 2,
         "price": 4.47
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 49,
@@ -3011,7 +3395,15 @@
         "lead_time": 3,
         "price": 2.9
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 50,
@@ -3066,7 +3458,15 @@
         "lead_time": 1,
         "price": 4.4
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 51,
@@ -3123,7 +3523,15 @@
         "lead_time": 1,
         "price": 3.37
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 52,
@@ -3178,7 +3586,15 @@
         "lead_time": 1,
         "price": 4.62
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 53,
@@ -3235,7 +3651,15 @@
         "lead_time": 1,
         "price": 2.07
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 54,
@@ -3291,7 +3715,15 @@
         "lead_time": 1,
         "price": 6.31
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 55,
@@ -3347,7 +3779,15 @@
         "lead_time": 1,
         "price": 7.16
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 56,
@@ -3401,7 +3841,15 @@
         "lead_time": 1,
         "price": 4.22
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 57,
@@ -3457,7 +3905,15 @@
         "lead_time": 1,
         "price": 2.53
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 58,
@@ -3512,7 +3968,15 @@
         "lead_time": 1,
         "price": 5.24
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 59,
@@ -3568,7 +4032,15 @@
         "lead_time": 1,
         "price": 4.09
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 60,
@@ -3623,7 +4095,15 @@
         "lead_time": 1,
         "price": 3.13
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 61,
@@ -3679,7 +4159,15 @@
         "lead_time": 1,
         "price": 3.56
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 62,
@@ -3736,7 +4224,15 @@
         "lead_time": 1,
         "price": 3.0
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 63,
@@ -3792,7 +4288,15 @@
         "lead_time": 1,
         "price": 7.65
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 64,
@@ -3847,7 +4351,15 @@
         "lead_time": 1,
         "price": 4.85
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 65,
@@ -3902,7 +4414,15 @@
         "lead_time": 1,
         "price": 5.33
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 66,
@@ -3959,7 +4479,15 @@
         "lead_time": 1,
         "price": 7.47
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 67,
@@ -4016,7 +4544,15 @@
         "lead_time": 1,
         "price": 3.93
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 68,
@@ -4072,7 +4608,15 @@
         "lead_time": 1,
         "price": 7.61
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": true,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 69,
@@ -4127,7 +4671,15 @@
         "lead_time": 1,
         "price": 5.46
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 70,
@@ -4182,7 +4734,15 @@
         "lead_time": 1,
         "price": 7.48
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 71,
@@ -4228,7 +4788,15 @@
         "lead_time": 1,
         "price": 8.69
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 72,
@@ -4283,7 +4851,15 @@
         "lead_time": 1,
         "price": 8.84
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": true,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 73,
@@ -4328,7 +4904,15 @@
         "lead_time": 1,
         "price": 13.84
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 74,
@@ -4373,7 +4957,15 @@
         "lead_time": 1,
         "price": 10.14
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 75,
@@ -4425,7 +5017,15 @@
         "lead_time": 1,
         "price": 10.31
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 76,
@@ -4469,7 +5069,15 @@
         "lead_time": 1,
         "price": 16.21
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 77,
@@ -4524,7 +5132,15 @@
         "lead_time": 1,
         "price": 13.09
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 78,
@@ -4578,7 +5194,15 @@
         "lead_time": 1,
         "price": 9.43
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 79,
@@ -4633,7 +5257,15 @@
         "lead_time": 1,
         "price": 16.56
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": true,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 80,
@@ -4685,7 +5317,15 @@
         "lead_time": 1,
         "price": 15.13
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 81,
@@ -4737,7 +5377,15 @@
         "lead_time": 1,
         "price": 8.91
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 82,
@@ -4783,7 +5431,15 @@
         "lead_time": 1,
         "price": 9.63
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 83,
@@ -4837,7 +5493,15 @@
         "lead_time": 1,
         "price": 11.77
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": true,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 84,
@@ -4883,7 +5547,15 @@
         "lead_time": 1,
         "price": 16.83
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 85,
@@ -4938,7 +5610,15 @@
         "lead_time": 1,
         "price": 17.24
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": true,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 86,
@@ -4990,7 +5670,15 @@
         "lead_time": 1,
         "price": 12.67
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 87,
@@ -5042,7 +5730,15 @@
         "lead_time": 1,
         "price": 15.55
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 88,
@@ -5087,7 +5783,15 @@
         "lead_time": 1,
         "price": 16.44
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 89,
@@ -5139,7 +5843,15 @@
         "lead_time": 1,
         "price": 12.16
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 90,
@@ -5184,7 +5896,15 @@
         "lead_time": 1,
         "price": 13.44
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 91,
@@ -5230,7 +5950,15 @@
         "lead_time": 1,
         "price": 11.11
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 92,
@@ -5282,7 +6010,15 @@
         "lead_time": 1,
         "price": 9.85
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 93,
@@ -5336,7 +6072,15 @@
         "lead_time": 1,
         "price": 11.49
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 94,
@@ -5388,7 +6132,15 @@
         "lead_time": 1,
         "price": 15.19
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 95,
@@ -5442,7 +6194,15 @@
         "lead_time": 1,
         "price": 10.82
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 96,
@@ -5498,7 +6258,15 @@
         "lead_time": 1,
         "price": 10.93
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 97,
@@ -5550,7 +6318,15 @@
         "lead_time": 1,
         "price": 17.58
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": true,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 98,
@@ -5604,7 +6380,15 @@
         "lead_time": 1,
         "price": 13.9
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 99,
@@ -5658,7 +6442,15 @@
         "lead_time": 1,
         "price": 17.98
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 100,
@@ -5710,7 +6502,15 @@
         "lead_time": 1,
         "price": 18.0
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 101,
@@ -5764,7 +6564,15 @@
         "lead_time": 1,
         "price": 19.69
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 102,
@@ -5818,7 +6626,15 @@
         "lead_time": 1,
         "price": 19.64
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 103,
@@ -5873,7 +6689,15 @@
         "lead_time": 1,
         "price": 17.69
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 104,
@@ -5927,7 +6751,15 @@
         "lead_time": 1,
         "price": 16.17
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 105,
@@ -5981,7 +6813,15 @@
         "lead_time": 1,
         "price": 12.83
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 106,
@@ -6035,7 +6875,15 @@
         "lead_time": 1,
         "price": 18.66
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 107,
@@ -6089,7 +6937,15 @@
         "lead_time": 1,
         "price": 13.35
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 108,
@@ -6143,7 +6999,15 @@
         "lead_time": 1,
         "price": 17.17
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 109,
@@ -6198,7 +7062,15 @@
         "lead_time": 1,
         "price": 13.13
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 110,
@@ -6252,7 +7124,15 @@
         "lead_time": 1,
         "price": 15.21
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 111,
@@ -6306,7 +7186,15 @@
         "lead_time": 1,
         "price": 17.05
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 112,
@@ -6361,7 +7249,15 @@
         "lead_time": 1,
         "price": 12.64
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 113,
@@ -6416,7 +7312,15 @@
         "lead_time": 1,
         "price": 19.55
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 114,
@@ -6472,7 +7376,15 @@
         "lead_time": 1,
         "price": 10.25
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": true,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 115,
@@ -6526,7 +7438,15 @@
         "lead_time": 1,
         "price": 10.24
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 116,
@@ -6582,7 +7502,15 @@
         "lead_time": 1,
         "price": 8.09
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 117,
@@ -6639,7 +7567,15 @@
         "lead_time": 1,
         "price": 9.87
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 118,
@@ -6692,7 +7628,15 @@
         "lead_time": 1,
         "price": 3.34
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 119,
@@ -6745,7 +7689,15 @@
         "lead_time": 1,
         "price": 7.5
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 120,
@@ -6802,7 +7754,15 @@
         "lead_time": 1,
         "price": 7.03
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 121,
@@ -6857,7 +7817,15 @@
         "lead_time": 1,
         "price": 6.03
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 122,
@@ -6912,7 +7880,15 @@
         "lead_time": 1,
         "price": 4.95
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 123,
@@ -6969,7 +7945,15 @@
         "lead_time": 1,
         "price": 3.51
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 124,
@@ -7022,7 +8006,15 @@
         "lead_time": 1,
         "price": 6.11
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 125,
@@ -7077,7 +8069,15 @@
         "lead_time": 1,
         "price": 5.57
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 126,
@@ -7133,7 +8133,15 @@
         "lead_time": 1,
         "price": 9.57
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 127,
@@ -7188,7 +8196,15 @@
         "lead_time": 1,
         "price": 7.52
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 128,
@@ -7243,7 +8259,15 @@
         "lead_time": 1,
         "price": 5.61
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 129,
@@ -7298,7 +8322,15 @@
         "lead_time": 1,
         "price": 8.68
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 130,
@@ -7351,7 +8383,15 @@
         "lead_time": 1,
         "price": 9.88
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 131,
@@ -7406,7 +8446,15 @@
         "lead_time": 1,
         "price": 5.91
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 132,
@@ -7461,7 +8509,15 @@
         "lead_time": 1,
         "price": 9.38
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 133,
@@ -7516,7 +8572,15 @@
         "lead_time": 1,
         "price": 3.13
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 134,
@@ -7571,7 +8635,15 @@
         "lead_time": 1,
         "price": 3.99
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 135,
@@ -7626,7 +8698,15 @@
         "lead_time": 1,
         "price": 6.86
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 136,
@@ -7682,7 +8762,15 @@
         "lead_time": 1,
         "price": 8.69
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 137,
@@ -7737,7 +8825,15 @@
         "lead_time": 1,
         "price": 4.89
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 138,
@@ -7790,7 +8886,15 @@
         "lead_time": 1,
         "price": 4.38
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 139,
@@ -7846,7 +8950,15 @@
         "lead_time": 1,
         "price": 4.76
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 140,
@@ -7903,7 +9015,15 @@
         "lead_time": 1,
         "price": 6.17
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 141,
@@ -7949,7 +9069,15 @@
         "lead_time": 1,
         "price": 5.79
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 142,
@@ -7995,7 +9123,15 @@
         "lead_time": 1,
         "price": 5.76
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 143,
@@ -8042,7 +9178,15 @@
         "lead_time": 1,
         "price": 6.73
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 144,
@@ -8088,7 +9232,15 @@
         "lead_time": 1,
         "price": 4.85
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 145,
@@ -8141,7 +9293,15 @@
         "lead_time": 1,
         "price": 3.61
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 146,
@@ -8187,7 +9347,15 @@
         "lead_time": 1,
         "price": 5.51
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 147,
@@ -8235,7 +9403,15 @@
         "lead_time": 1,
         "price": 4.86
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 148,
@@ -8290,7 +9466,15 @@
         "lead_time": 1,
         "price": 6.66
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 149,
@@ -8336,7 +9520,15 @@
         "lead_time": 1,
         "price": 5.4
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 150,
@@ -8382,7 +9574,15 @@
         "lead_time": 1,
         "price": 2.21
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 151,
@@ -8428,7 +9628,15 @@
         "lead_time": 1,
         "price": 4.0
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 152,
@@ -8483,7 +9691,15 @@
         "lead_time": 1,
         "price": 6.86
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 153,
@@ -8538,7 +9754,15 @@
         "lead_time": 1,
         "price": 7.19
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 154,
@@ -8582,7 +9806,15 @@
         "lead_time": 1,
         "price": 3.43
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 155,
@@ -8630,7 +9862,15 @@
         "lead_time": 1,
         "price": 4.25
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 156,
@@ -8687,7 +9927,15 @@
         "lead_time": 2,
         "price": 2.64
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": true,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 157,
@@ -8742,7 +9990,15 @@
         "lead_time": 3,
         "price": 7.41
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 158,
@@ -8798,7 +10054,15 @@
         "lead_time": 1,
         "price": 6.96
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 159,
@@ -8854,7 +10118,15 @@
         "lead_time": 3,
         "price": 6.05
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": true,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 160,
@@ -8907,7 +10179,15 @@
         "lead_time": 2,
         "price": 4.48
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 161,
@@ -8964,7 +10244,15 @@
         "lead_time": 2,
         "price": 3.48
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 162,
@@ -9021,7 +10309,15 @@
         "lead_time": 1,
         "price": 7.11
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 163,
@@ -9078,7 +10374,15 @@
         "lead_time": 1,
         "price": 4.72
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 164,
@@ -9133,7 +10437,15 @@
         "lead_time": 3,
         "price": 6.2
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 165,
@@ -9188,7 +10500,15 @@
         "lead_time": 2,
         "price": 6.29
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 166,
@@ -9241,7 +10561,15 @@
         "lead_time": 1,
         "price": 7.6
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 167,
@@ -9296,7 +10624,15 @@
         "lead_time": 3,
         "price": 2.01
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 168,
@@ -9353,7 +10689,15 @@
         "lead_time": 2,
         "price": 3.2
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 169,
@@ -9408,7 +10752,15 @@
         "lead_time": 1,
         "price": 3.87
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 170,
@@ -9465,7 +10817,15 @@
         "lead_time": 2,
         "price": 3.45
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 171,
@@ -9520,7 +10880,15 @@
         "lead_time": 1,
         "price": 2.46
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 172,
@@ -9573,7 +10941,15 @@
         "lead_time": 3,
         "price": 5.65
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 173,
@@ -9630,7 +11006,15 @@
         "lead_time": 1,
         "price": 2.94
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 174,
@@ -9687,7 +11071,15 @@
         "lead_time": 3,
         "price": 2.56
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 175,
@@ -9742,7 +11134,15 @@
         "lead_time": 1,
         "price": 3.98
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 176,
@@ -9798,7 +11198,15 @@
         "lead_time": 1,
         "price": 6.21
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 177,
@@ -9855,7 +11263,15 @@
         "lead_time": 2,
         "price": 6.22
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 178,
@@ -9910,7 +11326,15 @@
         "lead_time": 2,
         "price": 6.11
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 179,
@@ -9965,7 +11389,15 @@
         "lead_time": 1,
         "price": 7.05
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 180,
@@ -10021,7 +11453,15 @@
         "lead_time": 1,
         "price": 5.78
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 181,
@@ -10076,7 +11516,15 @@
         "lead_time": 1,
         "price": 9.02
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 182,
@@ -10131,7 +11579,15 @@
         "lead_time": 1,
         "price": 9.87
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 183,
@@ -10186,7 +11642,15 @@
         "lead_time": 1,
         "price": 9.81
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 184,
@@ -10239,7 +11703,15 @@
         "lead_time": 1,
         "price": 9.62
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 185,
@@ -10293,7 +11765,15 @@
         "lead_time": 1,
         "price": 6.74
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 186,
@@ -10348,7 +11828,15 @@
         "lead_time": 1,
         "price": 4.84
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 187,
@@ -10404,7 +11892,15 @@
         "lead_time": 1,
         "price": 8.07
       }
-    ]
+    ],
+    "contains_meat": true,
+    "is_sweet": true,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 188,
@@ -10460,7 +11956,15 @@
         "lead_time": 2,
         "price": 9.01
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 189,
@@ -10515,7 +12019,15 @@
         "lead_time": 2,
         "price": 5.02
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 190,
@@ -10568,7 +12080,15 @@
         "lead_time": 1,
         "price": 3.49
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 191,
@@ -10623,7 +12143,15 @@
         "lead_time": 2,
         "price": 4.45
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 192,
@@ -10678,7 +12206,15 @@
         "lead_time": 2,
         "price": 5.73
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 193,
@@ -10733,7 +12269,15 @@
         "lead_time": 2,
         "price": 8.83
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 194,
@@ -10788,7 +12332,15 @@
         "lead_time": 2,
         "price": 5.92
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 195,
@@ -10843,7 +12395,15 @@
         "lead_time": 2,
         "price": 4.19
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 196,
@@ -10896,7 +12456,15 @@
         "lead_time": 1,
         "price": 6.45
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 197,
@@ -10952,7 +12520,15 @@
         "lead_time": 1,
         "price": 4.9
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 198,
@@ -11007,7 +12583,15 @@
         "lead_time": 2,
         "price": 6.87
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 199,
@@ -11063,7 +12647,15 @@
         "lead_time": 1,
         "price": 4.36
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   },
   {
     "id": 200,
@@ -11116,6 +12708,14 @@
         "lead_time": 2,
         "price": 3.42
       }
-    ]
+    ],
+    "contains_meat": false,
+    "is_sweet": false,
+    "is_fried": false,
+    "is_whole_grain": false,
+    "contains_raw_milk": false,
+    "contains_raw_eggs": false,
+    "contains_raw_sausage": false,
+    "contains_raw_meat": false
   }
 ]

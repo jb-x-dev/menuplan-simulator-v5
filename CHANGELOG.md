@@ -1,4 +1,42 @@
-# Changelog - Menüplansimulator v1.0
+# CHANGELOG
+
+## [Version 1.1.0] - 2025-10-23
+
+### Hinzugefügt
+- **Wiederholungsabstand (minRepetition)**: Rezepte können jetzt mit einem Mindestabstand von X Tagen zwischen Wiederholungen konfiguriert werden
+- **Häufigkeitsbeschränkungen**: Maximale Anzahl von Fleisch-, Süß- und Frittier-Rezepten pro Planungszeitraum (maxMeat, maxSweet, maxFried)
+- **Qualitätsfilter**: Ausschluss von Rezepten mit rohen Zutaten (Rohmilch, rohe Eier, Rohwurst, rohes Fleisch)
+- **Automatische Rezept-Kategorisierung**: Script zur automatischen Klassifizierung von Rezepten basierend auf Inhaltsstoffen
+- **Umfassende Tests**: Test-Suite für alle neuen Simulationsparameter
+
+### Geändert
+- **Recipe-Modell erweitert**: Neue Felder `contains_meat`, `is_sweet`, `is_fried`, `is_whole_grain`, `contains_raw_milk`, `contains_raw_eggs`, `contains_raw_sausage`, `contains_raw_meat`
+- **Greedy-Konstruktion**: Berücksichtigt jetzt Wiederholungsabstand und Häufigkeitslimits bei der Rezeptauswahl
+- **Filterlogik**: Erweitert um Qualitätsfilter in `_filter_recipes()` Methode
+- **Local Search**: Wird automatisch deaktiviert wenn Häufigkeitsbeschränkungen oder Wiederholungsabstand aktiv sind (um Constraint-Verletzungen zu vermeiden)
+- **Soft Constraints**: Erlaubt kleine Überschreitungen (+2) bei Häufigkeitslimits als Fallback-Strategie
+
+### Behoben
+- **Falsch-Positive bei Süß-Erkennung**: "eis" in "Reis" wird nicht mehr als "Eis" (Dessert) erkannt
+- **Frittier-Erkennung**: Unterscheidet jetzt zwischen frittiert und gebraten (nur frittierte Gerichte werden gezählt)
+- **Häufigkeits-Zähler**: Werden jetzt korrekt inkrementiert wenn Rezepte ausgewählt werden
+
+### Technische Details
+- `backend/simulator.py`: Erweiterte `_greedy_construct_plan()` Methode mit Constraint-Checking
+- `data/recipes_200.json`: Alle 200 Rezepte wurden automatisch kategorisiert
+  - 51 Fleisch-Rezepte (25.5%)
+  - 34 Süß-Rezepte (17.0%)
+  - 7 Frittier-Rezepte (3.5%)
+  - 2 Rezepte mit rohen Eiern (1.0%)
+- `scripts/categorize_recipes.py`: Automatische Kategorisierung basierend auf Namen, Beschreibung und Zutaten
+- `scripts/test_simulation_params.py`: Umfassende Test-Suite mit 3 Tests
+
+### Test-Ergebnisse
+✅ **Wiederholungsabstand**: Alle Rezepte respektieren den 7-Tage-Mindestabstand  
+✅ **Häufigkeitsbeschränkungen**: Exakt 8 Fleisch-Rezepte (Limit: 8), 0 Süß, 2 Frittiert  
+✅ **Qualitätsfilter**: Keine rohen Zutaten im Plan
+
+---
 
 ## [Version 1.0.2] - 2025-10-23
 
@@ -47,3 +85,4 @@
 ---
 
 Für detaillierte Informationen siehe: BUGFIX_REPORT.md
+
