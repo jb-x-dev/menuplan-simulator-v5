@@ -830,13 +830,41 @@ def get_recipe_usage():
 @app.route('/<path:path>')
 def serve_static_file(path):
     """Serve any static file from frontend folder"""
+    import os
+    
+    print(f"\n=== CATCH-ALL ROUTE CALLED ===")
+    print(f"Requested path: {path}")
+    print(f"static_folder: {app.static_folder}")
+    print(f"static_folder (absolute): {os.path.abspath(app.static_folder)}")
+    
     # Don't serve API paths
     if path.startswith('api/'):
+        print(f"Rejected: API path")
         return jsonify({'error': 'API endpoint not found'}), 404
+    
+    full_path = os.path.join(app.static_folder, path)
+    print(f"Looking for file at: {full_path}")
+    print(f"File exists: {os.path.exists(full_path)}")
+    
+    if os.path.exists(full_path):
+        print(f"File found! Serving {path}")
+    else:
+        print(f"File NOT found!")
+        # List directory contents
+        dir_path = os.path.dirname(full_path)
+        if os.path.exists(dir_path):
+            print(f"Directory contents of {dir_path}:")
+            try:
+                files = os.listdir(dir_path)
+                for f in files[:20]:  # First 20 files
+                    print(f"  - {f}")
+            except Exception as e:
+                print(f"  Error listing directory: {e}")
     
     try:
         return send_from_directory(app.static_folder, path)
     except Exception as e:
-        return jsonify({'error': 'File not found'}), 404
+        print(f"ERROR serving file: {e}")
+        return jsonify({'error': f'File not found: {path}', 'details': str(e)}), 404
 
 # Deployment trigger Wed Oct 22 22:40:49 EDT 2025
