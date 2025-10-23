@@ -896,7 +896,7 @@
                     <input type="text" id="recipeSearchInput" placeholder="🔍 Rezept suchen..." 
                            style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; margin-bottom: 15px;"
                            oninput="filterRecipeList()">
-                    <div id="recipeListContainer" style="display: grid; gap: 10px;"></div>
+                    <div id="recipeListContainer" style="display: grid; gap: 10px; max-height: 400px; overflow-y: auto; min-height: 100px;"></div>
                 </div>
             </div>
         </div>
