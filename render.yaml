@@ -4,9 +4,21 @@ services:
     env: python
     region: frankfurt
     plan: free
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      echo "=== Installing Python dependencies ===" &&
+      pip install -r requirements.txt &&
+      echo "=== Verifying frontend files ===" &&
+      ls -la frontend/*.html &&
+      echo "=== Build complete ==="
     startCommand: gunicorn -c gunicorn.conf.py backend.app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
+      - key: PYTHONUNBUFFERED
+        value: 1
+    # Ensure all files are included
+    includeFiles:
+      - frontend/**/*
+      - backend/**/*
+      - data/**/*
 
