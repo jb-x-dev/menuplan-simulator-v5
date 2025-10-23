@@ -814,6 +814,16 @@
                 <button class="btn btn-secondary" id="btnExportPDF" style="display: none;">📝 PDF exportieren</button>
                 <button class="btn btn-secondary" id="btnSaveMealPlan" style="display: none; background: white; border: 1px solid #D3D3D3; color: #4A4A4A;">💾 Menüplan speichern</button>
                 
+                <!-- Day Selection Controls -->
+                <div id="daySelectionControls" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; border: 2px solid #e0e0e0;">
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <span style="font-weight: 600; color: #667eea;">📅 Tagesauswahl:</span>
+                        <button class="btn btn-secondary" onclick="selectAllDays()" style="padding: 8px 16px; font-size: 13px;">✔️ Alle auswählen</button>
+                        <button class="btn btn-secondary" onclick="deselectAllDays()" style="padding: 8px 16px; font-size: 13px;">❌ Alle abwählen</button>
+                        <button class="btn" onclick="generateOrderSuggestion()" style="padding: 8px 16px; font-size: 13px; background: #28a745; border-color: #28a745;">📋 Bestellvorschlag generieren</button>
+                    </div>
+                </div>
+                
                 <div id="customerPDFSection" style="display: none; margin-top: 10px;">
                     <label style="display: block; margin-bottom: 5px; font-weight: bold;">📄 Wochenplan für Abnehmer:</label>
                     <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
@@ -842,13 +852,30 @@
                     <div id="statusBadge" class="status-badge status-draft" style="margin-top: 10px;">📝 Entwurf</div>
                 </div>
             </div>
-            
-            <div class="results-panel">
+                       <div class="results-panel">
                 <div id="results">
                     <div class="loading">
                         <p>Wählen Sie einen Modus und konfigurieren Sie die Parameter</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Order Suggestion Modal -->
+    <div id="orderSuggestionModal" class="modal">
+        <div class="modal-content" style="max-width: 1200px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h2 class="modal-title">📋 Bestellvorschlag auf Komponentenebene</h2>
+                <button class="modal-close" onclick="closeOrderSuggestionModal()">&times;</button>
+            </div>
+            <div id="orderSuggestionContent" style="padding: 20px;">
+                <!-- Content will be dynamically generated -->
+            </div>
+            <div style="padding: 20px; border-top: 2px solid #e0e0e0; display: flex; gap: 10px; justify-content: flex-end;">
+                <button class="btn btn-secondary" onclick="exportOrderSuggestionCSV()">📊 CSV exportieren</button>
+                <button class="btn btn-secondary" onclick="exportOrderSuggestionPDF()">📝 PDF exportieren</button>
+                <button class="btn btn-secondary" onclick="closeOrderSuggestionModal()">Schließen</button>
             </div>
         </div>
     </div>
@@ -1035,6 +1062,8 @@
         let currentConfig = null;
         let allRecipes = [];
         let manualPlan = null;
+        let selectedDays = [];  // Tracks which days are selected for order suggestion
+        let orderSuggestionData = null;  // Stores the generated order suggestion
         
         // Mahlzeiten-Einstellungen
         let mealSettings = [
@@ -1389,9 +1418,14 @@
             for (let dayIdx = 0; dayIdx < plan.days.length; dayIdx++) {
                 const day = plan.days[dayIdx];
                 html += `
-                    <div class="day-card">
+                    <div class="day-card" id="day-${dayIdx}" data-day-index="${dayIdx}">
                         <div class="day-header">
-                            <div class="day-date">${formatDate(day.date)}</div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <input type="checkbox" id="daySelect-${dayIdx}" class="day-select-checkbox" checked onchange="toggleDaySelection(${dayIdx}, this.checked)" style="width: 20px; height: 20px; cursor: pointer;">
+                                <label for="daySelect-${dayIdx}" style="cursor: pointer; font-weight: 600;">
+                                    <div class="day-date">${formatDate(day.date)}</div>
+                                </label>
+                            </div>
                             <div class="day-cost">${day.total_cost.toFixed(2)}€</div>
                         </div>
                         <div class="meals-grid">
@@ -1526,6 +1560,12 @@
             html += '</div>';
             
             document.getElementById('results').innerHTML = html;
+            
+            // Initialize selectedDays array (all days selected by default)
+            selectedDays = plan.days.map((_, idx) => idx);
+            
+            // Show day selection controls
+            document.getElementById('daySelectionControls').style.display = 'block';
             
             // Aktualisiere Statistiken basierend auf Portionen
             setTimeout(() => updateStatisticsDisplay(), 100);
@@ -3853,6 +3893,243 @@
             } else {
                 planAversions = planAversions.filter(a => a !== aversion);
             }
+        }
+        
+        // ========== Day Selection Functions ==========
+        
+        // Toggle day selection
+        function toggleDaySelection(dayIdx, isChecked) {
+            if (isChecked) {
+                if (!selectedDays.includes(dayIdx)) {
+                    selectedDays.push(dayIdx);
+                }
+                // Update visual feedback
+                const dayCard = document.getElementById(`day-${dayIdx}`);
+                if (dayCard) {
+                    dayCard.style.opacity = '1';
+                    dayCard.style.border = '2px solid #667eea';
+                }
+            } else {
+                selectedDays = selectedDays.filter(d => d !== dayIdx);
+                // Update visual feedback
+                const dayCard = document.getElementById(`day-${dayIdx}`);
+                if (dayCard) {
+                    dayCard.style.opacity = '0.5';
+                    dayCard.style.border = '2px solid #e0e0e0';
+                }
+            }
+        }
+        
+        // Select all days
+        function selectAllDays() {
+            if (!currentPlan) return;
+            
+            selectedDays = currentPlan.days.map((_, idx) => idx);
+            
+            // Update all checkboxes
+            currentPlan.days.forEach((_, idx) => {
+                const checkbox = document.getElementById(`daySelect-${idx}`);
+                if (checkbox) checkbox.checked = true;
+                
+                const dayCard = document.getElementById(`day-${idx}`);
+                if (dayCard) {
+                    dayCard.style.opacity = '1';
+                    dayCard.style.border = '2px solid #667eea';
+                }
+            });
+        }
+        
+        // Deselect all days
+        function deselectAllDays() {
+            if (!currentPlan) return;
+            
+            selectedDays = [];
+            
+            // Update all checkboxes
+            currentPlan.days.forEach((_, idx) => {
+                const checkbox = document.getElementById(`daySelect-${idx}`);
+                if (checkbox) checkbox.checked = false;
+                
+                const dayCard = document.getElementById(`day-${idx}`);
+                if (dayCard) {
+                    dayCard.style.opacity = '0.5';
+                    dayCard.style.border = '2px solid #e0e0e0';
+                }
+            });
+        }
+        
+        // ========== Order Suggestion Functions ==========
+        
+        // Generate order suggestion
+        function generateOrderSuggestion() {
+            if (!currentPlan) {
+                alert('Bitte erstellen Sie zuerst einen Menüplan.');
+                return;
+            }
+            
+            if (selectedDays.length === 0) {
+                alert('Bitte wählen Sie mindestens einen Tag aus.');
+                return;
+            }
+            
+            // Aggregate ingredients from selected days
+            const componentMap = {};
+            
+            selectedDays.forEach(dayIdx => {
+                const day = currentPlan.days[dayIdx];
+                
+                day.menu_lines.forEach(menuLine => {
+                    if (!menuLine.recipes) return;
+                    
+                    menuLine.recipes.forEach(recipeSlot => {
+                        let recipe = null;
+                        let portions = 0;
+                        
+                        // Handle both old and new format
+                        if (recipeSlot.options && recipeSlot.options.length > 0) {
+                            // New format: MealSlot with options
+                            const selectedOption = recipeSlot.options[recipeSlot.selected_index || 0];
+                            recipe = selectedOption.recipe;
+                            portions = selectedOption.portions || 0;
+                        } else if (recipeSlot.recipe) {
+                            // Old format: direct recipe
+                            recipe = recipeSlot.recipe;
+                            portions = recipeSlot.portions || 0;
+                        }
+                        
+                        if (!recipe || !recipe.ingredients || portions === 0) return;
+                        
+                        // Process ingredients
+                        recipe.ingredients.forEach(ingredient => {
+                            const component = ingredient.component || 'Sonstiges';
+                            
+                            if (!componentMap[component]) {
+                                componentMap[component] = {};
+                            }
+                            
+                            const ingredientName = ingredient.name;
+                            
+                            if (!componentMap[component][ingredientName]) {
+                                componentMap[component][ingredientName] = {
+                                    name: ingredientName,
+                                    quantity: 0,
+                                    unit: ingredient.unit || 'Stück',
+                                    recipes: []
+                                };
+                            }
+                            
+                            // Calculate total quantity (ingredient quantity * portions)
+                            const totalQuantity = (ingredient.quantity || 0) * portions;
+                            componentMap[component][ingredientName].quantity += totalQuantity;
+                            
+                            // Track which recipes use this ingredient
+                            if (!componentMap[component][ingredientName].recipes.includes(recipe.name)) {
+                                componentMap[component][ingredientName].recipes.push(recipe.name);
+                            }
+                        });
+                    });
+                });
+            });
+            
+            orderSuggestionData = componentMap;
+            displayOrderSuggestion(componentMap);
+        }
+        
+        // Display order suggestion in modal
+        function displayOrderSuggestion(componentMap) {
+            const container = document.getElementById('orderSuggestionContent');
+            
+            let html = '';
+            
+            // Summary
+            html += `
+                <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #667eea;">
+                    <h3 style="margin: 0 0 10px 0; color: #667eea;">📊 Zusammenfassung</h3>
+                    <p style="margin: 5px 0;"><strong>Ausgewählte Tage:</strong> ${selectedDays.length} von ${currentPlan.days.length}</p>
+                    <p style="margin: 5px 0;"><strong>Komponenten:</strong> ${Object.keys(componentMap).length}</p>
+                    <p style="margin: 5px 0;"><strong>Zeitraum:</strong> ${formatDate(currentPlan.days[selectedDays[0]].date)} - ${formatDate(currentPlan.days[selectedDays[selectedDays.length - 1]].date)}</p>
+                </div>
+            `;
+            
+            // Components
+            const sortedComponents = Object.keys(componentMap).sort();
+            
+            sortedComponents.forEach(component => {
+                const ingredients = componentMap[component];
+                const ingredientList = Object.values(ingredients).sort((a, b) => a.name.localeCompare(b.name));
+                
+                html += `
+                    <div style="margin-bottom: 25px; border: 2px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                        <div style="background: #667eea; color: white; padding: 12px 15px; font-weight: 600; font-size: 16px;">
+                            ${component} (${ingredientList.length} Zutaten)
+                        </div>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #f8f9fa;">
+                                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #e0e0e0;">Zutat</th>
+                                    <th style="padding: 10px; text-align: right; border-bottom: 2px solid #e0e0e0;">Menge</th>
+                                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #e0e0e0;">Einheit</th>
+                                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #e0e0e0;">Verwendet in</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+                
+                ingredientList.forEach((ingredient, idx) => {
+                    const bgColor = idx % 2 === 0 ? 'white' : '#f8f9fa';
+                    html += `
+                        <tr style="background: ${bgColor};">
+                            <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${ingredient.name}</td>
+                            <td style="padding: 10px; text-align: right; border-bottom: 1px solid #e0e0e0; font-weight: 600;">${ingredient.quantity.toFixed(2)}</td>
+                            <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${ingredient.unit}</td>
+                            <td style="padding: 10px; border-bottom: 1px solid #e0e0e0; font-size: 12px; color: #666;">${ingredient.recipes.length} Rezept(e)</td>
+                        </tr>
+                    `;
+                });
+                
+                html += `
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            document.getElementById('orderSuggestionModal').classList.add('active');
+        }
+        
+        // Close order suggestion modal
+        function closeOrderSuggestionModal() {
+            document.getElementById('orderSuggestionModal').classList.remove('active');
+        }
+        
+        // Export order suggestion as CSV
+        function exportOrderSuggestionCSV() {
+            if (!orderSuggestionData) return;
+            
+            let csv = 'Komponente,Zutat,Menge,Einheit,Anzahl Rezepte\n';
+            
+            Object.keys(orderSuggestionData).sort().forEach(component => {
+                const ingredients = orderSuggestionData[component];
+                Object.values(ingredients).sort((a, b) => a.name.localeCompare(b.name)).forEach(ingredient => {
+                    csv += `"${component}","${ingredient.name}",${ingredient.quantity.toFixed(2)},"${ingredient.unit}",${ingredient.recipes.length}\n`;
+                });
+            });
+            
+            // Download CSV
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `bestellvorschlag_${new Date().toISOString().split('T')[0]}.csv`;
+            link.click();
+        }
+        
+        // Export order suggestion as PDF
+        async function exportOrderSuggestionPDF() {
+            if (!orderSuggestionData) return;
+            
+            alert('PDF-Export wird implementiert...');
+            // TODO: Implement PDF export using backend endpoint
         }
         
         // Speichere alle Einstellungen
