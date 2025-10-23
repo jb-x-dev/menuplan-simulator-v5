@@ -1757,7 +1757,7 @@
                                                         <button class="info-btn" onclick="event.stopPropagation(); showRecipeInfo(${option.recipe_id})" title="Rezept-Details anzeigen">ℹ️</button>
                                                     </div>
                                                     <div style="font-size: 14px; color: #666; margin-top: 4px;">
-                                                        💰 ${option.cost_per_serving.toFixed(2)}€
+                                                        💰 ${(option.cost_per_serving || 0).toFixed(2)}€
                                                         ${option.allergens && option.allergens.length > 0 ? `
                                                             | 🚨 ${option.allergens.join(', ')}
                                                         ` : ''}
@@ -2816,7 +2816,8 @@
             // Lade vollständige Rezeptdaten
             try {
                 const response = await fetch(`/api/recipe/${recipeId}`);
-                const recipe = await response.json();
+                const data = await response.json();
+                const recipe = data.recipe || data;
                 
                 if (!currentPlan || !currentPlan.days) return;
                 
@@ -2832,7 +2833,7 @@
                 const newOption = {
                     recipe_id: recipe.id,
                     recipe_name: recipe.name,
-                    cost_per_serving: recipe.cost,
+                    cost_per_serving: recipe.cost || recipe.cost_per_serving || 0,
                     allergens: recipe.allergens || [],
                     quantity: 0,
                     ingredients: recipe.ingredients || []
