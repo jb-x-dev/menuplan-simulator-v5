@@ -13,9 +13,14 @@ from backend.procurement import resolve_procurement
 from backend.pdf_export import create_menu_plan_pdf
 from backend.customer_pdf import generate_customer_pdf
 from backend.excel_export import create_excel_export
+from backend.health_check import register_health_routes
 
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 CORS(app)
+
+# Registriere Health Check Routes
+register_health_routes(app)
+
 # Lade Rezepte beim Start (200 Rezepte)
 recipes_file_200 = os.path.join(os.path.dirname(__file__), '..', 'data', 'recipes_200.json')
 recipes_file_extended = os.path.join(os.path.dirname(__file__), '..', 'data', 'recipes_extended.json')

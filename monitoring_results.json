@@ -1,0 +1,96 @@
+{
+  "timestamp": "2025-10-22T23:17:32.007997",
+  "base_url": "https://menuplan-simulator-v5.onrender.com",
+  "urls": [
+    {
+      "name": "Landing Page",
+      "path": "/",
+      "critical": true,
+      "success": true,
+      "status_code": 200,
+      "message": "OK"
+    },
+    {
+      "name": "Hauptanwendung",
+      "path": "/index.html",
+      "critical": true,
+      "success": true,
+      "status_code": 200,
+      "message": "OK"
+    },
+    {
+      "name": "Bestelllisten",
+      "path": "/order-lists.html",
+      "critical": true,
+      "success": false,
+      "status_code": 404,
+      "message": "HTTP 404"
+    },
+    {
+      "name": "Men\u00fcpl\u00e4ne",
+      "path": "/meal-plans.html",
+      "critical": true,
+      "success": false,
+      "status_code": 404,
+      "message": "HTTP 404"
+    },
+    {
+      "name": "Rezeptverwaltung",
+      "path": "/recipes.html",
+      "critical": true,
+      "success": true,
+      "status_code": 200,
+      "message": "OK"
+    },
+    {
+      "name": "Analytics",
+      "path": "/analytics.html",
+      "critical": false,
+      "success": true,
+      "status_code": 200,
+      "message": "OK"
+    },
+    {
+      "name": "Beschaffung",
+      "path": "/procurement.html",
+      "critical": false,
+      "success": true,
+      "status_code": 200,
+      "message": "OK"
+    },
+    {
+      "name": "Health Check API",
+      "path": "/api/health",
+      "critical": true,
+      "success": false,
+      "status_code": 404,
+      "message": "HTTP 404"
+    }
+  ],
+  "apis": [
+    {
+      "name": "Rezepte API",
+      "path": "/api/recipes",
+      "method": "GET",
+      "critical": true,
+      "success": true,
+      "status_code": 200,
+      "message": "OK"
+    },
+    {
+      "name": "Beispiel-Konfiguration",
+      "path": "/api/config/example",
+      "method": "GET",
+      "critical": false,
+      "success": true,
+      "status_code": 200,
+      "message": "OK"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "passed": 7,
+    "failed": 3,
+    "critical_failed": 3
+  }
+}
