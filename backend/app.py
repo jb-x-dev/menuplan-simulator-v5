@@ -346,6 +346,16 @@ def export_excel():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/<path:path>')
+def serve_static_file(path):
+    """Serve any static file from frontend folder"""
+    try:
+        return send_from_directory(app.static_folder, path)
+    except:
+        # If file not found, return 404
+        return jsonify({'error': 'File not found'}), 404
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print(f"\n🚀 Starting Menüplansimulator API on port {port}")
