@@ -2786,9 +2786,9 @@
                 if (!day) return;
                 
                 const menuLine = day.menu_lines[mlIdx];
-                if (!menuLine || !menuLine.recipes) return;
+                if (!menuLine) return;
                 
-                const recipeSlot = menuLine.recipes[recipeIdx];
+                let recipeSlot = menuLine.recipes ? menuLine.recipes[recipeIdx] : null;
                 
                 // Erstelle neue Option aus Rezept
                 const newOption = {
@@ -2807,8 +2807,24 @@
                     }
                 } else if (action === 'add') {
                     // Füge neue Option hinzu
-                    if (recipeSlot && recipeSlot.options) {
+                    if (!menuLine.recipes) {
+                        menuLine.recipes = [];
+                    }
+                    
+                    // Wenn kein recipeSlot existiert, erstelle eines
+                    if (!recipeSlot) {
+                        recipeSlot = {
+                            options: [],
+                            selected_index: 0
+                        };
+                        menuLine.recipes.push(recipeSlot);
+                    }
+                    
+                    // Füge Option hinzu
+                    if (recipeSlot.options) {
                         recipeSlot.options.push(newOption);
+                    } else {
+                        recipeSlot.options = [newOption];
                     }
                 }
                 
