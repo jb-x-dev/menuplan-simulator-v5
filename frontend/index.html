@@ -2181,7 +2181,9 @@
             }
         }
         
-        function removeRecipe(dayIdx, menuLineIdx, recipeIdx) {
+        // HINWEIS: Diese alte removeRecipe Funktion wurde umbenannt, da sie mit der neueren
+        // Funktion bei Zeile 2692 kollidiert. Die neuere Funktion ist korrekt implementiert.
+        function removeRecipeOld(dayIdx, menuLineIdx, recipeIdx) {
             if (!currentPlan || !currentPlan.days) return;
             
             const day = currentPlan.days[dayIdx];
@@ -2722,9 +2724,24 @@
             }
         }
         
-        function openRecipeSelectionModal() {
+        async function openRecipeSelectionModal() {
+            // Stelle sicher, dass Rezepte geladen sind
+            if (!allRecipes || allRecipes.length === 0) {
+                console.log('⚠️ Rezepte noch nicht geladen, lade jetzt...');
+                await loadRecipes();
+            }
+            
+            console.log(`🔍 Öffne Rezept-Auswahl-Modal mit ${allRecipes.length} Rezepten`);
+            
             const modal = document.getElementById('recipeSelectionModal');
             modal.classList.add('active');
+            
+            // Setze Suchfeld zurück
+            const searchInput = document.getElementById('recipeSearchInput');
+            if (searchInput) {
+                searchInput.value = '';
+            }
+            
             renderRecipeList(allRecipes);
         }
         
@@ -5111,48 +5128,11 @@ function initRecipeEditing() {
     style.textContent = recipeModalCSS;
     document.head.appendChild(style);
     
-    // Lade alle Rezepte
-    loadAllRecipes();
+    // Rezepte werden bereits bei Zeile 1408-1414 geladen (loadRecipes())
 }
 
-// Lade alle Rezepte
-function loadAllRecipes() {
-    fetch('/api/recipes')
-        .then(response => response.json())
-        .then(data => {
-            allRecipes = data.recipes || data;
-            console.log('Rezepte geladen:', allRecipes.length);
-        })
-        .catch(error => {
-            console.error('Fehler beim Laden der Rezepte:', error);
-        });
-}
-
-// Rezept ändern
-function changeRecipe(dayIdx, mlIdx) {
-    currentEditContext = { dayIdx, mlIdx, action: 'change' };
-    openRecipeModal();
-}
-
-// Rezept hinzufügen
-function addRecipe(dayIdx, componentName) {
-    currentEditContext = { dayIdx, componentName, action: 'add' };
-    openRecipeModal();
-}
-
-// Rezept entfernen
-function removeRecipe(dayIdx, mlIdx) {
-    if (!confirm('Rezept wirklich entfernen?')) {
-        return;
-    }
-    
-    // Entferne Rezept aus Plan
-    currentPlan.days[dayIdx].menu_lines.splice(mlIdx, 1);
-    
-    // Neuberechnung und Anzeige
-    recalculateStatistics();
-    displayPlan(currentPlan, currentMode === 'auto');
-}
+// HINWEIS: Diese alten Funktionen wurden entfernt, da sie mit den neueren Funktionen
+// bei Zeile 2682-2722 kollidieren. Die neueren Funktionen sind korrekt implementiert.
 
 // Modal öffnen
 function openRecipeModal() {
