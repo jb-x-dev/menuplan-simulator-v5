@@ -122,6 +122,31 @@ def simulate():
     try:
         config = request.json
         
+        # Parameter conversion from frontend format to backend format
+        from datetime import datetime, timedelta
+        
+        # Convert num_days to end_date
+        if 'num_days' in config and 'end_date' not in config:
+            start_date = datetime.strptime(config['start_date'], '%Y-%m-%d')
+            num_days = config['num_days']
+            end_date = start_date + timedelta(days=num_days - 1)
+            config['end_date'] = end_date.strftime('%Y-%m-%d')
+            del config['num_days']
+        
+        # Convert bkt_budget to bkt_target
+        if 'bkt_budget' in config and 'bkt_target' not in config:
+            config['bkt_target'] = config['bkt_budget']
+            del config['bkt_budget']
+        
+        # Set default bkt_tolerance if not provided
+        if 'bkt_tolerance' not in config:
+            config['bkt_tolerance'] = 0.15
+        
+        # Convert dietary_forms from list of dicts to list of strings
+        if 'dietary_forms' in config and config['dietary_forms']:
+            if isinstance(config['dietary_forms'][0], dict):
+                config['dietary_forms'] = [df['name'] for df in config['dietary_forms']]
+        
         # Validierung
         required_fields = ['start_date', 'end_date', 'menu_lines', 'bkt_target']
         for field in required_fields:
