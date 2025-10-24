@@ -790,6 +790,32 @@ def load_recipes_from_file(filepath: str) -> List[Recipe]:
 
 def run_simulation(config_dict: Dict, recipes: List[Recipe]) -> Dict:
     """Führt Simulation aus"""
+    # Konvertiere num_days zu end_date falls nötig
+    if 'num_days' in config_dict and 'end_date' not in config_dict:
+        from datetime import datetime, timedelta
+        start = datetime.strptime(config_dict['start_date'], '%Y-%m-%d')
+        end = start + timedelta(days=config_dict['num_days'] - 1)
+        config_dict = config_dict.copy()  # Erstelle Kopie um Original nicht zu ändern
+        config_dict['end_date'] = end.strftime('%Y-%m-%d')
+        del config_dict['num_days']
+    
+    # Konvertiere bkt_budget zu bkt_target falls nötig
+    if 'bkt_budget' in config_dict and 'bkt_target' not in config_dict:
+        config_dict = config_dict.copy() if 'num_days' not in config_dict else config_dict
+        config_dict['bkt_target'] = config_dict['bkt_budget']
+        del config_dict['bkt_budget']
+    
+    # Setze bkt_tolerance falls nicht vorhanden
+    if 'bkt_tolerance' not in config_dict:
+        config_dict = config_dict.copy() if 'num_days' not in config_dict and 'bkt_budget' not in config_dict else config_dict
+        config_dict['bkt_tolerance'] = 0.15  # 15% Toleranz
+    
+    # Konvertiere dietary_forms von Dictionaries zu Strings falls nötig
+    if 'dietary_forms' in config_dict and config_dict['dietary_forms']:
+        if isinstance(config_dict['dietary_forms'][0], dict):
+            config_dict = config_dict.copy() if 'num_days' not in config_dict and 'bkt_budget' not in config_dict and 'bkt_tolerance' not in config_dict else config_dict
+            config_dict['dietary_forms'] = [df['name'] for df in config_dict['dietary_forms']]
+    
     config = SimulatorConfig(**config_dict)
     simulator = MenuPlanSimulator(config, recipes)
     return simulator.generate_plan()
