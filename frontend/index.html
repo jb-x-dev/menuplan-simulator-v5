@@ -1055,6 +1055,7 @@
                     <button class="settings-tab" onclick="switchSimParamTab('budget')">💰 Budget</button>
                     <button class="settings-tab" onclick="switchSimParamTab('sustainability')">🌱 Nachhaltigkeit</button>
                     <button class="settings-tab" onclick="switchSimParamTab('quality')">✅ Qualität</button>
+                    <button class="settings-tab" onclick="switchSimParamTab('advanced')">🔧 Erweiterte Einstellungen</button>
                 </div>
                 
                 <!-- Nutrition Tab -->
@@ -1315,6 +1316,27 @@
                         <input type="checkbox" id="simSustainablePalmOil" checked>
                         <label for="simSustainablePalmOil">Palmölfrei oder nachhaltig</label>
                     </div>
+                </div>
+                
+                <!-- Advanced Settings Tab -->
+                <div id="simParamTabAdvanced" class="tab-content" style="display: none;">
+                    <h3>🔧 Erweiterte Einstellungen</h3>
+                    
+                    <h4 style="margin-top: 20px;">📋 Rezeptgruppen</h4>
+                    <div id="simParamRecipeGroupsCheckboxes" class="checkbox-group" style="max-height: 200px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; background: #f9f9f9;"></div>
+                    <small style="color: #666; display: block; margin-top: 8px;">Wählen Sie die Rezeptgruppen aus, die in der Simulation berücksichtigt werden sollen.</small>
+                    
+                    <h4 style="margin-top: 20px;">🍴 Menülinien</h4>
+                    <div id="simParamMenuLinesCheckboxes" class="checkbox-group" style="max-height: 200px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; background: #f9f9f9;"></div>
+                    <small style="color: #666; display: block; margin-top: 8px;">Wählen Sie die Menülinien aus, die in der Simulation berücksichtigt werden sollen.</small>
+                    
+                    <h4 style="margin-top: 20px;">👨‍🍳 Garmethoden</h4>
+                    <div id="simParamCookingMethodsCheckboxes" class="checkbox-group" style="max-height: 200px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; background: #f9f9f9;"></div>
+                    <small style="color: #666; display: block; margin-top: 8px;">Wählen Sie die Garmethoden aus, die in der Simulation berücksichtigt werden sollen.</small>
+                    
+                    <h4 style="margin-top: 20px;">🚫 Abneigungen</h4>
+                    <div id="simParamAversionsCheckboxes" class="checkbox-group" style="max-height: 200px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; background: #f9f9f9;"></div>
+                    <small style="color: #666; display: block; margin-top: 8px;">Wählen Sie Zutaten oder Gerichte aus, die in der Simulation ausgeschlossen werden sollen.</small>
                 </div>
                 
                 <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e0e0e0; display: flex; gap: 10px; justify-content: flex-end;">
@@ -1629,7 +1651,11 @@
                 menu_lines: [],
                 
                 // NEU: Simulationsparameter hinzufügen
-                simulation_params: simulationParameters
+                simulation_params: simulationParameters,
+                
+                // Erweiterte Einstellungen
+                selected_recipe_groups: selectedRecipeGroups,
+                selected_aversions: selectedAversions
             };
             
             // Verwende mealSettings statt hardcodierte Checkboxen
@@ -3580,7 +3606,7 @@
         
         function switchSimParamTab(tabName) {
             // Hide all tabs
-            const tabs = ['nutrition', 'variety', 'budget', 'sustainability', 'quality'];
+            const tabs = ['nutrition', 'variety', 'budget', 'sustainability', 'quality', 'advanced'];
             tabs.forEach(tab => {
                 document.getElementById('simParamTab' + tab.charAt(0).toUpperCase() + tab.slice(1)).style.display = 'none';
             });
@@ -3659,6 +3685,9 @@
             if (saved) {
                 simulationParameters = JSON.parse(saved);
             }
+            
+            // Render advanced settings checkboxes
+            renderSimParamAdvancedSettings();
             
             // Nutrition
             document.getElementById('simMinCalories').value = simulationParameters.nutrition.minCalories;
@@ -4301,6 +4330,73 @@
                 `;
             }
             container.innerHTML = html;
+        }
+        
+        // Rendere erweiterte Einstellungen im Simulationsparameter-Modal
+        function renderSimParamAdvancedSettings() {
+            // Recipe Groups
+            const rgContainer = document.getElementById('simParamRecipeGroupsCheckboxes');
+            if (rgContainer) {
+                let html = '';
+                for (const group of availableRecipeGroups) {
+                    const isChecked = selectedRecipeGroups.includes(group);
+                    html += `
+                        <div class="checkbox-item" style="margin-bottom: 8px;">
+                            <input type="checkbox" id="simRG_${group.replace(/\s+/g, '_')}" ${isChecked ? 'checked' : ''} onchange="toggleRecipeGroup('${group}', this.checked)">
+                            <label for="simRG_${group.replace(/\s+/g, '_')}">${group}</label>
+                        </div>
+                    `;
+                }
+                rgContainer.innerHTML = html;
+            }
+            
+            // Menu Lines
+            const mlContainer = document.getElementById('simParamMenuLinesCheckboxes');
+            if (mlContainer) {
+                let html = '';
+                for (const line of availableMenuLines) {
+                    const isChecked = selectedMenuLines.includes(line);
+                    html += `
+                        <div class="checkbox-item" style="margin-bottom: 8px;">
+                            <input type="checkbox" id="simML_${line.replace(/\s+/g, '_')}" ${isChecked ? 'checked' : ''} onchange="toggleMenuLine('${line}', this.checked)">
+                            <label for="simML_${line.replace(/\s+/g, '_')}">${line}</label>
+                        </div>
+                    `;
+                }
+                mlContainer.innerHTML = html;
+            }
+            
+            // Cooking Methods
+            const cmContainer = document.getElementById('simParamCookingMethodsCheckboxes');
+            if (cmContainer) {
+                let html = '';
+                for (const method of availableCookingMethods) {
+                    const isChecked = selectedCookingMethods.includes(method);
+                    html += `
+                        <div class="checkbox-item" style="margin-bottom: 8px;">
+                            <input type="checkbox" id="simCM_${method.replace(/\s+/g, '_')}" ${isChecked ? 'checked' : ''} onchange="toggleCookingMethod('${method}', this.checked)">
+                            <label for="simCM_${method.replace(/\s+/g, '_')}">${method}</label>
+                        </div>
+                    `;
+                }
+                cmContainer.innerHTML = html;
+            }
+            
+            // Aversions
+            const avContainer = document.getElementById('simParamAversionsCheckboxes');
+            if (avContainer) {
+                let html = '';
+                for (const aversion of availableAversions) {
+                    const isChecked = selectedAversions.includes(aversion);
+                    html += `
+                        <div class="checkbox-item" style="margin-bottom: 8px;">
+                            <input type="checkbox" id="simAV_${aversion.replace(/\s+/g, '_')}" ${isChecked ? 'checked' : ''} onchange="toggleAversion('${aversion}', this.checked)">
+                            <label for="simAV_${aversion.replace(/\s+/g, '_')}">${aversion}</label>
+                        </div>
+                    `;
+                }
+                avContainer.innerHTML = html;
+            }
         }
         
         // Toggle Erweiterte Einstellungen

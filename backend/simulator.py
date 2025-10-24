@@ -112,11 +112,19 @@ class SimulatorConfig:
     # NEU: Simulationsparameter
     simulation_params: Dict = None
     
+    # NEU: Erweiterte Einstellungen
+    selected_recipe_groups: List[str] = None
+    selected_aversions: List[str] = None
+    
     def __post_init__(self):
         if self.excluded_aversions is None:
             self.excluded_aversions = []
         if self.simulation_params is None:
             self.simulation_params = {}
+        if self.selected_recipe_groups is None:
+            self.selected_recipe_groups = []
+        if self.selected_aversions is None:
+            self.selected_aversions = []
     
     @property
     def bkt_min(self):
@@ -235,6 +243,18 @@ class MenuPlanSimulator:
                 continue
             if exclude_raw_meat and recipe.contains_raw_meat:
                 continue
+            
+            # NEU: Rezeptgruppen-Filter
+            if self.config.selected_recipe_groups and recipe.group not in self.config.selected_recipe_groups:
+                continue
+            
+            # NEU: Abneigungen-Filter (zusätzlich zu excluded_aversions)
+            if self.config.selected_aversions:
+                # Prüfe ob Rezept eine der ausgewählten Abneigungen enthält
+                # Abneigungen sind z.B. "Schweinefleisch", "Rindfleisch", etc.
+                # Diese müssen mit recipe.aversions abgeglichen werden
+                if set(recipe.aversions) & set(self.config.selected_aversions):
+                    continue
             
             # Zuordnung zu Menülinien
             for menu_line in self.config.menu_lines:
@@ -685,7 +705,9 @@ class MenuPlanSimulator:
                                     'popularity': opt.popularity,
                                     'additives': opt.additives,
                                     'ingredients': opt.ingredients,
-                                    'description': opt.description
+                                    'description': opt.description,
+                                    'group': opt.group,
+                                    'category': opt.category
                                 }
                                 for opt in meal_slot.options
                             ],
