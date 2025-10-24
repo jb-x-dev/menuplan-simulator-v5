@@ -4255,418 +4255,171 @@
             if (typeof renderDietaryCheckboxes === 'function') renderDietaryCheckboxes();
         }
         
-        
-// ============================================================================
-// CRUD System for Settings Tabs
-// ============================================================================
-
-// Current CRUD operation state
-let crudState = {
-    type: null,      // 'allergen', 'dietary', 'recipeGroup', 'menuLine', 'cookingMethod', 'aversion'
-    mode: null,      // 'add' or 'edit'
-    index: null,     // index for edit mode
-    oldValue: null   // old value for edit mode
-};
-
-// Configuration for each CRUD type
-const crudConfig = {
-    allergen: {
-        arrayName: 'availableAllergens',
-        selectedArrayName: 'selectedAllergens',
-        storageKey: 'availableAllergens',
-        renderFunction: 'renderAllergenCheckboxes',
-        label: 'Allergen',
-        placeholder: 'z.B. Gluten, Milch, Eier...'
-    },
-    dietary: {
-        arrayName: 'availableDietaryForms',
-        selectedArrayName: 'selectedDietaryForms',
-        storageKey: 'availableDietaryForms',
-        renderFunction: 'renderDietaryCheckboxes',
-        label: 'Ernährungsform',
-        placeholder: 'z.B. Vollkost, Vegetarisch, Vegan...'
-    },
-    recipeGroup: {
-        arrayName: 'availableRecipeGroups',
-        selectedArrayName: 'selectedRecipeGroups',
-        storageKey: 'availableRecipeGroups',
-        renderFunction: 'renderRecipeGroupCheckboxes',
-        label: 'Rezeptgruppe',
-        placeholder: 'z.B. Suppe, Salat, Hauptgericht...'
-    },
-    menuLine: {
-        arrayName: 'availableMenuLines',
-        selectedArrayName: 'selectedMenuLines',
-        storageKey: 'availableMenuLines',
-        renderFunction: 'renderMenuLineCheckboxes',
-        label: 'Menülinie',
-        placeholder: 'z.B. Menü 1, Menü 2, Vegetarisch...'
-    },
-    cookingMethod: {
-        arrayName: 'availableCookingMethods',
-        selectedArrayName: 'selectedCookingMethods',
-        storageKey: 'availableCookingMethods',
-        renderFunction: 'renderCookingMethodCheckboxes',
-        label: 'Garmethode',
-        placeholder: 'z.B. Gebraten, Gekocht, Gedünstet...'
-    },
-    aversion: {
-        arrayName: 'availableAversions',
-        selectedArrayName: 'selectedAversions',
-        storageKey: 'availableAversions',
-        renderFunction: 'renderAversionsCheckboxes',
-        label: 'Abneigung',
-        placeholder: 'z.B. Zwiebeln, Knoblauch, Paprika...'
-    }
-};
-
-// Open CRUD modal for adding
-function openCrudAdd(type) {
-    const config = crudConfig[type];
-    if (!config) return;
-    
-    crudState = {
-        type: type,
-        mode: 'add',
-        index: null,
-        oldValue: null
-    };
-    
-    document.getElementById('crudModalTitle').textContent = config.label + ' hinzufügen';
-    document.getElementById('crudInputLabel').textContent = config.label + ':';
-    document.getElementById('crudInput').placeholder = config.placeholder;
-    document.getElementById('crudInput').value = '';
-    document.getElementById('crudModal').style.display = 'flex';
-    document.getElementById('crudInput').focus();
-}
-
-// Open CRUD modal for editing
-function openCrudEdit(type, index) {
-    const config = crudConfig[type];
-    if (!config) return;
-    
-    const array = window[config.arrayName];
-    if (!array || index < 0 || index >= array.length) return;
-    
-    crudState = {
-        type: type,
-        mode: 'edit',
-        index: index,
-        oldValue: array[index]
-    };
-    
-    document.getElementById('crudModalTitle').textContent = config.label + ' bearbeiten';
-    document.getElementById('crudInputLabel').textContent = config.label + ':';
-    document.getElementById('crudInput').placeholder = config.placeholder;
-    document.getElementById('crudInput').value = array[index];
-    document.getElementById('crudModal').style.display = 'flex';
-    document.getElementById('crudInput').focus();
-}
-
-// Close CRUD modal
-function closeCrudModal() {
-    document.getElementById('crudModal').style.display = 'none';
-    crudState = {
-        type: null,
-        mode: null,
-        index: null,
-        oldValue: null
-    };
-}
-
-// Save CRUD item (add or edit)
-function saveCrudItem() {
-    const value = document.getElementById('crudInput').value.trim();
-    
-    if (!value) {
-        alert('Bitte geben Sie einen Wert ein.');
-        return;
-    }
-    
-    const config = crudConfig[crudState.type];
-    if (!config) return;
-    
-    const array = window[config.arrayName];
-    const selectedArray = window[config.selectedArrayName];
-    
-    if (crudState.mode === 'add') {
-        // Check for duplicates
-        if (array.includes(value)) {
-            alert('Dieser Eintrag existiert bereits.');
-            return;
-        }
-        
-        // Add to array
-        array.push(value);
-        
-        // Sort alphabetically
-        array.sort();
-        
-    } else if (crudState.mode === 'edit') {
-        // Check for duplicates (excluding current item)
-        if (array.some((item, idx) => item === value && idx !== crudState.index)) {
-            alert('Dieser Eintrag existiert bereits.');
-            return;
-        }
-        
-        // Update in selected array if it was selected
-        const wasSelected = selectedArray.includes(crudState.oldValue);
-        if (wasSelected) {
-            const selectedIndex = selectedArray.indexOf(crudState.oldValue);
-            if (selectedIndex !== -1) {
-                selectedArray[selectedIndex] = value;
+        // Rendere Allergene-Checkboxen
+        function renderAllergenCheckboxes() {
+            const container = document.getElementById('allergenCheckboxes');
+            let html = '';
+            
+            for (const allergen of availableAllergens) {
+                const isChecked = selectedAllergens.includes(allergen);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleAllergen('${allergen}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${allergen}</span>
+                    </label>
+                `;
             }
+            
+            container.innerHTML = html;
         }
         
-        // Update in array
-        array[crudState.index] = value;
-        
-        // Sort alphabetically
-        array.sort();
-    }
-    
-    // Save to localStorage
-    localStorage.setItem(config.storageKey, JSON.stringify(array));
-    if (selectedArray) {
-        localStorage.setItem(config.selectedArrayName, JSON.stringify(selectedArray));
-    }
-    
-    // Re-render
-    const renderFunc = window[config.renderFunction];
-    if (renderFunc) {
-        renderFunc();
-    }
-    
-    // Close modal
-    closeCrudModal();
-}
-
-// Delete CRUD item
-function deleteCrudItem(type, index) {
-    const config = crudConfig[type];
-    if (!config) return;
-    
-    const array = window[config.arrayName];
-    const selectedArray = window[config.selectedArrayName];
-    
-    if (!array || index < 0 || index >= array.length) return;
-    
-    const value = array[index];
-    
-    if (!confirm(`Möchten Sie "${value}" wirklich löschen?`)) {
-        return;
-    }
-    
-    // Remove from selected array if selected
-    if (selectedArray) {
-        const selectedIndex = selectedArray.indexOf(value);
-        if (selectedIndex !== -1) {
-            selectedArray.splice(selectedIndex, 1);
-        }
-    }
-    
-    // Remove from array
-    array.splice(index, 1);
-    
-    // Save to localStorage
-    localStorage.setItem(config.storageKey, JSON.stringify(array));
-    if (selectedArray) {
-        localStorage.setItem(config.selectedArrayName, JSON.stringify(selectedArray));
-    }
-    
-    // Re-render
-    const renderFunc = window[config.renderFunction];
-    if (renderFunc) {
-        renderFunc();
-    }
-}
-
-// ============================================================================
-// Updated Render Functions with CRUD Buttons
-// ============================================================================
-
-// Render Allergens with CRUD
-function renderAllergenCheckboxes() {
-    const container = document.getElementById('allergenCheckboxes');
-    let html = '';
-    
-    for (let i = 0; i < availableAllergens.length; i++) {
-        const allergen = availableAllergens[i];
-        const isChecked = selectedAllergens.includes(allergen);
-        html += `
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <label style="flex: 1; display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
-                    <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleAllergen('${allergen}', this.checked)" style="width: 18px; height: 18px;">
-                    <span style="font-weight: ${isChecked ? '600' : '400'};">${allergen}</span>
-                </label>
-                <button onclick="openCrudEdit('allergen', ${i})" style="padding: 8px 10px; background: #ffc107; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Bearbeiten">✏️</button>
-                <button onclick="deleteCrudItem('allergen', ${i})" style="padding: 8px 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Löschen">🗑️</button>
-            </div>
-        `;
-    }
-    
-    container.innerHTML = html;
-}
-
-// Render Dietary Forms with CRUD
-function renderDietaryCheckboxes() {
-    const container = document.getElementById('dietaryCheckboxes');
-    let html = '';
-    
-    for (let i = 0; i < availableDietaryForms.length; i++) {
-        const form = availableDietaryForms[i];
-        const isChecked = selectedDietaryForms.includes(form);
-        html += `
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <label style="flex: 1; display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
-                    <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleDietaryForm('${form}', this.checked)" style="width: 18px; height: 18px;">
-                    <span style="font-weight: ${isChecked ? '600' : '400'};">${form}</span>
-                </label>
-                <button onclick="openCrudEdit('dietary', ${i})" style="padding: 8px 10px; background: #ffc107; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Bearbeiten">✏️</button>
-                <button onclick="deleteCrudItem('dietary', ${i})" style="padding: 8px 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Löschen">🗑️</button>
-            </div>
-        `;
-    }
-    
-    container.innerHTML = html;
-}
-
-// Render Recipe Groups with CRUD
-function renderRecipeGroupCheckboxes() {
-    const container = document.getElementById('recipeGroupCheckboxes');
-    let html = '';
-    
-    for (let i = 0; i < availableRecipeGroups.length; i++) {
-        const group = availableRecipeGroups[i];
-        const isChecked = selectedRecipeGroups.includes(group);
-        html += `
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <label style="flex: 1; display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
-                    <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleRecipeGroup('${group}', this.checked)" style="width: 18px; height: 18px;">
-                    <span style="font-weight: ${isChecked ? '600' : '400'};">${group}</span>
-                </label>
-                <button onclick="openCrudEdit('recipeGroup', ${i})" style="padding: 8px 10px; background: #ffc107; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Bearbeiten">✏️</button>
-                <button onclick="deleteCrudItem('recipeGroup', ${i})" style="padding: 8px 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Löschen">🗑️</button>
-            </div>
-        `;
-    }
-    
-    container.innerHTML = html;
-}
-
-// Render Menu Lines with CRUD
-function renderMenuLineCheckboxes() {
-    const container = document.getElementById('menuLineCheckboxes');
-    let html = '';
-    
-    for (let i = 0; i < availableMenuLines.length; i++) {
-        const line = availableMenuLines[i];
-        const isChecked = selectedMenuLines.includes(line);
-        html += `
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <label style="flex: 1; display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
-                    <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleMenuLine('${line}', this.checked)" style="width: 18px; height: 18px;">
-                    <span style="font-weight: ${isChecked ? '600' : '400'};">${line}</span>
-                </label>
-                <button onclick="openCrudEdit('menuLine', ${i})" style="padding: 8px 10px; background: #ffc107; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Bearbeiten">✏️</button>
-                <button onclick="deleteCrudItem('menuLine', ${i})" style="padding: 8px 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Löschen">🗑️</button>
-            </div>
-        `;
-    }
-    
-    container.innerHTML = html;
-}
-
-// Render Cooking Methods with CRUD
-function renderCookingMethodCheckboxes() {
-    const container = document.getElementById('cookingMethodCheckboxes');
-    let html = '';
-    
-    for (let i = 0; i < availableCookingMethods.length; i++) {
-        const method = availableCookingMethods[i];
-        const isChecked = selectedCookingMethods.includes(method);
-        html += `
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <label style="flex: 1; display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
-                    <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleCookingMethod('${method}', this.checked)" style="width: 18px; height: 18px;">
-                    <span style="font-weight: ${isChecked ? '600' : '400'};">${method}</span>
-                </label>
-                <button onclick="openCrudEdit('cookingMethod', ${i})" style="padding: 8px 10px; background: #ffc107; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Bearbeiten">✏️</button>
-                <button onclick="deleteCrudItem('cookingMethod', ${i})" style="padding: 8px 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Löschen">🗑️</button>
-            </div>
-        `;
-    }
-    
-    container.innerHTML = html;
-}
-
-// Render Aversions with CRUD
-function renderAversionsCheckboxes() {
-    const container = document.getElementById('aversionsCheckboxes');
-    let html = '';
-    
-    for (let i = 0; i < availableAversions.length; i++) {
-        const aversion = availableAversions[i];
-        const isChecked = selectedAversions.includes(aversion);
-        html += `
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <label style="flex: 1; display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
-                    <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleAversion('${aversion}', this.checked)" style="width: 18px; height: 18px;">
-                    <span style="font-weight: ${isChecked ? '600' : '400'};">${aversion}</span>
-                </label>
-                <button onclick="openCrudEdit('aversion', ${i})" style="padding: 8px 10px; background: #ffc107; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Bearbeiten">✏️</button>
-                <button onclick="deleteCrudItem('aversion', ${i})" style="padding: 8px 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Löschen">🗑️</button>
-            </div>
-        `;
-    }
-    
-    container.innerHTML = html;
-}
-
-// ============================================================================
-// Load from LocalStorage on Init
-// ============================================================================
-
-function loadCrudDataFromStorage() {
-    // Load each type from localStorage if available
-    Object.keys(crudConfig).forEach(type => {
-        const config = crudConfig[type];
-        const stored = localStorage.getItem(config.storageKey);
-        if (stored) {
-            try {
-                window[config.arrayName] = JSON.parse(stored);
-            } catch (e) {
-                console.error(`Failed to load ${config.storageKey}:`, e);
+        // Rendere Ernährungsformen-Checkboxen
+        function renderDietaryCheckboxes() {
+            const container = document.getElementById('dietaryCheckboxes');
+            let html = '';
+            
+            for (const form of availableDietaryForms) {
+                const isChecked = selectedDietaryForms.includes(form);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleDietaryForm('${form}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${form}</span>
+                    </label>
+                `;
             }
+            
+            container.innerHTML = html;
         }
         
-        // Load selected items
-        const storedSelected = localStorage.getItem(config.selectedArrayName);
-        if (storedSelected) {
-            try {
-                window[config.selectedArrayName] = JSON.parse(storedSelected);
-            } catch (e) {
-                console.error(`Failed to load ${config.selectedArrayName}:`, e);
+        // Rendere Rezeptgruppen-Checkboxen
+        function renderRecipeGroupCheckboxes() {
+            const container = document.getElementById('recipeGroupCheckboxes');
+            let html = '';
+            
+            for (const group of availableRecipeGroups) {
+                const isChecked = selectedRecipeGroups.includes(group);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleRecipeGroup('${group}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${group}</span>
+                    </label>
+                `;
             }
-        }
-    });
-}
-
-// Call on page load
-document.addEventListener('DOMContentLoaded', function() {
-    loadCrudDataFromStorage();
-});
-
-
-
+            
+            container.innerHTML = html;
         }
         
+        // Rendere Menülinien-Checkboxen
+        function renderMenuLineCheckboxes() {
+            const container = document.getElementById('menuLineCheckboxes');
+            let html = '';
+            
+            for (const line of availableMenuLines) {
+                const isChecked = selectedMenuLines.includes(line);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleMenuLine('${line}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${line}</span>
+                    </label>
+                `;
+            }
+            
+            container.innerHTML = html;
         }
         
+        // Rendere Garmethoden-Checkboxen
+        function renderCookingMethodCheckboxes() {
+            const container = document.getElementById('cookingMethodCheckboxes');
+            let html = '';
+            
+            for (const method of availableCookingMethods) {
+                const isChecked = selectedCookingMethods.includes(method);
+                html += `
+                    <label style="display: flex; align-items: center; gap: 8px; padding: 10px; border: 2px solid ${isChecked ? '#667eea' : '#e0e0e0'}; border-radius: 6px; cursor: pointer; background: ${isChecked ? '#f0f4ff' : 'white'};">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleCookingMethod('${method}', this.checked)" style="width: 18px; height: 18px;">
+                        <span style="font-weight: ${isChecked ? '600' : '400'};">${method}</span>
+                    </label>
+                `;
+            }
+            
+            container.innerHTML = html;
         }
         
+        // Rendere Standardwerte
+        function renderDefaultValues() {
+            document.getElementById('defaultPortions').value = defaultPortions;
         }
         
+        // Toggle Allergen
+        function toggleAllergen(allergen, isChecked) {
+            if (isChecked) {
+                if (!selectedAllergens.includes(allergen)) {
+                    selectedAllergens.push(allergen);
+                }
+            } else {
+                selectedAllergens = selectedAllergens.filter(a => a !== allergen);
+            }
+            renderAllergenCheckboxes();
+        }
+        
+        // Toggle Ernährungsform
+        function toggleDietaryForm(form, isChecked) {
+            if (isChecked) {
+                if (!selectedDietaryForms.includes(form)) {
+                    selectedDietaryForms.push(form);
+                }
+            } else {
+                selectedDietaryForms = selectedDietaryForms.filter(f => f !== form);
+            }
+            renderDietaryCheckboxes();
+        }
+        
+        // Toggle Rezeptgruppe
+        function toggleRecipeGroup(group, isChecked) {
+            if (isChecked) {
+                if (!selectedRecipeGroups.includes(group)) {
+                    selectedRecipeGroups.push(group);
+                }
+            } else {
+                selectedRecipeGroups = selectedRecipeGroups.filter(g => g !== group);
+            }
+            renderRecipeGroupCheckboxes();
+        }
+        
+        // Toggle Menülinie
+        function toggleMenuLine(line, isChecked) {
+            if (isChecked) {
+                if (!selectedMenuLines.includes(line)) {
+                    selectedMenuLines.push(line);
+                }
+            } else {
+                selectedMenuLines = selectedMenuLines.filter(l => l !== line);
+            }
+            renderMenuLineCheckboxes();
+        }
+        
+        // Toggle Garmethode
+        function toggleCookingMethod(method, isChecked) {
+            if (isChecked) {
+                if (!selectedCookingMethods.includes(method)) {
+                    selectedCookingMethods.push(method);
+                }
+            } else {
+                selectedCookingMethods = selectedCookingMethods.filter(m => m !== method);
+            }
+            renderCookingMethodCheckboxes();
+        }
+        
+        // Toggle Abneigung
+        function toggleAversion(aversion, isChecked) {
+            if (isChecked) {
+                if (!selectedAversions.includes(aversion)) {
+                    selectedAversions.push(aversion);
+                }
+            } else {
+                selectedAversions = selectedAversions.filter(a => a !== aversion);
+            }
+            renderAversionsCheckboxes();
         }
         
         // Rendere Abneigungen-Checkboxen (Settings)
