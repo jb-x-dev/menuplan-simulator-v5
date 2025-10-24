@@ -896,6 +896,35 @@
                     <input type="text" id="recipeSearchInput" placeholder="🔍 Rezept suchen..." 
                            style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; margin-bottom: 15px;"
                            oninput="filterRecipeList()">
+                    
+                    <!-- Filter Dropdowns -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 15px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9em; color: #666;">📋 Rezeptgruppe</label>
+                            <select id="filterRecipeGroup" onchange="filterRecipeList()" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                                <option value="">Alle Gruppen</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9em; color: #666;">🍴 Menülinie</label>
+                            <select id="filterMenuLine" onchange="filterRecipeList()" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                                <option value="">Alle Linien</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9em; color: #666;">👨‍🍳 Garmethode</label>
+                            <select id="filterCookingMethod" onchange="filterRecipeList()" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                                <option value="">Alle Methoden</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-size: 0.9em; color: #666;">🚫 Abneigung ausschließen</label>
+                            <select id="filterAversion" onchange="filterRecipeList()" style="width: 100%; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                                <option value="">Keine Ausschlüsse</option>
+                            </select>
+                        </div>
+                    </div>
+                    
                     <div id="recipeListContainer" style="display: grid; gap: 10px; max-height: 400px; overflow-y: auto; min-height: 100px;"></div>
                 </div>
             </div>
@@ -1055,7 +1084,7 @@
                     <button class="settings-tab" onclick="switchSimParamTab('budget')">💰 Budget</button>
                     <button class="settings-tab" onclick="switchSimParamTab('sustainability')">🌱 Nachhaltigkeit</button>
                     <button class="settings-tab" onclick="switchSimParamTab('quality')">✅ Qualität</button>
-                    <button class="settings-tab" onclick="switchSimParamTab('advanced')">🔧 Erweiterte Einstellungen</button>
+
                 </div>
                 
                 <!-- Nutrition Tab -->
@@ -1316,27 +1345,6 @@
                         <input type="checkbox" id="simSustainablePalmOil" checked>
                         <label for="simSustainablePalmOil">Palmölfrei oder nachhaltig</label>
                     </div>
-                </div>
-                
-                <!-- Advanced Settings Tab -->
-                <div id="simParamTabAdvanced" class="tab-content" style="display: none;">
-                    <h3>🔧 Erweiterte Einstellungen</h3>
-                    
-                    <h4 style="margin-top: 20px;">📋 Rezeptgruppen</h4>
-                    <div id="simParamRecipeGroupsCheckboxes" class="checkbox-group" style="max-height: 200px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; background: #f9f9f9;"></div>
-                    <small style="color: #666; display: block; margin-top: 8px;">Wählen Sie die Rezeptgruppen aus, die in der Simulation berücksichtigt werden sollen.</small>
-                    
-                    <h4 style="margin-top: 20px;">🍴 Menülinien</h4>
-                    <div id="simParamMenuLinesCheckboxes" class="checkbox-group" style="max-height: 200px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; background: #f9f9f9;"></div>
-                    <small style="color: #666; display: block; margin-top: 8px;">Wählen Sie die Menülinien aus, die in der Simulation berücksichtigt werden sollen.</small>
-                    
-                    <h4 style="margin-top: 20px;">👨‍🍳 Garmethoden</h4>
-                    <div id="simParamCookingMethodsCheckboxes" class="checkbox-group" style="max-height: 200px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; background: #f9f9f9;"></div>
-                    <small style="color: #666; display: block; margin-top: 8px;">Wählen Sie die Garmethoden aus, die in der Simulation berücksichtigt werden sollen.</small>
-                    
-                    <h4 style="margin-top: 20px;">🚫 Abneigungen</h4>
-                    <div id="simParamAversionsCheckboxes" class="checkbox-group" style="max-height: 200px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; background: #f9f9f9;"></div>
-                    <small style="color: #666; display: block; margin-top: 8px;">Wählen Sie Zutaten oder Gerichte aus, die in der Simulation ausgeschlossen werden sollen.</small>
                 </div>
                 
                 <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e0e0e0; display: flex; gap: 10px; justify-content: flex-end;">
@@ -2732,6 +2740,9 @@
                 searchInput.value = '';
             }
             
+            // Fülle Filter-Dropdowns
+            populateRecipeFilters();
+            
             // Warte kurz, bis Modal vollständig geöffnet ist
             setTimeout(() => {
                 renderRecipeList(allRecipes);
@@ -2790,12 +2801,85 @@
         
         function filterRecipeList() {
             const searchTerm = document.getElementById('recipeSearchInput').value.toLowerCase();
-            const filtered = allRecipes.filter(r => 
-                r.name.toLowerCase().includes(searchTerm) ||
-                (r.description && r.description.toLowerCase().includes(searchTerm)) ||
-                (r.category && r.category.toLowerCase().includes(searchTerm))
-            );
+            const filterGroup = document.getElementById('filterRecipeGroup')?.value || '';
+            const filterLine = document.getElementById('filterMenuLine')?.value || '';
+            const filterMethod = document.getElementById('filterCookingMethod')?.value || '';
+            const filterAversion = document.getElementById('filterAversion')?.value || '';
+            
+            const filtered = allRecipes.filter(r => {
+                // Text search
+                const matchesSearch = !searchTerm || 
+                    r.name.toLowerCase().includes(searchTerm) ||
+                    (r.description && r.description.toLowerCase().includes(searchTerm)) ||
+                    (r.category && r.category.toLowerCase().includes(searchTerm));
+                
+                // Recipe group filter
+                const matchesGroup = !filterGroup || r.group === filterGroup;
+                
+                // Menu line filter (not yet in recipe data, skip for now)
+                const matchesLine = !filterLine || (r.menu_line && r.menu_line === filterLine);
+                
+                // Cooking method filter (not yet in recipe data, skip for now)
+                const matchesMethod = !filterMethod || (r.cooking_method && r.cooking_method === filterMethod);
+                
+                // Aversion filter (exclude recipes with this aversion)
+                const matchesAversion = !filterAversion || !(r.aversions && r.aversions.includes(filterAversion));
+                
+                return matchesSearch && matchesGroup && matchesLine && matchesMethod && matchesAversion;
+            });
+            
             renderRecipeList(filtered);
+        }
+        
+        function populateRecipeFilters() {
+            // Populate Recipe Groups
+            const groupSelect = document.getElementById('filterRecipeGroup');
+            if (groupSelect && allRecipes) {
+                const groups = [...new Set(allRecipes.map(r => r.group).filter(Boolean))].sort();
+                groupSelect.innerHTML = '<option value="">Alle Gruppen</option>';
+                groups.forEach(group => {
+                    const option = document.createElement('option');
+                    option.value = group;
+                    option.textContent = group;
+                    groupSelect.appendChild(option);
+                });
+            }
+            
+            // Populate Menu Lines
+            const lineSelect = document.getElementById('filterMenuLine');
+            if (lineSelect && availableMenuLines) {
+                lineSelect.innerHTML = '<option value="">Alle Linien</option>';
+                availableMenuLines.forEach(line => {
+                    const option = document.createElement('option');
+                    option.value = line;
+                    option.textContent = line;
+                    lineSelect.appendChild(option);
+                });
+            }
+            
+            // Populate Cooking Methods
+            const methodSelect = document.getElementById('filterCookingMethod');
+            if (methodSelect && availableCookingMethods) {
+                methodSelect.innerHTML = '<option value="">Alle Methoden</option>';
+                availableCookingMethods.forEach(method => {
+                    const option = document.createElement('option');
+                    option.value = method;
+                    option.textContent = method;
+                    methodSelect.appendChild(option);
+                });
+            }
+            
+            // Populate Aversions
+            const aversionSelect = document.getElementById('filterAversion');
+            if (aversionSelect && availableAversions) {
+                aversionSelect.innerHTML = '<option value="">Keine Ausschlüsse</option>';
+                availableAversions.forEach(aversion => {
+                    const option = document.createElement('option');
+                    option.value = aversion;
+                    option.textContent = aversion;
+                    aversionSelect.appendChild(option);
+                });
+            }
         }
         
         async function selectRecipeFromList(recipeId) {
@@ -3606,7 +3690,7 @@
         
         function switchSimParamTab(tabName) {
             // Hide all tabs
-            const tabs = ['nutrition', 'variety', 'budget', 'sustainability', 'quality', 'advanced'];
+            const tabs = ['nutrition', 'variety', 'budget', 'sustainability', 'quality'];
             tabs.forEach(tab => {
                 document.getElementById('simParamTab' + tab.charAt(0).toUpperCase() + tab.slice(1)).style.display = 'none';
             });
@@ -3685,9 +3769,6 @@
             if (saved) {
                 simulationParameters = JSON.parse(saved);
             }
-            
-            // Render advanced settings checkboxes
-            renderSimParamAdvancedSettings();
             
             // Nutrition
             document.getElementById('simMinCalories').value = simulationParameters.nutrition.minCalories;
@@ -4331,73 +4412,7 @@
             }
             container.innerHTML = html;
         }
-        
-        // Rendere erweiterte Einstellungen im Simulationsparameter-Modal
-        function renderSimParamAdvancedSettings() {
-            // Recipe Groups
-            const rgContainer = document.getElementById('simParamRecipeGroupsCheckboxes');
-            if (rgContainer) {
-                let html = '';
-                for (const group of availableRecipeGroups) {
-                    const isChecked = selectedRecipeGroups.includes(group);
-                    html += `
-                        <div class="checkbox-item" style="margin-bottom: 8px;">
-                            <input type="checkbox" id="simRG_${group.replace(/\s+/g, '_')}" ${isChecked ? 'checked' : ''} onchange="toggleRecipeGroup('${group}', this.checked)">
-                            <label for="simRG_${group.replace(/\s+/g, '_')}">${group}</label>
-                        </div>
-                    `;
-                }
-                rgContainer.innerHTML = html;
-            }
-            
-            // Menu Lines
-            const mlContainer = document.getElementById('simParamMenuLinesCheckboxes');
-            if (mlContainer) {
-                let html = '';
-                for (const line of availableMenuLines) {
-                    const isChecked = selectedMenuLines.includes(line);
-                    html += `
-                        <div class="checkbox-item" style="margin-bottom: 8px;">
-                            <input type="checkbox" id="simML_${line.replace(/\s+/g, '_')}" ${isChecked ? 'checked' : ''} onchange="toggleMenuLine('${line}', this.checked)">
-                            <label for="simML_${line.replace(/\s+/g, '_')}">${line}</label>
-                        </div>
-                    `;
-                }
-                mlContainer.innerHTML = html;
-            }
-            
-            // Cooking Methods
-            const cmContainer = document.getElementById('simParamCookingMethodsCheckboxes');
-            if (cmContainer) {
-                let html = '';
-                for (const method of availableCookingMethods) {
-                    const isChecked = selectedCookingMethods.includes(method);
-                    html += `
-                        <div class="checkbox-item" style="margin-bottom: 8px;">
-                            <input type="checkbox" id="simCM_${method.replace(/\s+/g, '_')}" ${isChecked ? 'checked' : ''} onchange="toggleCookingMethod('${method}', this.checked)">
-                            <label for="simCM_${method.replace(/\s+/g, '_')}">${method}</label>
-                        </div>
-                    `;
-                }
-                cmContainer.innerHTML = html;
-            }
-            
-            // Aversions
-            const avContainer = document.getElementById('simParamAversionsCheckboxes');
-            if (avContainer) {
-                let html = '';
-                for (const aversion of availableAversions) {
-                    const isChecked = selectedAversions.includes(aversion);
-                    html += `
-                        <div class="checkbox-item" style="margin-bottom: 8px;">
-                            <input type="checkbox" id="simAV_${aversion.replace(/\s+/g, '_')}" ${isChecked ? 'checked' : ''} onchange="toggleAversion('${aversion}', this.checked)">
-                            <label for="simAV_${aversion.replace(/\s+/g, '_')}">${aversion}</label>
-                        </div>
-                    `;
-                }
-                avContainer.innerHTML = html;
-            }
-        }
+
         
         // Toggle Erweiterte Einstellungen
         function toggleAdvancedSettings() {
