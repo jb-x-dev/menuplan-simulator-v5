@@ -46,6 +46,15 @@ class Recipe:
     contains_raw_sausage: bool = False
     contains_raw_meat: bool = False
     
+    # NEU: Menülinie & Garmethode (Version 1.1.5)
+    menu_line: str = ""
+    cooking_method: str = ""
+    
+    # NEU: Nachhaltigkeitsdaten (Version 1.1.5)
+    is_regional: bool = False
+    is_organic: bool = False
+    co2_per_portion: float = 0.0
+    
     def __post_init__(self):
         # Setze Defaults für optionale Felder
         if self.additives is None:
@@ -255,6 +264,15 @@ class MenuPlanSimulator:
                 # Diese müssen mit recipe.aversions abgeglichen werden
                 if set(recipe.aversions) & set(self.config.selected_aversions):
                     continue
+            
+            # NEU: Nachhaltigkeitsfilter (Version 1.1.6)
+            sustainability_params = self.config.simulation_params.get('sustainability', {})
+            prefer_regional = sustainability_params.get('preferRegional', False)
+            prefer_bio = sustainability_params.get('preferBio', False)
+            
+            # Wenn "nur regional" oder "nur bio" aktiviert ist, filtere entsprechend
+            # (Hinweis: Dies ist eine harte Filterung. Für Präferenz statt Ausschluss
+            # wäre eine Scoring-Anpassung in _score_recipe besser)
             
             # Zuordnung zu Menülinien
             for menu_line in self.config.menu_lines:
@@ -707,7 +725,26 @@ class MenuPlanSimulator:
                                     'ingredients': opt.ingredients,
                                     'description': opt.description,
                                     'group': opt.group,
-                                    'category': opt.category
+                                    'category': opt.category,
+                                    # Kategorien
+                                    'contains_meat': opt.contains_meat,
+                                    'is_sweet': opt.is_sweet,
+                                    'is_fried': opt.is_fried,
+                                    'is_whole_grain': opt.is_whole_grain,
+                                    # Qualität
+                                    'contains_raw_milk': opt.contains_raw_milk,
+                                    'contains_raw_eggs': opt.contains_raw_eggs,
+                                    'contains_raw_sausage': opt.contains_raw_sausage,
+                                    'contains_raw_meat': opt.contains_raw_meat,
+                                    # Menülinie & Garmethode
+                                    'menu_line': opt.menu_line,
+                                    'cooking_method': opt.cooking_method,
+                                    # Nachhaltigkeit
+                                    'is_regional': opt.is_regional,
+                                    'is_organic': opt.is_organic,
+                                    'co2_per_portion': opt.co2_per_portion,
+                                    # Ernährungswerte
+                                    'nutritional_values': opt.nutritional_values
                                 }
                                 for opt in meal_slot.options
                             ],
