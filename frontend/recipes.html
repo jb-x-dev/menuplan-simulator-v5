@@ -808,7 +808,23 @@
                                 ${recipe.contains_raw_meat ? '<span class="badge" style="background: #e74c3c; font-size: 10px;">⚠️ Rohes Fleisch</span> ' : ''}
                                 ${recipe.is_regional ? '<span class="badge" style="background: #28a745; font-size: 10px;">🌍 Regional</span> ' : ''}
                                 ${recipe.is_organic ? '<span class="badge" style="background: #28a745; font-size: 10px;">🌱 Bio</span> ' : ''}
-                                ${recipe.nutritional_values && recipe.nutritional_values.calories ? `<span class="badge" style="background: #17a2b8; font-size: 10px;">📊 ${recipe.nutritional_values.calories} kcal</span> ` : ''}
+                                ${recipe.co2_per_portion ? (() => {
+                                    const co2 = recipe.co2_per_portion;
+                                    let color = '#28a745'; // grün
+                                    let icon = '🟢'; // grüner Kreis
+                                    if (co2 > 1.5) { color = '#e74c3c'; icon = '🔴'; } // rot
+                                    else if (co2 > 0.8) { color = '#ffc107'; icon = '🟡'; } // gelb
+                                    return `<span class="badge" style="background: ${color}; font-size: 10px;">${icon} ${co2.toFixed(2)} kg CO₂</span> `;
+                                })() : ''}
+                                ${recipe.nutritional_values && recipe.nutritional_values.calories ? (() => {
+                                    const nv = recipe.nutritional_values;
+                                    const macros = [];
+                                    if (nv.protein) macros.push(`P:${nv.protein}g`);
+                                    if (nv.carbs) macros.push(`C:${nv.carbs}g`);
+                                    if (nv.fat) macros.push(`F:${nv.fat}g`);
+                                    const macroText = macros.length > 0 ? ` (${macros.join(' ')})` : '';
+                                    return `<span class="badge" style="background: #17a2b8; font-size: 10px;">📊 ${nv.calories} kcal${macroText}</span> `;
+                                })() : ''}
                                 ${recipe.menu_line ? `<span class="badge" style="background: #6c757d; font-size: 10px;">🍴 ${recipe.menu_line}</span> ` : ''}
                                 ${recipe.cooking_method ? `<span class="badge" style="background: #6c757d; font-size: 10px;">👨‍🍳 ${recipe.cooking_method}</span> ` : ''}
                             </div>
