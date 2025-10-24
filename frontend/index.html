@@ -1408,11 +1408,11 @@
         const availableDietaryForms = ['Vollkost', 'Vegetarisch', 'Vegan'];
         let selectedDietaryForms = ['Vollkost', 'Vegetarisch', 'Vegan'];  // Include all by default
         
-        // Rezeptgruppen-Einstellungen (from SRM Portal)
+        // Rezeptgruppen-Einstellungen (matching actual database groups)
         const availableRecipeGroups = [
-            'Basisrezeptur', 'Frühstück', 'Kalte Küche', 'Zwischenmahlzeit', 'Vorspeise Mittagessen',
-            'Fleisch/Fisch/Ei', 'Saucen', 'Sättigungsbeilage', 'Gemüse', 'Eintopf', 'Dessert',
-            'Abendessen', 'Aktionsgericht', 'Spätmahlzeit', 'Spezialität', 'Mediterran'
+            'Brot', 'Cremige Suppe', 'Dessert', 'Eintopf', 'Eis', 'Fisch', 'Fleisch', 'Gebäck',
+            'Gemüse', 'Getränk', 'Joghurt', 'Kalte Suppe', 'Klare Suppe', 'Kuchen', 'Käse',
+            'Müsli', 'Obst', 'Pasta', 'Pizza', 'Pudding', 'Salat', 'Suppe', 'Vegetarisch', 'Warmes Frühstück'
         ];
         let selectedRecipeGroups = [];  // Empty = include all recipe groups (no filtering)
         
@@ -4105,9 +4105,19 @@
             setDietaryCheckboxes();  // Setze auch Hauptseiten-Checkboxen
             
             // Rezeptgruppen
+            // Migration: Clear old selectedRecipeGroups that cause filtering issues
             const savedRecipeGroups = localStorage.getItem('selectedRecipeGroups');
             if (savedRecipeGroups) {
-                selectedRecipeGroups = JSON.parse(savedRecipeGroups);
+                const parsed = JSON.parse(savedRecipeGroups);
+                // Only load if it's explicitly empty array, otherwise reset to empty
+                if (Array.isArray(parsed) && parsed.length === 0) {
+                    selectedRecipeGroups = parsed;
+                } else {
+                    // Clear old non-empty values that don't match database groups
+                    console.log('🔄 Migration: Clearing old selectedRecipeGroups');
+                    selectedRecipeGroups = [];
+                    localStorage.setItem('selectedRecipeGroups', JSON.stringify([]));
+                }
             }
             
             // Menülinien
