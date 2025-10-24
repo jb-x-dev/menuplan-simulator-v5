@@ -277,6 +277,9 @@ class MenuPlanSimulator:
             # Zuordnung zu Menülinien
             for menu_line in self.config.menu_lines:
                 for cost_form in menu_line['cost_forms']:
+                    # Debug: Log component comparison
+                    if recipe.id == 1:  # Log only for first recipe to avoid spam
+                        print(f"DEBUG: Comparing recipe.menu_component='{recipe.menu_component}' with cost_form['component']='{cost_form['component']}'")
                     if recipe.menu_component == cost_form['component']:
                         key = (menu_line['id'], cost_form['id'])
                         eligible[key].append(recipe)
