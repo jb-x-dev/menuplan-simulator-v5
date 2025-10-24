@@ -620,6 +620,20 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="menuLine">🍴 Menülinie</label>
+                    <select id="menuLine" class="form-control">
+                        <option value="">-- Bitte wählen --</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cookingMethod">👨‍🍳 Garmethode</label>
+                    <select id="cookingMethod" class="form-control">
+                        <option value="">-- Bitte wählen --</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
                     <label class="form-label">✅ Qualitätsfilter (Rohe Zutaten)</label>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
@@ -637,6 +651,46 @@
                         <div class="checkbox-item">
                             <input type="checkbox" id="qualityRawMeat" value="raw_meat">
                             <label>🥩 Enthält rohes Fleisch (Mett)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">🌱 Nachhaltigkeit</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="isRegional" value="regional">
+                            <label>🌍 Regional</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="isOrganic" value="organic">
+                            <label>🌱 Bio</label>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <label for="co2PerPortion">💨 CO₂-Fußabdruck (kg pro Portion)</label>
+                        <input type="number" id="co2PerPortion" class="form-control" step="0.01" min="0" placeholder="z.B. 0.5">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">📊 Ernährungswerte (pro Portion)</label>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                        <div>
+                            <label for="calories">Kalorien (kcal)</label>
+                            <input type="number" id="calories" class="form-control" min="0" placeholder="320">
+                        </div>
+                        <div>
+                            <label for="protein">Eiweiß (g)</label>
+                            <input type="number" id="protein" class="form-control" step="0.1" min="0" placeholder="12">
+                        </div>
+                        <div>
+                            <label for="carbs">Kohlenhydrate (g)</label>
+                            <input type="number" id="carbs" class="form-control" step="0.1" min="0" placeholder="52">
+                        </div>
+                        <div>
+                            <label for="fat">Fett (g)</label>
+                            <input type="number" id="fat" class="form-control" step="0.1" min="0" placeholder="8">
                         </div>
                     </div>
                 </div>
@@ -752,6 +806,11 @@
                                 ${recipe.contains_raw_milk ? '<span class="badge" style="background: #e74c3c; font-size: 10px;">⚠️ Rohmilch</span> ' : ''}
                                 ${recipe.contains_raw_sausage ? '<span class="badge" style="background: #e74c3c; font-size: 10px;">⚠️ Rohwurst</span> ' : ''}
                                 ${recipe.contains_raw_meat ? '<span class="badge" style="background: #e74c3c; font-size: 10px;">⚠️ Rohes Fleisch</span> ' : ''}
+                                ${recipe.is_regional ? '<span class="badge" style="background: #28a745; font-size: 10px;">🌍 Regional</span> ' : ''}
+                                ${recipe.is_organic ? '<span class="badge" style="background: #28a745; font-size: 10px;">🌱 Bio</span> ' : ''}
+                                ${recipe.nutritional_values && recipe.nutritional_values.calories ? `<span class="badge" style="background: #17a2b8; font-size: 10px;">📊 ${recipe.nutritional_values.calories} kcal</span> ` : ''}
+                                ${recipe.menu_line ? `<span class="badge" style="background: #6c757d; font-size: 10px;">🍴 ${recipe.menu_line}</span> ` : ''}
+                                ${recipe.cooking_method ? `<span class="badge" style="background: #6c757d; font-size: 10px;">👨‍🍳 ${recipe.cooking_method}</span> ` : ''}
                             </div>
                         </td>
                         <td>${recipe.category}</td>
@@ -823,9 +882,36 @@
             document.getElementById('recipeModal').classList.add('active');
         }
         
+        function populateDropdowns() {
+            // Menülinie Dropdown füllen
+            const menuLineSelect = document.getElementById('menuLine');
+            menuLineSelect.innerHTML = '<option value="">-- Bitte wählen --</option>';
+            const menuLines = JSON.parse(localStorage.getItem('availableMenuLines') || '[]');
+            menuLines.forEach(line => {
+                const option = document.createElement('option');
+                option.value = line;
+                option.textContent = line;
+                menuLineSelect.appendChild(option);
+            });
+            
+            // Garmethode Dropdown füllen
+            const cookingMethodSelect = document.getElementById('cookingMethod');
+            cookingMethodSelect.innerHTML = '<option value="">-- Bitte wählen --</option>';
+            const cookingMethods = JSON.parse(localStorage.getItem('availableCookingMethods') || '[]');
+            cookingMethods.forEach(method => {
+                const option = document.createElement('option');
+                option.value = method;
+                option.textContent = method;
+                cookingMethodSelect.appendChild(option);
+            });
+        }
+        
         function editRecipe(id) {
             const recipe = allRecipes.find(r => r.id === id);
             if (!recipe) return;
+            
+            // Dropdowns füllen
+            populateDropdowns();
             
             document.getElementById('modalTitle').textContent = 'Rezept bearbeiten';
             document.getElementById('recipeName').value = recipe.name;
@@ -857,6 +943,22 @@
             document.getElementById('qualityRawEggs').checked = recipe.contains_raw_eggs || false;
             document.getElementById('qualityRawSausage').checked = recipe.contains_raw_sausage || false;
             document.getElementById('qualityRawMeat').checked = recipe.contains_raw_meat || false;
+            
+            // Menülinie & Garmethode
+            document.getElementById('menuLine').value = recipe.menu_line || '';
+            document.getElementById('cookingMethod').value = recipe.cooking_method || '';
+            
+            // Nachhaltigkeit
+            document.getElementById('isRegional').checked = recipe.is_regional || false;
+            document.getElementById('isOrganic').checked = recipe.is_organic || false;
+            document.getElementById('co2PerPortion').value = recipe.co2_per_portion || '';
+            
+            // Ernährungswerte
+            const nutritional = recipe.nutritional_values || {};
+            document.getElementById('calories').value = nutritional.calories || '';
+            document.getElementById('protein').value = nutritional.protein || '';
+            document.getElementById('carbs').value = nutritional.carbs || '';
+            document.getElementById('fat').value = nutritional.fat || '';
             
             document.getElementById('recipeModal').classList.add('active');
         }
@@ -909,7 +1011,21 @@
                 contains_raw_milk: document.getElementById('qualityRawMilk').checked,
                 contains_raw_eggs: document.getElementById('qualityRawEggs').checked,
                 contains_raw_sausage: document.getElementById('qualityRawSausage').checked,
-                contains_raw_meat: document.getElementById('qualityRawMeat').checked
+                contains_raw_meat: document.getElementById('qualityRawMeat').checked,
+                // Menülinie & Garmethode
+                menu_line: document.getElementById('menuLine').value,
+                cooking_method: document.getElementById('cookingMethod').value,
+                // Nachhaltigkeit
+                is_regional: document.getElementById('isRegional').checked,
+                is_organic: document.getElementById('isOrganic').checked,
+                co2_per_portion: parseFloat(document.getElementById('co2PerPortion').value) || 0,
+                // Ernährungswerte
+                nutritional_values: {
+                    calories: parseInt(document.getElementById('calories').value) || 0,
+                    protein: parseFloat(document.getElementById('protein').value) || 0,
+                    carbs: parseFloat(document.getElementById('carbs').value) || 0,
+                    fat: parseFloat(document.getElementById('fat').value) || 0
+                }
             };
             
             console.log('Rezept gespeichert:', recipeData);
