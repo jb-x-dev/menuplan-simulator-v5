@@ -2,11 +2,11 @@
 
 ## Bugs
 
-- [ ] Fix: Mahlzeiten-Auswahl stimmt nicht mit Rezept menu_component überein
-  - Problem: "No recipes for Frühstück/Frühstück" Fehler weiterhin vorhanden
-  - Ursache: Matching zwischen cost_form component und recipe menu_component schlägt fehl
-  - Lösung: Direktes Matching im Simulator-Code korrigieren
-  - Status: In Bearbeitung - API-Endpunkt erstellt, aber Matching funktioniert noch nicht
+- [ ] Fix: Mahlzeiten-Auswahl aus Einstellungen berücksichtigen
+  - Problem: Alle Mahlzeiten werden verwendet, nicht nur die aktivierten
+  - Lösung: Nur aktivierte Mahlzeiten aus Einstellungen für Generierung verwenden
+  - Beispielrezepte an verfügbare Kategorien anpassen
+  - Status: In Bearbeitung
 
 ## Features (für v5.1)
 

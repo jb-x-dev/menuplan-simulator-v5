@@ -1396,9 +1396,9 @@
         
         // Default-Einstellungen falls API fehlschlägt
         const defaultMealSettings = [
-            { id: 1, name: 'Frühstück', isMainMeal: false, component: 'Frühstück', recipesPerMeal: 2 },
-            { id: 2, name: 'Mittagessen', isMainMeal: true, component: 'Mittagessen', recipesPerMeal: 2 },
-            { id: 3, name: 'Abendessen', isMainMeal: false, component: 'Abendessen', recipesPerMeal: 2 }
+            { id: 1, name: 'Frühstück', isMainMeal: false, component: 'Frühstück', recipesPerMeal: 2, isActive: true },
+            { id: 2, name: 'Mittagessen', isMainMeal: true, component: 'Mittagessen', recipesPerMeal: 2, isActive: true },
+            { id: 3, name: 'Abendessen', isMainMeal: false, component: 'Abendessen', recipesPerMeal: 2, isActive: true }
         ];
         
         // Lade verfügbare Mahlzeiten-Kategorien aus API
@@ -1414,7 +1414,8 @@
                         name: cat.name,
                         isMainMeal: cat.name === 'Mittagessen', // Nur Mittagessen ist Hauptmahlzeit
                         component: cat.name, // Wichtig: component = name für korrektes Matching
-                        recipesPerMeal: 2
+                        recipesPerMeal: 2,
+                        isActive: ['Frühstück', 'Mittagessen', 'Abendessen'].includes(cat.name) // Standard-Mahlzeiten aktiv
                     }));
                     console.log('✅ Loaded meal categories from API:', mealSettings);
                 } else {
@@ -1740,8 +1741,15 @@
                 selected_aversions: selectedAversions
             };
             
-            // Verwende mealSettings statt hardcodierte Checkboxen
-            config.menu_lines = mealSettings.map((meal, idx) => ({
+            // Verwende nur AKTIVE mealSettings für die Generierung
+            const activeMeals = mealSettings.filter(meal => meal.isActive !== false);
+            
+            if (activeMeals.length === 0) {
+                alert('❌ Bitte aktivieren Sie mindestens eine Mahlzeit in den Einstellungen!');
+                return;
+            }
+            
+            config.menu_lines = activeMeals.map((meal, idx) => ({
                 id: idx + 1,
                 name: meal.name,
                 component: meal.component,
@@ -3977,21 +3985,26 @@
             
             for (let i = 0; i < mealSettings.length; i++) {
                 const meal = mealSettings[i];
+                const isActive = meal.isActive !== false; // Default true wenn nicht gesetzt
                 html += `
-                    <div style="border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; margin-bottom: 10px; background: white;">
+                    <div style="border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; margin-bottom: 10px; background: ${isActive ? 'white' : '#f8f9fa'}; opacity: ${isActive ? '1' : '0.7'};">
                         <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
-                            <input type="text" value="${meal.name}" onchange="updateMealName(${i}, this.value)" style="flex: 1; padding: 8px; border: 2px solid #D3D3D3; border-radius: 5px; font-size: 14px;" placeholder="Mahlzeit-Name">
+                            <label style="display: flex; align-items: center; gap: 5px;">
+                                <input type="checkbox" ${isActive ? 'checked' : ''} onchange="toggleMealActive(${i}, this.checked)" style="width: 18px; height: 18px;">
+                                <span style="font-weight: bold; color: ${isActive ? '#28a745' : '#6c757d'};">✓ Aktiv</span>
+                            </label>
+                            <input type="text" value="${meal.name}" onchange="updateMealName(${i}, this.value)" style="flex: 1; padding: 8px; border: 2px solid #D3D3D3; border-radius: 5px; font-size: 14px;" placeholder="Mahlzeit-Name" ${!isActive ? 'disabled' : ''}>
                             <label style="display: flex; align-items: center; gap: 5px; white-space: nowrap;">
-                                <input type="checkbox" ${meal.isMainMeal ? 'checked' : ''} onchange="setMainMeal(${i}, this.checked)">
+                                <input type="checkbox" ${meal.isMainMeal ? 'checked' : ''} onchange="setMainMeal(${i}, this.checked)" ${!isActive ? 'disabled' : ''}>
                                 <span style="font-weight: bold; color: #667eea;">⭐ Hauptmahlzeit</span>
                             </label>
                             <button onclick="removeMealSetting(${i})" style="padding: 8px 12px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">×</button>
                         </div>
                         <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                            <input type="text" value="${meal.component}" onchange="updateMealComponent(${i}, this.value)" style="flex: 1; padding: 8px; border: 2px solid #dee2e6; border-radius: 5px; font-size: 13px;" placeholder="Komponente (für API)">
+                            <input type="text" value="${meal.component}" onchange="updateMealComponent(${i}, this.value)" style="flex: 1; padding: 8px; border: 2px solid #dee2e6; border-radius: 5px; font-size: 13px;" placeholder="Komponente (für API)" ${!isActive ? 'disabled' : ''}>
                             <div style="display: flex; align-items: center; gap: 5px;">
                                 <label style="font-size: 13px; white-space: nowrap; color: #666;">Rezepte:</label>
-                                <input type="number" value="${meal.recipesPerMeal || defaultRecipesPerMeal}" min="1" max="5" onchange="updateRecipesPerMeal(${i}, parseInt(this.value))" style="width: 60px; padding: 8px; border: 2px solid #dee2e6; border-radius: 5px; font-size: 13px;">
+                                <input type="number" value="${meal.recipesPerMeal || defaultRecipesPerMeal}" min="1" max="5" onchange="updateRecipesPerMeal(${i}, parseInt(this.value))" style="width: 60px; padding: 8px; border: 2px solid #dee2e6; border-radius: 5px; font-size: 13px;" ${!isActive ? 'disabled' : ''}>
                             </div>
                         </div>
                     </div>
@@ -4013,6 +4026,12 @@
             if (count >= 1 && count <= 5) {
                 mealSettings[index].recipesPerMeal = count;
             }
+        }
+        
+        function toggleMealActive(index, isActive) {
+            mealSettings[index].isActive = isActive;
+            console.log(`Mahlzeit ${mealSettings[index].name} ${isActive ? 'aktiviert' : 'deaktiviert'}`);
+            renderMealSettings(); // UI aktualisieren
         }
         
         function setMainMeal(index, isMain) {
