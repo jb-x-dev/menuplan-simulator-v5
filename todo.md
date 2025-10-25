@@ -101,8 +101,10 @@
 
 
 
-- [ ] Fehler beim Speichern des Menüplans
-  - Fehlermeldung: "Fehler beim Speichern des Menüplans"
-  - Tritt auf nach erfolgreicher Generierung
-  - Status: Analyse erforderlich
+- [x] Fehler beim Speichern des Menüplans
+  - Ursache: Falscher API-Endpunkt (/api/menu-plans/save statt /api/menu-plans)
+  - Ursache 2: Falsche Datenstruktur (fehlte metadata-Objekt)
+  - Lösung: Korrigierte URL und Datenstruktur
+  - Metadaten werden jetzt aus currentPlan berechnet
+  - Status: Behoben
 
