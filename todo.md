@@ -24,10 +24,12 @@
 
 ## Features (aktuell)
 
-- [ ] Versionsanzeige unter Menüpunkt Start
+- [x] Versionsanzeige unter Menüpunkt Start
   - Version aus VERSION Datei laden
-  - Anzeige unter Header
-  - Status: In Bearbeitung
+  - API-Endpunkt: GET /api/version
+  - Anzeige unter Header (kleine graue Schrift)
+  - Auto-Load beim Seitenaufruf
+  - Status: Abgeschlossen
 
 - [x] Rezept-Auswahl-System implementieren
   - SQLite Datenbank für persistente Speicherung
