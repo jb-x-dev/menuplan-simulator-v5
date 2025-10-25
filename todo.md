@@ -2,9 +2,11 @@
 
 ## Bugs
 
-- [ ] Fix: Mahlzeiten-Auswahl und Vorbelegung funktioniert nicht
-  - Problem: Mahlzeiten werden nicht korrekt angezeigt/vorbelegt
-  - Status: In Bearbeitung
+- [x] Fix: Mahlzeiten-Auswahl und Vorbelegung funktioniert nicht
+  - Problem: Dynamisches API-Laden verursachte Probleme
+  - Lösung: Hardcoded Werte die EXAKT mit Rezept-Daten übereinstimmen
+  - 4 Mahlzeiten: Frühstück, Mittagessen, Abendessen (aktiv), Zwischenmahlzeit (inaktiv)
+  - Status: Behoben
 
 - [x] Fix: Mahlzeiten-Auswahl aus Einstellungen berücksichtigen
   - Problem: Alle Mahlzeiten wurden verwendet, nicht nur die aktivierten
