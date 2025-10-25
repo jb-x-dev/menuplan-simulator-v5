@@ -25,12 +25,14 @@
 ## Bugs
 
 - [ ] "No recipes for Frühstück/Frühstück" Fehler beheben
-  - Matching zwischen Mahlzeiten und Rezepten schlägt fehl
+  - Erweiterte Debug-Ausgaben hinzugefügt
+  - Warte auf Render.com Logs für Diagnose
   - Status: In Bearbeitung
 
-- [ ] Allergene standardmäßig deselektieren
-  - Alle Allergene sollen default NICHT ausgewählt sein
-  - Status: In Bearbeitung
+- [x] Allergene standardmäßig deselektieren
+  - selectedAllergens = [] beim Laden erzwungen
+  - LocalStorage für Allergene gelöscht
+  - Status: Behoben
 
 ## Features (aktuell)
 
