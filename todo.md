@@ -36,10 +36,12 @@
   - LocalStorage für Allergene gelöscht
   - Status: Behoben
 
-- [ ] "Zwischengang" vs "Zwischenmahlzeit" Naming-Mismatch
-  - mealSettings verwendet 'Zwischengang'
-  - Rezepte haben 'Zwischenmahlzeit'
-  - Status: In Bearbeitung
+- [x] "Zwischengang" vs "Zwischenmahlzeit" Naming-Mismatch
+  - Ursache: Browser-Cache hatte alte mealSettings mit 'Zwischengang'
+  - Lösung: localStorage für mealSettings wird jetzt ignoriert
+  - Standardwerte werden immer verwendet
+  - Debug-Spam im Backend entfernt
+  - Status: Behoben
 
 ## Features (aktuell)
 
