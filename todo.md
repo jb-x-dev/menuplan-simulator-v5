@@ -2,11 +2,12 @@
 
 ## Bugs
 
-- [ ] Systematische Fehlersuche und Behebung
-  - Alle Funktionen testen
-  - Debug-Logs analysieren
-  - Kritische Fehler beheben
-  - Status: In Bearbeitung
+- [x] Systematische Fehlersuche und Behebung
+  - self.recipes vs self.all_recipes Inkonsistenz behoben
+  - Statistik-Feldnamen korrigiert (avg_bkt, min_bkt, max_bkt)
+  - Debug-Logging verbessert
+  - Menüplan-Generierung funktioniert end-to-end
+  - Status: Abgeschlossen
 
 - [x] Fix: Mahlzeiten-Auswahl und Vorbelegung funktioniert nicht
   - Problem: Dynamisches API-Laden verursachte Probleme
