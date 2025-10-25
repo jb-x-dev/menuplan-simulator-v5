@@ -1391,50 +1391,51 @@
         let selectedDays = [];  // Tracks which days are selected for order suggestion
         let orderSuggestionData = null;  // Stores the generated order suggestion
         
-        // Mahlzeiten-Einstellungen (werden dynamisch aus API geladen)
-        let mealSettings = [];
-        
-        // Default-Einstellungen falls API fehlschlägt
-        const defaultMealSettings = [
-            { id: 1, name: 'Frühstück', isMainMeal: false, component: 'Frühstück', recipesPerMeal: 2, isActive: true },
-            { id: 2, name: 'Mittagessen', isMainMeal: true, component: 'Mittagessen', recipesPerMeal: 2, isActive: true },
-            { id: 3, name: 'Abendessen', isMainMeal: false, component: 'Abendessen', recipesPerMeal: 2, isActive: true }
+        // Mahlzeiten-Einstellungen - FEST DEFINIERT basierend auf Rezept-Daten
+        // Diese Werte müssen EXAKT mit menu_component in recipes_200.json übereinstimmen
+        let mealSettings = [
+            { 
+                id: 1, 
+                name: 'Frühstück', 
+                isMainMeal: false, 
+                component: 'Frühstück',  // EXAKT wie in recipes_200.json
+                recipesPerMeal: 2, 
+                isActive: true 
+            },
+            { 
+                id: 2, 
+                name: 'Mittagessen', 
+                isMainMeal: true, 
+                component: 'Mittagessen',  // EXAKT wie in recipes_200.json
+                recipesPerMeal: 2, 
+                isActive: true 
+            },
+            { 
+                id: 3, 
+                name: 'Abendessen', 
+                isMainMeal: false, 
+                component: 'Abendessen',  // EXAKT wie in recipes_200.json
+                recipesPerMeal: 2, 
+                isActive: true 
+            },
+            { 
+                id: 4, 
+                name: 'Zwischenmahlzeit', 
+                isMainMeal: false, 
+                component: 'Zwischenmahlzeit',  // EXAKT wie in recipes_200.json
+                recipesPerMeal: 1, 
+                isActive: false  // Standard deaktiviert
+            }
         ];
         
-        // Lade verfügbare Mahlzeiten-Kategorien aus API
-        async function loadMealCategories() {
-            try {
-                const response = await fetch('/api/meal-categories');
-                const data = await response.json();
-                
-                if (data.success && data.categories.length > 0) {
-                    // Erstelle mealSettings aus verfügbaren Kategorien
-                    mealSettings = data.categories.map((cat, idx) => ({
-                        id: idx + 1,
-                        name: cat.name,
-                        isMainMeal: cat.name === 'Mittagessen', // Nur Mittagessen ist Hauptmahlzeit
-                        component: cat.name, // Wichtig: component = name für korrektes Matching
-                        recipesPerMeal: 2,
-                        isActive: ['Frühstück', 'Mittagessen', 'Abendessen'].includes(cat.name) // Standard-Mahlzeiten aktiv
-                    }));
-                    console.log('✅ Loaded meal categories from API:', mealSettings);
-                } else {
-                    console.warn('⚠️ No meal categories from API, using defaults');
-                    mealSettings = defaultMealSettings;
-                }
-            } catch (error) {
-                console.error('❌ Failed to load meal categories:', error);
-                mealSettings = defaultMealSettings;
-            }
-            
-            // Aktualisiere UI nach dem Laden
+        console.log('✅ Meal settings initialized:', mealSettings);
+        
+        // Rendere Mahlzeiten-UI sofort
+        document.addEventListener('DOMContentLoaded', function() {
             if (typeof renderMealSettings === 'function') {
                 renderMealSettings();
             }
-        }
-        
-        // Lade Kategorien beim Start
-        loadMealCategories();
+        });
         
         // Unverträglichkeiten-Einstellungen (matching recipe data)
         // Note: These are EXCLUDED allergens - recipes with these allergens will be filtered out

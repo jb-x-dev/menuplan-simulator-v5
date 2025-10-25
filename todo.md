@@ -2,6 +2,10 @@
 
 ## Bugs
 
+- [ ] Fix: Mahlzeiten-Auswahl und Vorbelegung funktioniert nicht
+  - Problem: Mahlzeiten werden nicht korrekt angezeigt/vorbelegt
+  - Status: In Bearbeitung
+
 - [x] Fix: Mahlzeiten-Auswahl aus Einstellungen berücksichtigen
   - Problem: Alle Mahlzeiten wurden verwendet, nicht nur die aktivierten
   - Lösung: Aktiv/Inaktiv-Toggle für jede Mahlzeit hinzugefügt
