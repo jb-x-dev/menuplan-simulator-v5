@@ -24,12 +24,13 @@
 
 ## Features (aktuell)
 
-- [ ] Auto-Generierung sofort funktionsfähig machen
-  - Standard-Rezepte vorauswählen (z.B. 20 pro Komponente)
-  - Vorbelegung der Mahlzeiten-Einstellungen optimieren
-  - BKT-Zielwert realistisch setzen
-  - Beispiel-Konfiguration die funktioniert
-  - Status: In Bearbeitung
+- [x] Auto-Generierung sofort funktionsfähig machen
+  - Standard-Rezepte vorausgewählt: 80 Rezepte (40% der Gesamtmenge)
+  - Ausgewogene Verteilung: Frühstück 15, Mittagessen 40, Abendessen 15, Zwischenmahlzeit 10
+  - BKT-Zielwert: 5.50€ (realistisch)
+  - BKT-Toleranz: 10%
+  - Automatische Initialisierung beim ersten Start
+  - Status: Abgeschlossen
 
 - [x] Versionsanzeige unter Menüpunkt Start
   - Version aus VERSION Datei laden
