@@ -24,6 +24,13 @@
 
 ## Features (aktuell)
 
+- [ ] Automatische Menüplan-Generierung beim Seitenaufruf
+  - Menüplan automatisch beim Laden generieren
+  - Kein manueller Klick auf "Generieren" nötig
+  - Sofort gefüllter Menüplan sichtbar
+  - Testen bis es funktioniert
+  - Status: In Bearbeitung
+
 - [x] Rezept-Auswahl und Menülinien aus Einstellungen entfernen
   - Entfernt: Rezept-Auswahl Tab + Menülinien Tab
   - Behalten: Alle anderen Tabs (Laufzeiten, Allergene, Ernährungsformen, Rezeptgruppen, Garmethoden, Abneigungen, Standardwerte)

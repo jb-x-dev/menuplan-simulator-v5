@@ -1561,6 +1561,18 @@
         
         loadRecipes();
         
+        // Automatische Menüplan-Generierung beim Seitenaufruf
+        window.addEventListener('load', async () => {
+            console.log('🚀 Auto-generating menu plan on page load...');
+            // Warte kurz damit alle Initialisierungen abgeschlossen sind
+            setTimeout(async () => {
+                const btn = document.getElementById('btnSimulate');
+                if (btn) {
+                    btn.click(); // Trigger die Generierung
+                }
+            }, 500);
+        });
+        
         function switchMode(mode, event) {
             currentMode = mode;
             
