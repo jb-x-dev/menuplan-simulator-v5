@@ -36,6 +36,11 @@
   - LocalStorage für Allergene gelöscht
   - Status: Behoben
 
+- [ ] "Zwischengang" vs "Zwischenmahlzeit" Naming-Mismatch
+  - mealSettings verwendet 'Zwischengang'
+  - Rezepte haben 'Zwischenmahlzeit'
+  - Status: In Bearbeitung
+
 ## Features (aktuell)
 
 - [x] Automatische Menüplan-Generierung beim Seitenaufruf

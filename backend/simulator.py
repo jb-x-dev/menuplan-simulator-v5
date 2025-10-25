@@ -288,15 +288,6 @@ class MenuPlanSimulator:
                     recipe_comp = recipe.menu_component
                     cost_comp = cost_form.get('component', 'NO_COMPONENT')
                     
-                    # ERWEITERTE DEBUG-AUSGABE
-                    if recipe.name == "Haferflocken-Porridge mit Früchten":  # Erstes Frühstücks-Rezept
-                        print(f"\nDEBUG MATCHING for {recipe.name}:")
-                        print(f"  recipe.menu_component = {repr(recipe_comp)} (type={type(recipe_comp).__name__})")
-                        print(f"  cost_form['component'] = {repr(cost_comp)} (type={type(cost_comp).__name__})")
-                        print(f"  Equal? {recipe_comp == cost_comp}")
-                        print(f"  menu_line = {menu_line}")
-                        print(f"  cost_form = {cost_form}")
-                    
                     if recipe_comp == cost_comp:
                         key = (menu_line['id'], cost_form['id'])
                         eligible[key].append(recipe)
