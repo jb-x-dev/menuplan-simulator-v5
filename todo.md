@@ -108,3 +108,16 @@
   - Metadaten werden jetzt aus currentPlan berechnet
   - Status: Behoben
 
+
+
+- [ ] Bestelllisten aus aktiven Menüplänen generieren
+  - Auf Bestelllisten-Seite (📋 Bestelllisten)
+  - Liste aller Menüpläne mit Status "Aktiv" anzeigen
+  - Checkboxen zur Auswahl mehrerer Menüpläne
+  - Button "Bestellliste generieren"
+  - Aggregierte Bestellliste erstellen:
+    * Alle Rezepte aus ausgewählten Menüplänen
+    * Gesamtmengen pro Rezept/Zutat
+    * Nach Kategorien gruppiert
+  - Status: In Bearbeitung
+

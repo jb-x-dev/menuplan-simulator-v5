@@ -259,6 +259,49 @@
             padding-bottom: 10px;
             border-bottom: 2px solid #667eea;
         }
+        
+        .menu-plan-card {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .menu-plan-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102,126,234,0.2);
+        }
+        
+        .menu-plan-card.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .menu-plan-checkbox {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        .status-badge.active {
+            background: #d4edda;
+            color: #155724;
+        }
     </style>
 </head>
 <body>
@@ -271,6 +314,25 @@
                 <a href="/index.html" class="nav-btn">🏠 Startseite</a>
                 <a href="/meal-plans.html" class="nav-btn">📅 Menüpläne</a>
                 <a href="/recipes.html" class="nav-btn secondary">📚 Rezeptverwaltung</a>
+            </div>
+        </div>
+        
+        <!-- Menu Plan Selection Section -->
+        <div class="content-panel" style="margin-bottom: 20px;">
+            <h2 style="margin-bottom: 20px;">📅 Bestellliste aus Menüplänen generieren</h2>
+            <p style="color: #666; margin-bottom: 20px;">Wählen Sie aktive Menüpläne aus, um eine aggregierte Bestellliste zu erstellen</p>
+            
+            <div id="menuPlansContainer" class="order-list-grid">
+                <div class="empty-state">
+                    <div class="empty-state-icon">⏳</div>
+                    <h3>Lade Menüpläne...</h3>
+                </div>
+            </div>
+            
+            <div class="action-buttons" id="menuPlanActions" style="display: none;">
+                <button class="btn" id="btnGenerateFromMenuPlans" disabled>📋 Bestellliste generieren</button>
+                <button class="btn btn-secondary" id="btnSelectAllMenuPlans">✅ Alle auswählen</button>
+                <button class="btn btn-secondary" id="btnDeselectAllMenuPlans">❌ Alle abwählen</button>
             </div>
         </div>
         
@@ -484,7 +546,197 @@
             document.getElementById('viewModal').classList.remove('active');
         }
         
+        // Menu Plans Management
+        let menuPlans = [];
+        let selectedMenuPlans = new Set();
+        
+        // Load menu plans from backend
+        async function loadMenuPlans() {
+            try {
+                const response = await fetch('/api/menu-plans');
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Filter only active menu plans
+                    menuPlans = data.plans.filter(plan => plan.metadata.status === 'Aktiv');
+                    renderMenuPlans();
+                } else {
+                    console.error('Failed to load menu plans:', data.error);
+                    showMenuPlansError('Fehler beim Laden der Menüpläne');
+                }
+            } catch (error) {
+                console.error('Error loading menu plans:', error);
+                showMenuPlansError('Fehler beim Laden der Menüpläne');
+            }
+        }
+        
+        // Render menu plans
+        function renderMenuPlans() {
+            const container = document.getElementById('menuPlansContainer');
+            const actions = document.getElementById('menuPlanActions');
+            
+            if (menuPlans.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📅</div>
+                        <h3>Keine aktiven Menüpläne vorhanden</h3>
+                        <p>Erstellen Sie einen Menüplan mit Status "Aktiv" auf der Startseite</p>
+                    </div>
+                `;
+                actions.style.display = 'none';
+                return;
+            }
+            
+            actions.style.display = 'flex';
+            
+            container.innerHTML = menuPlans.map((plan, index) => {
+                const metadata = plan.metadata;
+                const isSelected = selectedMenuPlans.has(index);
+                
+                return `
+                    <div class="menu-plan-card ${isSelected ? 'selected' : ''}" 
+                         onclick="toggleMenuPlan(${index})">
+                        <input type="checkbox" 
+                               class="menu-plan-checkbox" 
+                               ${isSelected ? 'checked' : ''}
+                               onclick="event.stopPropagation(); toggleMenuPlan(${index});">
+                        <div class="order-list-title">${metadata.name}</div>
+                        <div class="order-list-meta">📅 ${metadata.start_date} - ${metadata.end_date}</div>
+                        <div class="order-list-meta">💰 Gesamt: ${metadata.total_cost.toFixed(2)}€</div>
+                        <div class="order-list-meta">📊 BKT: ${metadata.bkt_average.toFixed(2)}€</div>
+                        <div class="status-badge active">✅ ${metadata.status}</div>
+                    </div>
+                `;
+            }).join('');
+            
+            updateMenuPlanButtons();
+        }
+        
+        // Toggle menu plan selection
+        function toggleMenuPlan(index) {
+            if (selectedMenuPlans.has(index)) {
+                selectedMenuPlans.delete(index);
+            } else {
+                selectedMenuPlans.add(index);
+            }
+            renderMenuPlans();
+        }
+        
+        // Update menu plan buttons
+        function updateMenuPlanButtons() {
+            const hasSelection = selectedMenuPlans.size > 0;
+            document.getElementById('btnGenerateFromMenuPlans').disabled = !hasSelection;
+        }
+        
+        // Select all menu plans
+        document.getElementById('btnSelectAllMenuPlans').addEventListener('click', () => {
+            selectedMenuPlans = new Set(menuPlans.map((_, index) => index));
+            renderMenuPlans();
+        });
+        
+        // Deselect all menu plans
+        document.getElementById('btnDeselectAllMenuPlans').addEventListener('click', () => {
+            selectedMenuPlans.clear();
+            renderMenuPlans();
+        });
+        
+        // Generate order list from menu plans
+        document.getElementById('btnGenerateFromMenuPlans').addEventListener('click', async () => {
+            if (selectedMenuPlans.size === 0) return;
+            
+            try {
+                // Aggregate recipes from all selected menu plans
+                const aggregatedRecipes = {};
+                
+                selectedMenuPlans.forEach(index => {
+                    const plan = menuPlans[index];
+                    
+                    // Iterate through all days
+                    plan.plan.days.forEach(day => {
+                        // Iterate through all components (Frühstück, Mittagessen, etc.)
+                        Object.keys(day.components).forEach(component => {
+                            const recipes = day.components[component];
+                            
+                            if (!aggregatedRecipes[component]) {
+                                aggregatedRecipes[component] = {};
+                            }
+                            
+                            // Aggregate recipes
+                            recipes.forEach(recipe => {
+                                const recipeName = recipe.name;
+                                const quantity = recipe.quantity || 0;
+                                
+                                if (!aggregatedRecipes[component][recipeName]) {
+                                    aggregatedRecipes[component][recipeName] = {
+                                        name: recipeName,
+                                        totalQuantity: 0,
+                                        cost: recipe.cost || 0,
+                                        allergens: recipe.allergens || []
+                                    };
+                                }
+                                
+                                aggregatedRecipes[component][recipeName].totalQuantity += quantity;
+                            });
+                        });
+                    });
+                });
+                
+                // Create order list name
+                const timestamp = new Date().toISOString();
+                const planNames = Array.from(selectedMenuPlans).map(i => menuPlans[i].metadata.name).join(', ');
+                const orderListName = `Bestellliste aus: ${planNames}`;
+                
+                // Convert to order list format
+                const orderListData = {};
+                Object.keys(aggregatedRecipes).forEach(component => {
+                    orderListData[component] = Object.values(aggregatedRecipes[component]).map(recipe => ({
+                        ingredient: recipe.name,
+                        quantity: recipe.totalQuantity,
+                        unit: 'Portionen',
+                        cost: recipe.cost
+                    }));
+                });
+                
+                // Save to localStorage
+                const newOrderList = {
+                    name: orderListName,
+                    timestamp: timestamp,
+                    data: orderListData,
+                    source: 'menu_plans',
+                    menuPlanIds: Array.from(selectedMenuPlans).map(i => menuPlans[i].metadata.id)
+                };
+                
+                orderLists.push(newOrderList);
+                localStorage.setItem('saved_order_lists', JSON.stringify(orderLists));
+                
+                alert(`✅ Bestellliste erstellt: ${orderListName}`);
+                
+                // Reload order lists
+                loadOrderLists();
+                
+                // Scroll to saved order lists
+                document.getElementById('orderListsContainer').scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Error generating order list:', error);
+                alert('❌ Fehler beim Generieren der Bestellliste: ' + error.message);
+            }
+        });
+        
+        // Show menu plans error
+        function showMenuPlansError(message) {
+            const container = document.getElementById('menuPlansContainer');
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">❌</div>
+                    <h3>${message}</h3>
+                    <p>Bitte versuchen Sie es später erneut</p>
+                </div>
+            `;
+        }
+        
         // Initialize
+        loadMenuPlans();
         loadOrderLists();
         updateButtons();
     </script>
