@@ -25,8 +25,10 @@
 ## Bugs
 
 - [ ] "No recipes for Frühstück/Frühstück" Fehler beheben
-  - Erweiterte Debug-Ausgaben hinzugefügt
-  - Warte auf Render.com Logs für Diagnose
+  - Ursache gefunden: Ernährungsformen-Filter zu restriktiv
+  - dietary_forms nur ['Vollkost', 'Vegetarisch'], fehlt 'Vegan'
+  - Frühstücks-Rezepte werden ausgefiltert
+  - Lösung: Alle 3 Formen standardmäßig auswählen
   - Status: In Bearbeitung
 
 - [x] Allergene standardmäßig deselektieren

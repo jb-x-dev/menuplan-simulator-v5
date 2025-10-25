@@ -4225,11 +4225,9 @@
             renderAllergenCheckboxes();
             setAllergenCheckboxes();  // Setze auch Hauptseiten-Checkboxen
             
-            // Ernährungsformen
-            const savedDietary = localStorage.getItem('selectedDietaryForms');
-            if (savedDietary) {
-                selectedDietaryForms = JSON.parse(savedDietary);
-            }
+            // Ernährungsformen - IMMER alle auswählen, auch wenn LocalStorage Daten hat
+            selectedDietaryForms = ['Vollkost', 'Vegetarisch', 'Vegan'];  // Alle Formen standardmäßig ausgewählt
+            localStorage.removeItem('selectedDietaryForms');  // Lösche alte Daten
             renderDietaryCheckboxes();
             setDietaryCheckboxes();  // Setze auch Hauptseiten-Checkboxen
             
