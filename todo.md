@@ -121,3 +121,12 @@
   - CSS-Styling mit Hover-Effekten
   - Status: Implementiert
 
+
+
+- [ ] Fehler beim Speichern des Menüplans (persistent)
+  - Backend-Endpunkt funktioniert korrekt (API-Test erfolgreich)
+  - Problem: Frontend lädt alte JavaScript-Version (Browser-Cache)
+  - Render.com Deployment noch nicht abgeschlossen (alter Timestamp: Oct 22)
+  - Lösung: Warten auf Deployment oder aggressive Cache-Löschung
+  - Status: Wartet auf Render.com Deployment
+
