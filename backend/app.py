@@ -39,8 +39,8 @@ register_health_routes(app)
 # Registriere Recipe Selection API
 app.register_blueprint(recipe_selection_bp)
 
-# Initialisiere Standard-Rezept-Auswahl beim Start (falls leer)
-init_default_selection()
+# Rezept-Auswahl-System deaktiviert - alle Rezepte immer verfügbar
+# init_default_selection()  # Nicht mehr benötigt
 
 # Version API-Endpunkt
 @app.route('/api/version', methods=['GET'])
@@ -168,23 +168,11 @@ def simulate():
             if field not in config:
                 return jsonify({'error': f'Missing field: {field}'}), 400
         
-        # Hole ausgewählte Rezept-IDs
-        selected_ids = get_selected_recipe_ids()
+        # Verwende ALLE Rezepte (Auswahlsystem deaktiviert)
+        filtered_recipes = recipes
+        print(f"✅ Using all {len(filtered_recipes)} recipes")
         
-        # Filtere Rezepte: Nur ausgewählte verwenden
-        if selected_ids:
-            filtered_recipes = [r for r in recipes if r.id in selected_ids]
-            print(f"✅ Using {len(filtered_recipes)} selected recipes (out of {len(recipes)} total)")
-        else:
-            # Wenn keine Auswahl getroffen wurde, verwende KEINE Rezepte
-            filtered_recipes = []
-            print("⚠️  No recipes selected! Please select recipes in settings.")
-            return jsonify({
-                'success': False,
-                'error': 'No recipes selected. Please select recipes in settings first.'
-            }), 400
-        
-        # Führe Simulation mit gefilterten Rezepten aus
+        # Führe Simulation mit allen Rezepten aus
         result = run_simulation(config, filtered_recipes)
         
         return jsonify({

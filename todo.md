@@ -24,6 +24,13 @@
 
 ## Features (aktuell)
 
+- [ ] Rezept-Auswahl und Menülinien aus Einstellungen entfernen
+  - Entfernen: Rezept-Auswahl Tab + Menülinien Tab
+  - Behalten: Alle anderen Tabs (BKT, Allergene, Ernährungsformen, etc.)
+  - Rezept-Auswahl: Alle Rezepte immer verfügbar (kein Auswahlsystem mehr)
+  - Menülinien: Fest im Code definiert
+  - Status: In Bearbeitung
+
 - [x] Auto-Generierung sofort funktionsfähig machen
   - Standard-Rezepte vorausgewählt: 80 Rezepte (40% der Gesamtmenge)
   - Ausgewogene Verteilung: Frühstück 15, Mittagessen 40, Abendessen 15, Zwischenmahlzeit 10
