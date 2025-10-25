@@ -1454,8 +1454,18 @@
         function loadMealSettings() {
             const saved = localStorage.getItem('mealSettings');
             if (saved) {
-                mealSettings = JSON.parse(saved);
+                try {
+                    const parsed = JSON.parse(saved);
+                    if (Array.isArray(parsed) && parsed.length > 0) {
+                        mealSettings = parsed;
+                    }
+                    // If empty or invalid, keep default values
+                } catch (e) {
+                    console.error('Error loading mealSettings:', e);
+                    // Keep default values on error
+                }
             }
+            // Note: renderMealCheckboxes() will be called in loadAllSettings() after DOM is ready
         }
         
         // Initialisiere beim Start
