@@ -2691,15 +2691,41 @@
             const status = statusOptions[statusIndex];
             
             try {
-                const response = await fetch('/api/menu-plans/save', {
+                // Berechne Metadaten aus currentPlan
+                const planId = 'plan_' + Date.now();
+                const startDate = currentPlan && currentPlan.days && currentPlan.days.length > 0 
+                    ? currentPlan.days[0].date 
+                    : new Date().toISOString().split('T')[0];
+                const endDate = currentPlan && currentPlan.days && currentPlan.days.length > 0 
+                    ? currentPlan.days[currentPlan.days.length - 1].date 
+                    : new Date().toISOString().split('T')[0];
+                const totalCost = currentPlan && currentPlan.statistics 
+                    ? currentPlan.statistics.total_cost 
+                    : 0;
+                const bktAverage = currentPlan && currentPlan.statistics 
+                    ? currentPlan.statistics.avg_bkt 
+                    : 0;
+                
+                const response = await fetch('/api/menu-plans', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                         plan: currentPlan,
-                        status: status,
-                        name: name
+                        metadata: {
+                            id: planId,
+                            name: name,
+                            status: status,
+                            created_at: new Date().toISOString(),
+                            updated_at: new Date().toISOString(),
+                            start_date: startDate,
+                            end_date: endDate,
+                            total_cost: totalCost,
+                            bkt_average: bktAverage,
+                            description: '',
+                            tags: []
+                        }
                     })
                 });
                 
@@ -2710,7 +2736,7 @@
                     
                     // Auch lokal speichern für Kompatibilität
                     const savedPlan = {
-                        id: data.id,
+                        id: data.plan_id || planId,
                         name: name,
                         plan: currentPlan,
                         config: currentConfig,
@@ -2727,7 +2753,7 @@
                 }
             } catch (error) {
                 console.error('Fehler:', error);
-                alert('❌ Fehler beim Speichern des Menüplans');
+                alert('❌ Fehler beim Speichern des Menüplans: ' + error.message);
             }
         });
         

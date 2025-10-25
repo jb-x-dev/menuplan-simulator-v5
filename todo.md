@@ -99,3 +99,10 @@
 - [x] Render.com Deployment erfolgreich
 - [x] Service läuft auf Render.com
 
+
+
+- [ ] Fehler beim Speichern des Menüplans
+  - Fehlermeldung: "Fehler beim Speichern des Menüplans"
+  - Tritt auf nach erfolgreicher Generierung
+  - Status: Analyse erforderlich
+
