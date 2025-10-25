@@ -2,11 +2,11 @@
 
 ## Bugs
 
-- [x] Fix: Mahlzeiten-Auswahl stimmt nicht mit Rezept menu_component überein
-  - Problem: "No recipes for Frühstück/Frühstück" Fehler
-  - Ursache: Mahlzeiten-Einstellungen verwenden falsche Komponenten
-  - Lösung: Mahlzeiten dynamisch aus verfügbaren Rezept-Kategorien laden
-  - Status: Behoben mit /api/meal-categories Endpunkt
+- [ ] Fix: Mahlzeiten-Auswahl stimmt nicht mit Rezept menu_component überein
+  - Problem: "No recipes for Frühstück/Frühstück" Fehler weiterhin vorhanden
+  - Ursache: Matching zwischen cost_form component und recipe menu_component schlägt fehl
+  - Lösung: Direktes Matching im Simulator-Code korrigieren
+  - Status: In Bearbeitung - API-Endpunkt erstellt, aber Matching funktioniert noch nicht
 
 ## Features (für v5.1)
 

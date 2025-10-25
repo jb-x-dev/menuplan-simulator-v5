@@ -286,10 +286,21 @@ class MenuPlanSimulator:
                 for cost_form in menu_line['cost_forms']:
                     # Debug: Log comparison
                     recipe_comp = recipe.menu_component
-                    cost_comp = cost_form['component']
+                    cost_comp = cost_form.get('component', 'NO_COMPONENT')
                     if recipe_comp == cost_comp:
                         key = (menu_line['id'], cost_form['id'])
                         eligible[key].append(recipe)
+        
+        # Debug: Log eligible recipes summary
+        print(f"DEBUG: Eligible recipes summary:")
+        for key, recs in eligible.items():
+            print(f"  Key {key}: {len(recs)} recipes")
+        if not eligible:
+            print(f"  WARNING: No eligible recipes found!")
+            print(f"  Total recipes loaded: {len(self.recipes)}")
+            print(f"  Menu lines: {len(self.config.menu_lines)}")
+            if self.config.menu_lines:
+                print(f"  First menu_line: {self.config.menu_lines[0]}")
         
         return eligible
     
@@ -310,11 +321,16 @@ class MenuPlanSimulator:
                 
                 if not recipes:
                     # Debug: Show what we're looking for
-                    print(f"DEBUG: No recipes found for menu_line={menu_line['name']}, cost_form={cost_form}")
-                    print(f"DEBUG: Looking for component='{cost_form.get('component')}'")
-                    print(f"DEBUG: Available recipe components: {set(r.menu_component for r in self.recipes[:10])}")
+                    print(f"\nDEBUG: No recipes found!")
+                    print(f"  menu_line: {menu_line}")
+                    print(f"  cost_form: {cost_form}")
+                    print(f"  Looking for component: '{cost_form.get('component')}'")
+                    print(f"  Key: {key}")
+                    print(f"  All keys in eligible_recipes: {list(self.eligible_recipes.keys())}")
+                    print(f"  Available recipe components (first 10): {[r.menu_component for r in self.recipes[:10]]}")
+                    print(f"  Total recipes: {len(self.recipes)}")
                     raise ValueError(
-                        f"No recipes for {menu_line['name']}/{cost_form['name']} (component: {cost_form.get('component')})"
+                        f"No recipes for {menu_line['name']}/{cost_form['name']} (component: {cost_form.get('component', 'MISSING')})"
                     )
                 
                 min_daily += min(r.cost for r in recipes)
