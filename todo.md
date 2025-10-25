@@ -22,6 +22,14 @@
   - Standard: Frühstück, Mittagessen, Abendessen aktiv
   - Status: Behoben
 
+## Features (aktuell)
+
+- [ ] Rezept-Auswahl-System implementieren
+  - Alle Rezepte standardmäßig nicht ausgewählt
+  - Nur explizit ausgewählte Rezepte werden bei Generierung verwendet
+  - Auswahl-UI in Einstellungen
+  - Status: In Bearbeitung
+
 ## Features (für v5.1)
 
 - [ ] Performance-Optimierung für API-Requests

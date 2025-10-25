@@ -961,7 +961,8 @@
             <div style="padding: 20px;">
                 <!-- Tabs -->
                 <div class="settings-tabs" style="display: flex; gap: 5px; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0; flex-wrap: wrap;">
-                    <button class="settings-tab active" onclick="switchSettingsTab('meals')" id="tabMeals" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid #667eea; font-weight: 600; font-size: 13px;">🍽️ Mahlzeiten</button>
+                       <button class="settings-tab active" onclick="switchSettingsTab('recipes')" id="tabRecipes" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid #667eea; font-weight: 600; font-size: 13px;">📖 Rezept-Auswahl</button>
+                    <button class="settings-tab" onclick="switchSettingsTab('meals')" id="tabMeals" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">🍽️ Mahlzeiten</button>ton>
                     <button class="settings-tab" onclick="switchSettingsTab('runtime')" id="tabRuntime" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">📅 Laufzeiten</button>
                     <button class="settings-tab" onclick="switchSettingsTab('allergens')" id="tabAllergens" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">🚫 Allergene (Ausschluss)</button>
                     <button class="settings-tab" onclick="switchSettingsTab('dietary')" id="tabDietary" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">🥗 Ernährungsformen</button>
@@ -972,8 +973,42 @@
                     <button class="settings-tab" onclick="switchSettingsTab('defaults')" id="tabDefaults" style="padding: 8px 12px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666; font-size: 13px;">⚙️ Standardwerte</button>
                 </div>
                 
+                <!-- Tab Content: Rezept-Auswahl -->
+                <div id="tabContentRecipes" class="tab-content">
+                    <h3 style="margin-top: 0;">📖 Rezept-Auswahl</h3>
+                    <p style="color: #666; margin-bottom: 15px;"><strong>Wichtig:</strong> Nur ausgewählte Rezepte werden bei der automatischen Generierung verwendet. Standardmäßig sind <strong>keine</strong> Rezepte ausgewählt.</p>
+                    
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                        <button class="btn" onclick="selectAllRecipes()" style="background: #28a745; color: white;">✅ Alle auswählen</button>
+                        <button class="btn" onclick="deselectAllRecipes()" style="background: #dc3545; color: white;">❌ Alle abwählen</button>
+                        <button class="btn" onclick="loadRecipeSelection()" style="background: #17a2b8; color: white;">🔄 Aktualisieren</button>
+                    </div>
+                    
+                    <div id="recipeSelectionStats" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <strong>Statistik:</strong> <span id="selectionStatsText">Lade...</span>
+                    </div>
+                    
+                    <!-- Filter -->
+                    <div style="margin-bottom: 20px;">
+                        <input type="text" id="recipeSearchInput" placeholder="🔍 Rezepte suchen..." style="width: 100%; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 14px;" oninput="filterRecipeList()">
+                    </div>
+                    
+                    <!-- Tabs für Komponenten -->
+                    <div style="display: flex; gap: 5px; margin-bottom: 15px; border-bottom: 2px solid #e0e0e0; flex-wrap: wrap;">
+                        <button class="component-tab active" onclick="switchComponentTab('all')" id="compTabAll" style="padding: 8px 16px; border: none; background: none; cursor: pointer; border-bottom: 3px solid #667eea; font-weight: 600;">Alle</button>
+                        <button class="component-tab" onclick="switchComponentTab('Frühstück')" id="compTabFruehstueck" style="padding: 8px 16px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">Frühstück</button>
+                        <button class="component-tab" onclick="switchComponentTab('Mittagessen')" id="compTabMittagessen" style="padding: 8px 16px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">Mittagessen</button>
+                        <button class="component-tab" onclick="switchComponentTab('Abendessen')" id="compTabAbendessen" style="padding: 8px 16px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">Abendessen</button>
+                        <button class="component-tab" onclick="switchComponentTab('Zwischenmahlzeit')" id="compTabZwischenmahlzeit" style="padding: 8px 16px; border: none; background: none; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: #666;">Zwischenmahlzeit</button>
+                    </div>
+                    
+                    <div id="recipeSelectionList" style="max-height: 500px; overflow-y: auto; border: 2px solid #e0e0e0; border-radius: 8px; padding: 15px;">
+                        <p style="text-align: center; color: #666;">Lade Rezepte...</p>
+                    </div>
+                </div>
+                
                 <!-- Tab Content: Mahlzeiten -->
-                <div id="tabContentMeals" class="tab-content">
+                <div id="tabContentMeals" class="tab-content" style="display: none;">
                     <h3 style="margin-top: 0;">🍽️ Mahlzeiten-Konfiguration</h3>
                     <div id="mealSettingsContainer"></div>
                     <button class="btn" onclick="addMealSetting()" style="margin-top: 10px; background: #28a745; color: white;">➥ Mahlzeit hinzufügen</button>
@@ -1388,6 +1423,11 @@
         let currentConfig = null;
         let allRecipes = [];
         let manualPlan = null;
+        
+        // Rezept-Auswahl
+        let selectedRecipeIds = new Set();
+        let currentComponentFilter = 'all';
+        let recipeSearchQuery = '';
         let selectedDays = [];  // Tracks which days are selected for order suggestion
         let orderSuggestionData = null;  // Stores the generated order suggestion
         
@@ -5718,7 +5758,226 @@ window.onclick = function(event) {
 // Initialisiere Rezept-Bearbeitung nach DOM-Load
 document.addEventListener('DOMContentLoaded', function() {
     initRecipeEditing();
+    // Lade Rezept-Auswahl wenn Einstellungen geöffnet werden
+    loadRecipeSelection();
 });
+
+// ========================================
+// REZEPT-AUSWAHL FUNKTIONEN
+// ========================================
+
+// Lade Rezept-Auswahl-Status
+async function loadRecipeSelection() {
+    try {
+        const response = await fetch('/api/recipe-selection/status');
+        const data = await response.json();
+        
+        if (data.success) {
+            selectedRecipeIds = new Set(data.selected_ids);
+            updateSelectionStats(data.stats_by_component, data.selected_count);
+            renderRecipeList();
+        }
+    } catch (error) {
+        console.error('Fehler beim Laden der Rezept-Auswahl:', error);
+    }
+}
+
+// Aktualisiere Statistik-Anzeige
+function updateSelectionStats(statsByComponent, totalCount) {
+    const statsText = document.getElementById('selectionStatsText');
+    if (!statsText) return;
+    
+    const total = allRecipes.length;
+    const percentage = total > 0 ? Math.round((totalCount / total) * 100) : 0;
+    
+    let html = `<strong>${totalCount}</strong> von <strong>${total}</strong> Rezepten ausgewählt (${percentage}%)`;
+    
+    if (Object.keys(statsByComponent).length > 0) {
+        html += '<br><small style="color: #666;">';
+        for (const [component, count] of Object.entries(statsByComponent)) {
+            html += `${component}: ${count} | `;
+        }
+        html = html.slice(0, -3);
+        html += '</small>';
+    }
+    
+    statsText.innerHTML = html;
+}
+
+// Rendere Rezeptliste
+function renderRecipeList() {
+    const container = document.getElementById('recipeSelectionList');
+    if (!container) return;
+    
+    let filtered = allRecipes;
+    
+    if (currentComponentFilter !== 'all') {
+        filtered = filtered.filter(r => r.menu_component === currentComponentFilter);
+    }
+    
+    if (recipeSearchQuery) {
+        const query = recipeSearchQuery.toLowerCase();
+        filtered = filtered.filter(r => 
+            r.name.toLowerCase().includes(query) ||
+            (r.menu_component && r.menu_component.toLowerCase().includes(query))
+        );
+    }
+    
+    if (filtered.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: #666;">Keine Rezepte gefunden.</p>';
+        return;
+    }
+    
+    const grouped = {};
+    for (const recipe of filtered) {
+        const component = recipe.menu_component || 'Unbekannt';
+        if (!grouped[component]) grouped[component] = [];
+        grouped[component].push(recipe);
+    }
+    
+    let html = '';
+    for (const [component, recipes] of Object.entries(grouped).sort()) {
+        html += `<div style="margin-bottom: 20px;">`;
+        html += `<h4 style="color: #667eea; margin-bottom: 10px;">${component} (${recipes.length})</h4>`;
+        html += `<div style="display: grid; gap: 8px;">`;
+        
+        for (const recipe of recipes.sort((a, b) => a.name.localeCompare(b.name))) {
+            const isSelected = selectedRecipeIds.has(recipe.id);
+            const bgColor = isSelected ? '#e8f5e9' : '#f8f9fa';
+            const borderColor = isSelected ? '#4caf50' : '#e0e0e0';
+            const escapedName = recipe.name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+            
+            html += `
+                <div style="background: ${bgColor}; border: 2px solid ${borderColor}; border-radius: 6px; padding: 10px; display: flex; align-items: center; gap: 10px; cursor: pointer;" onclick="toggleRecipeSelection(${recipe.id}, '${escapedName}', '${recipe.menu_component || 'Unknown'}')">
+                    <input type="checkbox" ${isSelected ? 'checked' : ''} style="width: 18px; height: 18px; cursor: pointer;" onclick="event.stopPropagation();">
+                    <div style="flex: 1;">
+                        <div style="font-weight: 600; color: #333;">${recipe.name}</div>
+                        <div style="font-size: 12px; color: #666;">
+                            ID: ${recipe.id} | 
+                            Kosten: ${recipe.cost ? recipe.cost.toFixed(2) + '€' : 'N/A'} |
+                            Status: ${recipe.status || 'N/A'}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        html += `</div></div>`;
+    }
+    
+    container.innerHTML = html;
+}
+
+// Toggle Rezept-Auswahl
+async function toggleRecipeSelection(recipeId, recipeName, menuComponent) {
+    try {
+        const response = await fetch('/api/recipe-selection/toggle', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                recipe_id: recipeId,
+                recipe_name: recipeName,
+                menu_component: menuComponent
+            })
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+            if (data.selected) {
+                selectedRecipeIds.add(recipeId);
+            } else {
+                selectedRecipeIds.delete(recipeId);
+            }
+            await loadRecipeSelection();
+        }
+    } catch (error) {
+        console.error('Fehler beim Toggle:', error);
+    }
+}
+
+// Alle Rezepte auswählen
+async function selectAllRecipes() {
+    if (!confirm(`Möchten Sie wirklich alle ${allRecipes.length} Rezepte auswählen?`)) return;
+    
+    try {
+        const recipes = allRecipes.map(r => ({
+            id: r.id,
+            name: r.name,
+            menu_component: r.menu_component || 'Unknown'
+        }));
+        
+        const response = await fetch('/api/recipe-selection/select-all', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ recipes })
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+            await loadRecipeSelection();
+            alert(`✅ ${allRecipes.length} Rezepte ausgewählt!`);
+        }
+    } catch (error) {
+        console.error('Fehler:', error);
+        alert('❌ Fehler beim Auswählen');
+    }
+}
+
+// Alle Rezepte abwählen
+async function deselectAllRecipes() {
+    if (!confirm('Möchten Sie wirklich alle Rezepte abwählen?')) return;
+    
+    try {
+        const response = await fetch('/api/recipe-selection/deselect-all', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+            await loadRecipeSelection();
+            alert('✅ Alle Rezepte abgewählt!');
+        }
+    } catch (error) {
+        console.error('Fehler:', error);
+        alert('❌ Fehler beim Abwählen');
+    }
+}
+
+// Wechsle Komponenten-Tab
+function switchComponentTab(component) {
+    currentComponentFilter = component;
+    
+    document.querySelectorAll('.component-tab').forEach(tab => {
+        tab.style.borderBottom = '3px solid transparent';
+        tab.style.color = '#666';
+    });
+    
+    const tabIds = {
+        'all': 'compTabAll',
+        'Frühstück': 'compTabFruehstueck',
+        'Mittagessen': 'compTabMittagessen',
+        'Abendessen': 'compTabAbendessen',
+        'Zwischenmahlzeit': 'compTabZwischenmahlzeit'
+    };
+    
+    const activeTab = document.getElementById(tabIds[component]);
+    if (activeTab) {
+        activeTab.style.borderBottom = '3px solid #667eea';
+        activeTab.style.color = '#333';
+    }
+    
+    renderRecipeList();
+}
+
+// Filter Rezeptliste
+function filterRecipeList() {
+    const input = document.getElementById('recipeSearchInput');
+    if (input) {
+        recipeSearchQuery = input.value;
+        renderRecipeList();
+    }
+}
 
     </script>
 </body>

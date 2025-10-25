@@ -11,10 +11,12 @@ import sys
 # Importiere Simulator
 from backend.simulator import load_recipes_from_file, run_simulation, Recipe
 from backend.procurement import resolve_procurement
+from backend.recipe_selection_db import get_selected_recipe_ids
 from backend.pdf_export import create_menu_plan_pdf
 from backend.customer_pdf import generate_customer_pdf
 from backend.excel_export import create_excel_export
 from backend.health_check import register_health_routes
+from backend.recipe_selection_api import recipe_selection_bp
 
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 
@@ -31,6 +33,9 @@ CORS(app)
 
 # Registriere Health Check Routes
 register_health_routes(app)
+
+# Registriere Recipe Selection API
+app.register_blueprint(recipe_selection_bp)
 
 # API-Endpunkt für verfügbare Mahlzeiten-Kategorien
 @app.route('/api/meal-categories', methods=['GET'])
@@ -148,8 +153,24 @@ def simulate():
             if field not in config:
                 return jsonify({'error': f'Missing field: {field}'}), 400
         
-        # Führe Simulation aus
-        result = run_simulation(config, recipes)
+        # Hole ausgewählte Rezept-IDs
+        selected_ids = get_selected_recipe_ids()
+        
+        # Filtere Rezepte: Nur ausgewählte verwenden
+        if selected_ids:
+            filtered_recipes = [r for r in recipes if r.id in selected_ids]
+            print(f"✅ Using {len(filtered_recipes)} selected recipes (out of {len(recipes)} total)")
+        else:
+            # Wenn keine Auswahl getroffen wurde, verwende KEINE Rezepte
+            filtered_recipes = []
+            print("⚠️  No recipes selected! Please select recipes in settings.")
+            return jsonify({
+                'success': False,
+                'error': 'No recipes selected. Please select recipes in settings first.'
+            }), 400
+        
+        # Führe Simulation mit gefilterten Rezepten aus
+        result = run_simulation(config, filtered_recipes)
         
         return jsonify({
             'success': True,
