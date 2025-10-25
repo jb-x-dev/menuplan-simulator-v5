@@ -2,11 +2,12 @@
 
 ## Bugs
 
-- [ ] Fix: Mahlzeiten-Auswahl aus Einstellungen berücksichtigen
-  - Problem: Alle Mahlzeiten werden verwendet, nicht nur die aktivierten
-  - Lösung: Nur aktivierte Mahlzeiten aus Einstellungen für Generierung verwenden
-  - Beispielrezepte an verfügbare Kategorien anpassen
-  - Status: In Bearbeitung
+- [x] Fix: Mahlzeiten-Auswahl aus Einstellungen berücksichtigen
+  - Problem: Alle Mahlzeiten wurden verwendet, nicht nur die aktivierten
+  - Lösung: Aktiv/Inaktiv-Toggle für jede Mahlzeit hinzugefügt
+  - Nur aktive Mahlzeiten werden für Generierung verwendet
+  - Standard: Frühstück, Mittagessen, Abendessen aktiv
+  - Status: Behoben
 
 ## Features (für v5.1)
 
