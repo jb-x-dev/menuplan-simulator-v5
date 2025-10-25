@@ -1,9 +1,10 @@
-# 🍽️ Menüplansimulator
+# 🍽️ Menüplansimulator v5.0
 
-Automatische und manuelle Menüplanerstellung für Großküchen und Catering-Unternehmen.
+Professionelle Menüplanerstellung für Großküchen und Catering-Unternehmen mit erweiterten Management-Features.
 
 ## 🌟 Features
 
+### Kern-Features
 - **Automatische Menüplan-Generierung** mit KI-gestützter Rezeptauswahl
 - **Manuelle Menüplan-Erstellung** mit flexibler Rezeptauswahl
 - **BKT-Berechnung** (Rohkostbudget pro Tag) basierend auf Hauptmahlzeiten
@@ -12,11 +13,19 @@ Automatische und manuelle Menüplanerstellung für Großküchen und Catering-Unt
 - **Excel-Export** für Portionsübersichten
 - **Simulationsparameter** für detaillierte Menüplanung
 - **Allergene-Verwaltung** und Ernährungsformen
-- **Rezeptverwaltung** mit Kosten- und Nährwertinformationen
+- **Rezeptverwaltung** mit Kosten- und Nährwertinformationen (200 Rezepte)
+
+### ✨ Neu in v5.0
+- **Portionsanpassung** (1-500) pro Rezept mit automatischer Kostenberechnung
+- **Menüplan-Status-System** (Entwurf, Vorlage, Aktiv, Archiviert)
+- **Erweiterte Menüplan-Verwaltung** (Speichern, Laden, Duplizieren, Löschen)
+- **Bestelllisten-Management** mit Metadaten und Zeitstempel
+- **BKT-Statistiken** mit detaillierter Analyse und Toleranz-Berechnung
+- **12 neue API-Endpunkte** für vollständige CRUD-Operationen
 
 ## 🚀 Live-Demo
 
-Die Anwendung ist live verfügbar unter: **[Wird nach Deployment aktualisiert]**
+Die Anwendung kann auf Render.com deployed werden. Siehe [DEPLOYMENT_GUIDE_V5.md](DEPLOYMENT_GUIDE_V5.md) für Details.
 
 ## 📋 Voraussetzungen
 
@@ -109,6 +118,38 @@ Dies ermöglicht eine realistische Kostenplanung für Großküchen.
 
 Siehe [CHANGELOG.md](CHANGELOG.md) für Details.
 
+## 📚 Dokumentation
+
+- **[DEPLOYMENT_GUIDE_V5.md](DEPLOYMENT_GUIDE_V5.md)** - Vollständige Deployment-Anleitung
+- **[CHANGELOG_V5.md](CHANGELOG_V5.md)** - Detaillierte Änderungshistorie
+- **[BACKEND_IMPROVEMENTS.md](BACKEND_IMPROVEMENTS.md)** - Technische Backend-Dokumentation
+- **[PLANNED_IMPROVEMENTS.md](PLANNED_IMPROVEMENTS.md)** - Roadmap für zukünftige Features
+
+## 🔧 API-Endpunkte (v5.0)
+
+### Menüplan-Management
+- `GET /api/menu-plans` - Liste aller Menüpläne
+- `GET /api/menu-plans/<plan_id>` - Spezifischen Plan laden
+- `POST /api/menu-plans` - Plan speichern
+- `PUT /api/menu-plans/<plan_id>/status` - Status ändern
+- `DELETE /api/menu-plans/<plan_id>` - Plan löschen
+- `POST /api/menu-plans/<plan_id>/duplicate` - Plan duplizieren
+- `PUT /api/menu-plans/<plan_id>/portions` - Portionen aktualisieren
+
+### Bestelllisten-Management
+- `GET /api/order-lists` - Liste aller Bestelllisten
+- `GET /api/order-lists/<order_id>` - Spezifische Liste laden
+- `POST /api/order-lists` - Liste speichern
+- `DELETE /api/order-lists/<order_id>` - Liste löschen
+
+### Bestehende Endpunkte
+- `GET /api/recipes` - Alle Rezepte
+- `GET /api/recipes/<recipe_id>` - Spezifisches Rezept
+- `POST /api/simulate` - Menüplan generieren
+- `POST /api/procurement` - Beschaffungsbedarfe auflösen
+- `POST /api/export/pdf` - PDF exportieren
+- `POST /api/export/excel` - Excel exportieren
+
 ## 📝 Lizenz
 
 Dieses Projekt ist unter der MIT-Lizenz lizenziert.
@@ -116,8 +157,8 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert.
 ## 📧 Kontakt
 
 Bei Fragen oder Problemen:
-- GitHub Issues: [Repository Issues]
-- E-Mail: [Ihre E-Mail]
+- GitHub Issues: https://github.com/jb-x-dev/menuplan-simulator-v5/issues
+- Repository: https://github.com/jb-x-dev/menuplan-simulator-v5
 
 ---
 
