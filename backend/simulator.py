@@ -284,7 +284,10 @@ class MenuPlanSimulator:
             # Zuordnung zu Menülinien
             for menu_line in self.config.menu_lines:
                 for cost_form in menu_line['cost_forms']:
-                    if recipe.menu_component == cost_form['component']:
+                    # Debug: Log comparison
+                    recipe_comp = recipe.menu_component
+                    cost_comp = cost_form['component']
+                    if recipe_comp == cost_comp:
                         key = (menu_line['id'], cost_form['id'])
                         eligible[key].append(recipe)
         
@@ -306,8 +309,12 @@ class MenuPlanSimulator:
                 recipes = self.eligible_recipes.get(key, [])
                 
                 if not recipes:
+                    # Debug: Show what we're looking for
+                    print(f"DEBUG: No recipes found for menu_line={menu_line['name']}, cost_form={cost_form}")
+                    print(f"DEBUG: Looking for component='{cost_form.get('component')}'")
+                    print(f"DEBUG: Available recipe components: {set(r.menu_component for r in self.recipes[:10])}")
                     raise ValueError(
-                        f"No recipes for {menu_line['name']}/{cost_form['name']}"
+                        f"No recipes for {menu_line['name']}/{cost_form['name']} (component: {cost_form.get('component')})"
                     )
                 
                 min_daily += min(r.cost for r in recipes)
