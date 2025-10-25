@@ -71,6 +71,7 @@ class MealSlot:
     """
     options: List['Recipe']
     selected_index: int = 0
+    portions: int = 1  # NEU: Anzahl der Portionen (1-500)
     
     @property
     def selected(self) -> 'Recipe':
@@ -81,8 +82,13 @@ class MealSlot:
     
     @property
     def cost(self) -> float:
-        """Gibt die Kosten des ausgewählten Rezepts zurück."""
-        return self.selected.cost if self.selected else 0.0
+        """Gibt die Kosten des ausgewählten Rezepts zurück (mit Portionen multipliziert)."""
+        if not self.selected:
+            return 0.0
+        # Kosten basierend auf Portionen berechnen
+        base_cost = self.selected.cost
+        calculation_basis = self.selected.calculation_basis if self.selected.calculation_basis > 0 else 1
+        return (base_cost / calculation_basis) * self.portions
     
     @property
     def id(self) -> int:
@@ -99,7 +105,8 @@ class MealSlot:
         return {
             'options': [asdict(r) for r in self.options],
             'selected_index': self.selected_index,
-            'selected': asdict(self.selected) if self.selected else None
+            'selected': asdict(self.selected) if self.selected else None,
+            'portions': self.portions  # NEU: Portionen hinzufügen
         }
 
 

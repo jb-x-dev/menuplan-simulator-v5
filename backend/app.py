@@ -846,6 +846,166 @@ def get_recipe_usage():
 
 
 
+# NEU: Menüplan-Management API-Endpunkte
+from backend.menuplan_manager import MenuPlanManager, MenuPlanMetadata, OrderListMetadata
+
+plan_manager = MenuPlanManager(data_dir=os.path.join(os.path.dirname(__file__), '..', 'data'))
+
+@app.route('/api/menu-plans', methods=['GET'])
+def list_menu_plans():
+    """Listet alle gespeicherten Menüpläne auf"""
+    try:
+        status = request.args.get('status')
+        plans = plan_manager.list_menu_plans(status=status)
+        return jsonify({
+            'success': True,
+            'plans': [asdict(p) for p in plans]
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/menu-plans/<plan_id>', methods=['GET'])
+def get_menu_plan(plan_id):
+    """Lädt einen spezifischen Menüplan"""
+    try:
+        plan_data = plan_manager.load_menu_plan(plan_id)
+        if not plan_data:
+            return jsonify({'success': False, 'error': 'Plan not found'}), 404
+        return jsonify({'success': True, 'data': plan_data})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/menu-plans', methods=['POST'])
+def save_menu_plan():
+    """Speichert einen Menüplan"""
+    try:
+        data = request.json
+        metadata = MenuPlanMetadata(**data['metadata'])
+        plan_id = plan_manager.save_menu_plan(data['plan'], metadata)
+        return jsonify({'success': True, 'plan_id': plan_id})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/menu-plans/<plan_id>/status', methods=['PUT'])
+def update_plan_status(plan_id):
+    """Ändert den Status eines Menüplans"""
+    try:
+        data = request.json
+        new_status = data.get('status')
+        if not new_status:
+            return jsonify({'success': False, 'error': 'Missing status'}), 400
+        
+        success = plan_manager.update_menu_plan_status(plan_id, new_status)
+        if not success:
+            return jsonify({'success': False, 'error': 'Plan not found'}), 404
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/menu-plans/<plan_id>', methods=['DELETE'])
+def delete_menu_plan(plan_id):
+    """Löscht einen Menüplan"""
+    try:
+        success = plan_manager.delete_menu_plan(plan_id)
+        if not success:
+            return jsonify({'success': False, 'error': 'Plan not found'}), 404
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/menu-plans/<plan_id>/duplicate', methods=['POST'])
+def duplicate_menu_plan(plan_id):
+    """Dupliziert einen Menüplan"""
+    try:
+        data = request.json
+        new_name = data.get('name', 'Kopie')
+        new_id = plan_manager.duplicate_menu_plan(plan_id, new_name)
+        if not new_id:
+            return jsonify({'success': False, 'error': 'Plan not found'}), 404
+        return jsonify({'success': True, 'plan_id': new_id})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/order-lists', methods=['GET'])
+def list_order_lists():
+    """Listet alle gespeicherten Bestelllisten auf"""
+    try:
+        orders = plan_manager.list_order_lists()
+        return jsonify({
+            'success': True,
+            'orders': [asdict(o) for o in orders]
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/order-lists/<order_id>', methods=['GET'])
+def get_order_list(order_id):
+    """Lädt eine spezifische Bestellliste"""
+    try:
+        order_data = plan_manager.load_order_list(order_id)
+        if not order_data:
+            return jsonify({'success': False, 'error': 'Order list not found'}), 404
+        return jsonify({'success': True, 'data': order_data})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/order-lists', methods=['POST'])
+def save_order_list():
+    """Speichert eine Bestellliste"""
+    try:
+        data = request.json
+        metadata = OrderListMetadata(**data['metadata'])
+        order_id = plan_manager.save_order_list(data['order_list'], metadata)
+        return jsonify({'success': True, 'order_id': order_id})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/order-lists/<order_id>', methods=['DELETE'])
+def delete_order_list(order_id):
+    """Löscht eine Bestellliste"""
+    try:
+        success = plan_manager.delete_order_list(order_id)
+        if not success:
+            return jsonify({'success': False, 'error': 'Order list not found'}), 404
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/menu-plans/<plan_id>/portions', methods=['PUT'])
+def update_meal_portions(plan_id):
+    """Aktualisiert die Portionen für eine Mahlzeit"""
+    try:
+        data = request.json
+        day_index = data.get('day_index')
+        meal_name = data.get('meal_name')
+        portions = data.get('portions', 1)
+        
+        if day_index is None or not meal_name:
+            return jsonify({'success': False, 'error': 'Missing parameters'}), 400
+        
+        # Lade Plan
+        plan_data = plan_manager.load_menu_plan(plan_id)
+        if not plan_data:
+            return jsonify({'success': False, 'error': 'Plan not found'}), 404
+        
+        # Aktualisiere Portionen
+        plan = plan_data['plan']
+        if day_index < len(plan['days']):
+            day = plan['days'][day_index]
+            if meal_name in day.get('meals', {}):
+                day['meals'][meal_name]['portions'] = portions
+                
+                # Speichere zurück
+                metadata = MenuPlanMetadata(**plan_data['metadata'])
+                plan_manager.save_menu_plan(plan, metadata)
+                
+                return jsonify({'success': True})
+        
+        return jsonify({'success': False, 'error': 'Invalid day or meal'}), 400
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
 # Catch-all route for static files - MUST be last!
 @app.route('/<path:path>')
 def serve_static_file(path):
