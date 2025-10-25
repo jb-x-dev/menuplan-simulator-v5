@@ -1416,6 +1416,16 @@
     </div>
     
     <script>
+        // CRITICAL: Clear ALL localStorage on page load to fix caching issues
+        // This ensures old mealSettings with 'Zwischengang' are removed
+        const SETTINGS_VERSION = '5.0.1';  // Increment this to force cache clear
+        const storedVersion = localStorage.getItem('settingsVersion');
+        if (storedVersion !== SETTINGS_VERSION) {
+            console.log('📦 Settings version mismatch - clearing localStorage');
+            localStorage.clear();
+            localStorage.setItem('settingsVersion', SETTINGS_VERSION);
+        }
+        
         let currentMode = 'auto';
         let currentPlan = null;
         let currentConfig = null;
