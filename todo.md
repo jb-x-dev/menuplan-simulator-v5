@@ -24,12 +24,12 @@
 
 ## Bugs
 
-- [ ] "No recipes for Frühstück/Frühstück" Fehler beheben
-  - Ursache gefunden: Ernährungsformen-Filter zu restriktiv
-  - dietary_forms nur ['Vollkost', 'Vegetarisch'], fehlt 'Vegan'
-  - Frühstücks-Rezepte werden ausgefiltert
-  - Lösung: Alle 3 Formen standardmäßig auswählen
-  - Status: In Bearbeitung
+- [x] "No recipes for Frühstück/Frühstück" Fehler beheben
+  - Ursache: LocalStorage hatte alte dietary_forms ohne 'Vegan'
+  - Vegane Frühstücks-Rezepte wurden ausgefiltert
+  - Lösung: Alle 3 Formen beim Laden erzwingen
+  - localStorage.removeItem('selectedDietaryForms')
+  - Status: Behoben
 
 - [x] Allergene standardmäßig deselektieren
   - selectedAllergens = [] beim Laden erzwungen
