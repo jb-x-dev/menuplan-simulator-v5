@@ -22,6 +22,16 @@
   - Standard: Frühstück, Mittagessen, Abendessen aktiv
   - Status: Behoben
 
+## Bugs
+
+- [ ] "No recipes for Frühstück/Frühstück" Fehler beheben
+  - Matching zwischen Mahlzeiten und Rezepten schlägt fehl
+  - Status: In Bearbeitung
+
+- [ ] Allergene standardmäßig deselektieren
+  - Alle Allergene sollen default NICHT ausgewählt sein
+  - Status: In Bearbeitung
+
 ## Features (aktuell)
 
 - [x] Automatische Menüplan-Generierung beim Seitenaufruf

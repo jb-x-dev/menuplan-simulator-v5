@@ -4219,11 +4219,9 @@
             // Rendere Checkboxen aus mealSettings
             renderMealCheckboxes();
             
-            // Allergene
-            const savedAllergens = localStorage.getItem('selectedAllergens');
-            if (savedAllergens) {
-                selectedAllergens = JSON.parse(savedAllergens);
-            }
+            // Allergene - IMMER leer starten, auch wenn LocalStorage Daten hat
+            selectedAllergens = [];  // Alle Allergene standardmäßig NICHT ausgewählt
+            localStorage.removeItem('selectedAllergens');  // Lösche alte Daten
             renderAllergenCheckboxes();
             setAllergenCheckboxes();  // Setze auch Hauptseiten-Checkboxen
             
