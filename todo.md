@@ -24,11 +24,13 @@
 
 ## Features (aktuell)
 
-- [ ] Rezept-Auswahl-System implementieren
+- [x] Rezept-Auswahl-System implementieren
+  - SQLite Datenbank für persistente Speicherung
+  - 8 neue API-Endpunkte
   - Alle Rezepte standardmäßig nicht ausgewählt
   - Nur explizit ausgewählte Rezepte werden bei Generierung verwendet
-  - Auswahl-UI in Einstellungen
-  - Status: In Bearbeitung
+  - Auswahl-UI in Einstellungen mit Filter und Suche
+  - Status: Abgeschlossen
 
 ## Features (für v5.1)
 
