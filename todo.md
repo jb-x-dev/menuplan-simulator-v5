@@ -110,14 +110,14 @@
 
 
 
-- [ ] Bestelllisten aus aktiven Menüplänen generieren
-  - Auf Bestelllisten-Seite (📋 Bestelllisten)
-  - Liste aller Menüpläne mit Status "Aktiv" anzeigen
+- [x] Bestelllisten aus aktiven Menüplänen generieren
+  - Neue Sektion auf order-lists.html implementiert
+  - Lädt Menüpläne mit Status 'Aktiv' vom Backend (/api/menu-plans)
   - Checkboxen zur Auswahl mehrerer Menüpläne
-  - Button "Bestellliste generieren"
-  - Aggregierte Bestellliste erstellen:
-    * Alle Rezepte aus ausgewählten Menüplänen
-    * Gesamtmengen pro Rezept/Zutat
-    * Nach Kategorien gruppiert
-  - Status: In Bearbeitung
+  - Buttons: Alle auswählen/abwählen, Bestellliste generieren
+  - Aggregiert Rezepte über alle ausgewählten Menüpläne
+  - Erstellt Bestellliste mit Gesamtmengen pro Rezept
+  - Speichert in localStorage
+  - CSS-Styling mit Hover-Effekten
+  - Status: Implementiert
 
