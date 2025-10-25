@@ -24,12 +24,13 @@
 
 ## Features (aktuell)
 
-- [ ] Rezept-Auswahl und Menülinien aus Einstellungen entfernen
-  - Entfernen: Rezept-Auswahl Tab + Menülinien Tab
-  - Behalten: Alle anderen Tabs (BKT, Allergene, Ernährungsformen, etc.)
-  - Rezept-Auswahl: Alle Rezepte immer verfügbar (kein Auswahlsystem mehr)
-  - Menülinien: Fest im Code definiert
-  - Status: In Bearbeitung
+- [x] Rezept-Auswahl und Menülinien aus Einstellungen entfernen
+  - Entfernt: Rezept-Auswahl Tab + Menülinien Tab
+  - Behalten: Alle anderen Tabs (Laufzeiten, Allergene, Ernährungsformen, Rezeptgruppen, Garmethoden, Abneigungen, Standardwerte)
+  - Alle 200 Rezepte immer verfügbar (kein Auswahlsystem mehr)
+  - Auto-Initialisierung deaktiviert
+  - UX vereinfacht
+  - Status: Abgeschlossen
 
 - [x] Auto-Generierung sofort funktionsfähig machen
   - Standard-Rezepte vorausgewählt: 80 Rezepte (40% der Gesamtmenge)
