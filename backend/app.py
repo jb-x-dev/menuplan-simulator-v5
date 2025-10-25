@@ -17,6 +17,7 @@ from backend.customer_pdf import generate_customer_pdf
 from backend.excel_export import create_excel_export
 from backend.health_check import register_health_routes
 from backend.recipe_selection_api import recipe_selection_bp
+from backend.version_api import get_version
 
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 
@@ -36,6 +37,16 @@ register_health_routes(app)
 
 # Registriere Recipe Selection API
 app.register_blueprint(recipe_selection_bp)
+
+# Version API-Endpunkt
+@app.route('/api/version', methods=['GET'])
+def version():
+    """Gibt die aktuelle Version zurück"""
+    return jsonify({
+        'version': get_version(),
+        'name': 'Menüplansimulator',
+        'status': 'production'
+    })
 
 # API-Endpunkt für verfügbare Mahlzeiten-Kategorien
 @app.route('/api/meal-categories', methods=['GET'])

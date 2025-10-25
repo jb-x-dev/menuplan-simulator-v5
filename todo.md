@@ -24,6 +24,11 @@
 
 ## Features (aktuell)
 
+- [ ] Versionsanzeige unter Menüpunkt Start
+  - Version aus VERSION Datei laden
+  - Anzeige unter Header
+  - Status: In Bearbeitung
+
 - [x] Rezept-Auswahl-System implementieren
   - SQLite Datenbank für persistente Speicherung
   - 8 neue API-Endpunkte
