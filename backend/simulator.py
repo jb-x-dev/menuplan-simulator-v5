@@ -163,6 +163,7 @@ class MenuPlanSimulator:
     def __init__(self, config: SimulatorConfig, recipes: List[Recipe]):
         self.config = config
         self.all_recipes = recipes
+        self.recipes = recipes  # Alias für Kompatibilität
         self.eligible_recipes = None
         self.current_plan = None
         self.progress = 0
@@ -796,16 +797,24 @@ class MenuPlanSimulator:
         total_cost = sum(day['total_cost'] for day in days)
         avg_daily_cost = total_cost / len(days) if days else 0
         
+        # Berechne Min/Max BKT pro Tag
+        daily_costs = [day['total_cost'] for day in days]
+        min_daily_cost = min(daily_costs) if daily_costs else 0
+        max_daily_cost = max(daily_costs) if daily_costs else 0
+        
         return {
             'days': days,
             'statistics': {
                 'total_days': len(days),
-                'average_bkt': round(avg_daily_cost, 2),  # Durchschnitt pro Tag
+                'avg_bkt': round(avg_daily_cost, 2),  # Durchschnitt pro Tag
+                'min_bkt': round(min_daily_cost, 2),  # Minimum pro Tag
+                'max_bkt': round(max_daily_cost, 2),  # Maximum pro Tag
                 'total_cost': round(total_cost, 2),  # Gesamtkosten über alle Tage
-                'bkt_target': self.config.bkt_target,  # Maximum pro Tag
-                'bkt_min': round(self.config.bkt_min, 2),
-                'bkt_max': round(self.config.bkt_max, 2),
-                'within_budget': avg_daily_cost <= self.config.bkt_max  # Durchschnitt unter Maximum
+                'bkt_target': self.config.bkt_target,  # Ziel-BKT
+                'bkt_tolerance': self.config.bkt_tolerance,  # Toleranz
+                'bkt_min_allowed': round(self.config.bkt_min, 2),  # Minimum erlaubt
+                'bkt_max_allowed': round(self.config.bkt_max, 2),  # Maximum erlaubt
+                'within_budget': avg_daily_cost <= self.config.bkt_max  # Durchschnitt im Budget
             }
         }
 

@@ -2,6 +2,12 @@
 
 ## Bugs
 
+- [ ] Systematische Fehlersuche und Behebung
+  - Alle Funktionen testen
+  - Debug-Logs analysieren
+  - Kritische Fehler beheben
+  - Status: In Bearbeitung
+
 - [x] Fix: Mahlzeiten-Auswahl und Vorbelegung funktioniert nicht
   - Problem: Dynamisches API-Laden verursachte Probleme
   - Lösung: Hardcoded Werte die EXAKT mit Rezept-Daten übereinstimmen
