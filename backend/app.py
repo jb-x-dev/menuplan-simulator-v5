@@ -749,7 +749,7 @@ def get_recipe_usage():
 
 
 
-# NEU: Menüplan-Management API-Endpunkte
+# NEU: Menüplan-Management API-Endpunkte (v5.0 - fixed duplicates)
 from backend.menuplan_manager import MenuPlanManager, MenuPlanMetadata, OrderListMetadata
 
 plan_manager = MenuPlanManager(data_dir=os.path.join(os.path.dirname(__file__), '..', 'data'))
