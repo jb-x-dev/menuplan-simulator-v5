@@ -24,12 +24,13 @@
 
 ## Features (aktuell)
 
-- [ ] Automatische Menüplan-Generierung beim Seitenaufruf
-  - Menüplan automatisch beim Laden generieren
+- [x] Automatische Menüplan-Generierung beim Seitenaufruf
+  - Menüplan wird automatisch beim Laden generiert
   - Kein manueller Klick auf "Generieren" nötig
   - Sofort gefüllter Menüplan sichtbar
-  - Testen bis es funktioniert
-  - Status: In Bearbeitung
+  - 500ms Verzögerung für Initialisierung
+  - window.addEventListener('load') + btn.click()
+  - Status: Abgeschlossen
 
 - [x] Rezept-Auswahl und Menülinien aus Einstellungen entfernen
   - Entfernt: Rezept-Auswahl Tab + Menülinien Tab
