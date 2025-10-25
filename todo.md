@@ -36,11 +36,13 @@
   - LocalStorage für Allergene gelöscht
   - Status: Behoben
 
-- [ ] "Zwischengang" vs "Zwischenmahlzeit" Naming-Mismatch
-  - Frontend-Fix: localStorage für mealSettings wird ignoriert ✓
-  - Backend-Problem: Backend verwendet immer noch 'Zwischengang'
-  - Fehler: "No recipes for Zwischengang/Zwischengang (component: Zwischengang)"
-  - Status: Backend-Fix erforderlich
+- [x] "Zwischengang" vs "Zwischenmahlzeit" Naming-Mismatch
+  - Ursache: Browser-Cache hatte alte mealSettings
+  - Lösung 1: localStorage für mealSettings ignorieren
+  - Lösung 2: Settings-Versionierung (v5.0.1) mit automatischem Cache-Clear
+  - Debug-Spam im Backend entfernt
+  - Erfolgreich getestet auf Live-Site
+  - Status: Behoben
 
 ## Features (aktuell)
 
