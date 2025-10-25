@@ -570,27 +570,7 @@ def get_menu_plans():
         return jsonify({'error': str(e)}), 500
 
 
-@app.route('/api/menu-plans/<int:plan_id>', methods=['GET'])
-def get_menu_plan(plan_id):
-    """Gibt einen spezifischen Menüplan zurück"""
-    try:
-        plans_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'menu_plans.json')
-        if not os.path.exists(plans_file):
-            return jsonify({'error': 'Keine Pläne gefunden'}), 404
-        
-        with open(plans_file, 'r', encoding='utf-8') as f:
-            saved_plans = json.load(f)
-        
-        plan = next((p for p in saved_plans if p['id'] == plan_id), None)
-        if not plan:
-            return jsonify({'error': 'Plan nicht gefunden'}), 404
-        
-        return jsonify(plan)
-    
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return jsonify({'error': str(e)}), 500
+# Removed duplicate get_menu_plan function - using the one from menuplan_manager.py instead
 
 
 @app.route('/api/procurement/from-plans', methods=['POST'])
