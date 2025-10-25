@@ -2,10 +2,11 @@
 
 ## Bugs
 
-- [ ] Fix: Mahlzeiten-Auswahl stimmt nicht mit Rezept menu_component überein
+- [x] Fix: Mahlzeiten-Auswahl stimmt nicht mit Rezept menu_component überein
   - Problem: "No recipes for Frühstück/Frühstück" Fehler
   - Ursache: Mahlzeiten-Einstellungen verwenden falsche Komponenten
   - Lösung: Mahlzeiten dynamisch aus verfügbaren Rezept-Kategorien laden
+  - Status: Behoben mit /api/meal-categories Endpunkt
 
 ## Features (für v5.1)
 
