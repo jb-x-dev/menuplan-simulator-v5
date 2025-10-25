@@ -494,85 +494,8 @@ def update_selection():
 
 
 
-@app.route('/api/menu-plans/save', methods=['POST'])
-def save_menu_plan():
-    """Speichert einen Menüplan mit Status"""
-    try:
-        data = request.get_json()
-        plan = data.get('plan')
-        status = data.get('status', 'Entwurf')  # Entwurf, Vorlage, Aktiv, Archiviert
-        name = data.get('name', '')
-        
-        if not plan:
-            return jsonify({'error': 'Kein Plan angegeben'}), 400
-        
-        # Lade bestehende Pläne
-        plans_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'menu_plans.json')
-        if os.path.exists(plans_file):
-            with open(plans_file, 'r', encoding='utf-8') as f:
-                data_obj = json.load(f)
-                saved_plans = data_obj.get('plans', []) if isinstance(data_obj, dict) else data_obj
-        else:
-            saved_plans = []
-        
-        # Erstelle neuen Plan-Eintrag
-        from datetime import datetime
-        plan_entry = {
-            'id': len(saved_plans) + 1,
-            'name': name or f"Menüplan {datetime.now().strftime('%Y-%m-%d %H:%M')}",
-            'status': status,
-            'created_at': datetime.now().isoformat(),
-            'plan': plan
-        }
-        
-        saved_plans.append(plan_entry)
-        
-        # Speichere Pläne
-        os.makedirs(os.path.dirname(plans_file), exist_ok=True)
-        with open(plans_file, 'w', encoding='utf-8') as f:
-            json.dump({'plans': saved_plans}, f, ensure_ascii=False, indent=2)
-        
-        return jsonify({
-            'success': True,
-            'id': plan_entry['id'],
-            'message': f'Menüplan gespeichert mit Status: {status}'
-        })
-    
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return jsonify({'error': str(e)}), 500
-
-
-@app.route('/api/menu-plans', methods=['GET'])
-def get_menu_plans():
-    """Gibt alle gespeicherten Menüpläne zurück"""
-    try:
-        status_filter = request.args.get('status')
-        
-        plans_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'menu_plans.json')
-        if not os.path.exists(plans_file):
-            return jsonify([])
-        
-        with open(plans_file, 'r', encoding='utf-8') as f:
-            saved_plans = json.load(f)
-        
-        # Filtere nach Status wenn angegeben
-        plans_list = saved_plans.get('plans', []) if isinstance(saved_plans, dict) else saved_plans
-        if status_filter:
-            plans_list = [p for p in plans_list if p.get('status') == status_filter]
-        
-        return jsonify({'plans': plans_list})
-    
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return jsonify({'error': str(e)}), 500
-
-
-# Removed duplicate get_menu_plan function - using the one from menuplan_manager.py instead
-
-
+# Removed old save_menu_plan endpoint (duplicate)
+# Removed old get_menu_plans endpoint (duplicate)
 @app.route('/api/procurement/from-plans', methods=['POST'])
 def get_procurement_from_plans():
     """Erstellt Beschaffungsliste aus aktiven Menüplänen"""
