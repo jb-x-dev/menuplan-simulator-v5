@@ -3645,16 +3645,30 @@
         
         // Settings Modal Functions
         function showSettings() {
-            loadAllSettings();
-            renderMealSettings();
-            renderAllergenCheckboxes();
-            renderDietaryCheckboxes();
-            renderRecipeGroupCheckboxes();
-            renderMenuLineCheckboxes();
-            renderCookingMethodCheckboxes();
-            renderAversionsCheckboxes();
-            renderDefaultValues();
-            document.getElementById('settingsModal').classList.add('active');
+            try {
+                loadAllSettings();
+                renderMealSettings();
+                renderAllergenCheckboxes();
+                renderDietaryCheckboxes();
+                renderRecipeGroupCheckboxes();
+                renderMenuLineCheckboxes();
+                renderCookingMethodCheckboxes();
+                renderAversionsCheckboxes();
+                renderDefaultValues();
+                document.getElementById('settingsModal').classList.add('active');
+            } catch (error) {
+                console.error('Error opening settings:', error);
+                alert('⚠️ Fehler beim Öffnen der Einstellungen: ' + error.message);
+            }
+        }
+        
+        // NEU: Fehlende Funktion für Standard-Werte
+        function renderDefaultValues() {
+            // Setze Standardwerte in UI-Feldern
+            const defaultRecipesInput = document.getElementById('defaultRecipesPerMeal');
+            if (defaultRecipesInput) {
+                defaultRecipesInput.value = defaultRecipesPerMeal;
+            }
         }
         
         function closeSettings() {
