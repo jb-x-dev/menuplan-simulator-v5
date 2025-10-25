@@ -18,6 +18,7 @@ from backend.excel_export import create_excel_export
 from backend.health_check import register_health_routes
 from backend.recipe_selection_api import recipe_selection_bp
 from backend.version_api import get_version
+from backend.init_default_selection import init_default_selection
 
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 
@@ -37,6 +38,9 @@ register_health_routes(app)
 
 # Registriere Recipe Selection API
 app.register_blueprint(recipe_selection_bp)
+
+# Initialisiere Standard-Rezept-Auswahl beim Start (falls leer)
+init_default_selection()
 
 # Version API-Endpunkt
 @app.route('/api/version', methods=['GET'])

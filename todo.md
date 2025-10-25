@@ -24,6 +24,13 @@
 
 ## Features (aktuell)
 
+- [ ] Auto-Generierung sofort funktionsfähig machen
+  - Standard-Rezepte vorauswählen (z.B. 20 pro Komponente)
+  - Vorbelegung der Mahlzeiten-Einstellungen optimieren
+  - BKT-Zielwert realistisch setzen
+  - Beispiel-Konfiguration die funktioniert
+  - Status: In Bearbeitung
+
 - [x] Versionsanzeige unter Menüpunkt Start
   - Version aus VERSION Datei laden
   - API-Endpunkt: GET /api/version
