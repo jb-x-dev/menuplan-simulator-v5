@@ -194,9 +194,12 @@
 
 
 
-- [ ] Automatischer Import beim Server-Start
-  - Prüft ob Menüpläne/Bestelllisten bereits in DB
-  - Importiert automatisch aus data/ wenn nicht vorhanden
-  - Läuft beim Flask-App-Start
-  - Status: In Bearbeitung
+- [x] Automatischer Import beim Server-Start
+  - Prüft ob Menüpläne/Bestelllisten bereits in DB ✓
+  - Importiert automatisch aus data/ wenn nicht vorhanden ✓
+  - Läuft beim Flask-App-Start ✓
+  - Verhindert Duplikate ✓
+  - Logs Import-Status in Konsole ✓
+  - Modul: backend/auto_import.py
+  - Status: Implementiert
 
