@@ -130,3 +130,20 @@
   - Lösung: Warten auf Deployment oder aggressive Cache-Löschung
   - Status: Wartet auf Render.com Deployment
 
+
+
+- [x] Rezeptdatenbank erweitern und pflegen
+  - 100 neue Rezepte hinzugefügt (gesamt: 300 Rezepte) ✓
+  - Verteilung: Frühstück 60, Mittagessen 130, Abendessen 58, Zwischenmahlzeit 52
+  - Vegetarisch: 172 (57.3%), Vegan: 26 (8.7%) ✓
+  - Preiskategorien: 1.10€ - 9.20€ (Durchschnitt: 3.44€) ✓
+  - Internationale Küche integriert ✓
+    * Asiatisch: Pad Thai, Ramen, Bibimbap, Sushi, Pho, Dim Sum, etc.
+    * Mediterran: Paella, Moussaka, Tapas, Antipasti, etc.
+    * Orientalisch: Shakshuka, Falafel, Mezze, Hummus, Baklava, etc.
+    * Lateinamerikanisch: Chilaquiles, Burritos, Ceviche, Empanadas, etc.
+  - Bestehende Rezepte geprüft (0 Verbesserungen nötig)
+  - Backend aktualisiert: Lädt jetzt recipes_300.json
+  - Scripts erstellt: generate_100_recipes.py, merge_and_improve_recipes.py
+  - Status: Abgeschlossen
+
