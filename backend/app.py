@@ -72,21 +72,25 @@ def get_meal_categories():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
-# Lade Rezepte beim Start (200 Rezepte)
+# Lade Rezepte beim Start (300 Rezepte)
+recipes_file_300 = os.path.join(os.path.dirname(__file__), '..', 'data', 'recipes_300.json')
 recipes_file_200 = os.path.join(os.path.dirname(__file__), '..', 'data', 'recipes_200.json')
 recipes_file_extended = os.path.join(os.path.dirname(__file__), '..', 'data', 'recipes_extended.json')
 recipes_file_original = os.path.join(os.path.dirname(__file__), '..', 'data', 'recipes.json')
 
-# Versuche 200 Rezepte zu laden, sonst Fallback
-if os.path.exists(recipes_file_200):
+# Versuche 300 Rezepte zu laden, sonst Fallback
+if os.path.exists(recipes_file_300):
+    recipes = load_recipes_from_file(recipes_file_300)
+    print(f"✅ Loaded {len(recipes)} recipes from 300-recipe database")
+elif os.path.exists(recipes_file_200):
     recipes = load_recipes_from_file(recipes_file_200)
-    print(f"\u2705 Loaded {len(recipes)} recipes from 200-recipe database")
+    print(f"✅ Loaded {len(recipes)} recipes from 200-recipe database")
 elif os.path.exists(recipes_file_extended):
     recipes = load_recipes_from_file(recipes_file_extended)
-    print(f"\u2705 Loaded {len(recipes)} recipes from extended database")
+    print(f"✅ Loaded {len(recipes)} recipes from extended database")
 else:
     recipes = load_recipes_from_file(recipes_file_original)
-    print(f"\u2705 Loaded {len(recipes)} recipes from original database")
+    print(f"✅ Loaded {len(recipes)} recipes from original database")
 
 
 @app.route('/')

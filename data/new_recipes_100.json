@@ -1,0 +1,4425 @@
+[
+  {
+    "id": 201,
+    "name": "Shakshuka",
+    "cost": 3.2,
+    "allergens": [
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Eierspeisen",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 500,
+      "fat": 23,
+      "carbs": 44,
+      "protein": 21
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Pochierte Eier in würziger Tomatensauce mit Paprika",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 202,
+    "name": "Congee (Reisbrei)",
+    "cost": 1.9,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Brei",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 265,
+      "fat": 11,
+      "carbs": 40,
+      "protein": 19
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Asiatischer Reisbrei mit Gemüse und Sesam",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 203,
+    "name": "Chilaquiles",
+    "cost": 2.8,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Mexikanisch",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 436,
+      "fat": 22,
+      "carbs": 53,
+      "protein": 14
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Mexikanische Tortilla-Chips mit Salsa und Käse",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 204,
+    "name": "Menemen",
+    "cost": 2.9,
+    "allergens": [
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Eierspeisen",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 282,
+      "fat": 17,
+      "carbs": 42,
+      "protein": 14
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Türkisches Rührei mit Tomaten und Paprika",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 205,
+    "name": "Smoothie Bowl Acai",
+    "cost": 4.5,
+    "allergens": [
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Smoothies",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 267,
+      "fat": 24,
+      "carbs": 33,
+      "protein": 19
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Acai-Bowl mit Früchten, Granola und Nüssen",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 206,
+    "name": "Japanisches Frühstück",
+    "cost": 5.2,
+    "allergens": [
+      "Fisch",
+      "Soja",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Frühstück",
+    "group": "Asiatisch",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 5,
+    "nutritional_values": {
+      "calories": 265,
+      "fat": 25,
+      "carbs": 52,
+      "protein": 22
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Reis, gegrillter Lachs, Miso-Suppe und Tamagoyaki",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 207,
+    "name": "Huevos Rancheros",
+    "cost": 3.4,
+    "allergens": [
+      "Eier",
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Mexikanisch",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 370,
+      "fat": 23,
+      "carbs": 52,
+      "protein": 25
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.4,
+    "description": "Eier auf Tortillas mit Bohnen und Salsa",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 208,
+    "name": "Chia-Pudding",
+    "cost": 2.1,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Pudding",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 487,
+      "fat": 6,
+      "carbs": 58,
+      "protein": 18
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Chia-Samen in Mandelmilch mit Früchten",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 209,
+    "name": "Nasi Lemak",
+    "cost": 4.8,
+    "allergens": [
+      "Fisch",
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Frühstück",
+    "group": "Asiatisch",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 5,
+    "nutritional_values": {
+      "calories": 292,
+      "fat": 25,
+      "carbs": 42,
+      "protein": 30
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Malaysisches Kokosnuss-Reis-Gericht mit Anchovis",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 210,
+    "name": "Crêpes mit Nutella",
+    "cost": 2.6,
+    "allergens": [
+      "Gluten",
+      "Milch",
+      "Eier",
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Pfannkuchen",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 434,
+      "fat": 14,
+      "carbs": 49,
+      "protein": 26
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.7,
+    "description": "Dünne französische Pfannkuchen mit Haselnusscreme",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 211,
+    "name": "Quinoa-Frühstücksbowl",
+    "cost": 3.1,
+    "allergens": [
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Bowls",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 295,
+      "fat": 12,
+      "carbs": 34,
+      "protein": 22
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.6,
+    "description": "Quinoa mit Früchten, Nüssen und Ahornsirup",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 212,
+    "name": "Banh Mi Frühstück",
+    "cost": 3.8,
+    "allergens": [
+      "Gluten",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Frühstück",
+    "group": "Sandwiches",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 284,
+      "fat": 23,
+      "carbs": 43,
+      "protein": 23
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Vietnamesisches Baguette mit Ei und Gemüse",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 213,
+    "name": "Granola selbstgemacht",
+    "cost": 2.4,
+    "allergens": [
+      "Gluten",
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Müsli",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 313,
+      "fat": 25,
+      "carbs": 52,
+      "protein": 15
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.3,
+    "description": "Gebackenes Müsli mit Honig und Nüssen",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 214,
+    "name": "Türkischer Käse-Teller",
+    "cost": 3.5,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Käse",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 392,
+      "fat": 5,
+      "carbs": 50,
+      "protein": 11
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.6,
+    "description": "Verschiedene Käsesorten mit Oliven und Brot",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 215,
+    "name": "Tofu-Scramble",
+    "cost": 2.7,
+    "allergens": [
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Eierspeisen",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 428,
+      "fat": 25,
+      "carbs": 51,
+      "protein": 14
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Veganes Rührei aus Tofu mit Gemüse",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 216,
+    "name": "Dim Sum Frühstück",
+    "cost": 5.5,
+    "allergens": [
+      "Gluten",
+      "Soja",
+      "Fisch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Frühstück",
+    "group": "Asiatisch",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 372,
+      "fat": 17,
+      "carbs": 47,
+      "protein": 25
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Gedämpfte chinesische Teigtaschen",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 217,
+    "name": "Protein-Pancakes",
+    "cost": 3.3,
+    "allergens": [
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Pfannkuchen",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 478,
+      "fat": 22,
+      "carbs": 43,
+      "protein": 18
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Eiweißreiche Pfannkuchen mit Beeren",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 218,
+    "name": "Falafel-Frühstück",
+    "cost": 3.6,
+    "allergens": [
+      "Sesam"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Orientalisch",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 447,
+      "fat": 14,
+      "carbs": 53,
+      "protein": 28
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.1,
+    "description": "Kichererbsenbällchen mit Hummus und Gemüse",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 219,
+    "name": "Kokos-Reis-Pudding",
+    "cost": 2.2,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Pudding",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 276,
+      "fat": 9,
+      "carbs": 49,
+      "protein": 13
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Süßer Reispudding mit Kokosmilch",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 220,
+    "name": "Eggs Benedict",
+    "cost": 4.9,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Frühstück",
+    "group": "Eierspeisen",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 389,
+      "fat": 18,
+      "carbs": 34,
+      "protein": 21
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Pochierte Eier auf English Muffin mit Sauce Hollandaise",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 221,
+    "name": "Matcha-Latte Bowl",
+    "cost": 4.2,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Bowls",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 427,
+      "fat": 14,
+      "carbs": 40,
+      "protein": 19
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Grüntee-Pudding mit Früchten",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 222,
+    "name": "Spanisches Tortilla",
+    "cost": 2.9,
+    "allergens": [
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Eierspeisen",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 488,
+      "fat": 8,
+      "carbs": 39,
+      "protein": 10
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.4,
+    "description": "Kartoffel-Omelette nach spanischer Art",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 223,
+    "name": "Overnight Oats Schoko",
+    "cost": 2.3,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Frühstück",
+    "group": "Müsli",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 284,
+      "fat": 19,
+      "carbs": 50,
+      "protein": 20
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.1,
+    "description": "Haferflocken mit Kakao über Nacht eingeweicht",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 224,
+    "name": "Pho Bo Frühstück",
+    "cost": 5.8,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Frühstück",
+    "group": "Suppen",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 338,
+      "fat": 13,
+      "carbs": 51,
+      "protein": 22
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.9,
+    "description": "Vietnamesische Rindfleisch-Nudelsuppe",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 225,
+    "name": "Avocado-Toast Premium",
+    "cost": 4.1,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Frühstück",
+    "group": "Toast",
+    "menu_component": "Frühstück",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 415,
+      "fat": 9,
+      "carbs": 48,
+      "protein": 15
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.7,
+    "description": "Sauerteigbrot mit Avocado, Tomaten und Microgreens",
+    "portion_size": "250g",
+    "ingredients": []
+  },
+  {
+    "id": 226,
+    "name": "Pad Thai",
+    "cost": 4.5,
+    "allergens": [
+      "Gluten",
+      "Fisch",
+      "Schalenfrüchte",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Asiatisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 444,
+      "fat": 23,
+      "carbs": 62,
+      "protein": 22
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.3,
+    "description": "Thailändische gebratene Reisnudeln mit Garnelen",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 227,
+    "name": "Moussaka",
+    "cost": 5.2,
+    "allergens": [
+      "Milch",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Auflauf",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 561,
+      "fat": 33,
+      "carbs": 57,
+      "protein": 46
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Griechischer Auberginen-Hackfleisch-Auflauf",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 228,
+    "name": "Bibimbap",
+    "cost": 4.8,
+    "allergens": [
+      "Soja",
+      "Sesam",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Asiatisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 726,
+      "fat": 35,
+      "carbs": 60,
+      "protein": 29
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.4,
+    "description": "Koreanische Reis-Bowl mit Gemüse und Ei",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 229,
+    "name": "Paella Valenciana",
+    "cost": 6.5,
+    "allergens": [
+      "Fisch",
+      "Krebstiere"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Reisgerichte",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 748,
+      "fat": 34,
+      "carbs": 48,
+      "protein": 29
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.2,
+    "description": "Spanisches Reisgericht mit Meeresfrüchten",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 230,
+    "name": "Ramen Premium",
+    "cost": 5.9,
+    "allergens": [
+      "Gluten",
+      "Soja",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Suppen",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 514,
+      "fat": 25,
+      "carbs": 65,
+      "protein": 32
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Japanische Nudelsuppe mit Chashu-Schweinefleisch",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 231,
+    "name": "Couscous Royal",
+    "cost": 5.4,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Nordafrikanisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 541,
+      "fat": 17,
+      "carbs": 58,
+      "protein": 44
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.6,
+    "description": "Marokkanischer Couscous mit Lamm und Gemüse",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 232,
+    "name": "Burritos Bowl",
+    "cost": 4.2,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Mexikanisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 462,
+      "fat": 29,
+      "carbs": 41,
+      "protein": 45
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.1,
+    "description": "Reis-Bowl mit Bohnen, Fleisch und Guacamole",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 233,
+    "name": "Poke Bowl Lachs",
+    "cost": 7.2,
+    "allergens": [
+      "Fisch",
+      "Soja",
+      "Sesam"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Asiatisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 460,
+      "fat": 29,
+      "carbs": 79,
+      "protein": 24
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Hawaiianische Reis-Bowl mit rohem Lachs",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 234,
+    "name": "Tagine Lamm",
+    "cost": 6.8,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Nordafrikanisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 589,
+      "fat": 23,
+      "carbs": 54,
+      "protein": 23
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.7,
+    "description": "Marokkanischer Lamm-Eintopf mit Aprikosen",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 235,
+    "name": "Sushi-Platte",
+    "cost": 8.5,
+    "allergens": [
+      "Fisch",
+      "Soja",
+      "Sesam"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Asiatisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 595,
+      "fat": 18,
+      "carbs": 61,
+      "protein": 20
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.1,
+    "description": "Verschiedene Sushi-Variationen",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 236,
+    "name": "Osso Buco",
+    "cost": 7.9,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Italienisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 578,
+      "fat": 30,
+      "carbs": 80,
+      "protein": 36
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.8,
+    "description": "Geschmorte Kalbshaxe mit Gremolata",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 237,
+    "name": "Pho Ga",
+    "cost": 4.6,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Suppen",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 625,
+      "fat": 20,
+      "carbs": 60,
+      "protein": 44
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.7,
+    "description": "Vietnamesische Hühner-Nudelsuppe",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 238,
+    "name": "Falafel-Teller Premium",
+    "cost": 4.9,
+    "allergens": [
+      "Sesam",
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Mittagessen",
+    "group": "Orientalisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 566,
+      "fat": 27,
+      "carbs": 43,
+      "protein": 45
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Falafel mit Hummus, Tabouleh und Pita",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 239,
+    "name": "Rendang Beef",
+    "cost": 6.2,
+    "allergens": [
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Asiatisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 524,
+      "fat": 33,
+      "carbs": 76,
+      "protein": 39
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.9,
+    "description": "Indonesisches Rindfleisch-Curry",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 240,
+    "name": "Risotto Funghi Porcini",
+    "cost": 5.8,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Mittagessen",
+    "group": "Reisgerichte",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 587,
+      "fat": 25,
+      "carbs": 74,
+      "protein": 25
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.5,
+    "description": "Cremiges Steinpilz-Risotto",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 241,
+    "name": "Tandoori Chicken",
+    "cost": 5.3,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Indisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 771,
+      "fat": 40,
+      "carbs": 44,
+      "protein": 35
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.1,
+    "description": "Im Tandoor gegrilltes mariniertes Hähnchen",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 242,
+    "name": "Shakshuka Mittagessen",
+    "cost": 3.8,
+    "allergens": [
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Mittagessen",
+    "group": "Eierspeisen",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 724,
+      "fat": 29,
+      "carbs": 69,
+      "protein": 44
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.5,
+    "description": "Pochierte Eier in Tomatensauce mit Brot",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 243,
+    "name": "Tom Yum Goong",
+    "cost": 5.5,
+    "allergens": [
+      "Krebstiere",
+      "Fisch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Suppen",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 498,
+      "fat": 15,
+      "carbs": 44,
+      "protein": 48
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Thailändische sauer-scharfe Garnelensuppe",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 244,
+    "name": "Enchiladas",
+    "cost": 4.7,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Mexikanisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 717,
+      "fat": 25,
+      "carbs": 48,
+      "protein": 30
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Gefüllte Tortillas mit Chili-Sauce überbacken",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 245,
+    "name": "Laksa",
+    "cost": 5.1,
+    "allergens": [
+      "Krebstiere",
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Suppen",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 453,
+      "fat": 24,
+      "carbs": 79,
+      "protein": 31
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.4,
+    "description": "Malaysische Curry-Nudelsuppe",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 246,
+    "name": "Gyros-Teller",
+    "cost": 4.9,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Griechisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 626,
+      "fat": 18,
+      "carbs": 78,
+      "protein": 47
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.6,
+    "description": "Gegrilltes Schweinefleisch mit Tzatziki und Pommes",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 247,
+    "name": "Butter Chicken",
+    "cost": 5.6,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Indisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 686,
+      "fat": 28,
+      "carbs": 76,
+      "protein": 48
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Hähnchen in cremiger Tomaten-Butter-Sauce",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 248,
+    "name": "Ceviche",
+    "cost": 6.9,
+    "allergens": [
+      "Fisch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Lateinamerikanisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 549,
+      "fat": 35,
+      "carbs": 79,
+      "protein": 35
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.9,
+    "description": "Roher Fisch mariniert in Limettensaft",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 249,
+    "name": "Massaman Curry",
+    "cost": 5.2,
+    "allergens": [
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Mittagessen",
+    "group": "Asiatisch",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 758,
+      "fat": 23,
+      "carbs": 58,
+      "protein": 44
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.1,
+    "description": "Thailändisches Curry mit Erdnüssen",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 250,
+    "name": "Quinoa-Buddha-Bowl",
+    "cost": 4.4,
+    "allergens": [
+      "Sesam"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Mittagessen",
+    "group": "Bowls",
+    "menu_component": "Mittagessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 638,
+      "fat": 25,
+      "carbs": 74,
+      "protein": 23
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Quinoa mit geröstetem Gemüse und Tahini",
+    "portion_size": "350g",
+    "ingredients": []
+  },
+  {
+    "id": 251,
+    "name": "Tapas-Mix Premium",
+    "cost": 5.8,
+    "allergens": [
+      "Fisch",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Spanisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 595,
+      "fat": 18,
+      "carbs": 42,
+      "protein": 21
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.7,
+    "description": "Auswahl spanischer Häppchen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 252,
+    "name": "Sushi-Abend",
+    "cost": 7.9,
+    "allergens": [
+      "Fisch",
+      "Soja",
+      "Sesam"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Asiatisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 490,
+      "fat": 27,
+      "carbs": 45,
+      "protein": 33
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.7,
+    "description": "Sushi-Platte mit Maki und Nigiri",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 253,
+    "name": "Mezze-Platte Deluxe",
+    "cost": 6.2,
+    "allergens": [
+      "Sesam",
+      "Milch",
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Abendessen",
+    "group": "Orientalisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 473,
+      "fat": 24,
+      "carbs": 34,
+      "protein": 35
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Orientalische Vorspeisen-Auswahl",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 254,
+    "name": "Charcuterie Board",
+    "cost": 7.5,
+    "allergens": [
+      "Milch",
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Käse",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 591,
+      "fat": 22,
+      "carbs": 47,
+      "protein": 33
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.1,
+    "description": "Käse- und Wurstplatte mit Beilagen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 255,
+    "name": "Dim Sum Platte",
+    "cost": 6.8,
+    "allergens": [
+      "Gluten",
+      "Soja",
+      "Krebstiere"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Asiatisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 576,
+      "fat": 18,
+      "carbs": 37,
+      "protein": 15
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.8,
+    "description": "Gedämpfte chinesische Teigtaschen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 256,
+    "name": "Antipasti Premium",
+    "cost": 5.9,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Abendessen",
+    "group": "Italienisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 548,
+      "fat": 15,
+      "carbs": 49,
+      "protein": 34
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.7,
+    "description": "Italienische Vorspeisen mit Mozzarella",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 257,
+    "name": "Poke Bowl Thunfisch",
+    "cost": 6.9,
+    "allergens": [
+      "Fisch",
+      "Soja",
+      "Sesam"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Asiatisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 323,
+      "fat": 23,
+      "carbs": 33,
+      "protein": 33
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.9,
+    "description": "Hawaiianische Bowl mit rohem Thunfisch",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 258,
+    "name": "Quiche Lorraine",
+    "cost": 3.9,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Französisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 431,
+      "fat": 22,
+      "carbs": 32,
+      "protein": 29
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.6,
+    "description": "Französischer Speckkuchen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 259,
+    "name": "Gazpacho mit Brot",
+    "cost": 2.8,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Abendessen",
+    "group": "Suppen",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 336,
+      "fat": 21,
+      "carbs": 42,
+      "protein": 25
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.0,
+    "description": "Kalte spanische Tomatensuppe",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 260,
+    "name": "Crostini-Variation",
+    "cost": 4.2,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Abendessen",
+    "group": "Italienisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 323,
+      "fat": 30,
+      "carbs": 36,
+      "protein": 22
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.0,
+    "description": "Geröstetes Brot mit verschiedenen Belägen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 261,
+    "name": "Sommer-Rollen",
+    "cost": 3.6,
+    "allergens": [
+      "Krebstiere",
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Asiatisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 515,
+      "fat": 33,
+      "carbs": 28,
+      "protein": 20
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 2.0,
+    "description": "Vietnamesische Reispapier-Rollen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 262,
+    "name": "Baba Ghanoush Platte",
+    "cost": 3.4,
+    "allergens": [
+      "Sesam",
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Abendessen",
+    "group": "Orientalisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 309,
+      "fat": 31,
+      "carbs": 28,
+      "protein": 32
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Auberginen-Dip mit Pita-Brot",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 263,
+    "name": "Vitello Tonnato",
+    "cost": 6.5,
+    "allergens": [
+      "Fisch",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Italienisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 323,
+      "fat": 11,
+      "carbs": 46,
+      "protein": 23
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.7,
+    "description": "Kalbfleisch mit Thunfisch-Kapern-Sauce",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 264,
+    "name": "Wraps-Platte",
+    "cost": 3.8,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Abendessen",
+    "group": "International",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 497,
+      "fat": 23,
+      "carbs": 40,
+      "protein": 25
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Verschiedene gefüllte Wraps",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 265,
+    "name": "Sashimi-Platte",
+    "cost": 9.2,
+    "allergens": [
+      "Fisch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Asiatisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 588,
+      "fat": 15,
+      "carbs": 48,
+      "protein": 23
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.6,
+    "description": "Roher Fisch in dünnen Scheiben",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 266,
+    "name": "Pincho-Spieße",
+    "cost": 4.5,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Spanisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 316,
+      "fat": 34,
+      "carbs": 30,
+      "protein": 32
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Spanische Fleisch-Gemüse-Spieße",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 267,
+    "name": "Caprese Premium",
+    "cost": 4.8,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Abendessen",
+    "group": "Italienisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 391,
+      "fat": 19,
+      "carbs": 37,
+      "protein": 30
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.8,
+    "description": "Büffelmozzarella mit Tomaten und Basilikum",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 268,
+    "name": "Edamame mit Meersalz",
+    "cost": 2.5,
+    "allergens": [
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Abendessen",
+    "group": "Asiatisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 375,
+      "fat": 11,
+      "carbs": 47,
+      "protein": 23
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.3,
+    "description": "Gedämpfte grüne Sojabohnen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 269,
+    "name": "Tarte Flambée",
+    "cost": 4.1,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Französisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 512,
+      "fat": 25,
+      "carbs": 26,
+      "protein": 23
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Elsässischer Flammkuchen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 270,
+    "name": "Hummus-Trio",
+    "cost": 3.7,
+    "allergens": [
+      "Sesam"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Abendessen",
+    "group": "Orientalisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 360,
+      "fat": 12,
+      "carbs": 43,
+      "protein": 26
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.9,
+    "description": "Drei Hummus-Variationen mit Gemüse",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 271,
+    "name": "Arancini",
+    "cost": 3.9,
+    "allergens": [
+      "Gluten",
+      "Milch",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Abendessen",
+    "group": "Italienisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 449,
+      "fat": 22,
+      "carbs": 51,
+      "protein": 19
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.1,
+    "description": "Frittierte sizilianische Reisbällchen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 272,
+    "name": "Pita-Taschen",
+    "cost": 3.2,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Abendessen",
+    "group": "Orientalisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 465,
+      "fat": 12,
+      "carbs": 55,
+      "protein": 29
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.7,
+    "description": "Gefüllte Pita-Brote mit Falafel",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 273,
+    "name": "Onigiri-Set",
+    "cost": 3.5,
+    "allergens": [
+      "Fisch",
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost"
+    ],
+    "category": "Abendessen",
+    "group": "Asiatisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 576,
+      "fat": 12,
+      "carbs": 40,
+      "protein": 24
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.6,
+    "description": "Japanische Reis-Dreiecke mit Füllung",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 274,
+    "name": "Bruschetta-Variation",
+    "cost": 3.6,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Abendessen",
+    "group": "Italienisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 545,
+      "fat": 33,
+      "carbs": 29,
+      "protein": 33
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Geröstetes Brot mit verschiedenen Toppings",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 275,
+    "name": "Samosa-Platte",
+    "cost": 3.4,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Abendessen",
+    "group": "Indisch",
+    "menu_component": "Abendessen",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 412,
+      "fat": 12,
+      "carbs": 38,
+      "protein": 17
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Frittierte indische Teigtaschen",
+    "portion_size": "200g",
+    "ingredients": []
+  },
+  {
+    "id": 276,
+    "name": "Mochi-Mix",
+    "cost": 2.8,
+    "allergens": [
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Asiatisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 244,
+      "fat": 6,
+      "carbs": 36,
+      "protein": 5
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.3,
+    "description": "Japanische Reiskuchen mit verschiedenen Füllungen",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 277,
+    "name": "Churros mit Schokolade",
+    "cost": 2.9,
+    "allergens": [
+      "Gluten",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Spanisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 207,
+      "fat": 9,
+      "carbs": 38,
+      "protein": 11
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.1,
+    "description": "Frittierte Teigstangen mit heißer Schokolade",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 278,
+    "name": "Baklava",
+    "cost": 3.2,
+    "allergens": [
+      "Gluten",
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Orientalisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 247,
+      "fat": 14,
+      "carbs": 55,
+      "protein": 10
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Türkisches Blätterteig-Gebäck mit Nüssen",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 279,
+    "name": "Macarons-Box",
+    "cost": 4.5,
+    "allergens": [
+      "Eier",
+      "Schalenfrüchte",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Französisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 250,
+      "fat": 15,
+      "carbs": 41,
+      "protein": 3
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Französische Mandel-Baiser-Kekse",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 280,
+    "name": "Taiyaki",
+    "cost": 2.6,
+    "allergens": [
+      "Gluten",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Asiatisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 286,
+      "fat": 10,
+      "carbs": 36,
+      "protein": 10
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Japanischer fischförmiger Kuchen mit Füllung",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 281,
+    "name": "Empanadas süß",
+    "cost": 2.4,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Lateinamerikanisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 266,
+      "fat": 17,
+      "carbs": 60,
+      "protein": 10
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.7,
+    "description": "Gefüllte Teigtaschen mit Früchten",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 282,
+    "name": "Tiramisu-Becher",
+    "cost": 3.8,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Italienisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 239,
+      "fat": 11,
+      "carbs": 55,
+      "protein": 13
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Italienisches Mascarpone-Dessert",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 283,
+    "name": "Dorayaki",
+    "cost": 2.5,
+    "allergens": [
+      "Gluten",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Asiatisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 256,
+      "fat": 20,
+      "carbs": 41,
+      "protein": 11
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.3,
+    "description": "Japanische Pfannkuchen mit roter Bohnenpaste",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 284,
+    "name": "Panna Cotta",
+    "cost": 3.1,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Italienisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 366,
+      "fat": 20,
+      "carbs": 42,
+      "protein": 4
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Italienisches Sahne-Dessert",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 285,
+    "name": "Bubble Tea",
+    "cost": 3.5,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Asiatisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 249,
+      "fat": 18,
+      "carbs": 41,
+      "protein": 15
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.2,
+    "description": "Taiwanesisches Getränk mit Tapioka-Perlen",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 286,
+    "name": "Crème Brûlée",
+    "cost": 4.2,
+    "allergens": [
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Französisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 309,
+      "fat": 11,
+      "carbs": 35,
+      "protein": 4
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Französische Vanillecreme mit Karamellkruste",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 287,
+    "name": "Mango Sticky Rice",
+    "cost": 3.4,
+    "allergens": [],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Asiatisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 308,
+      "fat": 15,
+      "carbs": 50,
+      "protein": 6
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Thailändischer Klebreis mit Mango",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 288,
+    "name": "Churros-Eis",
+    "cost": 3.9,
+    "allergens": [
+      "Gluten",
+      "Milch",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Spanisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 290,
+      "fat": 5,
+      "carbs": 31,
+      "protein": 15
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.4,
+    "description": "Churros mit Eiscreme",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 289,
+    "name": "Dango-Spieße",
+    "cost": 2.7,
+    "allergens": [
+      "Soja"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Asiatisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 212,
+      "fat": 19,
+      "carbs": 30,
+      "protein": 4
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.9,
+    "description": "Japanische Reismehl-Kugeln am Spieß",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 290,
+    "name": "Loukoumades",
+    "cost": 2.8,
+    "allergens": [
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegan"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Griechisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 281,
+      "fat": 17,
+      "carbs": 50,
+      "protein": 6
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.0,
+    "description": "Griechische Honigbällchen",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 291,
+    "name": "Affogato",
+    "cost": 3.6,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Italienisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 270,
+      "fat": 11,
+      "carbs": 41,
+      "protein": 6
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Vanilleeis mit heißem Espresso",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 292,
+    "name": "Gulab Jamun",
+    "cost": 2.9,
+    "allergens": [
+      "Milch",
+      "Gluten"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Indisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 349,
+      "fat": 14,
+      "carbs": 38,
+      "protein": 7
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.8,
+    "description": "Indische Milchbällchen in Sirup",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 293,
+    "name": "Profiteroles",
+    "cost": 3.7,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Französisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 279,
+      "fat": 13,
+      "carbs": 47,
+      "protein": 10
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.9,
+    "description": "Windbeutel mit Sahne und Schokolade",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 294,
+    "name": "Kulfi",
+    "cost": 3.2,
+    "allergens": [
+      "Milch",
+      "Schalenfrüchte"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Indisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 6,
+    "nutritional_values": {
+      "calories": 285,
+      "fat": 6,
+      "carbs": 57,
+      "protein": 4
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.4,
+    "description": "Indisches Eis mit Pistazien",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 295,
+    "name": "Beignets",
+    "cost": 2.6,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Französisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 355,
+      "fat": 18,
+      "carbs": 53,
+      "protein": 8
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.1,
+    "description": "Französische Krapfen mit Puderzucker",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 296,
+    "name": "Matcha-Kuchen",
+    "cost": 3.5,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Asiatisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 392,
+      "fat": 5,
+      "carbs": 32,
+      "protein": 11
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.5,
+    "description": "Grüntee-Kuchen nach japanischer Art",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 297,
+    "name": "Flan",
+    "cost": 2.8,
+    "allergens": [
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Lateinamerikanisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 394,
+      "fat": 15,
+      "carbs": 41,
+      "protein": 9
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Karamell-Pudding",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 298,
+    "name": "Cannoli",
+    "cost": 3.4,
+    "allergens": [
+      "Gluten",
+      "Milch",
+      "Eier"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Italienisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 8,
+    "nutritional_values": {
+      "calories": 294,
+      "fat": 16,
+      "carbs": 38,
+      "protein": 13
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.5,
+    "description": "Sizilianische Teigrollen mit Ricotta",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 299,
+    "name": "Tres Leches Cake",
+    "cost": 3.6,
+    "allergens": [
+      "Gluten",
+      "Eier",
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Lateinamerikanisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 7,
+    "nutritional_values": {
+      "calories": 291,
+      "fat": 7,
+      "carbs": 48,
+      "protein": 4
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 0.6,
+    "description": "Kuchen getränkt in drei Milchsorten",
+    "portion_size": "150g",
+    "ingredients": []
+  },
+  {
+    "id": 300,
+    "name": "Gelato-Becher",
+    "cost": 3.8,
+    "allergens": [
+      "Milch"
+    ],
+    "additives": [],
+    "dietary_forms": [
+      "Vollkost",
+      "Vegetarisch"
+    ],
+    "category": "Zwischenmahlzeit",
+    "group": "Italienisch",
+    "menu_component": "Zwischenmahlzeit",
+    "seasonality": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "popularity": 9,
+    "nutritional_values": {
+      "calories": 280,
+      "fat": 5,
+      "carbs": 50,
+      "protein": 3
+    },
+    "is_enabled": true,
+    "status": "Freigegeben",
+    "calculation_basis": 10,
+    "processing_time": 1.3,
+    "description": "Italienisches Eis in verschiedenen Sorten",
+    "portion_size": "150g",
+    "ingredients": []
+  }
+]
