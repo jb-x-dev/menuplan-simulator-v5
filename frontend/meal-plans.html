@@ -248,11 +248,34 @@
         let mealPlans = [];
         let selectedMealPlan = null;
         
-        // Load meal plans from localStorage
-        function loadMealPlans() {
-            const saved = localStorage.getItem('saved_meal_plans');
-            if (saved) {
-                mealPlans = JSON.parse(saved);
+        // Load meal plans from API
+        async function loadMealPlans() {
+            try {
+                const response = await fetch('/api/menu-plans');
+                const data = await response.json();
+                
+                if (data.success && data.plans) {
+                    // Konvertiere API-Format zu lokalem Format
+                    mealPlans = data.plans.map(p => ({
+                        id: p.id,
+                        name: p.name,
+                        status: p.status,
+                        timestamp: p.created_at,
+                        start_date: p.start_date,
+                        end_date: p.end_date,
+                        total_cost: p.total_cost,
+                        bkt_average: p.bkt_average,
+                        description: p.description || '',
+                        tags: p.tags || [],
+                        plan: {} // Plan-Daten werden bei Bedarf geladen
+                    }));
+                } else {
+                    console.error('Failed to load meal plans:', data.error);
+                    mealPlans = [];
+                }
+            } catch (error) {
+                console.error('Error loading meal plans:', error);
+                mealPlans = [];
             }
             renderMealPlans();
         }

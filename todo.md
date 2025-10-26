@@ -218,3 +218,11 @@
   - 5 Bestelllisten erfolgreich importiert
   - Status: Behoben
 
+
+
+- [ ] meal-plans.html zeigt keine Menüpläne an
+  - API gibt 6 Menüpläne zurück
+  - Frontend zeigt "Keine Menüpläne vorhanden"
+  - JavaScript lädt Daten nicht korrekt
+  - Status: Debug erforderlich
+
