@@ -158,9 +158,10 @@
 
 
 
-- [ ] Render.com Deployment-Fehler: ModuleNotFoundError
+- [x] Render.com Deployment-Fehler: ModuleNotFoundError
   - Fehler: "ModuleNotFoundError: No module named 'app'"
-  - Ursache: gunicorn sucht app.py im falschen Pfad
-  - Backend liegt in /backend/app.py
-  - Status: Fix erforderlich
+  - Ursache: Render.com verwendete alte Konfiguration (gunicorn app:app)
+  - Lösung: start.sh Script erstellt mit explizitem backend.app:app
+  - render.yaml aktualisiert: Verwendet jetzt ./start.sh
+  - Status: Behoben
 
