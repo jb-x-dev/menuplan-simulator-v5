@@ -53,6 +53,16 @@ register_health_routes(app)
 # Registriere Recipe Selection API
 app.register_blueprint(recipe_selection_bp)
 
+# Registriere Manual Import API (Admin)
+try:
+    from backend.manual_import_api import manual_import_bp
+    app.register_blueprint(manual_import_bp)
+    print("✅ Manual Import API registered")
+except ImportError:
+    from manual_import_api import manual_import_bp
+    app.register_blueprint(manual_import_bp)
+    print("✅ Manual Import API registered")
+
 # Rezept-Auswahl-System deaktiviert - alle Rezepte immer verfügbar
 # init_default_selection()  # Nicht mehr benötigt
 
