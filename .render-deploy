@@ -1,0 +1,4 @@
+# Force Render.com to use correct configuration
+# This file triggers a fresh deployment
+BUILD_ID=$(date +%s)
+
