@@ -1,5 +1,46 @@
 # CHANGELOG
 
+## [Version 6.0.0] - 2025-10-26 - STABLE RELEASE
+
+### Major Features
+- **52 Menüpläne für 2026** (KW 01-52) mit je 80 Portionen
+  - Automatische Rezeptzuweisung aus 300 Rezepten
+  - 1.092 Mahlzeiten gesamt
+  - 87.360 Portionen gesamt
+- **52 Bestelllisten** mit 1 Woche Vorlaufzeit
+- **Datenbank-basiertes Menüplan-Management**
+  - SQLite-Tabellen: `menu_plans`, `order_lists`
+  - MenuPlanDBManager (zwingend DB-basiert)
+  - Automatische Dateninitialisierung beim Start
+
+### Bug Fixes
+- Fixed `procurement.html`: "Cannot read properties of undefined (reading 'days')" error
+- Fixed Render.com deployment: gunicorn command corrected
+
+### Technical Improvements
+- Auto-import prüft speziell auf 2026-Daten
+- Verbesserte Fehlerbehandlung und Logging
+- Manual Import API-Endpoints für Admin:
+  - `GET /api/admin/db-status` - Datenbank-Status
+  - `POST /api/admin/init-2026-data` - Manueller Import
+- PYTHONPATH-Konfiguration für Render.com
+
+### Deployment
+- Live URL: https://menuplan-simulator-v5.onrender.com/
+- API: https://menuplan-simulator-v5.onrender.com/api/menu-plans
+- GitHub Tag: v6.0.0
+
+### Git Commits
+- `8721e17` - Fix procurement.html undefined error
+- `1c92a55` - Add database-based menu plan management
+- `f011a4e` - Add automatic database initialization
+- `f5f7f36` - Improve error handling
+- `47063f5` - Add manual import API
+- `535f6a4` - Force 2026 data import on every startup
+- `10ed45f` - Fix Render.com deployment (gunicorn)
+
+---
+
 ## [Version 1.1.0] - 2025-10-23
 
 ### Hinzugefügt
