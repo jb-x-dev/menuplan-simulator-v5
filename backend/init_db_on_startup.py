@@ -75,23 +75,24 @@ def create_tables_if_not_exist():
     return False  # Tabellen wurden gerade erstellt
 
 def import_2026_data_if_empty():
-    """Importiert 2026-Daten falls Tabellen leer sind"""
+    """Importiert 2026-Daten falls Tabellen leer sind oder nur alte Daten enthalten"""
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     
-    # Prüfe ob Daten bereits vorhanden
-    cursor.execute("SELECT COUNT(*) FROM menu_plans")
-    menu_plans_count = cursor.fetchone()[0]
+    # Prüfe ob 2026-Daten bereits vorhanden
+    cursor.execute("SELECT COUNT(*) FROM menu_plans WHERE name LIKE '%2026%'")
+    menu_plans_2026_count = cursor.fetchone()[0]
     
-    cursor.execute("SELECT COUNT(*) FROM order_lists")
-    order_lists_count = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM order_lists WHERE name LIKE '%2026%'")
+    order_lists_2026_count = cursor.fetchone()[0]
     
-    if menu_plans_count > 0 and order_lists_count > 0:
-        print(f"✅ Data already imported: {menu_plans_count} menu plans, {order_lists_count} order lists")
+    if menu_plans_2026_count >= 52 and order_lists_2026_count >= 52:
+        print(f"✅ 2026 data already imported: {menu_plans_2026_count} menu plans, {order_lists_2026_count} order lists")
         conn.close()
         return
     
-    print("📚 Importing 2026 data...")
+    print(f"⚠️ Only {menu_plans_2026_count}/52 menu plans and {order_lists_2026_count}/52 order lists for 2026 found")
+    print("📥 Importing 2026 data...")
     
     # Lade Menüpläne
     menu_plans_file = Path(__file__).parent.parent / "data" / "menu_plans_2026.json"
