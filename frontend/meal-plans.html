@@ -300,27 +300,37 @@
             actionButtons.style.display = 'flex';
             
             container.innerHTML = mealPlans.map((plan, index) => {
-                const date = new Date(plan.timestamp);
+                const date = new Date(plan.created_at || plan.updated_at || Date.now());
                 const dateStr = date.toLocaleDateString('de-DE');
-                const timeStr = date.toLocaleTimeString('de-DE', {hour: '2-digit', minute: '2-digit'});
                 
                 const statusLabels = {
-                    'draft': '📝 Entwurf',
-                    'template': '📋 Vorlage',
-                    'active': '✅ Aktiv',
-                    'archived': '📦 Archiviert'
+                    'Entwurf': '📝 Entwurf',
+                    'Vorlage': '📋 Vorlage',
+                    'Aktiv': '✅ Aktiv',
+                    'Archiviert': '📦 Archiviert'
                 };
                 
-                const totalDays = plan.plan.days ? plan.plan.days.length : 0;
+                // Berechne Tage aus start_date und end_date
+                let totalDays = 0;
+                if (plan.start_date && plan.end_date) {
+                    const start = new Date(plan.start_date);
+                    const end = new Date(plan.end_date);
+                    totalDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + 1;
+                }
+                
+                const dateRange = plan.start_date && plan.end_date 
+                    ? `${plan.start_date} - ${plan.end_date}` 
+                    : dateStr;
                 
                 return `
                     <div class="meal-plan-card ${selectedMealPlan === index ? 'selected' : ''}" 
                          onclick="selectMealPlan(${index})">
                         <div class="meal-plan-title">${plan.name}</div>
-                        <div class="meal-plan-meta">📅 ${dateStr} ${timeStr}</div>
+                        <div class="meal-plan-meta">📅 ${dateRange}</div>
                         <div class="meal-plan-meta">📆 ${totalDays} Tage</div>
-                        <div class="meal-plan-meta">💰 ${plan.plan.total_cost ? plan.plan.total_cost.toFixed(2) + '€' : 'N/A'}</div>
-                        <span class="status-badge status-${plan.status || 'draft'}">${statusLabels[plan.status || 'draft']}</span>
+                        <div class="meal-plan-meta">💰 ${plan.total_cost ? plan.total_cost.toFixed(2) + '€' : 'N/A'}</div>
+                        <div class="meal-plan-meta">📊 BKT: ${plan.bkt_average ? plan.bkt_average.toFixed(2) + '€' : 'N/A'}</div>
+                        <span class="status-badge status-${plan.status || 'Entwurf'}">${statusLabels[plan.status || 'Entwurf']}</span>
                     </div>
                 `;
             }).join('');
