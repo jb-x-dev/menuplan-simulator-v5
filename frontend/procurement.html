@@ -481,7 +481,8 @@
             section.style.display = 'block';
             details.innerHTML = '';
             
-            const plan = selectedPlan.plan;
+            // Fix: Handle both nested and flat structure
+            const plan = selectedPlan.plan || selectedPlan;
             const days = plan.days || [];
             
             let totalPortions = 0;
