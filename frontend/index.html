@@ -2630,26 +2630,30 @@
         function populateHeaderDropdowns() {
             // Bestelllisten-Dropdown
             const orderListSelect = document.getElementById('headerOrderListSelect');
-            orderListSelect.innerHTML = '<option value="">📋 Bestelllisten...</option>';
-            
-            const sortedOrderLists = [...orderLists].sort((a, b) => b.id - a.id);
-            for (const list of sortedOrderLists) {
-                const option = document.createElement('option');
-                option.value = list.id;
-                option.textContent = list.name;
-                orderListSelect.appendChild(option);
+            if (orderListSelect) {
+                orderListSelect.innerHTML = '<option value="">📋 Bestelllisten...</option>';
+                
+                const sortedOrderLists = [...orderLists].sort((a, b) => b.id - a.id);
+                for (const list of sortedOrderLists) {
+                    const option = document.createElement('option');
+                    option.value = list.id;
+                    option.textContent = list.name;
+                    orderListSelect.appendChild(option);
+                }
             }
             
             // Menüpläne-Dropdown
             const mealPlanSelect = document.getElementById('headerMealPlanSelect');
-            mealPlanSelect.innerHTML = '<option value="">📅 Menüpläne...</option>';
-            
-            const sortedMealPlans = [...savedMealPlans].sort((a, b) => b.id - a.id);
-            for (const plan of sortedMealPlans) {
-                const option = document.createElement('option');
-                option.value = plan.id;
-                option.textContent = plan.name || `Menüplan ${plan.id}`;
-                mealPlanSelect.appendChild(option);
+            if (mealPlanSelect) {
+                mealPlanSelect.innerHTML = '<option value="">📅 Menüpläne...</option>';
+                
+                const sortedMealPlans = [...savedMealPlans].sort((a, b) => b.id - a.id);
+                for (const plan of sortedMealPlans) {
+                    const option = document.createElement('option');
+                    option.value = plan.id;
+                    option.textContent = plan.name || `Menüplan ${plan.id}`;
+                    mealPlanSelect.appendChild(option);
+                }
             }
         }
         

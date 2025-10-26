@@ -147,3 +147,11 @@
   - Scripts erstellt: generate_100_recipes.py, merge_and_improve_recipes.py
   - Status: Abgeschlossen
 
+
+
+- [ ] JavaScript-Fehler beim Speichern: orderListSelect is null
+  - Fehlermeldung: "null is not an object (evaluating 'orderListSelect.innerHTML = ...')"
+  - Tritt beim Speichern des Menüplans auf
+  - Ursache: Element existiert nicht oder wird zu früh referenziert
+  - Status: Analyse erforderlich
+
