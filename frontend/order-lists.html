@@ -619,7 +619,6 @@
             actions.style.display = 'flex';
             
             container.innerHTML = menuPlans.map((plan, index) => {
-                const metadata = plan.metadata;
                 const isSelected = selectedMenuPlans.has(index);
                 
                 return `
@@ -629,11 +628,11 @@
                                class="menu-plan-checkbox" 
                                ${isSelected ? 'checked' : ''}
                                onclick="event.stopPropagation(); toggleMenuPlan(${index});">
-                        <div class="order-list-title">${metadata.name}</div>
-                        <div class="order-list-meta">📅 ${metadata.start_date} - ${metadata.end_date}</div>
-                        <div class="order-list-meta">💰 Gesamt: ${metadata.total_cost.toFixed(2)}€</div>
-                        <div class="order-list-meta">📊 BKT: ${metadata.bkt_average.toFixed(2)}€</div>
-                        <div class="status-badge active">✅ ${metadata.status}</div>
+                        <div class="order-list-title">${plan.name}</div>
+                        <div class="order-list-meta">📅 ${plan.start_date} - ${plan.end_date}</div>
+                        <div class="order-list-meta">💰 Gesamt: ${(plan.total_cost || 0).toFixed(2)}€</div>
+                        <div class="order-list-meta">📊 BKT: ${(plan.bkt_average || 0).toFixed(2)}€</div>
+                        <div class="status-badge active">✅ ${plan.status}</div>
                     </div>
                 `;
             }).join('');
