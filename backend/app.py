@@ -9,16 +9,29 @@ import os
 import sys
 
 # Importiere Simulator
-from backend.simulator import load_recipes_from_file, run_simulation, Recipe
-from backend.procurement import resolve_procurement
-from backend.recipe_selection_db import get_selected_recipe_ids
-from backend.pdf_export import create_menu_plan_pdf
-from backend.customer_pdf import generate_customer_pdf
-from backend.excel_export import create_excel_export
-from backend.health_check import register_health_routes
-from backend.recipe_selection_api import recipe_selection_bp
-from backend.version_api import get_version
-from backend.init_default_selection import init_default_selection
+try:
+    from backend.simulator import load_recipes_from_file, run_simulation, Recipe
+    from backend.procurement import resolve_procurement
+    from backend.recipe_selection_db import get_selected_recipe_ids
+    from backend.pdf_export import create_menu_plan_pdf
+    from backend.customer_pdf import generate_customer_pdf
+    from backend.excel_export import create_excel_export
+    from backend.health_check import register_health_routes
+    from backend.recipe_selection_api import recipe_selection_bp
+    from backend.version_api import get_version
+    from backend.init_default_selection import init_default_selection
+except ImportError:
+    # Fallback für lokale Ausführung
+    from simulator import load_recipes_from_file, run_simulation, Recipe
+    from procurement import resolve_procurement
+    from recipe_selection_db import get_selected_recipe_ids
+    from pdf_export import create_menu_plan_pdf
+    from customer_pdf import generate_customer_pdf
+    from excel_export import create_excel_export
+    from health_check import register_health_routes
+    from recipe_selection_api import recipe_selection_bp
+    from version_api import get_version
+    from init_default_selection import init_default_selection
 
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 

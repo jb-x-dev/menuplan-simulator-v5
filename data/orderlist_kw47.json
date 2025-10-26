@@ -1,0 +1,274 @@
+{
+  "id": "order_kw_47_1761461459",
+  "name": "Bestellliste KW 47",
+  "created_at": "2025-10-26T02:50:59.026369",
+  "menu_plan_id": "plan_kw47_1761461432",
+  "menu_plan_name": "KW 47",
+  "start_date": "2025-11-24",
+  "end_date": "2025-11-30",
+  "items": [
+    {
+      "recipe_id": 176,
+      "recipe_name": "Brotzeit-Platte",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.5,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 178,
+      "recipe_name": "Caprese-Salat",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 181,
+      "recipe_name": "Kartoffelsalat",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 11.0,
+      "allergens": [
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 275,
+      "recipe_name": "Samosa-Platte",
+      "component": "Abendessen",
+      "count": 3,
+      "portions_total": 150,
+      "cost_total": 51.0,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 261,
+      "recipe_name": "Sommer-Rollen",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 18.0,
+      "allergens": [
+        "Krebstiere",
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 22,
+      "recipe_name": "Bagel mit Frischkäse",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 9.0,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 212,
+      "recipe_name": "Banh Mi Frühstück",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 19.0,
+      "allergens": [
+        "Gluten",
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 202,
+      "recipe_name": "Congee (Reisbrei)",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 9.5,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 29,
+      "recipe_name": "Cornflakes mit Milch",
+      "component": "Frühstück",
+      "count": 2,
+      "portions_total": 100,
+      "cost_total": 15.0,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 24,
+      "recipe_name": "Knäckebrot mit Aufstrich",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 6.5,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 2,
+      "recipe_name": "Vollkornbrot mit Butter und Marmelade",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 6.0,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 8,
+      "recipe_name": "Fischfilet mit Gemüse",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 22.5,
+      "allergens": [
+        "Fisch"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 133,
+      "recipe_name": "Gemüse-Pfanne asiatisch",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 15.0,
+      "allergens": [
+        "Soja"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 75,
+      "recipe_name": "Hähnchen-Curry",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 18.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 76,
+      "recipe_name": "Lammkeule geschmort",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 31.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 74,
+      "recipe_name": "Rinderroulade",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 25.5,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 95,
+      "recipe_name": "Rindfleisch-Fajitas",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 21.0,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 91,
+      "recipe_name": "Schweinegulasch",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 20.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_recipes": 18,
+    "total_portions": 1050,
+    "total_cost": 324.5
+  }
+}

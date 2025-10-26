@@ -1,0 +1,331 @@
+{
+  "id": "order_kw_43_1761461459",
+  "name": "Bestellliste KW 43",
+  "created_at": "2025-10-26T02:50:59.022880",
+  "menu_plan_id": "plan_kw43_1761461432",
+  "menu_plan_name": "KW 43",
+  "start_date": "2025-10-27",
+  "end_date": "2025-11-02",
+  "items": [
+    {
+      "recipe_id": 274,
+      "recipe_name": "Bruschetta-Variation",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 18.0,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 177,
+      "recipe_name": "Caesar Salad",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 15.5,
+      "allergens": [
+        "Gluten",
+        "Eier",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 193,
+      "recipe_name": "Hummus mit Gemüse",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.0,
+      "allergens": [
+        "Sesam"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 266,
+      "recipe_name": "Pincho-Spieße",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 22.5,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 261,
+      "recipe_name": "Sommer-Rollen",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 18.0,
+      "allergens": [
+        "Krebstiere",
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 263,
+      "recipe_name": "Vitello Tonnato",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 32.5,
+      "allergens": [
+        "Fisch",
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 41,
+      "recipe_name": "Wraps mit Hähnchen",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.5,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 210,
+      "recipe_name": "Crêpes mit Nutella",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 13.0,
+      "allergens": [
+        "Gluten",
+        "Milch",
+        "Eier",
+        "Schalenfrüchte"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 207,
+      "recipe_name": "Huevos Rancheros",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 17.0,
+      "allergens": [
+        "Eier",
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 61,
+      "recipe_name": "Käse-Omelette",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 13.0,
+      "allergens": [
+        "Eier",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 23,
+      "recipe_name": "Obstsalat mit Joghurt",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 10.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 58,
+      "recipe_name": "Protein-Shake",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 201,
+      "recipe_name": "Shakshuka",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 16.0,
+      "allergens": [
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 215,
+      "recipe_name": "Tofu-Scramble",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 13.5,
+      "allergens": [
+        "Soja"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 154,
+      "recipe_name": "Gazpacho",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 140,
+      "recipe_name": "Käse-Spätzle",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 16.5,
+      "allergens": [
+        "Gluten",
+        "Eier",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 227,
+      "recipe_name": "Moussaka",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 26.0,
+      "allergens": [
+        "Milch",
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 236,
+      "recipe_name": "Osso Buco",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 39.5,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 95,
+      "recipe_name": "Rindfleisch-Fajitas",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 21.0,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 114,
+      "recipe_name": "Seelachs paniert",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 19.5,
+      "allergens": [
+        "Fisch",
+        "Gluten",
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 132,
+      "recipe_name": "Zucchini-Lasagne",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 18.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_recipes": 21,
+    "total_portions": 1050,
+    "total_cost": 380.0
+  }
+}

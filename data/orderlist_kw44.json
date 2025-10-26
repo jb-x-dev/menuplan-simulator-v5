@@ -1,0 +1,312 @@
+{
+  "id": "order_kw_44_1761461459",
+  "name": "Bestellliste KW 44",
+  "created_at": "2025-10-26T02:50:59.023835",
+  "menu_plan_id": "plan_kw44_1761461432",
+  "menu_plan_name": "KW 44",
+  "start_date": "2025-11-03",
+  "end_date": "2025-11-09",
+  "items": [
+    {
+      "recipe_id": 189,
+      "recipe_name": "Bruschetta",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 11.5,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 260,
+      "recipe_name": "Crostini-Variation",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 21.0,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 187,
+      "recipe_name": "Flammkuchen",
+      "component": "Abendessen",
+      "count": 2,
+      "portions_total": 100,
+      "cost_total": 34.0,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 259,
+      "recipe_name": "Gazpacho mit Brot",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.0,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 194,
+      "recipe_name": "Käsefondue",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 21.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 50,
+      "recipe_name": "Käseplatte",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.5,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 52,
+      "recipe_name": "Griechischer Joghurt mit Honig",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 9.5,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 69,
+      "recipe_name": "Joghurt-Parfait",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.5,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 4,
+      "recipe_name": "Müsli mit Joghurt und Obst",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 11.5,
+      "allergens": [
+        "Gluten",
+        "Milch",
+        "Schalenfrüchte"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 209,
+      "recipe_name": "Nasi Lemak",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 24.0,
+      "allergens": [
+        "Fisch",
+        "Schalenfrüchte"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 224,
+      "recipe_name": "Pho Bo Frühstück",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 29.0,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 25,
+      "recipe_name": "Smoothie Bowl",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 2,
+      "recipe_name": "Vollkornbrot mit Butter und Marmelade",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 6.0,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 120,
+      "recipe_name": "Gemüse-Quiche",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 17.0,
+      "allergens": [
+        "Gluten",
+        "Eier",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 146,
+      "recipe_name": "Hühnersuppe",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 143,
+      "recipe_name": "Linsensuppe",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 9.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 145,
+      "recipe_name": "Minestrone",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 11.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 38,
+      "recipe_name": "Ratatouille",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 13.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 239,
+      "recipe_name": "Rendang Beef",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 31.0,
+      "allergens": [
+        "Schalenfrüchte"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 240,
+      "recipe_name": "Risotto Funghi Porcini",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 29.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_recipes": 20,
+    "total_portions": 1050,
+    "total_cost": 342.5
+  }
+}

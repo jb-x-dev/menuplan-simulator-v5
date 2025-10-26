@@ -1,0 +1,42 @@
+[
+  {
+    "id": "plan_kw43_1761461432",
+    "name": "KW 43",
+    "week": 43,
+    "start_date": "2025-10-27",
+    "end_date": "2025-11-02",
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/menuplan_kw43.json"
+  },
+  {
+    "id": "plan_kw44_1761461432",
+    "name": "KW 44",
+    "week": 44,
+    "start_date": "2025-11-03",
+    "end_date": "2025-11-09",
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/menuplan_kw44.json"
+  },
+  {
+    "id": "plan_kw45_1761461432",
+    "name": "KW 45",
+    "week": 45,
+    "start_date": "2025-11-10",
+    "end_date": "2025-11-16",
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/menuplan_kw45.json"
+  },
+  {
+    "id": "plan_kw46_1761461432",
+    "name": "KW 46",
+    "week": 46,
+    "start_date": "2025-11-17",
+    "end_date": "2025-11-23",
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/menuplan_kw46.json"
+  },
+  {
+    "id": "plan_kw47_1761461432",
+    "name": "KW 47",
+    "week": 47,
+    "start_date": "2025-11-24",
+    "end_date": "2025-11-30",
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/menuplan_kw47.json"
+  }
+]

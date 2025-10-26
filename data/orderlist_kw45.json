@@ -1,0 +1,319 @@
+{
+  "id": "order_kw_45_1761461459",
+  "name": "Bestellliste KW 45",
+  "created_at": "2025-10-26T02:50:59.024629",
+  "menu_plan_id": "plan_kw45_1761461432",
+  "menu_plan_name": "KW 45",
+  "start_date": "2025-11-10",
+  "end_date": "2025-11-16",
+  "items": [
+    {
+      "recipe_id": 267,
+      "recipe_name": "Caprese Premium",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 24.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 260,
+      "recipe_name": "Crostini-Variation",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 21.0,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 194,
+      "recipe_name": "Käsefondue",
+      "component": "Abendessen",
+      "count": 2,
+      "portions_total": 100,
+      "cost_total": 42.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 199,
+      "recipe_name": "Panini",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.5,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 252,
+      "recipe_name": "Sushi-Abend",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 39.5,
+      "allergens": [
+        "Fisch",
+        "Soja",
+        "Sesam"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 185,
+      "recipe_name": "Wurst-Käse-Salat",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.5,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 67,
+      "recipe_name": "Granola mit Milch",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 9.5,
+      "allergens": [
+        "Gluten",
+        "Milch",
+        "Nüsse"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 24,
+      "recipe_name": "Knäckebrot mit Aufstrich",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 6.5,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 59,
+      "recipe_name": "Müsli-Riegel",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 7.5,
+      "allergens": [
+        "Gluten",
+        "Nüsse"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 224,
+      "recipe_name": "Pho Bo Frühstück",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 29.0,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 58,
+      "recipe_name": "Protein-Shake",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 25,
+      "recipe_name": "Smoothie Bowl",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 215,
+      "recipe_name": "Tofu-Scramble",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 13.5,
+      "allergens": [
+        "Soja"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 228,
+      "recipe_name": "Bibimbap",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 24.0,
+      "allergens": [
+        "Soja",
+        "Sesam",
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 130,
+      "recipe_name": "Blumenkohl-Curry",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 13.5,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 232,
+      "recipe_name": "Burritos Bowl",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 21.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 134,
+      "recipe_name": "Kartoffel-Gemüse-Auflauf",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 245,
+      "recipe_name": "Laksa",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 25.5,
+      "allergens": [
+        "Krebstiere",
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 227,
+      "recipe_name": "Moussaka",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 26.0,
+      "allergens": [
+        "Milch",
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 235,
+      "recipe_name": "Sushi-Platte",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 42.5,
+      "allergens": [
+        "Fisch",
+        "Soja",
+        "Sesam"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_recipes": 20,
+    "total_portions": 1050,
+    "total_cost": 414.0
+  }
+}

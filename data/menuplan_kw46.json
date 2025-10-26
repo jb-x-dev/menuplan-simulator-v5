@@ -1,0 +1,1333 @@
+{
+  "plan": {
+    "days": [
+      {
+        "date": "2025-11-17",
+        "weekday": "Monday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 211,
+              "name": "Quinoa-Frühstücksbowl",
+              "cost": 3.1,
+              "allergens": [
+                "Schalenfrüchte"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegan"
+              ],
+              "category": "Frühstück",
+              "group": "Bowls",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 295,
+                "fat": 12,
+                "carbs": 34,
+                "protein": 22
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.6,
+              "description": "Quinoa mit Früchten, Nüssen und Ahornsirup",
+              "portion_size": "250g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 15.5
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 10,
+              "name": "Linsen-Bolognese",
+              "cost": 2.5,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vegetarisch",
+                "Vegan"
+              ],
+              "category": "Hauptgang",
+              "group": "Vegetarisch",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                10,
+                11,
+                12,
+                1,
+                2,
+                3
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 480,
+                "fat": 12,
+                "carbs": 70,
+                "protein": 22
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.5,
+              "description": "Herzhafte Bolognese aus roten Linsen mit Tomaten und Kräutern",
+              "portion_size": "300g",
+              "ingredients": [
+                {
+                  "id": 109,
+                  "name": "Linsen",
+                  "quantity": 1000,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 2,
+                  "lead_time": 3,
+                  "price": 3.2
+                },
+                {
+                  "id": 110,
+                  "name": "Tomaten",
+                  "quantity": 1500,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 2.2
+                },
+                {
+                  "id": 111,
+                  "name": "Zwiebeln",
+                  "quantity": 300,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 2,
+                  "lead_time": 3,
+                  "price": 1.5
+                }
+              ],
+              "contains_meat": true,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 12.5
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 177,
+              "name": "Caesar Salad",
+              "cost": 3.1,
+              "allergens": [
+                "Gluten",
+                "Eier",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Beilage",
+              "group": "Salat",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 348,
+                "fat": 29,
+                "carbs": 44,
+                "protein": 16
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.6,
+              "description": "Caesar Salad - Leichtes Abendessen",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 1077,
+                  "name": "Abendessen-Zutaten 177",
+                  "quantity": 1070,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 3,
+                  "lead_time": 2,
+                  "price": 6.22
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 15.5
+          }
+        ]
+      },
+      {
+        "date": "2025-11-18",
+        "weekday": "Tuesday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 27,
+              "name": "Quark mit Früchten",
+              "cost": 1.7,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Müsli",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 252,
+                "fat": 17,
+                "carbs": 46,
+                "protein": 8
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.3,
+              "description": "Magerquark mit frischen Früchten",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 227,
+                  "name": "Zutat 27",
+                  "quantity": 1678,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 2,
+                  "lead_time": 3,
+                  "price": 2.78
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 8.5
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 14,
+              "name": "Tomatensuppe",
+              "cost": 1.8,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Suppe",
+              "group": "Cremige Suppe",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 220,
+                "fat": 12,
+                "carbs": 24,
+                "protein": 6
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.0,
+              "description": "Cremige Tomatensuppe mit Basilikum",
+              "portion_size": "300ml",
+              "ingredients": [
+                {
+                  "id": 110,
+                  "name": "Tomaten",
+                  "quantity": 2000,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 2.2
+                },
+                {
+                  "id": 119,
+                  "name": "Sahne",
+                  "quantity": 300,
+                  "unit": "ml",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 3.5
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 9.0
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 42,
+              "name": "Griechischer Salat",
+              "cost": 2.3,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Beilage",
+              "group": "Salat",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 436,
+                "fat": 25,
+                "carbs": 42,
+                "protein": 19
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.9,
+              "description": "Salat mit Feta und Oliven",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 242,
+                  "name": "Zutat 42",
+                  "quantity": 594,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 3.93
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 11.5
+          }
+        ]
+      },
+      {
+        "date": "2025-11-19",
+        "weekday": "Wednesday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 218,
+              "name": "Falafel-Frühstück",
+              "cost": 3.6,
+              "allergens": [
+                "Sesam"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegan"
+              ],
+              "category": "Frühstück",
+              "group": "Orientalisch",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 447,
+                "fat": 14,
+                "carbs": 53,
+                "protein": 28
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.1,
+              "description": "Kichererbsenbällchen mit Hummus und Gemüse",
+              "portion_size": "250g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 18.0
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 104,
+              "name": "Kabeljau in Weißwein",
+              "cost": 4.9,
+              "allergens": [
+                "Fisch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Hauptgang",
+              "group": "Fisch",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 510,
+                "fat": 32,
+                "carbs": 46,
+                "protein": 38
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.5,
+              "description": "Kabeljau in Weißwein - Fischspezialität",
+              "portion_size": "300g",
+              "ingredients": [
+                {
+                  "id": 604,
+                  "name": "Fisch 104",
+                  "quantity": 1563,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 16.17
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 24.500000000000004
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 272,
+              "name": "Pita-Taschen",
+              "cost": 3.2,
+              "allergens": [
+                "Gluten"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegan"
+              ],
+              "category": "Abendessen",
+              "group": "Orientalisch",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 465,
+                "fat": 12,
+                "carbs": 55,
+                "protein": 29
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.7,
+              "description": "Gefüllte Pita-Brote mit Falafel",
+              "portion_size": "200g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 16.0
+          }
+        ]
+      },
+      {
+        "date": "2025-11-20",
+        "weekday": "Thursday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 207,
+              "name": "Huevos Rancheros",
+              "cost": 3.4,
+              "allergens": [
+                "Eier",
+                "Gluten"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Mexikanisch",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 370,
+                "fat": 23,
+                "carbs": 52,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.4,
+              "description": "Eier auf Tortillas mit Bohnen und Salsa",
+              "portion_size": "250g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 17.0
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 122,
+              "name": "Gemüse-Moussaka",
+              "cost": 3.5,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Hauptgang",
+              "group": "Vegetarisch",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 503,
+                "fat": 20,
+                "carbs": 70,
+                "protein": 17
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Gemüse-Moussaka - Vegetarisches Hauptgericht",
+              "portion_size": "350g",
+              "ingredients": [
+                {
+                  "id": 722,
+                  "name": "Gemüse 122",
+                  "quantity": 2339,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 4.95
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 17.5
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 200,
+              "name": "Suppen-Topf",
+              "cost": 2.5,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Hauptgang",
+              "group": "Suppe",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 326,
+                "fat": 20,
+                "carbs": 41,
+                "protein": 17
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.4,
+              "description": "Suppen-Topf - Leichtes Abendessen",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 1100,
+                  "name": "Abendessen-Zutaten 200",
+                  "quantity": 1466,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 2,
+                  "lead_time": 2,
+                  "price": 3.42
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 12.5
+          }
+        ]
+      },
+      {
+        "date": "2025-11-21",
+        "weekday": "Friday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 219,
+              "name": "Kokos-Reis-Pudding",
+              "cost": 2.2,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegan"
+              ],
+              "category": "Frühstück",
+              "group": "Pudding",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 276,
+                "fat": 9,
+                "carbs": 49,
+                "protein": 13
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.8,
+              "description": "Süßer Reispudding mit Kokosmilch",
+              "portion_size": "250g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 11.000000000000002
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 152,
+              "name": "Karottensuppe",
+              "cost": 1.8,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Suppe",
+              "group": "Cremige Suppe",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 204,
+                "fat": 12,
+                "carbs": 34,
+                "protein": 11
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.8,
+              "description": "Karottensuppe - Wohltuende Suppe",
+              "portion_size": "300ml",
+              "ingredients": [
+                {
+                  "id": 852,
+                  "name": "Suppenzutaten 152",
+                  "quantity": 2247,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 6.86
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 9.0
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 264,
+              "name": "Wraps-Platte",
+              "cost": 3.8,
+              "allergens": [
+                "Gluten",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Abendessen",
+              "group": "International",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 497,
+                "fat": 23,
+                "carbs": 40,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.5,
+              "description": "Verschiedene gefüllte Wraps",
+              "portion_size": "200g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 19.0
+          }
+        ]
+      },
+      {
+        "date": "2025-11-22",
+        "weekday": "Saturday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 61,
+              "name": "Käse-Omelette",
+              "cost": 2.6,
+              "allergens": [
+                "Eier",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Warmes Frühstück",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 407,
+                "fat": 15,
+                "carbs": 43,
+                "protein": 19
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.4,
+              "description": "Käse-Omelette - Frühstücksspezialität",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 361,
+                  "name": "Hauptzutat 61",
+                  "quantity": 1066,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 2,
+                  "lead_time": 1,
+                  "price": 3.56
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 13.0
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 104,
+              "name": "Kabeljau in Weißwein",
+              "cost": 4.9,
+              "allergens": [
+                "Fisch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Hauptgang",
+              "group": "Fisch",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 510,
+                "fat": 32,
+                "carbs": 46,
+                "protein": 38
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.5,
+              "description": "Kabeljau in Weißwein - Fischspezialität",
+              "portion_size": "300g",
+              "ingredients": [
+                {
+                  "id": 604,
+                  "name": "Fisch 104",
+                  "quantity": 1563,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 16.17
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 24.500000000000004
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 269,
+              "name": "Tarte Flambée",
+              "cost": 4.1,
+              "allergens": [
+                "Gluten",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Französisch",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 512,
+                "fat": 25,
+                "carbs": 26,
+                "protein": 23
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.0,
+              "description": "Elsässischer Flammkuchen",
+              "portion_size": "200g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 20.5
+          }
+        ]
+      },
+      {
+        "date": "2025-11-23",
+        "weekday": "Sunday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 222,
+              "name": "Spanisches Tortilla",
+              "cost": 2.9,
+              "allergens": [
+                "Eier"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Eierspeisen",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 488,
+                "fat": 8,
+                "carbs": 39,
+                "protein": 10
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.4,
+              "description": "Kartoffel-Omelette nach spanischer Art",
+              "portion_size": "250g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 14.499999999999998
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 228,
+              "name": "Bibimbap",
+              "cost": 4.8,
+              "allergens": [
+                "Soja",
+                "Sesam",
+                "Eier"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Asiatisch",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 726,
+                "fat": 35,
+                "carbs": 60,
+                "protein": 29
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.4,
+              "description": "Koreanische Reis-Bowl mit Gemüse und Ei",
+              "portion_size": "350g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 24.0
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 253,
+              "name": "Mezze-Platte Deluxe",
+              "cost": 6.2,
+              "allergens": [
+                "Sesam",
+                "Milch",
+                "Gluten"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Abendessen",
+              "group": "Orientalisch",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 473,
+                "fat": 24,
+                "carbs": 34,
+                "protein": 35
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.4,
+              "description": "Orientalische Vorspeisen-Auswahl",
+              "portion_size": "200g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 31.0
+          }
+        ]
+      }
+    ],
+    "statistics": {
+      "total_cost": 344.5,
+      "avg_bkt": 49.21,
+      "num_days": 7,
+      "num_meals": 21,
+      "portions_total": 1050
+    }
+  },
+  "metadata": {
+    "id": "plan_kw46_1761461432",
+    "name": "KW 46",
+    "status": "Aktiv",
+    "created_at": "2025-10-26T02:50:32.640308",
+    "updated_at": "2025-10-26T02:50:32.640311",
+    "start_date": "2025-11-17",
+    "end_date": "2025-11-23",
+    "total_cost": 344.5,
+    "bkt_average": 49.21,
+    "description": "Automatisch generierter Menüplan für KW 46",
+    "tags": [
+      "auto-generated",
+      "kw-46"
+    ]
+  }
+}

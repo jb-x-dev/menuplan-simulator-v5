@@ -1,0 +1,317 @@
+{
+  "id": "order_kw_46_1761461459",
+  "name": "Bestellliste KW 46",
+  "created_at": "2025-10-26T02:50:59.025443",
+  "menu_plan_id": "plan_kw46_1761461432",
+  "menu_plan_name": "KW 46",
+  "start_date": "2025-11-17",
+  "end_date": "2025-11-23",
+  "items": [
+    {
+      "recipe_id": 177,
+      "recipe_name": "Caesar Salad",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 15.5,
+      "allergens": [
+        "Gluten",
+        "Eier",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 42,
+      "recipe_name": "Griechischer Salat",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 11.5,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 253,
+      "recipe_name": "Mezze-Platte Deluxe",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 31.0,
+      "allergens": [
+        "Sesam",
+        "Milch",
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 272,
+      "recipe_name": "Pita-Taschen",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 16.0,
+      "allergens": [
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 200,
+      "recipe_name": "Suppen-Topf",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.5,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 269,
+      "recipe_name": "Tarte Flambée",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 20.5,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 264,
+      "recipe_name": "Wraps-Platte",
+      "component": "Abendessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 19.0,
+      "allergens": [
+        "Gluten",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 218,
+      "recipe_name": "Falafel-Frühstück",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 18.0,
+      "allergens": [
+        "Sesam"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 207,
+      "recipe_name": "Huevos Rancheros",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 17.0,
+      "allergens": [
+        "Eier",
+        "Gluten"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 219,
+      "recipe_name": "Kokos-Reis-Pudding",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 11.0,
+      "allergens": [],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 61,
+      "recipe_name": "Käse-Omelette",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 13.0,
+      "allergens": [
+        "Eier",
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 27,
+      "recipe_name": "Quark mit Früchten",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 8.5,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 211,
+      "recipe_name": "Quinoa-Frühstücksbowl",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 15.5,
+      "allergens": [
+        "Schalenfrüchte"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 222,
+      "recipe_name": "Spanisches Tortilla",
+      "component": "Frühstück",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 14.5,
+      "allergens": [
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 228,
+      "recipe_name": "Bibimbap",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 24.0,
+      "allergens": [
+        "Soja",
+        "Sesam",
+        "Eier"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 122,
+      "recipe_name": "Gemüse-Moussaka",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 17.5,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 104,
+      "recipe_name": "Kabeljau in Weißwein",
+      "component": "Mittagessen",
+      "count": 2,
+      "portions_total": 100,
+      "cost_total": 49.0,
+      "allergens": [
+        "Fisch"
+      ],
+      "dietary_forms": [
+        "Vollkost"
+      ]
+    },
+    {
+      "recipe_id": 152,
+      "recipe_name": "Karottensuppe",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 9.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    },
+    {
+      "recipe_id": 10,
+      "recipe_name": "Linsen-Bolognese",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 12.5,
+      "allergens": [],
+      "dietary_forms": [
+        "Vegetarisch",
+        "Vegan"
+      ]
+    },
+    {
+      "recipe_id": 14,
+      "recipe_name": "Tomatensuppe",
+      "component": "Mittagessen",
+      "count": 1,
+      "portions_total": 50,
+      "cost_total": 9.0,
+      "allergens": [
+        "Milch"
+      ],
+      "dietary_forms": [
+        "Vollkost",
+        "Vegetarisch"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_recipes": 20,
+    "total_portions": 1050,
+    "total_cost": 344.5
+  }
+}

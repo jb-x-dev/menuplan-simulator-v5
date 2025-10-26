@@ -1,0 +1,1410 @@
+{
+  "plan": {
+    "days": [
+      {
+        "date": "2025-11-03",
+        "weekday": "Monday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 209,
+              "name": "Nasi Lemak",
+              "cost": 4.8,
+              "allergens": [
+                "Fisch",
+                "Schalenfrüchte"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Asiatisch",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 292,
+                "fat": 25,
+                "carbs": 42,
+                "protein": 30
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.5,
+              "description": "Malaysisches Kokosnuss-Reis-Gericht mit Anchovis",
+              "portion_size": "250g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 24.0
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 145,
+              "name": "Minestrone",
+              "cost": 2.2,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Suppe",
+              "group": "Klare Suppe",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 187,
+                "fat": 16,
+                "carbs": 33,
+                "protein": 10
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.9,
+              "description": "Minestrone - Wohltuende Suppe",
+              "portion_size": "300ml",
+              "ingredients": [
+                {
+                  "id": 845,
+                  "name": "Suppenzutaten 145",
+                  "quantity": 2226,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 3.61
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 11.000000000000002
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 189,
+              "name": "Bruschetta",
+              "cost": 2.3,
+              "allergens": [
+                "Gluten"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Beilage",
+              "group": "Brot",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 335,
+                "fat": 14,
+                "carbs": 28,
+                "protein": 18
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.8,
+              "description": "Bruschetta - Leichtes Abendessen",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 1089,
+                  "name": "Abendessen-Zutaten 189",
+                  "quantity": 1467,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 1,
+                  "lead_time": 2,
+                  "price": 5.02
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 11.5
+          }
+        ]
+      },
+      {
+        "date": "2025-11-04",
+        "weekday": "Tuesday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 69,
+              "name": "Joghurt-Parfait",
+              "cost": 2.5,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Joghurt",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 421,
+                "fat": 21,
+                "carbs": 68,
+                "protein": 17
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.5,
+              "description": "Joghurt-Parfait - Frühstücksspezialität",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 369,
+                  "name": "Hauptzutat 69",
+                  "quantity": 1021,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 2,
+                  "lead_time": 1,
+                  "price": 5.46
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 12.5
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 120,
+              "name": "Gemüse-Quiche",
+              "cost": 3.4,
+              "allergens": [
+                "Gluten",
+                "Eier",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Hauptgang",
+              "group": "Vegetarisch",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 453,
+                "fat": 29,
+                "carbs": 52,
+                "protein": 18
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.2,
+              "description": "Gemüse-Quiche - Vegetarisches Hauptgericht",
+              "portion_size": "350g",
+              "ingredients": [
+                {
+                  "id": 720,
+                  "name": "Gemüse 120",
+                  "quantity": 2257,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 7.03
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 17.0
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 187,
+              "name": "Flammkuchen",
+              "cost": 3.4,
+              "allergens": [
+                "Gluten",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Hauptgang",
+              "group": "Pizza",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 365,
+                "fat": 21,
+                "carbs": 59,
+                "protein": 19
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.0,
+              "description": "Flammkuchen - Leichtes Abendessen",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 1087,
+                  "name": "Abendessen-Zutaten 187",
+                  "quantity": 1406,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 8.07
+                }
+              ],
+              "contains_meat": true,
+              "is_sweet": true,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 17.0
+          }
+        ]
+      },
+      {
+        "date": "2025-11-05",
+        "weekday": "Wednesday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 52,
+              "name": "Griechischer Joghurt mit Honig",
+              "cost": 1.9,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Joghurt",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 387,
+                "fat": 8,
+                "carbs": 57,
+                "protein": 14
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.3,
+              "description": "Griechischer Joghurt mit Honig - Frühstücksspezialität",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 352,
+                  "name": "Hauptzutat 52",
+                  "quantity": 562,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 4.62
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 9.5
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 38,
+              "name": "Ratatouille",
+              "cost": 2.6,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Hauptgang",
+              "group": "Vegetarisch",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 9,
+              "nutritional_values": {
+                "calories": 510,
+                "fat": 22,
+                "carbs": 79,
+                "protein": 45
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.5,
+              "description": "Französisches Gemüsegericht",
+              "portion_size": "350g",
+              "ingredients": [
+                {
+                  "id": 238,
+                  "name": "Hauptzutat 38",
+                  "quantity": 1677,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 3,
+                  "lead_time": 1,
+                  "price": 11.46
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 13.0
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 187,
+              "name": "Flammkuchen",
+              "cost": 3.4,
+              "allergens": [
+                "Gluten",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Hauptgang",
+              "group": "Pizza",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 365,
+                "fat": 21,
+                "carbs": 59,
+                "protein": 19
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.0,
+              "description": "Flammkuchen - Leichtes Abendessen",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 1087,
+                  "name": "Abendessen-Zutaten 187",
+                  "quantity": 1406,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 8.07
+                }
+              ],
+              "contains_meat": true,
+              "is_sweet": true,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 17.0
+          }
+        ]
+      },
+      {
+        "date": "2025-11-06",
+        "weekday": "Thursday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 2,
+              "name": "Vollkornbrot mit Butter und Marmelade",
+              "cost": 1.2,
+              "allergens": [
+                "Gluten",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Brot",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 9,
+              "nutritional_values": {
+                "calories": 280,
+                "fat": 12,
+                "carbs": 38,
+                "protein": 8
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.3,
+              "description": "Frisches Vollkornbrot mit Butter und hausgemachter Marmelade",
+              "portion_size": "2 Scheiben",
+              "ingredients": [
+                {
+                  "id": 205,
+                  "name": "Vollkornbrot",
+                  "quantity": 1500,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 3.2
+                },
+                {
+                  "id": 206,
+                  "name": "Butter",
+                  "quantity": 300,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 6.5
+                },
+                {
+                  "id": 207,
+                  "name": "Marmelade",
+                  "quantity": 400,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 2,
+                  "lead_time": 3,
+                  "price": 4.8
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": true,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 6.0
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 239,
+              "name": "Rendang Beef",
+              "cost": 6.2,
+              "allergens": [
+                "Schalenfrüchte"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Asiatisch",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 524,
+                "fat": 33,
+                "carbs": 76,
+                "protein": 39
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.9,
+              "description": "Indonesisches Rindfleisch-Curry",
+              "portion_size": "350g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 31.0
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 260,
+              "name": "Crostini-Variation",
+              "cost": 4.2,
+              "allergens": [
+                "Gluten",
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Abendessen",
+              "group": "Italienisch",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 323,
+                "fat": 30,
+                "carbs": 36,
+                "protein": 22
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Geröstetes Brot mit verschiedenen Belägen",
+              "portion_size": "200g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 21.000000000000004
+          }
+        ]
+      },
+      {
+        "date": "2025-11-07",
+        "weekday": "Friday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 25,
+              "name": "Smoothie Bowl",
+              "cost": 2.8,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Müsli",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 312,
+                "fat": 15,
+                "carbs": 44,
+                "protein": 12
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.5,
+              "description": "Smoothie Bowl mit Toppings",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 225,
+                  "name": "Zutat 25",
+                  "quantity": 1093,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 2,
+                  "lead_time": 1,
+                  "price": 5.04
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 13.999999999999998
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 146,
+              "name": "Hühnersuppe",
+              "cost": 2.4,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Suppe",
+              "group": "Klare Suppe",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                10,
+                11,
+                12,
+                1,
+                2,
+                3
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 254,
+                "fat": 15,
+                "carbs": 30,
+                "protein": 8
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.8,
+              "description": "Hühnersuppe - Wohltuende Suppe",
+              "portion_size": "300ml",
+              "ingredients": [
+                {
+                  "id": 846,
+                  "name": "Suppenzutaten 146",
+                  "quantity": 1590,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 5.51
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 12.0
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 194,
+              "name": "Käsefondue",
+              "cost": 4.2,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Hauptgang",
+              "group": "Käse",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 491,
+                "fat": 15,
+                "carbs": 47,
+                "protein": 10
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.4,
+              "description": "Käsefondue - Leichtes Abendessen",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 1094,
+                  "name": "Abendessen-Zutaten 194",
+                  "quantity": 1168,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 3,
+                  "lead_time": 2,
+                  "price": 5.92
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 21.000000000000004
+          }
+        ]
+      },
+      {
+        "date": "2025-11-08",
+        "weekday": "Saturday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 224,
+              "name": "Pho Bo Frühstück",
+              "cost": 5.8,
+              "allergens": [
+                "Gluten"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Suppen",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 338,
+                "fat": 13,
+                "carbs": 51,
+                "protein": 22
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.9,
+              "description": "Vietnamesische Rindfleisch-Nudelsuppe",
+              "portion_size": "250g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 28.999999999999996
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 143,
+              "name": "Linsensuppe",
+              "cost": 1.8,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Suppe",
+              "group": "Cremige Suppe",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                10,
+                11,
+                12,
+                1,
+                2,
+                3
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 189,
+                "fat": 9,
+                "carbs": 29,
+                "protein": 8
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.6,
+              "description": "Linsensuppe - Wohltuende Suppe",
+              "portion_size": "300ml",
+              "ingredients": [
+                {
+                  "id": 843,
+                  "name": "Suppenzutaten 143",
+                  "quantity": 2227,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 6.73
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 9.0
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 259,
+              "name": "Gazpacho mit Brot",
+              "cost": 2.8,
+              "allergens": [
+                "Gluten"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegan"
+              ],
+              "category": "Abendessen",
+              "group": "Suppen",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 6,
+              "nutritional_values": {
+                "calories": 336,
+                "fat": 21,
+                "carbs": 42,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Kalte spanische Tomatensuppe",
+              "portion_size": "200g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 13.999999999999998
+          }
+        ]
+      },
+      {
+        "date": "2025-11-09",
+        "weekday": "Sunday",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 4,
+              "name": "Müsli mit Joghurt und Obst",
+              "cost": 2.3,
+              "allergens": [
+                "Gluten",
+                "Milch",
+                "Schalenfrüchte"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Frühstück",
+              "group": "Müsli",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 9,
+              "nutritional_values": {
+                "calories": 380,
+                "fat": 14,
+                "carbs": 54,
+                "protein": 14
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 0.3,
+              "description": "Knuspriges Müsli mit Naturjoghurt und frischem Obst",
+              "portion_size": "200g",
+              "ingredients": [
+                {
+                  "id": 210,
+                  "name": "Müsli",
+                  "quantity": 1000,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 2,
+                  "lead_time": 3,
+                  "price": 5.5
+                },
+                {
+                  "id": 211,
+                  "name": "Joghurt",
+                  "quantity": 1500,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 3.2
+                },
+                {
+                  "id": 203,
+                  "name": "Früchte gemischt",
+                  "quantity": 800,
+                  "unit": "g",
+                  "category": "ORDER",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 4.5
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 11.5
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 240,
+              "name": "Risotto Funghi Porcini",
+              "cost": 5.8,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Mittagessen",
+              "group": "Reisgerichte",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 8,
+              "nutritional_values": {
+                "calories": 587,
+                "fat": 25,
+                "carbs": 74,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.5,
+              "description": "Cremiges Steinpilz-Risotto",
+              "portion_size": "350g",
+              "ingredients": []
+            },
+            "portions": 50,
+            "cost": 28.999999999999996
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 50,
+              "name": "Käseplatte",
+              "cost": 2.5,
+              "allergens": [
+                "Milch"
+              ],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost",
+                "Vegetarisch"
+              ],
+              "category": "Beilage",
+              "group": "Käse",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 7,
+              "nutritional_values": {
+                "calories": 382,
+                "fat": 16,
+                "carbs": 42,
+                "protein": 5
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 1.8,
+              "description": "Verschiedene Käsesorten",
+              "portion_size": "1 Portion",
+              "ingredients": [
+                {
+                  "id": 250,
+                  "name": "Zutat 50",
+                  "quantity": 1166,
+                  "unit": "g",
+                  "category": "STOCK",
+                  "supplier_id": 1,
+                  "lead_time": 1,
+                  "price": 4.4
+                }
+              ],
+              "contains_meat": false,
+              "is_sweet": false,
+              "is_fried": false,
+              "is_whole_grain": false,
+              "contains_raw_milk": false,
+              "contains_raw_eggs": false,
+              "contains_raw_sausage": false,
+              "contains_raw_meat": false
+            },
+            "portions": 50,
+            "cost": 12.5
+          }
+        ]
+      }
+    ],
+    "statistics": {
+      "total_cost": 342.5,
+      "avg_bkt": 48.93,
+      "num_days": 7,
+      "num_meals": 21,
+      "portions_total": 1050
+    }
+  },
+  "metadata": {
+    "id": "plan_kw44_1761461432",
+    "name": "KW 44",
+    "status": "Aktiv",
+    "created_at": "2025-10-26T02:50:32.636015",
+    "updated_at": "2025-10-26T02:50:32.636019",
+    "start_date": "2025-11-03",
+    "end_date": "2025-11-09",
+    "total_cost": 342.5,
+    "bkt_average": 48.93,
+    "description": "Automatisch generierter Menüplan für KW 44",
+    "tags": [
+      "auto-generated",
+      "kw-44"
+    ]
+  }
+}

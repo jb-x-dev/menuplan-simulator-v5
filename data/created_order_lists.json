@@ -1,0 +1,32 @@
+[
+  {
+    "id": "order_kw_43_1761461459",
+    "name": "Bestellliste KW 43",
+    "week": 43,
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/orderlist_kw43.json"
+  },
+  {
+    "id": "order_kw_44_1761461459",
+    "name": "Bestellliste KW 44",
+    "week": 44,
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/orderlist_kw44.json"
+  },
+  {
+    "id": "order_kw_45_1761461459",
+    "name": "Bestellliste KW 45",
+    "week": 45,
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/orderlist_kw45.json"
+  },
+  {
+    "id": "order_kw_46_1761461459",
+    "name": "Bestellliste KW 46",
+    "week": 46,
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/orderlist_kw46.json"
+  },
+  {
+    "id": "order_kw_47_1761461459",
+    "name": "Bestellliste KW 47",
+    "week": 47,
+    "file": "/home/ubuntu/menuplan-simulator-v5/data/orderlist_kw47.json"
+  }
+]
