@@ -371,11 +371,33 @@
         let orderLists = [];
         let selectedOrderList = null;
         
-        // Load order lists from localStorage
-        function loadOrderLists() {
-            const saved = localStorage.getItem('saved_order_lists');
-            if (saved) {
-                orderLists = JSON.parse(saved);
+        // Load order lists from API
+        async function loadOrderLists() {
+            try {
+                const response = await fetch('/api/order-lists');
+                const data = await response.json();
+                
+                if (data.success && data.orders) {
+                    // Konvertiere API-Format zu lokalem Format
+                    orderLists = data.orders.map(o => ({
+                        id: o.id,
+                        name: o.name,
+                        created_at: o.created_at,
+                        menu_plan_id: o.menu_plan_id || '',
+                        menu_plan_name: o.menu_plan_name || '',
+                        start_date: o.start_date || '',
+                        end_date: o.end_date || '',
+                        total_items: o.total_items || 0,
+                        total_cost: o.total_cost || 0,
+                        items: [] // Items werden bei Bedarf geladen
+                    }));
+                } else {
+                    console.error('Failed to load order lists:', data.error);
+                    orderLists = [];
+                }
+            } catch (error) {
+                console.error('Error loading order lists:', error);
+                orderLists = [];
             }
             renderOrderLists();
         }
