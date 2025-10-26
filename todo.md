@@ -182,3 +182,12 @@
   - Standalone Scripts erstellt ✓
   - Status: Abgeschlossen
 
+
+
+- [ ] API-Endpunkt für Import von Menüplänen und Bestelllisten
+  - POST /api/import/menu-plans - Importiert alle JSON-Menüpläne
+  - POST /api/import/order-lists - Importiert alle JSON-Bestelllisten
+  - Lädt Dateien aus data/ Ordner
+  - Speichert in Backend-Datenbank
+  - Status: In Bearbeitung
+

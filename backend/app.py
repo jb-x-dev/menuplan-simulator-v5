@@ -1014,6 +1014,103 @@ def serve_static_file(path):
 # Deployment trigger Wed Oct 22 22:40:49 EDT 2025
 
 
+# NEU: Import-Endpunkte für Menüpläne und Bestelllisten
+@app.route('/api/import/menu-plans', methods=['POST'])
+def import_menu_plans():
+    """Importiert alle JSON-Menüpläne aus dem data/ Ordner"""
+    try:
+        import glob
+        data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+        pattern = os.path.join(data_dir, 'menuplan_kw*.json')
+        files = glob.glob(pattern)
+        
+        imported = []
+        errors = []
+        
+        for file_path in files:
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                
+                # Speichere via MenuPlanManager
+                metadata = MenuPlanMetadata(**data['metadata'])
+                plan_id = plan_manager.save_menu_plan(data['plan'], metadata)
+                imported.append({
+                    'file': os.path.basename(file_path),
+                    'plan_id': plan_id,
+                    'name': metadata.name
+                })
+            except Exception as e:
+                errors.append({
+                    'file': os.path.basename(file_path),
+                    'error': str(e)
+                })
+        
+        return jsonify({
+            'success': True,
+            'imported': len(imported),
+            'errors': len(errors),
+            'details': {
+                'imported': imported,
+                'errors': errors
+            }
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/import/order-lists', methods=['POST'])
+def import_order_lists():
+    """Importiert alle JSON-Bestelllisten aus dem data/ Ordner"""
+    try:
+        import glob
+        data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+        pattern = os.path.join(data_dir, 'orderlist_kw*.json')
+        files = glob.glob(pattern)
+        
+        imported = []
+        errors = []
+        
+        for file_path in files:
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                
+                # Erstelle OrderListMetadata
+                metadata = OrderListMetadata(
+                    id=data['id'],
+                    name=data['name'],
+                    created_at=data['created_at'],
+                    menu_plan_id=data.get('menu_plan_id', ''),
+                    menu_plan_name=data.get('menu_plan_name', ''),
+                    start_date=data.get('start_date', ''),
+                    end_date=data.get('end_date', '')
+                )
+                
+                # Speichere via MenuPlanManager
+                order_id = plan_manager.save_order_list(data['items'], metadata)
+                imported.append({
+                    'file': os.path.basename(file_path),
+                    'order_id': order_id,
+                    'name': metadata.name
+                })
+            except Exception as e:
+                errors.append({
+                    'file': os.path.basename(file_path),
+                    'error': str(e)
+                })
+        
+        return jsonify({
+            'success': True,
+            'imported': len(imported),
+            'errors': len(errors),
+            'details': {
+                'imported': imported,
+                'errors': errors
+            }
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
 @app.route('/deployment-version')
 def deployment_version():
     """Serve deployment version file for verification"""
