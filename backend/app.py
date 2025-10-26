@@ -811,10 +811,12 @@ def get_recipe_usage():
 
 
 
-# NEU: Menüplan-Management API-Endpunkte (v5.0 - fixed duplicates)
-from backend.menuplan_manager import MenuPlanManager, MenuPlanMetadata, OrderListMetadata
+# NEU: Menüplan-Management API-Endpunkte (v5.0 - Database-based)
+# Verwende ZWINGEND Datenbank-basierten Manager
+from backend.menuplan_db_manager import MenuPlanDBManager, MenuPlanMetadata, OrderListMetadata
 
-plan_manager = MenuPlanManager(data_dir=os.path.join(os.path.dirname(__file__), '..', 'data'))
+plan_manager = MenuPlanDBManager()
+print("✅ Using database-based MenuPlanDBManager (REQUIRED)")
 
 # Auto-Import beim Start
 try:

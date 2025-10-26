@@ -1,0 +1,5774 @@
+{
+  "orders": [
+    {
+      "name": "Bestellung KW 01 - 2026",
+      "menu_plan_name": "KW 01 - 2026",
+      "order_date": "2025-12-29",
+      "delivery_date": "2026-01-05",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Dessert-Zutaten 165",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 110",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Spaghetti",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Speck",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Parmesan",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 138",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Rindfleisch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kartoffeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 146",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fischfilet",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 100",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 84",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 51",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 181",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 25",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 57",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 02 - 2026",
+      "menu_plan_name": "KW 02 - 2026",
+      "order_date": "2026-01-05",
+      "delivery_date": "2026-01-12",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Zutat 48",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 61",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 44",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 145",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 67",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 88",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fischfilet",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 124",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 151",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 126",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 172",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 79",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 93",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 189",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 03 - 2026",
+      "menu_plan_name": "KW 03 - 2026",
+      "order_date": "2026-01-12",
+      "delivery_date": "2026-01-19",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 90",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 66",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 132",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Rindfleisch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kartoffeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 42",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 139",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Lasagneplatten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Béchamelsauce",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 135",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Brötchen",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Käse Scheiben",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 56",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 94",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 04 - 2026",
+      "menu_plan_name": "KW 04 - 2026",
+      "order_date": "2026-01-19",
+      "delivery_date": "2026-01-26",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Hauptzutat 58",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 80",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 195",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Tofu",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kokosmilch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 133",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 36",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 23",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 26",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 117",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 50",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 182",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hackfleisch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kidneybohnen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 97",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 155",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 70",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 51",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 05 - 2026",
+      "menu_plan_name": "KW 05 - 2026",
+      "order_date": "2026-01-26",
+      "delivery_date": "2026-02-02",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Käse Scheiben",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Salat gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 92",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 77",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 126",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kartoffeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Würstchen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 57",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 112",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 194",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Schnittlauch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 84",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 158",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 79",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 143",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 67",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Linsen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zwiebeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 06 - 2026",
+      "menu_plan_name": "KW 06 - 2026",
+      "order_date": "2026-02-02",
+      "delivery_date": "2026-02-09",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 81",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 154",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 172",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 178",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 132",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 41",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 150",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 156",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 106",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hähnchenbrust",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Reis",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 129",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 121",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 169",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 161",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 07 - 2026",
+      "menu_plan_name": "KW 07 - 2026",
+      "order_date": "2026-02-09",
+      "delivery_date": "2026-02-16",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 93",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 129",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 42",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 106",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 29",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 92",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 121",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 98",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 59",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Müsli",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Joghurt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 178",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 34",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 134",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 08 - 2026",
+      "menu_plan_name": "KW 08 - 2026",
+      "order_date": "2026-02-16",
+      "delivery_date": "2026-02-23",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Suppenzutaten 154",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 158",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 132",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 151",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 27",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 128",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 75",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 149",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Müsli",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Joghurt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 189",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 117",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 76",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 09 - 2026",
+      "menu_plan_name": "KW 09 - 2026",
+      "order_date": "2026-02-23",
+      "delivery_date": "2026-03-02",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 81",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 78",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 118",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 134",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 97",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 77",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 96",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 142",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 168",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 198",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 102",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 10 - 2026",
+      "menu_plan_name": "KW 10 - 2026",
+      "order_date": "2026-03-02",
+      "delivery_date": "2026-03-09",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 182",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 28",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 88",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 93",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 155",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Linsen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zwiebeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Haferflocken",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Honig",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 190",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 51",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 42",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 63",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 149",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 11 - 2026",
+      "menu_plan_name": "KW 11 - 2026",
+      "order_date": "2026-03-09",
+      "delivery_date": "2026-03-16",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 120",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 162",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 56",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 44",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Käse Scheiben",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Salat gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 174",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 104",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 80",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 189",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 54",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 66",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 88",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 89",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 187",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 12 - 2026",
+      "menu_plan_name": "KW 12 - 2026",
+      "order_date": "2026-03-16",
+      "delivery_date": "2026-03-23",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 123",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 125",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Müsli",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Joghurt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 102",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 75",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 103",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 111",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 139",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 108",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 94",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 124",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 41",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Tofu",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kokosmilch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 58",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 158",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 13 - 2026",
+      "menu_plan_name": "KW 13 - 2026",
+      "order_date": "2026-03-23",
+      "delivery_date": "2026-03-30",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Zutat 46",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 112",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 88",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 55",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 73",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 53",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 94",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 179",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 81",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 101",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 14 - 2026",
+      "menu_plan_name": "KW 14 - 2026",
+      "order_date": "2026-03-30",
+      "delivery_date": "2026-04-06",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Hauptzutat 66",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 130",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 167",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 91",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 141",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 135",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 84",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 184",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 93",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 127",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 129",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 60",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 101",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 29",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 186",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 166",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 15 - 2026",
+      "menu_plan_name": "KW 15 - 2026",
+      "order_date": "2026-04-06",
+      "delivery_date": "2026-04-13",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 135",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 119",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 150",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 125",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Marmelade",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 94",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 50",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Dessert-Zutaten 160",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Haferflocken",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Honig",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 86",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 171",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 133",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 173",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 16 - 2026",
+      "menu_plan_name": "KW 16 - 2026",
+      "order_date": "2026-04-13",
+      "delivery_date": "2026-04-20",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 140",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Haferflocken",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Honig",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Brötchen",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Käse Scheiben",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 165",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 32",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 52",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 105",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 186",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 42",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 180",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Dessert-Zutaten 167",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 48",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 57",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 174",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 106",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 17 - 2026",
+      "menu_plan_name": "KW 17 - 2026",
+      "order_date": "2026-04-20",
+      "delivery_date": "2026-04-27",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fisch 115",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 179",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 127",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Linsen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zwiebeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 190",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 86",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 168",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 37",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 147",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 129",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 102",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 71",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 194",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 186",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 175",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 55",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 83",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 18 - 2026",
+      "menu_plan_name": "KW 18 - 2026",
+      "order_date": "2026-04-27",
+      "delivery_date": "2026-05-04",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fisch 112",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 40",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 110",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 67",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 171",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 119",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Schnittlauch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 199",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 87",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 129",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 168",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 124",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 56",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 192",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 74",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 158",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 19 - 2026",
+      "menu_plan_name": "KW 19 - 2026",
+      "order_date": "2026-05-04",
+      "delivery_date": "2026-05-11",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 125",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 134",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 88",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 192",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 112",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 143",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 66",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Haferflocken",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Honig",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 181",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 92",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 146",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 64",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 20 - 2026",
+      "menu_plan_name": "KW 20 - 2026",
+      "order_date": "2026-05-11",
+      "delivery_date": "2026-05-18",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 85",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 54",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Brötchen",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Käse Scheiben",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 103",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 126",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 153",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 57",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 155",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 48",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 72",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 135",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 160",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 145",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 21 - 2026",
+      "menu_plan_name": "KW 21 - 2026",
+      "order_date": "2026-05-18",
+      "delivery_date": "2026-05-25",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 192",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 177",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 35",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 148",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 136",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 174",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 185",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 146",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 197",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 83",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 68",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 108",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 22 - 2026",
+      "menu_plan_name": "KW 22 - 2026",
+      "order_date": "2026-05-25",
+      "delivery_date": "2026-06-01",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 137",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 73",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Lasagneplatten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Béchamelsauce",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 129",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 136",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 115",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 134",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 78",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 188",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 147",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 198",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 162",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 92",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 116",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 193",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Spaghetti",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Speck",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Parmesan",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 62",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 23 - 2026",
+      "menu_plan_name": "KW 23 - 2026",
+      "order_date": "2026-06-01",
+      "delivery_date": "2026-06-08",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fisch 112",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 111",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 142",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 168",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 117",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 44",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 42",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 52",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 119",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 118",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 138",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 153",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 139",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 24 - 2026",
+      "menu_plan_name": "KW 24 - 2026",
+      "order_date": "2026-06-08",
+      "delivery_date": "2026-06-15",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 117",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 96",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 164",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hackfleisch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kidneybohnen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 144",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 189",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 185",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 118",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 187",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 26",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 120",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 130",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 25 - 2026",
+      "menu_plan_name": "KW 25 - 2026",
+      "order_date": "2026-06-15",
+      "delivery_date": "2026-06-22",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 75",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 40",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 27",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 102",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 24",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 131",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 95",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 89",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 48",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 124",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 77",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Spaghetti",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Speck",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Parmesan",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 52",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hähnchenbrust",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Reis",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 85",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 74",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 26 - 2026",
+      "menu_plan_name": "KW 26 - 2026",
+      "order_date": "2026-06-22",
+      "delivery_date": "2026-06-29",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 84",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 85",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 105",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 184",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 174",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 74",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 46",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 128",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 82",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 172",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 148",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 88",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 194",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 27 - 2026",
+      "menu_plan_name": "KW 27 - 2026",
+      "order_date": "2026-06-29",
+      "delivery_date": "2026-07-06",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 199",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 148",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 127",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 91",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 99",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 169",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 108",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 155",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 90",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 179",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 61",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 50",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Dessert-Zutaten 173",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Lasagneplatten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Béchamelsauce",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 151",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 28 - 2026",
+      "menu_plan_name": "KW 28 - 2026",
+      "order_date": "2026-07-06",
+      "delivery_date": "2026-07-13",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 131",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 69",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 142",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 180",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Brötchen",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Käse Scheiben",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Salat gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Müsli",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Joghurt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 150",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 191",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 68",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 128",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 164",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 29 - 2026",
+      "menu_plan_name": "KW 29 - 2026",
+      "order_date": "2026-07-13",
+      "delivery_date": "2026-07-20",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Hauptzutat 52",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 46",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 144",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 82",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 76",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 75",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 90",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 185",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 73",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 63",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 30 - 2026",
+      "menu_plan_name": "KW 30 - 2026",
+      "order_date": "2026-07-20",
+      "delivery_date": "2026-07-27",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fisch 103",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 52",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 61",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 99",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 85",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 117",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 159",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 90",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 113",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 83",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 134",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 35",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 31 - 2026",
+      "menu_plan_name": "KW 31 - 2026",
+      "order_date": "2026-07-27",
+      "delivery_date": "2026-08-03",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Suppenzutaten 145",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 97",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 141",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 129",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 61",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 174",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 179",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 178",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 138",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 134",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Mehl",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Äpfel",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 88",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 33",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 160",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 32",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 32 - 2026",
+      "menu_plan_name": "KW 32 - 2026",
+      "order_date": "2026-08-03",
+      "delivery_date": "2026-08-10",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fisch 101",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 57",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 37",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 109",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 89",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Haferflocken",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Honig",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 56",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 50",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 29",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Dessert-Zutaten 165",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 173",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 33 - 2026",
+      "menu_plan_name": "KW 33 - 2026",
+      "order_date": "2026-08-10",
+      "delivery_date": "2026-08-17",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 186",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Schnittlauch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 24",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Puddingpulver Schoko",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 128",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 151",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 115",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 144",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 183",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 152",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 198",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 124",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 40",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 112",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 36",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 34 - 2026",
+      "menu_plan_name": "KW 34 - 2026",
+      "order_date": "2026-08-17",
+      "delivery_date": "2026-08-24",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 200",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 93",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 98",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 197",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hähnchenbrust",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Reis",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 109",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 62",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hackfleisch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kidneybohnen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 177",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 39",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 66",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 193",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 125",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 195",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 35 - 2026",
+      "menu_plan_name": "KW 35 - 2026",
+      "order_date": "2026-08-24",
+      "delivery_date": "2026-08-31",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 134",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 189",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 25",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 118",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Tofu",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kokosmilch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 144",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 108",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 194",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Marmelade",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 101",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 113",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 26",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 195",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 28",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 111",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 36 - 2026",
+      "menu_plan_name": "KW 36 - 2026",
+      "order_date": "2026-08-31",
+      "delivery_date": "2026-09-07",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 184",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 174",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 163",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 119",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 48",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 98",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 173",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 198",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 134",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 33",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Käse Scheiben",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Salat gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 150",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 117",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 37 - 2026",
+      "menu_plan_name": "KW 37 - 2026",
+      "order_date": "2026-09-07",
+      "delivery_date": "2026-09-14",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Suppenzutaten 149",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 123",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 106",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 48",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 124",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 104",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 58",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 90",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 68",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 60",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 92",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 196",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 137",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 138",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 192",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 38 - 2026",
+      "menu_plan_name": "KW 38 - 2026",
+      "order_date": "2026-09-14",
+      "delivery_date": "2026-09-21",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 87",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 127",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 57",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 108",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 82",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 70",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 125",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Linsen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zwiebeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 51",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Sahne",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 91",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 49",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Müsli",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Joghurt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 177",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Mehl",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Äpfel",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 39 - 2026",
+      "menu_plan_name": "KW 39 - 2026",
+      "order_date": "2026-09-21",
+      "delivery_date": "2026-09-28",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 177",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 91",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 196",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 192",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 137",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 139",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Puddingpulver Schoko",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 126",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 24",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 154",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 37",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 167",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 141",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 40 - 2026",
+      "menu_plan_name": "KW 40 - 2026",
+      "order_date": "2026-09-28",
+      "delivery_date": "2026-10-05",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Fleisch 77",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 42",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 97",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 139",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 173",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 187",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 73",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 37",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 127",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 164",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Haferflocken",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Honig",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Dessert-Zutaten 162",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 112",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 41 - 2026",
+      "menu_plan_name": "KW 41 - 2026",
+      "order_date": "2026-10-05",
+      "delivery_date": "2026-10-12",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 191",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 189",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Rindfleisch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kartoffeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 47",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 146",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 75",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 155",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 65",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 98",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 150",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 78",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 76",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Marmelade",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 89",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 42 - 2026",
+      "menu_plan_name": "KW 42 - 2026",
+      "order_date": "2026-10-12",
+      "delivery_date": "2026-10-19",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Hauptzutat 36",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 124",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 92",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 91",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 56",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 166",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Müsli",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Joghurt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 97",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 151",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 120",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 72",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Mehl",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Äpfel",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Lasagneplatten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Béchamelsauce",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 81",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 30",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 43 - 2026",
+      "menu_plan_name": "KW 43 - 2026",
+      "order_date": "2026-10-19",
+      "delivery_date": "2026-10-26",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 181",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 46",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 141",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 92",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 199",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 38",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 71",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 72",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 160",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 129",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 186",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 82",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 44 - 2026",
+      "menu_plan_name": "KW 44 - 2026",
+      "order_date": "2026-10-26",
+      "delivery_date": "2026-11-02",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Zutat 27",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 178",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 126",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 137",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 142",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 141",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 120",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Schnittlauch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 90",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 80",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Lasagneplatten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Béchamelsauce",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 103",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 24",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 45 - 2026",
+      "menu_plan_name": "KW 45 - 2026",
+      "order_date": "2026-11-02",
+      "delivery_date": "2026-11-09",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Hauptzutat 53",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Schnittlauch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 151",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 79",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Tofu",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kokosmilch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 154",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 162",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 92",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 172",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 38",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 148",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 173",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 41",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 138",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 125",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 55",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 94",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 122",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 46 - 2026",
+      "menu_plan_name": "KW 46 - 2026",
+      "order_date": "2026-11-09",
+      "delivery_date": "2026-11-16",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Dessert-Zutaten 172",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 90",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 126",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 28",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 192",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 127",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 200",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Dessert-Zutaten 163",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 70",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 56",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 186",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 155",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 21",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 65",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 44",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Sahne",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hähnchenbrust",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Reis",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 47 - 2026",
+      "menu_plan_name": "KW 47 - 2026",
+      "order_date": "2026-11-16",
+      "delivery_date": "2026-11-23",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 181",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Puddingpulver Schoko",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 109",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 48",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 38",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 200",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fleisch 88",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 120",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kartoffeln",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Würstchen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 21",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 48 - 2026",
+      "menu_plan_name": "KW 48 - 2026",
+      "order_date": "2026-11-23",
+      "delivery_date": "2026-11-30",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Suppenzutaten 144",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 125",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 111",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 48",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tofu",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kokosmilch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 24",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Vollkornbrot",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Marmelade",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 40",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 138",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 133",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 67",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Sahne",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 41",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 154",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 49 - 2026",
+      "menu_plan_name": "KW 49 - 2026",
+      "order_date": "2026-11-30",
+      "delivery_date": "2026-12-07",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Hähnchenbrust",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Reis",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüsemix",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Schnittlauch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 26",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 49",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Suppenzutaten 148",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 38",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 190",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Hauptzutat 39",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 45",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 40",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Puddingpulver Schoko",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 113",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 158",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 145",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 127",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 122",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 78",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 50 - 2026",
+      "menu_plan_name": "KW 50 - 2026",
+      "order_date": "2026-12-07",
+      "delivery_date": "2026-12-14",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Gemüse 135",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 178",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 112",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Milch",
+          "amount": 0.0,
+          "unit": "ml",
+          "category": "ORDER"
+        },
+        {
+          "name": "Puddingpulver Schoko",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Eier",
+          "amount": 0.0,
+          "unit": "Stück",
+          "category": "ORDER"
+        },
+        {
+          "name": "Butter",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Schnittlauch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 105",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 32",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Suppenzutaten 149",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 139",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 66",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 27",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 197",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 37",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 106",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 43",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 51 - 2026",
+      "menu_plan_name": "KW 51 - 2026",
+      "order_date": "2026-12-14",
+      "delivery_date": "2026-12-21",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Abendessen-Zutaten 197",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 116",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 63",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 91",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 73",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 132",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hackfleisch",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Kidneybohnen",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Tomaten",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Abendessen-Zutaten 182",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 189",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Abendessen-Zutaten 185",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 172",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    },
+    {
+      "name": "Bestellung KW 52 - 2026",
+      "menu_plan_name": "KW 52 - 2026",
+      "order_date": "2026-12-21",
+      "delivery_date": "2026-12-28",
+      "lead_time_days": 7,
+      "status": "Entwurf",
+      "items": [
+        {
+          "name": "Zutat 45",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fisch 102",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Hauptzutat 33",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 156",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Fisch 113",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Fleisch 71",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 140",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 123",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Gemüse 135",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Müsli",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Joghurt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Früchte gemischt",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Dessert-Zutaten 160",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Zutat 41",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        },
+        {
+          "name": "Zutat 30",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "STOCK"
+        },
+        {
+          "name": "Gemüse 116",
+          "amount": 0.0,
+          "unit": "g",
+          "category": "ORDER"
+        }
+      ]
+    }
+  ]
+}
