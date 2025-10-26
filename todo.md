@@ -205,15 +205,16 @@
 
 
 
-- [ ] Backend-Fehler: asdict not defined
+- [x] Backend-Fehler: asdict not defined
   - Fehler in /api/menu-plans Endpunkt
-  - Import fehlt in app.py
-  - Status: Fix erforderlich
+  - Import hinzugefügt in app.py
+  - Status: Behoben
 
 
 
-- [ ] OrderListMetadata fehlt start_date und end_date Felder
-  - Fehler beim Import der Bestelllisten
-  - menuplan_manager.py muss erweitert werden
-  - Status: Fix erforderlich
+- [x] OrderListMetadata fehlt start_date und end_date Felder
+  - Felder hinzugefügt: start_date, end_date
+  - Optional-Felder mit Defaults: menu_plan_id, menu_plan_name, total_items, total_cost
+  - 5 Bestelllisten erfolgreich importiert
+  - Status: Behoben
 
