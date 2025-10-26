@@ -444,6 +444,13 @@ def export_excel():
 
 
 if __name__ == '__main__':
+    # Initialisiere Datenbank beim Start
+    try:
+        from backend.init_db_on_startup import init_database
+        init_database()
+    except Exception as e:
+        print(f"⚠️ Database initialization warning: {e}")
+    
     port = int(os.environ.get('PORT', 5000))
     print(f"\n🚀 Starting Menüplansimulator API on port {port}")
     print(f"📊 Loaded {len(recipes)} recipes")
