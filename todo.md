@@ -165,3 +165,20 @@
   - render.yaml aktualisiert: Verwendet jetzt ./start.sh
   - Status: Behoben
 
+
+
+- [x] 5 Menüpläne erstellen und speichern
+  - 5 Wochen: KW 43-47 (2025) ✓
+  - Jeweils 7 Tage, 50 Personen, 3 Mahlzeiten/Tag ✓
+  - Status: Aktiv ✓
+  - Menüpläne:
+    * KW 43: 27.10-02.11.2025 (380.00€, BKT 54.29€)
+    * KW 44: 03.11-09.11.2025 (342.50€, BKT 48.93€)
+    * KW 45: 10.11-16.11.2025 (414.00€, BKT 59.14€)
+    * KW 46: 17.11-23.11.2025 (344.50€, BKT 49.21€)
+    * KW 47: 24.11-30.11.2025 (324.50€, BKT 46.36€)
+  - Bestelllisten aus jedem Menüplan generiert ✓
+  - JSON-Dateien gespeichert in data/ ✓
+  - Standalone Scripts erstellt ✓
+  - Status: Abgeschlossen
+
