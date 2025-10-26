@@ -422,17 +422,24 @@
             actionButtons.style.display = 'flex';
             
             container.innerHTML = orderLists.map((list, index) => {
-                const date = new Date(list.timestamp);
+                const date = new Date(list.created_at || Date.now());
                 const dateStr = date.toLocaleDateString('de-DE');
                 const timeStr = date.toLocaleTimeString('de-DE', {hour: '2-digit', minute: '2-digit'});
+                
+                // Berechne Statistiken
+                const totalItems = list.total_items || 0;
+                const totalCost = (list.total_cost || 0).toFixed(2);
+                const dateRange = list.start_date && list.end_date 
+                    ? `${list.start_date} - ${list.end_date}` 
+                    : dateStr;
                 
                 return `
                     <div class="order-list-card ${selectedOrderList === index ? 'selected' : ''}" 
                          onclick="selectOrderList(${index})">
                         <div class="order-list-title">${list.name}</div>
-                        <div class="order-list-meta">📅 ${dateStr} ${timeStr}</div>
-                        <div class="order-list-meta">📦 ${Object.keys(list.data).length} Komponenten</div>
-                        <div class="order-list-meta">🔢 ${countTotalIngredients(list.data)} Zutaten</div>
+                        <div class="order-list-meta">📅 ${dateRange}</div>
+                        <div class="order-list-meta">📦 ${totalItems} Artikel</div>
+                        <div class="order-list-meta">💰 ${totalCost}€</div>
                     </div>
                 `;
             }).join('');
@@ -578,9 +585,9 @@
                 const response = await fetch('/api/menu-plans');
                 const data = await response.json();
                 
-                if (data.success) {
+                if (data.success && data.plans) {
                     // Filter only active menu plans
-                    menuPlans = data.plans.filter(plan => plan.metadata.status === 'Aktiv');
+                    menuPlans = data.plans.filter(plan => plan.status === 'Aktiv');
                     renderMenuPlans();
                 } else {
                     console.error('Failed to load menu plans:', data.error);

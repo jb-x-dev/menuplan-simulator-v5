@@ -226,3 +226,11 @@
   - JavaScript lädt Daten nicht korrekt
   - Status: Debug erforderlich
 
+
+
+- [ ] order-lists.html JavaScript-Fehler
+  - Zeile 434: Object.keys() auf undefined/null
+  - Zeile 583: Cannot read properties of undefined (reading 'status')
+  - API-Daten haben nicht das erwartete Format
+  - Status: Fix erforderlich
+
