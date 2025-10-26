@@ -156,3 +156,11 @@
   - Funktion populateHeaderDropdowns() korrigiert
   - Status: Behoben
 
+
+
+- [ ] Render.com Deployment-Fehler: ModuleNotFoundError
+  - Fehler: "ModuleNotFoundError: No module named 'app'"
+  - Ursache: gunicorn sucht app.py im falschen Pfad
+  - Backend liegt in /backend/app.py
+  - Status: Fix erforderlich
+
