@@ -1,0 +1,1010 @@
+{
+  "plan": {
+    "days": [
+      {
+        "date": "2026-03-16",
+        "weekday": "Montag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 218,
+              "name": "Falafel-Frühstück",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Falafel-Frühstück",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 120,
+              "name": "Gemüse-Quiche",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Gemüse-Quiche",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 162,
+              "name": "Brownies",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Brownies",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-17",
+        "weekday": "Dienstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 56,
+              "name": "Rührei mit Speck",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Rührei mit Speck",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 44,
+              "name": "Quiche Lorraine",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Quiche Lorraine",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 19,
+              "name": "Käsebrot mit Salat",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Käsebrot mit Salat",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-18",
+        "weekday": "Mittwoch",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 162,
+              "name": "Brownies",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Brownies",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 294,
+              "name": "Kulfi",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Kulfi",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 174,
+              "name": "Crêpes",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Crêpes",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-19",
+        "weekday": "Donnerstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 104,
+              "name": "Kabeljau in Weißwein",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Kabeljau in Weißwein",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 286,
+              "name": "Crème Brûlée",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Crème Brûlée",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 80,
+              "name": "Rindergeschnetzeltes",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Rindergeschnetzeltes",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-20",
+        "weekday": "Freitag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 189,
+              "name": "Bruschetta",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Bruschetta",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 54,
+              "name": "Frischkäse-Bagel",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Frischkäse-Bagel",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 66,
+              "name": "Pfannkuchen mit Ahornsirup",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Pfannkuchen mit Ahornsirup",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-21",
+        "weekday": "Samstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 202,
+              "name": "Congee (Reisbrei)",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Congee (Reisbrei)",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 88,
+              "name": "Rinderbraten",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Rinderbraten",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 89,
+              "name": "Putenroulade",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Putenroulade",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-22",
+        "weekday": "Sonntag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 224,
+              "name": "Pho Bo Frühstück",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Pho Bo Frühstück",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 269,
+              "name": "Tarte Flambée",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Tarte Flambée",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 187,
+              "name": "Flammkuchen",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Flammkuchen",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "id": "plan_kw11_2026_1761497682",
+    "name": "KW 11 - 2026",
+    "status": "Aktiv",
+    "created_at": "2025-10-26T12:54:42.183231",
+    "updated_at": "2025-10-26T12:54:42.183231",
+    "start_date": "2026-03-16",
+    "end_date": "2026-03-22",
+    "total_cost": 105.0,
+    "bkt_average": 5.0,
+    "description": "Automatisch generierter Menüplan für KW 11 - 2026",
+    "tags": [
+      "auto-generated",
+      "kw-11",
+      "2026"
+    ]
+  }
+}

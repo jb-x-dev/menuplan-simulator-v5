@@ -1,0 +1,1010 @@
+{
+  "plan": {
+    "days": [
+      {
+        "date": "2026-07-13",
+        "weekday": "Montag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 131,
+              "name": "Gemüse-Strudel",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Gemüse-Strudel",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 242,
+              "name": "Shakshuka Mittagessen",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Shakshuka Mittagessen",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 240,
+              "name": "Risotto Funghi Porcini",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Risotto Funghi Porcini",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-14",
+        "weekday": "Dienstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 69,
+              "name": "Joghurt-Parfait",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Joghurt-Parfait",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 142,
+              "name": "Erbsensuppe",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Erbsensuppe",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 180,
+              "name": "Nudelsalat",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Nudelsalat",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-15",
+        "weekday": "Mittwoch",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 299,
+              "name": "Tres Leches Cake",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Tres Leches Cake",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 69,
+              "name": "Joghurt-Parfait",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Joghurt-Parfait",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 253,
+              "name": "Mezze-Platte Deluxe",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Mezze-Platte Deluxe",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-16",
+        "weekday": "Donnerstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 5,
+              "name": "Käsebrötchen",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Käsebrötchen",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 290,
+              "name": "Loukoumades",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Loukoumades",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 19,
+              "name": "Käsebrot mit Salat",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Käsebrot mit Salat",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-17",
+        "weekday": "Freitag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 225,
+              "name": "Avocado-Toast Premium",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Avocado-Toast Premium",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 4,
+              "name": "Müsli mit Joghurt und Obst",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Müsli mit Joghurt und Obst",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 150,
+              "name": "Bohnensuppe",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Bohnensuppe",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-18",
+        "weekday": "Samstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 191,
+              "name": "Wraps vegetarisch",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Wraps vegetarisch",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 218,
+              "name": "Falafel-Frühstück",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Falafel-Frühstück",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 68,
+              "name": "Vollkorntoast mit Ei",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Vollkorntoast mit Ei",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-19",
+        "weekday": "Sonntag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 128,
+              "name": "Paprika gefüllt",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Paprika gefüllt",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 164,
+              "name": "Fruchtjoghurt",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Fruchtjoghurt",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 253,
+              "name": "Mezze-Platte Deluxe",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Mezze-Platte Deluxe",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "id": "plan_kw28_2026_1761497682",
+    "name": "KW 28 - 2026",
+    "status": "Aktiv",
+    "created_at": "2025-10-26T12:54:42.208420",
+    "updated_at": "2025-10-26T12:54:42.208420",
+    "start_date": "2026-07-13",
+    "end_date": "2026-07-19",
+    "total_cost": 105.0,
+    "bkt_average": 5.0,
+    "description": "Automatisch generierter Menüplan für KW 28 - 2026",
+    "tags": [
+      "auto-generated",
+      "kw-28",
+      "2026"
+    ]
+  }
+}

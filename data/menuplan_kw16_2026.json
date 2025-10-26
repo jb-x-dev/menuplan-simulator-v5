@@ -1,0 +1,1010 @@
+{
+  "plan": {
+    "days": [
+      {
+        "date": "2026-04-20",
+        "weekday": "Montag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 140,
+              "name": "Käse-Spätzle",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Käse-Spätzle",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 272,
+              "name": "Pita-Taschen",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Pita-Taschen",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 1,
+              "name": "Haferflocken-Porridge mit Früchten",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Haferflocken-Porridge mit Früchten",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-21",
+        "weekday": "Dienstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 18,
+              "name": "Gemüsesuppe mit Brot",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Gemüsesuppe mit Brot",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 203,
+              "name": "Chilaquiles",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Chilaquiles",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 5,
+              "name": "Käsebrötchen",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Käsebrötchen",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-22",
+        "weekday": "Mittwoch",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 165,
+              "name": "Eis-Becher",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Eis-Becher",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 32,
+              "name": "Lachsfilet mit Reis",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Lachsfilet mit Reis",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 52,
+              "name": "Griechischer Joghurt mit Honig",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Griechischer Joghurt mit Honig",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-23",
+        "weekday": "Donnerstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 105,
+              "name": "Thunfisch-Steak",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Thunfisch-Steak",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 186,
+              "name": "Sandwich-Platte",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Sandwich-Platte",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 42,
+              "name": "Griechischer Salat",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Griechischer Salat",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-24",
+        "weekday": "Freitag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 287,
+              "name": "Mango Sticky Rice",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Mango Sticky Rice",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 180,
+              "name": "Nudelsalat",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Nudelsalat",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 167,
+              "name": "Milchreis",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Milchreis",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-25",
+        "weekday": "Samstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 48,
+              "name": "Vanillepudding",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Vanillepudding",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 212,
+              "name": "Banh Mi Frühstück",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Banh Mi Frühstück",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 57,
+              "name": "Bananenbrot",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Bananenbrot",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-26",
+        "weekday": "Sonntag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 293,
+              "name": "Profiteroles",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Profiteroles",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 174,
+              "name": "Crêpes",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Crêpes",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 106,
+              "name": "Scholle gebraten",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Scholle gebraten",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "id": "plan_kw16_2026_1761497682",
+    "name": "KW 16 - 2026",
+    "status": "Aktiv",
+    "created_at": "2025-10-26T12:54:42.190278",
+    "updated_at": "2025-10-26T12:54:42.190278",
+    "start_date": "2026-04-20",
+    "end_date": "2026-04-26",
+    "total_cost": 105.0,
+    "bkt_average": 5.0,
+    "description": "Automatisch generierter Menüplan für KW 16 - 2026",
+    "tags": [
+      "auto-generated",
+      "kw-16",
+      "2026"
+    ]
+  }
+}

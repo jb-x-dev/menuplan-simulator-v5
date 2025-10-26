@@ -1,0 +1,1010 @@
+{
+  "plan": {
+    "days": [
+      {
+        "date": "2026-11-23",
+        "weekday": "Montag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 181,
+              "name": "Kartoffelsalat",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Kartoffelsalat",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 16,
+              "name": "Schokoladenpudding",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Schokoladenpudding",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 109,
+              "name": "Hering in Sahnesauce",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Hering in Sahnesauce",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-24",
+        "weekday": "Dienstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 48,
+              "name": "Vanillepudding",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Vanillepudding",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 296,
+              "name": "Matcha-Kuchen",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Matcha-Kuchen",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 266,
+              "name": "Pincho-Spieße",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Pincho-Spieße",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-25",
+        "weekday": "Mittwoch",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 38,
+              "name": "Ratatouille",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Ratatouille",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 200,
+              "name": "Suppen-Topf",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Suppen-Topf",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 256,
+              "name": "Antipasti Premium",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Antipasti Premium",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-26",
+        "weekday": "Donnerstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 88,
+              "name": "Rinderbraten",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Rinderbraten",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 18,
+              "name": "Gemüsesuppe mit Brot",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Gemüsesuppe mit Brot",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 274,
+              "name": "Bruschetta-Variation",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Bruschetta-Variation",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-27",
+        "weekday": "Freitag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 88,
+              "name": "Rinderbraten",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Rinderbraten",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 206,
+              "name": "Japanisches Frühstück",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Japanisches Frühstück",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 247,
+              "name": "Butter Chicken",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Butter Chicken",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-28",
+        "weekday": "Samstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 120,
+              "name": "Gemüse-Quiche",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Gemüse-Quiche",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 265,
+              "name": "Sashimi-Platte",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Sashimi-Platte",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 15,
+              "name": "Kartoffelsuppe",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Kartoffelsuppe",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-29",
+        "weekday": "Sonntag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 269,
+              "name": "Tarte Flambée",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Tarte Flambée",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 21,
+              "name": "Waffeln mit Früchten",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Waffeln mit Früchten",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 271,
+              "name": "Arancini",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Arancini",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "id": "plan_kw47_2026_1761497682",
+    "name": "KW 47 - 2026",
+    "status": "Aktiv",
+    "created_at": "2025-10-26T12:54:42.236072",
+    "updated_at": "2025-10-26T12:54:42.236072",
+    "start_date": "2026-11-23",
+    "end_date": "2026-11-29",
+    "total_cost": 105.0,
+    "bkt_average": 5.0,
+    "description": "Automatisch generierter Menüplan für KW 47 - 2026",
+    "tags": [
+      "auto-generated",
+      "kw-47",
+      "2026"
+    ]
+  }
+}

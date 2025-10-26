@@ -1,0 +1,1010 @@
+{
+  "plan": {
+    "days": [
+      {
+        "date": "2026-03-30",
+        "weekday": "Montag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 46,
+              "name": "Obstteller",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Obstteller",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 298,
+              "name": "Cannoli",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Cannoli",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 281,
+              "name": "Empanadas süß",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Empanadas süß",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Montag"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-31",
+        "weekday": "Dienstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 213,
+              "name": "Granola selbstgemacht",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Granola selbstgemacht",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 218,
+              "name": "Falafel-Frühstück",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Falafel-Frühstück",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 280,
+              "name": "Taiyaki",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Taiyaki",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Dienstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-01",
+        "weekday": "Mittwoch",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 215,
+              "name": "Tofu-Scramble",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Tofu-Scramble",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 112,
+              "name": "Fischstäbchen",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Fischstäbchen",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 279,
+              "name": "Macarons-Box",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Macarons-Box",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Mittwoch"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-02",
+        "weekday": "Donnerstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 88,
+              "name": "Rinderbraten",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Rinderbraten",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 223,
+              "name": "Overnight Oats Schoko",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Overnight Oats Schoko",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 55,
+              "name": "Overnight Oats",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Overnight Oats",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Donnerstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-03",
+        "weekday": "Freitag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 73,
+              "name": "Schweinesteak gegrillt",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Schweinesteak gegrillt",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 53,
+              "name": "Vollkorn-Pancakes",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Vollkorn-Pancakes",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 94,
+              "name": "Schweinefilet",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Schweinefilet",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Freitag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-04",
+        "weekday": "Samstag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 179,
+              "name": "Tomaten-Mozzarella",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Tomaten-Mozzarella",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 81,
+              "name": "Putengeschnetzeltes",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Putengeschnetzeltes",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 101,
+              "name": "Seelachsfilet gebraten",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Seelachsfilet gebraten",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Samstag"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-05",
+        "weekday": "Sonntag",
+        "meals": [
+          {
+            "component": "Frühstück",
+            "recipe": {
+              "id": 267,
+              "name": "Caprese Premium",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Frühstück",
+              "group": "Standard",
+              "menu_component": "Frühstück",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Caprese Premium",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Mittagessen",
+            "recipe": {
+              "id": 297,
+              "name": "Flan",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Mittagessen",
+              "group": "Standard",
+              "menu_component": "Mittagessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Flan",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          },
+          {
+            "component": "Abendessen",
+            "recipe": {
+              "id": 261,
+              "name": "Sommer-Rollen",
+              "cost": 5.0,
+              "allergens": [],
+              "additives": [],
+              "dietary_forms": [
+                "Vollkost"
+              ],
+              "category": "Abendessen",
+              "group": "Standard",
+              "menu_component": "Abendessen",
+              "seasonality": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "popularity": 5,
+              "nutritional_values": {
+                "calories": 500,
+                "fat": 20,
+                "carbs": 60,
+                "protein": 25
+              },
+              "is_enabled": true,
+              "status": "Freigegeben",
+              "calculation_basis": 10,
+              "processing_time": 2.0,
+              "description": "Rezept für Sommer-Rollen",
+              "ingredients": []
+            },
+            "portions": 80,
+            "notes": "Automatisch generiert für Sonntag"
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "id": "plan_kw13_2026_1761497682",
+    "name": "KW 13 - 2026",
+    "status": "Aktiv",
+    "created_at": "2025-10-26T12:54:42.185981",
+    "updated_at": "2025-10-26T12:54:42.185981",
+    "start_date": "2026-03-30",
+    "end_date": "2026-04-05",
+    "total_cost": 105.0,
+    "bkt_average": 5.0,
+    "description": "Automatisch generierter Menüplan für KW 13 - 2026",
+    "tags": [
+      "auto-generated",
+      "kw-13",
+      "2026"
+    ]
+  }
+}
