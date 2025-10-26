@@ -210,3 +210,10 @@
   - Import fehlt in app.py
   - Status: Fix erforderlich
 
+
+
+- [ ] OrderListMetadata fehlt start_date und end_date Felder
+  - Fehler beim Import der Bestelllisten
+  - menuplan_manager.py muss erweitert werden
+  - Status: Fix erforderlich
+

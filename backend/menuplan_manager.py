@@ -34,10 +34,12 @@ class OrderListMetadata:
     id: str
     name: str
     created_at: str
-    menu_plan_id: str
-    menu_plan_name: str
-    total_items: int
-    total_cost: float
+    menu_plan_id: str = ""
+    menu_plan_name: str = ""
+    start_date: str = ""
+    end_date: str = ""
+    total_items: int = 0
+    total_cost: float = 0.0
     order_date: str = ""
     supplier: str = ""
     notes: str = ""
