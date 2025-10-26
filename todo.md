@@ -149,9 +149,10 @@
 
 
 
-- [ ] JavaScript-Fehler beim Speichern: orderListSelect is null
+- [x] JavaScript-Fehler beim Speichern: orderListSelect is null
   - Fehlermeldung: "null is not an object (evaluating 'orderListSelect.innerHTML = ...')"
-  - Tritt beim Speichern des Menüplans auf
-  - Ursache: Element existiert nicht oder wird zu früh referenziert
-  - Status: Analyse erforderlich
+  - Ursache: headerOrderListSelect und headerMealPlanSelect existieren nicht im DOM
+  - Lösung: Null-Prüfungen hinzugefügt (if (element) { ... })
+  - Funktion populateHeaderDropdowns() korrigiert
+  - Status: Behoben
 
