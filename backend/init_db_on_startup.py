@@ -167,6 +167,10 @@ def init_database():
     print("="*60 + "\n")
     
     try:
+        # Stelle sicher dass data-Verzeichnis existiert
+        data_dir = Path(__file__).parent.parent / "data"
+        data_dir.mkdir(exist_ok=True)
+        
         # Erstelle Tabellen
         tables_existed = create_tables_if_not_exist()
         
@@ -179,7 +183,10 @@ def init_database():
         
     except Exception as e:
         print(f"\n❌ Database initialization failed: {e}\n")
-        raise
+        import traceback
+        traceback.print_exc()
+        # Nicht werfen, damit App trotzdem startet
+        print("⚠️ Continuing without database initialization...\n")
 
 if __name__ == "__main__":
     init_database()
