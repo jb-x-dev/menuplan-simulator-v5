@@ -184,10 +184,11 @@
 
 
 
-- [ ] API-Endpunkt für Import von Menüplänen und Bestelllisten
-  - POST /api/import/menu-plans - Importiert alle JSON-Menüpläne
-  - POST /api/import/order-lists - Importiert alle JSON-Bestelllisten
-  - Lädt Dateien aus data/ Ordner
-  - Speichert in Backend-Datenbank
-  - Status: In Bearbeitung
+- [x] API-Endpunkt für Import von Menüplänen und Bestelllisten
+  - POST /api/import/menu-plans - Importiert alle menuplan_kw*.json ✓
+  - POST /api/import/order-lists - Importiert alle orderlist_kw*.json ✓
+  - Lädt Dateien aus data/ Ordner ✓
+  - Speichert in Backend-Datenbank via MenuPlanManager ✓
+  - Rückgabe: Import-Statistiken (imported count, errors) ✓
+  - Status: Implementiert
 
