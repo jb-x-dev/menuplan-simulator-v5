@@ -815,6 +815,20 @@ from backend.menuplan_manager import MenuPlanManager, MenuPlanMetadata, OrderLis
 
 plan_manager = MenuPlanManager(data_dir=os.path.join(os.path.dirname(__file__), '..', 'data'))
 
+# Auto-Import beim Start
+try:
+    from backend.auto_import import auto_import_data
+    data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+    auto_import_data(plan_manager, data_dir)
+except ImportError:
+    # Fallback für lokale Ausführung
+    try:
+        from auto_import import auto_import_data
+        data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+        auto_import_data(plan_manager, data_dir)
+    except Exception as e:
+        print(f"Warning: Auto-import failed: {e}")
+
 @app.route('/api/menu-plans', methods=['GET'])
 def list_menu_plans():
     """Listet alle gespeicherten Menüpläne auf"""

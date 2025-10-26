@@ -192,3 +192,11 @@
   - Rückgabe: Import-Statistiken (imported count, errors) ✓
   - Status: Implementiert
 
+
+
+- [ ] Automatischer Import beim Server-Start
+  - Prüft ob Menüpläne/Bestelllisten bereits in DB
+  - Importiert automatisch aus data/ wenn nicht vorhanden
+  - Läuft beim Flask-App-Start
+  - Status: In Bearbeitung
+
