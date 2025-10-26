@@ -835,17 +835,18 @@ from backend.menuplan_db_manager import MenuPlanDBManager, MenuPlanMetadata, Ord
 plan_manager = MenuPlanDBManager()
 print("✅ Using database-based MenuPlanDBManager (REQUIRED)")
 
-# Auto-Import beim Start
+# Auto-Import beim Start (Version 2.0 mit Lock-File)
 try:
-    from backend.auto_import import auto_import_data
+    from backend.auto_import_v2 import auto_import_data
     data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
-    auto_import_data(plan_manager, data_dir)
+    # Import läuft nur beim ersten Start (Lock-File-Mechanismus)
+    auto_import_data(plan_manager, data_dir, force=False)
 except ImportError:
     # Fallback für lokale Ausführung
     try:
-        from auto_import import auto_import_data
+        from auto_import_v2 import auto_import_data
         data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
-        auto_import_data(plan_manager, data_dir)
+        auto_import_data(plan_manager, data_dir, force=False)
     except Exception as e:
         print(f"Warning: Auto-import failed: {e}")
 
