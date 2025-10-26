@@ -9,6 +9,14 @@ from typing import Dict, List, Set, Tuple
 from collections import defaultdict
 from dataclasses import dataclass, asdict
 
+# Alias-Mapping für Menükomponenten
+# Ermöglicht Fallback wenn konfigurierte Komponente nicht in Rezepten existiert
+COMPONENT_ALIASES = {
+    'Zwischengang': 'Zwischenmahlzeit',
+    'Snack': 'Zwischenmahlzeit',
+    'Vorspeise': 'Mittagessen',  # Fallback für Vorspeise
+}
+
 
 @dataclass
 class Recipe:
@@ -288,7 +296,12 @@ class MenuPlanSimulator:
                     recipe_comp = recipe.menu_component
                     cost_comp = cost_form.get('component', 'NO_COMPONENT')
                     
-                    if recipe_comp == cost_comp:
+                    # NEU: Alias-Mapping anwenden
+                    # Wenn cost_comp ein Alias ist, verwende die gemappte Komponente
+                    mapped_cost_comp = COMPONENT_ALIASES.get(cost_comp, cost_comp)
+                    
+                    # Prüfe sowohl Original als auch gemappte Komponente
+                    if recipe_comp == cost_comp or recipe_comp == mapped_cost_comp:
                         key = (menu_line['id'], cost_form['id'])
                         eligible[key].append(recipe)
         
@@ -296,6 +309,19 @@ class MenuPlanSimulator:
         print(f"DEBUG: Eligible recipes summary:")
         for key, recs in eligible.items():
             print(f"  Key {key}: {len(recs)} recipes")
+        
+        # NEU: Log wenn Alias-Mapping verwendet wurde
+        used_aliases = set()
+        for menu_line in self.config.menu_lines:
+            for cost_form in menu_line['cost_forms']:
+                cost_comp = cost_form.get('component', 'NO_COMPONENT')
+                if cost_comp in COMPONENT_ALIASES:
+                    used_aliases.add(f"{cost_comp} → {COMPONENT_ALIASES[cost_comp]}")
+        
+        if used_aliases:
+            print(f"\nℹ️  Alias-Mapping aktiv:")
+            for alias in used_aliases:
+                print(f"  {alias}")
         if not eligible:
             print(f"  WARNING: No eligible recipes found!")
             print(f"  Total recipes loaded: {len(self.recipes)}")
