@@ -203,3 +203,10 @@
   - Modul: backend/auto_import.py
   - Status: Implementiert
 
+
+
+- [ ] Backend-Fehler: asdict not defined
+  - Fehler in /api/menu-plans Endpunkt
+  - Import fehlt in app.py
+  - Status: Fix erforderlich
+

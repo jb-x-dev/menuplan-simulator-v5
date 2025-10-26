@@ -4,6 +4,7 @@ Flask API Server für Menüplansimulator
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from whitenoise import WhiteNoise
+from dataclasses import asdict
 import json
 import os
 import sys
